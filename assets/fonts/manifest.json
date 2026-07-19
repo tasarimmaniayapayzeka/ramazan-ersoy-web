@@ -1,0 +1,98 @@
+[
+ {
+  "name": "josefin-sans-500-ext.woff2",
+  "url": "https://fonts.gstatic.com/s/josefinsans/v34/Qw3aZQNVED7rKGKxtqIqX5EUA3x4RHw.woff2",
+  "fam": "Josefin Sans",
+  "w": "500",
+  "style": "normal",
+  "sub": "ext"
+ },
+ {
+  "name": "josefin-sans-500-lat.woff2",
+  "url": "https://fonts.gstatic.com/s/josefinsans/v34/Qw3aZQNVED7rKGKxtqIqX5EUDXx4.woff2",
+  "fam": "Josefin Sans",
+  "w": "500",
+  "style": "normal",
+  "sub": "lat"
+ },
+ {
+  "name": "josefin-sans-600-ext.woff2",
+  "url": "https://fonts.gstatic.com/s/josefinsans/v34/Qw3aZQNVED7rKGKxtqIqX5EUA3x4RHw.woff2",
+  "fam": "Josefin Sans",
+  "w": "600",
+  "style": "normal",
+  "sub": "ext"
+ },
+ {
+  "name": "josefin-sans-600-lat.woff2",
+  "url": "https://fonts.gstatic.com/s/josefinsans/v34/Qw3aZQNVED7rKGKxtqIqX5EUDXx4.woff2",
+  "fam": "Josefin Sans",
+  "w": "600",
+  "style": "normal",
+  "sub": "lat"
+ },
+ {
+  "name": "lora-400i-ext.woff2",
+  "url": "https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoqF2nOeZ.woff2",
+  "fam": "Lora",
+  "w": "400",
+  "style": "italic",
+  "sub": "ext"
+ },
+ {
+  "name": "lora-400i-lat.woff2",
+  "url": "https://fonts.gstatic.com/s/lora/v37/0QI8MX1D_JOuMw_hLdO6T2wV9KnW-MoFoq92nA.woff2",
+  "fam": "Lora",
+  "w": "400",
+  "style": "italic",
+  "sub": "lat"
+ },
+ {
+  "name": "mulish-400-ext.woff2",
+  "url": "https://fonts.gstatic.com/s/mulish/v18/1Ptvg83HX_SGhgqk0QotcqA.woff2",
+  "fam": "Mulish",
+  "w": "400",
+  "style": "normal",
+  "sub": "ext"
+ },
+ {
+  "name": "mulish-400-lat.woff2",
+  "url": "https://fonts.gstatic.com/s/mulish/v18/1Ptvg83HX_SGhgqk3wot.woff2",
+  "fam": "Mulish",
+  "w": "400",
+  "style": "normal",
+  "sub": "lat"
+ },
+ {
+  "name": "mulish-600-ext.woff2",
+  "url": "https://fonts.gstatic.com/s/mulish/v18/1Ptvg83HX_SGhgqk0QotcqA.woff2",
+  "fam": "Mulish",
+  "w": "600",
+  "style": "normal",
+  "sub": "ext"
+ },
+ {
+  "name": "mulish-600-lat.woff2",
+  "url": "https://fonts.gstatic.com/s/mulish/v18/1Ptvg83HX_SGhgqk3wot.woff2",
+  "fam": "Mulish",
+  "w": "600",
+  "style": "normal",
+  "sub": "lat"
+ },
+ {
+  "name": "mulish-700-ext.woff2",
+  "url": "https://fonts.gstatic.com/s/mulish/v18/1Ptvg83HX_SGhgqk0QotcqA.woff2",
+  "fam": "Mulish",
+  "w": "700",
+  "style": "normal",
+  "sub": "ext"
+ },
+ {
+  "name": "mulish-700-lat.woff2",
+  "url": "https://fonts.gstatic.com/s/mulish/v18/1Ptvg83HX_SGhgqk3wot.woff2",
+  "fam": "Mulish",
+  "w": "700",
+  "style": "normal",
+  "sub": "lat"
+ }
+]

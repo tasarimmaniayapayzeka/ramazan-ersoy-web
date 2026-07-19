@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Klinik atmosferi illüstrasyonu — profesyonel çekim bekleniyor">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EAF6F4"/>
+      <stop offset="55%" stop-color="#D9EDEA"/>
+      <stop offset="100%" stop-color="#C6E3DF"/>
+    </linearGradient>
+    <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F7FCFB"/>
+      <stop offset="100%" stop-color="#E4F1EE"/>
+    </linearGradient>
+    <clipPath id="win"><rect x="118" y="150" width="564" height="700" rx="282"/></clipPath>
+  </defs>
+
+  <rect width="800" height="1000" fill="#324140"/>
+  <rect x="96" y="128" width="608" height="744" rx="304" fill="url(#frame)"/>
+
+  <g clip-path="url(#win)">
+    <rect x="118" y="150" width="564" height="700" fill="url(#sky)"/>
+    <!-- uzak tepeler -->
+    <path d="M118 700 Q250 600 400 668 T682 640 L682 850 L118 850 Z" fill="#B6DCD6" opacity=".85"/>
+    <path d="M118 760 Q260 690 420 742 T682 726 L682 850 L118 850 Z" fill="#8FC9C2"/>
+    <!-- ağaç siluetleri -->
+    <g fill="#5FA9A2" opacity=".55">
+      <circle cx="210" cy="672" r="46"/><rect x="205" y="700" width="9" height="60"/>
+      <circle cx="300" cy="700" r="34"/><rect x="296" y="722" width="7" height="46"/>
+      <circle cx="560" cy="686" r="40"/><rect x="556" y="712" width="8" height="52"/>
+    </g>
+    <!-- çayır -->
+    <path d="M118 800 Q400 760 682 796 L682 850 L118 850 Z" fill="#6DBEBB"/>
+    <!-- süzülen polen -->
+    <g fill="#FA8A53" opacity=".38">
+      <circle cx="240" cy="330" r="7"/><circle cx="470" cy="270" r="5"/><circle cx="580" cy="420" r="8"/>
+      <circle cx="330" cy="500" r="4.5"/><circle cx="620" cy="560" r="5.5"/><circle cx="190" cy="470" r="6"/>
+      <circle cx="430" cy="620" r="5"/><circle cx="520" cy="180" r="4"/>
+    </g>
+    <!-- nefes eğrisi -->
+    <path d="M140 520 Q220 430 300 520 T460 520 T620 520" fill="none" stroke="#2E7C78" stroke-width="3.5" stroke-linecap="round" opacity=".5"/>
+  </g>
+
+  <!-- pencere kanadı -->
+  <rect x="96" y="128" width="608" height="744" rx="304" fill="none" stroke="#FFFFFF" stroke-width="16"/>
+  <line x1="400" y1="150" x2="400" y2="850" stroke="#FFFFFF" stroke-width="10" opacity=".9"/>
+  <line x1="118" y1="500" x2="682" y2="500" stroke="#FFFFFF" stroke-width="10" opacity=".9"/>
+</svg>
