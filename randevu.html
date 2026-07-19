@@ -10,6 +10,8 @@
 <meta property="og:description" content="Formu doldurun, telefonla arayın ya da WhatsApp'tan yazın. Randevunuz sekreterimizin sizi aramasıyla kesinleşir.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="tr_TR">
+<meta property="og:image" content="https://www.guzel.net.tr/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/site.css">
 <script type="application/ld+json">
@@ -118,6 +120,8 @@
           <a href="hastaliklar/astim.html">Yetişkinlerde Astım <small>Öksürük, hırıltı, nefes darlığı</small></a>
           <a href="hastaliklar/urtiker.html">Ürtiker (Kurdeşen) <small>Kaşıntılı kabarıklıklar</small></a>
           <a href="hastaliklar/besin-alerjisi.html">Besin Alerjisi <small>Yiyeceklere karşı reaksiyon</small></a>
+          <a href="hastaliklar/ilac-alerjisi.html">İlaç Alerjisi <small>İlaç reaksiyonları</small></a>
+          <a href="hastaliklar/ari-alerjisi.html">Arı Alerjisi <small>Arı sokması reaksiyonları</small></a>
         </div>
       </div>
       <div class="has-drop" data-open="false">
@@ -131,7 +135,7 @@
       <a href="dr-ramazan-ersoy.html">Doktor</a>
       <a href="araclar/polen-takvimi.html">Polen Takvimi</a>
       <a href="iletisim.html">İletişim</a>
-      <span class="nav-cta"><a class="btn btn--primary btn--sm" href="randevu.html">Randevu Talep Et</a></span>
+      <span class="nav-cta"><a class="btn btn--primary btn--sm" href="randevu.html" aria-current="page">Randevu Talep Et</a></span>
     </nav>
   </div>
 </header>
@@ -232,7 +236,7 @@
         </form>
         <div class="form-ok" data-appointment-done>
           <strong>Talebiniz alındı.</strong>
-          <p style="margin:.5rem 0 0">Aynı gün içinde sizi arayacağız. Acil bir durumunuz varsa lütfen 112'yi arayın.</p>
+          <p style="margin:.5rem 0 0">Mesai saatleri içindeyse aynı gün, mesai dışıysa ertesi iş günü sizi arayacağız. Acil bir durumunuz varsa lütfen 112'yi arayın.</p>
           <p class="xs muted" style="margin:.75rem 0 0">(Demo: form gönderimi WordPress aşamasında etkinleştirilecektir.)</p>
         </div>
       </div>
@@ -260,7 +264,7 @@
         <svg class="t-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M16 4a12 12 0 00-10.3 18.2L4 28l5.9-1.6A12 12 0 1016 4z"/><path d="M12 12.5c0 4 3.5 7.5 7.5 7.5"/></svg>
         <h3>WhatsApp — yazarak anlatmak için</h3>
         <p>Şikayetinizi yazmak, elinizdeki eski tetkiklerin varlığını bildirmek ya da uygun saat aralıklarınızı iletmek istiyorsanız pratiktir.</p>
-        <p class="xs muted"><b>Ne zaman:</b> Konuşmaya uygun olmadığınız saatlerde. Mesajlar mesai içinde okunur; tıbbi ayrıntı ve belge paylaşımı için uygun kanal değildir.</p>
+        <p class="xs muted"><b>Ne zaman:</b> Konuşmaya uygun olmadığınız saatlerde. Mesajlar mesai içinde okunur. Tahlil ve belge iletimi için en uygun yolu sekreterimiz sizinle birlikte belirler.</p>
         <a class="link-arrow sm" data-wa="Merhaba, randevu için uygun günleri öğrenmek istiyorum." data-wa-src="randevu-kart" href="#">WhatsApp'tan yazın</a>
       </article>
       <article class="tool-card">
@@ -368,6 +372,13 @@
           <li><a href="hasta-merkezi/ikinci-gorus.html">Sonucunuzu yükleyin</a> — başka merkezde yapılan testler için ikinci görüş.</li>
         </ul>
         <p class="xs muted">Bu hizmetler muayenenin, tanının ve tedavinin yerine geçmez; acil durumlarda kullanılmaz.</p>
+      </div>
+
+      <div class="card" style="margin-top:1.25rem">
+        <span class="badge">Bilgilendirme</span>
+        <h3 style="margin-top:.75rem">Ücret ve ödeme hakkında</h3>
+        <p class="sm">Mevzuat gereği ücret bilgisi web sitesinde yayınlanmamaktadır. Muayene ücreti, özel sağlık sigortası belgelendirmesi ve ödeme seçenekleri hakkında bilgiyi telefonla alabilirsiniz.</p>
+        <p style="margin-bottom:0"><a class="btn btn--ghost btn--sm" href="tel:+902127099396">☎ 0212 709 93 96</a></p>
       </div>
     </div>
   </div>
@@ -501,6 +512,7 @@
           <li><a href="hastaliklar/urtiker.html">Ürtiker</a></li>
           <li><a href="hastaliklar/besin-alerjisi.html">Besin Alerjisi</a></li>
           <li><a href="hastaliklar/ilac-alerjisi.html">İlaç Alerjisi</a></li>
+          <li><a href="hastaliklar/ari-alerjisi.html">Arı Alerjisi</a></li>
         </ul>
       </div>
       <div>
@@ -517,6 +529,9 @@
         <ul>
           <li><a href="randevu.html">Randevu talebi</a></li>
           <li><a href="hasta-merkezi/randevunuza-hazirlanin.html">Randevunuza hazırlanın</a></li>
+          <li><a href="araclar/astim-kontrol-testi.html">Astım Kontrol Testi</a></li>
+          <li><a href="araclar/alerji-mi-soguk-alginligi-mi.html">Alerji mi Soğuk Algınlığı mı?</a></li>
+          <li><a href="araclar/video-kutuphanesi.html">Video Kütüphanesi</a></li>
           <li><a href="araclar/polen-takvimi.html">Polen takvimi</a></li>
           <li><a href="dr-ramazan-ersoy.html">Doktor özgeçmişi</a></li>
           <li><a href="en/index.html" hreflang="en">English</a></li>

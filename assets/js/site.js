@@ -136,6 +136,84 @@
     }
   }
 
+  /* ---------- Uzun sayfalar: okuma çubuğu + scrollspy ---------- */
+  var article = document.querySelector('.article-layout');
+  if (article && header) {
+    var bar = document.createElement('div');
+    bar.className = 'read-progress';
+    bar.setAttribute('aria-hidden', 'true');
+    header.appendChild(bar);
+    var onRead = function () {
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      bar.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
+    };
+    onRead();
+    window.addEventListener('scroll', onRead, { passive: true });
+
+    /* Scrollspy: görünür alanın üst çeyreğini geçen SON başlık aktiftir.
+       (IntersectionObserver dar bandı, sıçramalı kaydırmada geçişleri
+       kaçırıyordu — konum bazlı hesap her karede doğru sonuç verir.) */
+    var tocLinks = document.querySelectorAll('.toc a[href^="#"]');
+    if (tocLinks.length) {
+      var mapTL = {};
+      tocLinks.forEach(function (a) { mapTL[a.getAttribute('href').slice(1)] = a; });
+      var spyTargets = Object.keys(mapTL)
+        .map(function (id) { return document.getElementById(id); })
+        .filter(Boolean);
+      var current = null;
+      var spyUpdate = function () {
+        var line = window.innerHeight * 0.28;
+        var best = null;
+        spyTargets.forEach(function (t) {
+          if (t.getBoundingClientRect().top <= line) best = t;
+        });
+        var next = best ? mapTL[best.id] : null;
+        if (next === current) return;
+        if (current) { current.classList.remove('is-active'); current.removeAttribute('aria-current'); }
+        current = next;
+        if (current) { current.classList.add('is-active'); current.setAttribute('aria-current', 'location'); }
+      };
+      window.addEventListener('scroll', spyUpdate, { passive: true });
+      spyUpdate();
+    }
+  }
+
+  /* ---------- Yazdırmadan önce tüm akordiyonları aç ---------- */
+  window.addEventListener('beforeprint', function () {
+    document.querySelectorAll('details:not([open])').forEach(function (d) {
+      d.setAttribute('open', '');
+      d.setAttribute('data-print-opened', '');
+    });
+  });
+  window.addEventListener('afterprint', function () {
+    document.querySelectorAll('details[data-print-opened]').forEach(function (d) {
+      d.removeAttribute('open');
+      d.removeAttribute('data-print-opened');
+    });
+  });
+
+  /* ---------- Randevu formu: ?sikayet= ön-seçimi ----------
+     Hastalık sayfalarındaki CTA'lar ?sikayet=rinit|astim|cilt|besin|ilac|asi taşır. */
+  var sikayetSelect = document.getElementById('sikayet');
+  if (sikayetSelect) {
+    var esle = {
+      rinit: 'Burun akıntısı / tıkanıklık',
+      astim: 'Öksürük / nefes darlığı',
+      cilt: 'Ciltte kaşıntı / kurdeşen',
+      besin: 'Besin alerjisi şüphesi',
+      ilac: 'İlaç alerjisi şüphesi',
+      asi: 'Alerji aşısı hakkında bilgi'
+    };
+    var istenen = esle[new URLSearchParams(location.search).get('sikayet')];
+    if (istenen) {
+      [].slice.call(sikayetSelect.options).some(function (o) {
+        if (o.text === istenen) { sikayetSelect.value = o.value || o.text; return true; }
+        return false;
+      });
+    }
+  }
+
   /* ---------- Sayfaya duyarlı WhatsApp mesajı ---------- */
   document.querySelectorAll('[data-wa]').forEach(function (link) {
     var msg = link.getAttribute('data-wa') ||
@@ -144,7 +222,13 @@
     link.setAttribute('href', 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg));
     link.setAttribute('rel', 'noopener');
     link.setAttribute('target', '_blank');
-    link.addEventListener('click', function () {
+    link.addEventListener('click', function (e) {
+      // Demo aşaması: gerçek hat müşteriden gelince WA_NUMBER güncellenecek
+      if (WA_NUMBER === '905000000000') {
+        e.preventDefault();
+        alert('Demo sürümü: WhatsApp hattı, site yayına alındığında aktifleşecektir.\nŞimdilik 0212 709 93 96 numarasını arayabilirsiniz.');
+        return;
+      }
       // WP'de Takip Merkezi'ne bağlanacak (utm_source=whatsapp&src=...)
       if (window.console) console.info('[takip] whatsapp:' + src);
     });
@@ -183,9 +267,29 @@
   }
 
   /* ---------- Video lightbox (tıkla-oynat, lite-embed) ---------- */
+  var PLACEHOLDER_IDS = ['dQw4w9WgXcQ', ''];
   document.querySelectorAll('[data-video]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var id = btn.getAttribute('data-video');
+      if (PLACEHOLDER_IDS.indexOf(id) !== -1) {
+        // Gerçek video ID'leri müşteriden gelene kadar zarif bekleme kartı
+        var box = document.createElement('div');
+        box.setAttribute('role', 'dialog');
+        box.setAttribute('aria-modal', 'true');
+        box.style.cssText = 'position:fixed;inset:0;z-index:200;background:rgba(20,30,29,.9);' +
+          'display:flex;align-items:center;justify-content:center;padding:5vw';
+        box.innerHTML = '<div style="background:var(--cream);border-radius:18px;padding:2.5rem;max-width:440px;text-align:center">' +
+          '<svg viewBox="0 0 48 48" width="46" height="46" fill="none" stroke="var(--mint-ink)" stroke-width="2.5" stroke-linecap="round" style="margin:0 auto 1rem"><rect x="6" y="10" width="36" height="26" rx="4"/><path d="M20 18l10 5-10 5z" fill="var(--coral)" stroke="none"/><path d="M16 42h16"/></svg>' +
+          '<h3 style="margin:0 0 .5rem">Video hazırlanıyor</h3>' +
+          '<p style="margin:0 0 1.25rem;font-size:.9375rem;color:var(--body)">Dr. Ersoy’un bu konudaki videosu, video kütüphanesi düzenlemesi tamamlandığında burada yayınlanacak.</p>' +
+          '<button class="btn btn--ghost btn--sm">Kapat</button></div>';
+        var closeCard = function () { box.remove(); btn.focus(); };
+        box.addEventListener('click', function (e) { if (e.target === box) closeCard(); });
+        box.querySelector('button').addEventListener('click', closeCard);
+        document.body.appendChild(box);
+        box.querySelector('button').focus();
+        return;
+      }
       var box = document.createElement('div');
       box.setAttribute('role', 'dialog');
       box.setAttribute('aria-modal', 'true');

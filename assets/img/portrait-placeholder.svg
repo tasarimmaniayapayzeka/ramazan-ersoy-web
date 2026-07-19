@@ -1,13 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Dr. Ramazan Ersoy portresi — profesyonel çekim bekleniyor">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Dr. Ramazan Ersoy portresi — profesyonel çekim hazırlanıyor">
   <defs>
     <linearGradient id="bgp" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#EAF6F4"/><stop offset="100%" stop-color="#CFE7E3"/>
+      <stop offset="0%" stop-color="#EAF6F4"/><stop offset="100%" stop-color="#D3EAE6"/>
     </linearGradient>
   </defs>
   <rect width="400" height="400" fill="url(#bgp)"/>
-  <circle cx="200" cy="158" r="66" fill="#B4D8D3"/>
-  <path d="M62 400 q0-118 138-118 t138 118 z" fill="#FFFFFF"/>
-  <path d="M124 400 q14-96 76-96 t76 96 z" fill="#E6F2F0"/>
-  <path d="M200 292 l-20 34 20 26 20-26z" fill="#6DBEBB"/>
-  <circle cx="200" cy="158" r="66" fill="none" stroke="#8FC9C2" stroke-width="3"/>
+
+  <!-- nefes halkası -->
+  <circle cx="200" cy="185" r="118" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-dasharray="4 9" opacity=".7"/>
+  <circle cx="200" cy="185" r="96" fill="#FFFFFF"/>
+
+  <!-- RE monogramı -->
+  <text x="200" y="212" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="74" font-weight="600" fill="#2E7C78" letter-spacing="2">RE</text>
+
+  <!-- nefes eğrisi -->
+  <path d="M120 300 q40-26 80 0 t80 0" fill="none" stroke="#2E7C78" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+  <circle cx="288" cy="112" r="7" fill="#FA8A53" opacity=".6"/>
+  <circle cx="304" cy="138" r="4.5" fill="#FA8A53" opacity=".45"/>
+
+  <!-- rozet -->
+  <g>
+    <rect x="70" y="336" width="260" height="36" rx="18" fill="#324140"/>
+    <text x="200" y="359" text-anchor="middle" font-family="system-ui,Segoe UI,sans-serif" font-size="14.5" font-weight="600" fill="#EAF4F2">Profesyonel çekim hazırlanıyor</text>
+  </g>
 </svg>

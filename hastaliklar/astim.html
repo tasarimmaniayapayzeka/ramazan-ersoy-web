@@ -10,6 +10,8 @@
 <meta property="og:description" content="Astım nedir, nasıl teşhis edilir, nasıl kontrol altına alınır? Hasta diliyle, GINA rehberi temelli bir anlatım.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="tr_TR">
+<meta property="og:image" content="https://www.guzel.net.tr/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="../assets/fonts/josefin-sans-600-lat.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/mulish-400-lat.woff2" as="font" type="font/woff2" crossorigin>
@@ -137,6 +139,8 @@
           <a href="astim.html" aria-current="page">Yetişkinlerde Astım <small>Öksürük, hırıltı, nefes darlığı</small></a>
           <a href="urtiker.html">Ürtiker (Kurdeşen) <small>Kaşıntılı kabarıklıklar</small></a>
           <a href="besin-alerjisi.html">Besin Alerjisi <small>Yiyeceklere karşı reaksiyon</small></a>
+          <a href="ilac-alerjisi.html">İlaç Alerjisi <small>İlaç reaksiyonları</small></a>
+          <a href="ari-alerjisi.html">Arı Alerjisi <small>Arı sokması reaksiyonları</small></a>
         </div>
       </div>
       <div class="has-drop" data-open="false">
@@ -150,7 +154,7 @@
       <a href="../dr-ramazan-ersoy.html">Doktor</a>
       <a href="../araclar/polen-takvimi.html">Polen Takvimi</a>
       <a href="../iletisim.html">İletişim</a>
-      <span class="nav-cta"><a class="btn btn--primary btn--sm" href="../randevu.html">Randevu Talep Et</a></span>
+      <span class="nav-cta"><a class="btn btn--primary btn--sm" href="../randevu.html?sikayet=astim">Randevu Talep Et</a></span>
     </nav>
   </div>
 </header>
@@ -173,7 +177,7 @@
     <h1>Geceleri öksürüyor, göğsünüzde hırıltı mı duyuyorsunuz?</h1>
     <p class="hero-lede" style="max-width:62ch">Gecenin bir yarısı öksürükle uyanmak, merdiven çıkarken nefesin yetişmemesi, göğüste bir kemer sıkışması hissi… Bunlar “yaş ilerliyor” ya da “geçmeyen grip” diye geçiştirilmemesi gereken belirtilerdir. Yetişkinlerde astım, tanısı konulabilen ve büyük ölçüde kontrol altına alınabilen bir hastalıktır.</p>
     <div class="btn-row">
-      <a class="btn btn--primary" href="../randevu.html">Randevu Talep Et</a>
+      <a class="btn btn--primary" href="../randevu.html?sikayet=astim">Randevu Talep Et</a>
       <a class="btn btn--wa" data-wa="Merhaba, astım şikayetlerim için randevu almak istiyorum." data-wa-src="astim" href="#">WhatsApp'tan yazın</a>
     </div>
   </div>
@@ -426,7 +430,11 @@
           <li>Ataklarınız ve acil başvurularınız olmaz.</li>
         </ul>
         <p>Bu ölçütler GINA rehberinin kontrol değerlendirme yaklaşımıyla uyumludur. Kendi kontrol düzeyinizi kabaca ölçmek için standart <b>Astım Kontrol Testi (ACT)</b> kullanılabilir: beş soruluk, birkaç dakikada tamamlanan bir öz değerlendirmedir.</p>
-        <p><a class="link-arrow" href="../araclar/astim-kontrol-testi.html">Astım Kontrol Testi'ni (ACT) yapın</a></p>
+        <div class="card" style="margin:1.25rem 0">
+          <h3 style="margin-top:0">Astımınız kontrol altında mı?</h3>
+          <p>5 soruluk Astım Kontrol Testi (ACT) ile son 4 haftadaki kontrol düzeyinizi birkaç dakikada ölçün. Sonuç bir puan olarak görüntülenir ve kontrol muayenenizde hekiminizle paylaşabilirsiniz.</p>
+          <a class="btn btn--ghost" href="../araclar/astim-kontrol-testi.html">ACT testini yapın</a>
+        </div>
         <div class="caution">
           <b>İhtiyat notu:</b> ACT gibi öz değerlendirme araçları bir tarama aracıdır; tanı koymaz ve muayenenin yerine geçmez. Puanınız iyi çıksa bile şikayetleriniz sürüyorsa hekiminize başvurun. Sonuçlar kişiden kişiye farklılık gösterebilir.
         </div>
@@ -588,7 +596,7 @@
     <h2>Nefesinizi bir uzmanla değerlendirelim</h2>
     <p>Şikayetlerinizi dinleyip solunum fonksiyon testi ve gerekiyorsa alerji testleriyle tabloyu netleştirelim. Randevu talebinize <strong>aynı gün içinde</strong> dönüş yapılır; randevunuz sekreterimiz sizinle görüştükten sonra kesinleşir.</p>
     <div class="btn-row" style="justify-content:center;margin:1.5rem 0">
-      <a class="btn btn--primary" href="../randevu.html">Randevu Talep Et</a>
+      <a class="btn btn--primary" href="../randevu.html?sikayet=astim">Randevu Talep Et</a>
       <a class="btn btn--wa" data-wa="Merhaba, gece öksürüğü ve nefes darlığı şikayetlerim var; astım değerlendirmesi için randevu almak istiyorum." data-wa-src="astim-kapanis" href="#">WhatsApp'tan yazın</a>
       <a class="btn btn--ghost" href="tel:+902127099396">☎ 0212 709 93 96</a>
     </div>
@@ -617,6 +625,7 @@
           <li><a href="urtiker.html">Ürtiker</a></li>
           <li><a href="besin-alerjisi.html">Besin Alerjisi</a></li>
           <li><a href="ilac-alerjisi.html">İlaç Alerjisi</a></li>
+          <li><a href="ari-alerjisi.html">Arı Alerjisi</a></li>
         </ul>
       </div>
       <div>
@@ -633,6 +642,9 @@
         <ul>
           <li><a href="../randevu.html">Randevu talebi</a></li>
           <li><a href="../hasta-merkezi/randevunuza-hazirlanin.html">Randevunuza hazırlanın</a></li>
+          <li><a href="../araclar/astim-kontrol-testi.html">Astım Kontrol Testi</a></li>
+          <li><a href="../araclar/alerji-mi-soguk-alginligi-mi.html">Alerji mi Soğuk Algınlığı mı?</a></li>
+          <li><a href="../araclar/video-kutuphanesi.html">Video Kütüphanesi</a></li>
           <li><a href="../araclar/polen-takvimi.html">Polen takvimi</a></li>
           <li><a href="../dr-ramazan-ersoy.html">Doktor özgeçmişi</a></li>
           <li><a href="../en/index.html" hreflang="en">English</a></li>

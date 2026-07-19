@@ -10,6 +10,8 @@
 <meta property="og:description" content="Standart 5 soruluk ACT ile son 4 haftadaki astım kontrolünüzü ölçün. Sonuç bir tarama puanıdır; hekiminizle paylaşın.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="tr_TR">
+<meta property="og:image" content="https://www.guzel.net.tr/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/css/site.css">
 
@@ -99,6 +101,8 @@
           <a href="../hastaliklar/astim.html">Yetişkinlerde Astım <small>Öksürük, hırıltı, nefes darlığı</small></a>
           <a href="../hastaliklar/urtiker.html">Ürtiker (Kurdeşen) <small>Kaşıntılı kabarıklıklar</small></a>
           <a href="../hastaliklar/besin-alerjisi.html">Besin Alerjisi <small>Yiyeceklere karşı reaksiyon</small></a>
+          <a href="../hastaliklar/ilac-alerjisi.html">İlaç Alerjisi <small>İlaç reaksiyonları</small></a>
+          <a href="../hastaliklar/ari-alerjisi.html">Arı Alerjisi <small>Arı sokması reaksiyonları</small></a>
         </div>
       </div>
       <div class="has-drop" data-open="false">
@@ -364,6 +368,7 @@
           <li><a href="../hastaliklar/urtiker.html">Ürtiker</a></li>
           <li><a href="../hastaliklar/besin-alerjisi.html">Besin Alerjisi</a></li>
           <li><a href="../hastaliklar/ilac-alerjisi.html">İlaç Alerjisi</a></li>
+          <li><a href="../hastaliklar/ari-alerjisi.html">Arı Alerjisi</a></li>
         </ul>
       </div>
       <div>
@@ -380,6 +385,9 @@
         <ul>
           <li><a href="../randevu.html">Randevu talebi</a></li>
           <li><a href="../hasta-merkezi/randevunuza-hazirlanin.html">Randevunuza hazırlanın</a></li>
+          <li><a href="../araclar/astim-kontrol-testi.html">Astım Kontrol Testi</a></li>
+          <li><a href="../araclar/alerji-mi-soguk-alginligi-mi.html">Alerji mi Soğuk Algınlığı mı?</a></li>
+          <li><a href="../araclar/video-kutuphanesi.html">Video Kütüphanesi</a></li>
           <li><a href="polen-takvimi.html">Polen takvimi</a></li>
           <li><a href="../dr-ramazan-ersoy.html">Doktor özgeçmişi</a></li>
           <li><a href="../en/index.html" hreflang="en">English</a></li>
@@ -469,13 +477,17 @@
       baslik = 'İyi kontrol';
       aciklama = 'Son 4 haftada astımınız <strong>kontrol altında</strong> görünüyor; ancak puanınız tam kontrole (25) ulaşmamış. Bu, tedavinizde küçük düzenlemelerle daha rahat bir döneme geçilebileceğini düşündürebilir. Sonucunuzu bir sonraki muayenenizde hekiminizle paylaşmanız yeterlidir.';
       rozetStil = 'background:var(--mint-bg);color:var(--mint-ink);border:1px solid var(--mint-line)';
+      cta =
+        '<div class="btn-row" style="margin-top:1.1rem">' +
+          '<a class="btn btn--ghost" href="../randevu.html?sikayet=astim">Kontrolü tam hedefliyorsanız değerlendirme için randevu oluşturabilirsiniz</a>' +
+        '</div>';
     } else {
       baslik = 'Kontrol yetersiz olabilir';
       aciklama = 'Puanınız 20\'nin altında. Bu, son 4 haftada <strong>astım kontrolünüzün yetersiz olabileceğini</strong> düşündüren bir tarama bulgusudur — kesin bir sonuç değildir. Tedavinizin, tetikleyicilerinizin ve ilaç kullanım tekniğinizin gözden geçirilmesi için bir değerlendirme randevusu oluşturabilirsiniz.';
       rozetStil = 'background:#FFFBF3;color:#92400E;border:1px solid var(--amber)';
       cta =
         '<div class="btn-row" style="margin-top:1.1rem">' +
-          '<a class="btn btn--primary" href="../randevu.html">Değerlendirme için randevu oluşturun</a>' +
+          '<a class="btn btn--primary" href="../randevu.html?sikayet=astim">Değerlendirme için randevu oluşturun</a>' +
           '<a class="btn btn--ghost" href="tel:+902127099396">☎ 0212 709 93 96</a>' +
         '</div>';
     }
@@ -488,11 +500,20 @@
         '<p style="margin:0 0 .9rem"><span style="display:inline-block;font-size:var(--fs-xs);font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.3rem .75rem;border-radius:var(--r-pill);' + rozetStil + '">' + esc(baslik) + '</span></p>' +
         '<p class="sm" style="margin-bottom:0">' + aciklama + '</p>' +
         cta +
+        '<p style="margin:1.1rem 0 0"><button class="btn btn--ghost" type="button" onclick="window.print()">Sonucu yazdır</button></p>' +
         '<div class="caution" style="margin-bottom:0;margin-top:1.1rem">' +
           '<b>Önemli:</b> ACT bir <b>tarama aracıdır</b>; tanı ve tedavi kararının yerine geçmez. ' +
           'Sonucunuzu mutlaka hekiminizle paylaşın. Sonuçlar kişiden kişiye farklılık gösterebilir.' +
         '</div>' +
       '</div>';
+
+    /* WhatsApp mesajını puana göre güncelle (data-wa + href birlikte) */
+    var waMsg = 'Merhaba, ACT testinden ' + puan + ' puan aldım, değerlendirme randevusu istiyorum.';
+    document.querySelectorAll('a[data-wa]').forEach(function(wa){
+      wa.setAttribute('data-wa', waMsg);
+      var h = wa.getAttribute('href') || '';
+      if(h.indexOf('wa.me') !== -1) wa.setAttribute('href', h.split('?')[0] + '?text=' + encodeURIComponent(waMsg));
+    });
 
     out.scrollIntoView({behavior:'smooth', block:'nearest'});
   }

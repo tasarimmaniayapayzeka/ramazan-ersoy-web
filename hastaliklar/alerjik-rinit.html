@@ -10,6 +10,8 @@
 <meta property="og:description" content="Yıllarca “bahar nezlesi” denip geçilen şikayetlerin ardında çoğu zaman teşhis edilebilir bir alerji vardır.">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="tr_TR">
+<meta property="og:image" content="https://www.guzel.net.tr/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/css/site.css">
 
@@ -19,7 +21,7 @@
   "@type":"BreadcrumbList",
   "itemListElement":[
     {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://www.guzel.net.tr/"},
-    {"@type":"ListItem","position":2,"name":"Şikayetler","item":"https://www.guzel.net.tr/hastaliklar/"},
+    {"@type":"ListItem","position":2,"name":"Şikayetler","item":"https://www.guzel.net.tr/#sikayet"},
     {"@type":"ListItem","position":3,"name":"Alerjik Rinit","item":"https://www.guzel.net.tr/hastaliklar/alerjik-rinit.html"}
   ]
 }
@@ -132,10 +134,12 @@
       <div class="has-drop" data-open="false">
         <button aria-expanded="false">Şikayetler</button>
         <div class="drop">
-          <a href="alerjik-rinit.html">Alerjik Rinit <small>Burun akıntısı, tıkanıklık, hapşırık</small></a>
+          <a href="alerjik-rinit.html" aria-current="page">Alerjik Rinit <small>Burun akıntısı, tıkanıklık, hapşırık</small></a>
           <a href="astim.html">Yetişkinlerde Astım <small>Öksürük, hırıltı, nefes darlığı</small></a>
           <a href="urtiker.html">Ürtiker (Kurdeşen) <small>Kaşıntılı kabarıklıklar</small></a>
           <a href="besin-alerjisi.html">Besin Alerjisi <small>Yiyeceklere karşı reaksiyon</small></a>
+          <a href="ilac-alerjisi.html">İlaç Alerjisi <small>İlaç reaksiyonları</small></a>
+          <a href="ari-alerjisi.html">Arı Alerjisi <small>Arı sokması reaksiyonları</small></a>
         </div>
       </div>
       <div class="has-drop" data-open="false">
@@ -149,7 +153,7 @@
       <a href="../dr-ramazan-ersoy.html">Doktor</a>
       <a href="../araclar/polen-takvimi.html">Polen Takvimi</a>
       <a href="../iletisim.html">İletişim</a>
-      <span class="nav-cta"><a class="btn btn--primary btn--sm" href="../randevu.html">Randevu Talep Et</a></span>
+      <span class="nav-cta"><a class="btn btn--primary btn--sm" href="../randevu.html?sikayet=rinit">Randevu Talep Et</a></span>
     </nav>
   </div>
 </header>
@@ -172,7 +176,7 @@
     <h1>Burnunuz sürekli mi akıyor, tıkanıyor mu?</h1>
     <p class="hero-lede" style="max-width:62ch">Sabahları peş peşe gelen hapşırıklar, geceleri geçmeyen burun tıkanıklığı, boğazınıza akan geniz akıntısı ve sulanan gözler… “Yine üşütmüşüm” diye geçiştirilen bu tablo, yetişkinlerde en sık atlanan alerji şeklidir: <strong>alerjik rinit</strong>. Bu sayfada nedenini, nasıl ayırt edildiğini ve neyin işe yaradığını sade bir dille anlattık.</p>
     <div class="btn-row" style="margin-top:1.25rem">
-      <a class="btn btn--primary" href="../randevu.html">Randevu Talep Et</a>
+      <a class="btn btn--primary" href="../randevu.html?sikayet=rinit">Randevu Talep Et</a>
       <a class="btn btn--wa" data-wa="Merhaba, burun akıntısı ve tıkanıklık şikayetim var. Alerjik rinit için randevu almak istiyorum." data-wa-src="alerjik-rinit" href="#">WhatsApp'tan yazın</a>
     </div>
   </div>
@@ -328,7 +332,11 @@
         <b>Bu tablo bir tanı aracı değildir.</b> Belirtiler kişiden kişiye farklılık gösterebilir ve iki durum bir arada da bulunabilir. Kesin ayrım muayene ve gerektiğinde testle yapılır.
       </div>
 
-      <p class="sm"><a class="link-arrow" href="../araclar/alerji-mi-soguk-alginligi-mi.html">6 soruluk kısa değerlendirmeyi deneyin</a></p>
+      <div class="card" style="margin:1.5rem 0">
+        <h3 style="margin-top:0">Alerji mi, soğuk algınlığı mı? 60 saniyelik test</h3>
+        <p>6 kısa soruyla şikayetlerinizin hangi tabloya daha yakın olduğuna dair fikir edinin. Test tanı koymaz; sonuç muayenenin yerine geçmez.</p>
+        <a class="btn btn--ghost" href="../araclar/alerji-mi-soguk-alginligi-mi.html">Teste başlayın</a>
+      </div>
 
       <h2 id="tani">Nasıl teşhis edilir?</h2>
       <p>Alerjik rinit tanısı tek bir testin sonucuna değil, üç parçanın birbirini tutmasına dayanır: <strong>hikâye, muayene ve test</strong>. Testi hikâyeden bağımsız okumak, yanlış tanının en sık nedenidir.</p>
@@ -467,7 +475,7 @@
       <p class="sm muted">Muayenehanede <b>yetişkin hastalar</b> kabul edilmektedir. 18 yaş altı hastalar için çocuk alerji ve immünoloji uzmanına başvurmanızı öneririz.</p>
 
       <div class="btn-row" style="margin:1.5rem 0">
-        <a class="btn btn--primary" href="../randevu.html">Randevu Talep Et</a>
+        <a class="btn btn--primary" href="../randevu.html?sikayet=rinit">Randevu Talep Et</a>
         <a class="btn btn--ghost" href="tel:+902127099396">☎ 0212 709 93 96</a>
       </div>
 
@@ -586,7 +594,7 @@
     <h2>Şikayetinizin adını birlikte koyalım</h2>
     <p>Burun akıntısı ve tıkanıklık şikayetiniz haftalardır sürüyorsa, önce kaynağını bulalım. Formu doldurun ya da doğrudan yazın; <strong>aynı gün içinde</strong> sizi arayalım.</p>
     <div class="btn-row" style="justify-content:center;margin-top:1.5rem">
-      <a class="btn btn--primary" href="../randevu.html">Randevu Talep Et</a>
+      <a class="btn btn--primary" href="../randevu.html?sikayet=rinit">Randevu Talep Et</a>
       <a class="btn btn--wa" data-wa="Merhaba, alerjik rinit sayfanızı okudum. Burun akıntısı ve tıkanıklık şikayetim için randevu almak istiyorum." data-wa-src="alerjik-rinit-kapanis" href="#">WhatsApp'tan yazın</a>
       <a class="btn btn--ghost" href="tel:+902127099396">☎ 0212 709 93 96</a>
     </div>
@@ -614,6 +622,7 @@
           <li><a href="urtiker.html">Ürtiker</a></li>
           <li><a href="besin-alerjisi.html">Besin Alerjisi</a></li>
           <li><a href="ilac-alerjisi.html">İlaç Alerjisi</a></li>
+          <li><a href="ari-alerjisi.html">Arı Alerjisi</a></li>
         </ul>
       </div>
       <div>
@@ -630,6 +639,9 @@
         <ul>
           <li><a href="../randevu.html">Randevu talebi</a></li>
           <li><a href="../hasta-merkezi/randevunuza-hazirlanin.html">Randevunuza hazırlanın</a></li>
+          <li><a href="../araclar/astim-kontrol-testi.html">Astım Kontrol Testi</a></li>
+          <li><a href="../araclar/alerji-mi-soguk-alginligi-mi.html">Alerji mi Soğuk Algınlığı mı?</a></li>
+          <li><a href="../araclar/video-kutuphanesi.html">Video Kütüphanesi</a></li>
           <li><a href="../araclar/polen-takvimi.html">Polen takvimi</a></li>
           <li><a href="../dr-ramazan-ersoy.html">Doktor özgeçmişi</a></li>
           <li><a href="../en/index.html" hreflang="en">English</a></li>

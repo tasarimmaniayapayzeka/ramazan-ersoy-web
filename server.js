@@ -33,9 +33,10 @@ http.createServer((req, res) => {
 
   fs.readFile(filePath, (err, data) => {
     if (err) {
-      res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
-      res.end('<h1 style="font-family:sans-serif;padding:3rem">404 — Sayfa bulunamadı</h1>' +
-              '<p style="font-family:sans-serif;padding:0 3rem">Aranan: ' + urlPath + '</p>');
+      fs.readFile(path.join(ROOT, '404.html'), (e2, page) => {
+        res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
+        res.end(e2 ? '<h1>404</h1>' : page);
+      });
       return;
     }
     res.writeHead(200, {
