@@ -29,7 +29,7 @@
     <!-- çayır -->
     <path d="M118 800 Q400 760 682 796 L682 850 L118 850 Z" fill="#6DBEBB"/>
     <!-- süzülen polen -->
-    <g fill="#FA8A53" opacity=".38">
+    <g fill="#B98A3B" opacity=".38">
       <circle cx="240" cy="330" r="7"/><circle cx="470" cy="270" r="5"/><circle cx="580" cy="420" r="8"/>
       <circle cx="330" cy="500" r="4.5"/><circle cx="620" cy="560" r="5.5"/><circle cx="190" cy="470" r="6"/>
       <circle cx="430" cy="620" r="5"/><circle cx="520" cy="180" r="4"/>

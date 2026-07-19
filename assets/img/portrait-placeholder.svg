@@ -15,8 +15,8 @@
 
   <!-- nefes eğrisi -->
   <path d="M120 300 q40-26 80 0 t80 0" fill="none" stroke="#2E7C78" stroke-width="3" stroke-linecap="round" opacity=".55"/>
-  <circle cx="288" cy="112" r="7" fill="#FA8A53" opacity=".6"/>
-  <circle cx="304" cy="138" r="4.5" fill="#FA8A53" opacity=".45"/>
+  <circle cx="288" cy="112" r="7" fill="#B98A3B" opacity=".6"/>
+  <circle cx="304" cy="138" r="4.5" fill="#B98A3B" opacity=".45"/>
 
   <!-- rozet -->
   <g>

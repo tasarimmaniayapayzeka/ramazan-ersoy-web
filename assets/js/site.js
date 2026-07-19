@@ -106,19 +106,7 @@
     counters.forEach(function (el) { cio.observe(el); });
   }
 
-  /* ---------- Süzülen polen (dekoratif) ---------- */
-  var pollen = document.querySelector('.pollen');
-  if (pollen && !reduced) {
-    for (var i = 0; i < 14; i++) {
-      var dot = document.createElement('i');
-      var size = 4 + Math.random() * 9;
-      dot.style.width = dot.style.height = size.toFixed(1) + 'px';
-      dot.style.left = (Math.random() * 100).toFixed(1) + '%';
-      dot.style.animationDuration = (12 + Math.random() * 14).toFixed(1) + 's';
-      dot.style.animationDelay = (-Math.random() * 20).toFixed(1) + 's';
-      pollen.appendChild(dot);
-    }
-  }
+  /* (v2 Sessiz Lüks: süzülen polen animasyonu emekli edildi — kurumsal sadelik) */
 
   /* ---------- Polen takvimi: içinde bulunulan ayı vurgula ----------
      Ay vurgusu tarih fonksiyonuyla otomatik — "Mart'ta donmuş site"

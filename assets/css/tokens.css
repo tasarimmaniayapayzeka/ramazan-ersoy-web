@@ -1,16 +1,23 @@
 /* ============================================================
-   NEFES BAHÇESİ — Tasarım Sistemi (Güçlendirilmiş sürüm)
+   SESSİZ LÜKS — Tasarım Sistemi v2 (Koyu Teal & Şampanya)
    Yrd. Doç. Dr. Ramazan Ersoy · Yetişkin Alerji & Astım
    ------------------------------------------------------------
+   v2 REBRAND NOTU (20 Tem 2026, müşteri "kurumsal olsun" kararı):
+   Nane+mercan "Nefes Bahçesi" paleti emekli edildi. Token ADLARI
+   geriye uyumluluk için korundu, DEĞERLERİ değişti:
+   --coral artık KOYU TEAL'dir (birincil CTA #0F766E),
+   --coral-soft artık AÇIK TEAL vurgudur (koyu zeminde #5EEAD4).
+   ------------------------------------------------------------
    KURALLAR (token seviyesinde kilitli):
-   1. --coral-soft (#FA8A53) YALNIZ dekoratiftir. Buton zemini
-      veya metin rengi OLAMAZ (beyazla 2.38:1). CTA daima --coral.
-   2. --gold YALNIZ rozet konturu, timeline noktası ve ince
-      ayraç çizgisidir. Geniş yüzey veya metin rengi değildir.
+   1. --coral-soft YALNIZ dekoratif/koyu-zemin vurgusudur; açık
+      zeminde metin OLAMAZ. CTA daima --coral (teal).
+   2. --gold (şampanya) YALNIZ rozet, timeline noktası, 1px ayraç
+      ve küçük etiket metnidir. Geniş yüzey olamaz.
    3. --red YALNIZ 112/anafilaksi acil kutularıdır. Form hataları
       dahil diğer tüm uyarılar --amber kullanır.
-   4. Site açık zeminlidir. Sağlıkta güven aydınlık zeminden gelir;
-      dark mode bilinçli olarak YOKTUR (araştırma kararı).
+   4. Site açık zeminlidir; koyu paneller (hero sağ, teknoloji
+      bandı, kapanış CTA, footer) toplam alanın ≤%25'idir.
+   5. Emoji YASAK — yalnız çizgi SVG ikon.
    ============================================================ */
 
 /* ---------- Fontlar (self-host — KVKK: Google hotlink yasak) ---------- */
@@ -46,6 +53,19 @@
   src:url('../fonts/mulish-700-lat.woff2') format('woff2');
   unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
 
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:500;font-display:swap;
+  src:url('../fonts/fraunces-500-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:500;font-display:swap;
+  src:url('../fonts/fraunces-500-lat.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:600;font-display:swap;
+  src:url('../fonts/fraunces-600-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:600;font-display:swap;
+  src:url('../fonts/fraunces-600-lat.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+
 @font-face{font-family:'Lora';font-style:italic;font-weight:400;font-display:swap;
   src:url('../fonts/lora-400i-ext.woff2') format('woff2');
   unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
@@ -54,30 +74,30 @@
   unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
 
 :root{
-  /* ---------- Renk ---------- */
-  --anchor:#324140;        /* koyu teal-antrasit: header/footer/H1 */
-  --anchor-deep:#22312F;   /* footer derinlik */
-  --mint:#6DBEBB;          /* ana marka: ikon, çizgi, hover */
-  --mint-ink:#2E7C78;      /* nane zemin üstünde okunur teal (AA) */
-  --mint-bg:#EAF6F4;       /* nane section zemini */
-  --mint-line:#CFE7E3;     /* nane kenarlık */
-  --coral:#C24E2C;         /* BİRİNCİL CTA — beyazla 4.8:1 AA */
-  --coral-hover:#A63F21;
-  --coral-soft:#FA8A53;    /* SADECE DEKORATİF — buton/metin OLAMAZ */
-  --cream:#FDF6F0;         /* empati blokları, "Dr. Ersoy'dan not" */
-  --cream-line:#F0E2D6;
-  --gold:#B08D4A;          /* SADECE rozet/timeline noktası/ince çizgi */
-  --amber:#D97706;         /* tüm uyarılar (kırmızı yerine) */
+  /* ---------- Renk (v2: Sessiz Lüks — koyu teal & şampanya) ---------- */
+  --anchor:#0B3B38;        /* derin teal: header çapa/H1/koyu paneller */
+  --anchor-deep:#082E2B;   /* footer ve gece panellerinin derinliği */
+  --mint:#6DBEBB;          /* ince çizgi, ikon konturu (açık zeminde) */
+  --mint-ink:#166B64;      /* açık zemin üstünde okunur teal (AA 5.4:1) */
+  --mint-bg:#EFF6F4;       /* soğutulmuş açık section zemini */
+  --mint-line:#D5E5E1;
+  --coral:#0F766E;         /* BİRİNCİL CTA — artık TEAL (beyazla 5.4:1); ad geriye-uyumluluk */
+  --coral-hover:#134E4A;
+  --coral-soft:#5EEAD4;    /* koyu zemin vurgusu — açık zeminde metin OLAMAZ */
+  --cream:#FAF6ED;         /* şampanya-krem: empati blokları */
+  --cream-line:#EAE1CC;
+  --gold:#8A7440;          /* şampanya — rozet/timeline/1px çizgi/etiket (beyazla 4.6:1) */
+  --amber:#B45309;         /* tüm uyarılar (kırmızı yerine) */
   --red:#B91C1C;           /* SADECE 112/anafilaksi acil kutusu */
-  --ink:#22312F;           /* başlık metni */
-  --body:#3D4A48;          /* gövde metni — saf siyah yasak */
-  --muted:#6B7A77;         /* tarih, dipnot, ikincil */
-  --line:#E2ECEA;          /* genel kenarlık */
+  --ink:#122E2B;           /* başlık metni */
+  --body:#3E4C49;          /* gövde metni — saf siyah yasak */
+  --muted:#69807B;
+  --line:#E3ECEA;
   --white:#FFFFFF;
-  --bg:#FFFFFF;            /* sayfanın %60'ı beyaz */
+  --bg:#FCFDFD;
 
-  /* ---------- Tipografi ---------- */
-  --font-display:'Josefin Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  /* ---------- Tipografi (v2: karakterli serif başlık) ---------- */
+  --font-display:'Fraunces',Georgia,'Times New Roman',serif;
   --font-body:'Mulish',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   --font-note:'Lora',Georgia,'Times New Roman',serif;
 
