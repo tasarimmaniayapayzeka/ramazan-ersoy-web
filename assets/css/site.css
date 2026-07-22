@@ -11,6 +11,9 @@ body{
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
   padding-bottom:var(--bar-h);
 }
+/* Ekran dışına taşan öğeler (kapalı mobil menü vb.) yatay kaydırma
+   üretmesin. 'clip' scroll konteyneri oluşturmadığı için sticky header bozulmaz. */
+html,body{overflow-x:clip}
 img,video,svg{max-width:100%;height:auto;display:block}
 a{color:var(--mint-ink);text-decoration:none;transition:color var(--t-fast) var(--ease)}
 a:hover{color:var(--coral)}
@@ -132,9 +135,12 @@ code{font-family:ui-monospace,Consolas,monospace;font-size:.9em;background:var(-
   .nav{
     position:fixed;inset:0 0 auto;top:0;margin:0;flex-direction:column;align-items:stretch;gap:.15rem;
     background:#fff;padding:5.5rem var(--gutter) 2rem;height:100dvh;overflow-y:auto;
-    transform:translateX(100%);transition:transform var(--t-mid) var(--ease);z-index:99;
+    transform:translateX(100%);z-index:99;
+    /* kapalıyken görünmez VE odaklanamaz olsun — hem taşma hem klavye-erişim düzeltmesi */
+    visibility:hidden;
+    transition:transform var(--t-mid) var(--ease),visibility 0s var(--t-mid);
   }
-  .nav[data-open="true"]{transform:translateX(0)}
+  .nav[data-open="true"]{transform:translateX(0);visibility:visible;transition:transform var(--t-mid) var(--ease)}
   .nav a:not(.btn),.has-drop>button{width:100%;padding:.85rem .6rem;font-size:1.0625rem;border-bottom:1px solid var(--line);border-radius:0}
   .has-drop>button{justify-content:space-between}
   .drop{position:static;transform:none;opacity:1;visibility:visible;box-shadow:none;border:none;padding:0 0 .5rem .8rem;min-width:0;display:none}
