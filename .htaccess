@@ -40,8 +40,11 @@ ErrorDocument 404 /404.html
   Header always unset X-Powered-By
   Header unset Server
 
-  # SSL doğrulandıktan SONRA aşağıdaki satırın başındaki # kaldırılacak:
-  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  # HSTS — 26 Tem 2026'da açıldı. Ön koşul doğrulandı:
+  # https 200 döndü, http→https ve www→non-www 301'leri çalışıyor,
+  # AutoSSL sertifikası etkin. Sorun çıkarsa bu satırı yorum yapmak
+  # tek başına YETMEZ; tarayıcılar süreyi hatırlar (chrome://net-internals/#hsts).
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 </IfModule>
 ServerSignature Off
 
