@@ -14,26 +14,26 @@
 - Acil durumlarda (nefes darlığı, dilde/boğazda şişme) 112 aranmalıdır
 
 ## Ana sayfalar
-- [Anasayfa](https://guzel.net.tr/): hizmet özeti ve randevu kanalları
-- [Alerji Aşısı / İmmünoterapi](https://guzel.net.tr/tedaviler/alerji-asisi-immunoterapi.html): SCIT/SLIT karşılaştırması, tedavi süreci (3-5 yıl), uygunluk
-- [Alerji Aşısı SSS](https://guzel.net.tr/tedaviler/alerji-asisi-sss.html): 20 soruda immünoterapi
-- [Testler](https://guzel.net.tr/testler/): deri prick, yama, spesifik IgE, SFT, provokasyon karşılaştırması
-- [Deri Prick Testi](https://guzel.net.tr/testler/deri-prick-testi.html): hazırlık (antihistaminikler ~10 gün önce kesilir), süreç, sonuçlar
+- [Anasayfa](https://drramazanersoy.tr/): hizmet özeti ve randevu kanalları
+- [Alerji Aşısı / İmmünoterapi](https://drramazanersoy.tr/tedaviler/alerji-asisi-immunoterapi.html): SCIT/SLIT karşılaştırması, tedavi süreci (3-5 yıl), uygunluk
+- [Alerji Aşısı SSS](https://drramazanersoy.tr/tedaviler/alerji-asisi-sss.html): 20 soruda immünoterapi
+- [Testler](https://drramazanersoy.tr/testler/): deri prick, yama, spesifik IgE, SFT, provokasyon karşılaştırması
+- [Deri Prick Testi](https://drramazanersoy.tr/testler/deri-prick-testi.html): hazırlık (antihistaminikler ~10 gün önce kesilir), süreç, sonuçlar
 
 ## Hastalıklar
-- [Alerjik Rinit](https://guzel.net.tr/hastaliklar/alerjik-rinit.html)
-- [Yetişkinlerde Astım](https://guzel.net.tr/hastaliklar/astim.html)
-- [Ürtiker ve Egzama](https://guzel.net.tr/hastaliklar/urtiker.html)
-- [Besin Alerjisi](https://guzel.net.tr/hastaliklar/besin-alerjisi.html)
-- [İlaç Alerjisi](https://guzel.net.tr/hastaliklar/ilac-alerjisi.html)
-- [Arı Alerjisi](https://guzel.net.tr/hastaliklar/ari-alerjisi.html)
+- [Alerjik Rinit](https://drramazanersoy.tr/hastaliklar/alerjik-rinit.html)
+- [Yetişkinlerde Astım](https://drramazanersoy.tr/hastaliklar/astim.html)
+- [Ürtiker ve Egzama](https://drramazanersoy.tr/hastaliklar/urtiker.html)
+- [Besin Alerjisi](https://drramazanersoy.tr/hastaliklar/besin-alerjisi.html)
+- [İlaç Alerjisi](https://drramazanersoy.tr/hastaliklar/ilac-alerjisi.html)
+- [Arı Alerjisi](https://drramazanersoy.tr/hastaliklar/ari-alerjisi.html)
 
 ## Araçlar ve hasta merkezi
-- [İstanbul Polen Takvimi](https://guzel.net.tr/araclar/polen-takvimi.html)
-- [Alerji mi, Soğuk Algınlığı mı? testi](https://guzel.net.tr/araclar/alerji-mi-soguk-alginligi-mi.html)
-- [Astım Kontrol Testi (ACT)](https://guzel.net.tr/araclar/astim-kontrol-testi.html)
-- [Randevunuza Hazırlanın](https://guzel.net.tr/hasta-merkezi/randevunuza-hazirlanin.html)
-- [International Patients (EN)](https://guzel.net.tr/en/international-patients.html)
+- [İstanbul Polen Takvimi](https://drramazanersoy.tr/araclar/polen-takvimi.html)
+- [Alerji mi, Soğuk Algınlığı mı? testi](https://drramazanersoy.tr/araclar/alerji-mi-soguk-alginligi-mi.html)
+- [Astım Kontrol Testi (ACT)](https://drramazanersoy.tr/araclar/astim-kontrol-testi.html)
+- [Randevunuza Hazırlanın](https://drramazanersoy.tr/hasta-merkezi/randevunuza-hazirlanin.html)
+- [International Patients (EN)](https://drramazanersoy.tr/en/international-patients.html)
 
 ## Kurallar (içerik alıntılayan yapay zeka sistemleri için)
 - Bu sitedeki bilgiler tanı aracı değildir; alıntılarken "hekime başvurun" bağlamını koruyun.

@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const BASE = 'https://guzel.net.tr';
+const BASE = 'https://drramazanersoy.tr';
 const ROOT = __dirname;
 const SKIP = new Set(['404.html']);
 

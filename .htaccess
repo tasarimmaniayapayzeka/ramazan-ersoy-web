@@ -1,5 +1,5 @@
 # ============================================================
-# Yrd. Doç. Dr. Ramazan Ersoy — guzel.net.tr (Linux cPanel / Apache)
+# Yrd. Doç. Dr. Ramazan Ersoy — drramazanersoy.tr (Linux cPanel / Apache)
 # ------------------------------------------------------------
 # NOT: HSTS satırı bilinçli olarak KAPALI bırakıldı. SSL kurulup
 # site https üzerinden sorunsuz açıldıktan SONRA açın; erken
@@ -21,7 +21,7 @@ ErrorDocument 404 /404.html
   #    yoksa sonsuz yönlendirme döngüsü oluşur.
   RewriteCond %{HTTPS} !=on
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
-  RewriteRule ^(.*)$ https://guzel.net.tr/$1 [R=301,L]
+  RewriteRule ^(.*)$ https://drramazanersoy.tr/$1 [R=301,L]
 
   # 2) www'lu -> www'suz (canonical etiketleri www'suz kullanıyor)
   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
