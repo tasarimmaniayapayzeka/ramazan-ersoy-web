@@ -1,0 +1,83 @@
+# ============================================================
+# Yrd. Doç. Dr. Ramazan Ersoy — guzel.net.tr (Linux cPanel / Apache)
+# ------------------------------------------------------------
+# NOT: HSTS satırı bilinçli olarak KAPALI bırakıldı. SSL kurulup
+# site https üzerinden sorunsuz açıldıktan SONRA açın; erken
+# açılırsa ve SSL sorun çıkarırsa site tarayıcıda kilitlenir.
+# ============================================================
+
+# ---------- Varsayılan dosya ----------
+DirectoryIndex index.html
+
+# ---------- 404 sayfası ----------
+ErrorDocument 404 /404.html
+
+# ---------- Yönlendirmeler ----------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 1) HTTPS'e yönlendir
+  #    Not: Cloudflare arkasında X-Forwarded-Proto kontrolü şart,
+  #    yoksa sonsuz yönlendirme döngüsü oluşur.
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://guzel.net.tr/$1 [R=301,L]
+
+  # 2) www'lu -> www'suz (canonical etiketleri www'suz kullanıyor)
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+  # 3) Klasör adresinde index.html'i göster (/alerji-rehberi/ gibi)
+  #    Apache DirectoryIndex zaten yapar; ek kurala gerek yok.
+</IfModule>
+
+# ---------- Güvenlik başlıkları ----------
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+  Header always unset X-Powered-By
+  Header unset Server
+
+  # SSL doğrulandıktan SONRA aşağıdaki satırın başındaki # kaldırılacak:
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+ServerSignature Off
+
+# ---------- Sıkıştırma ----------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript
+  AddOutputFilterByType DEFLATE application/json image/svg+xml application/xml text/xml
+</IfModule>
+
+# ---------- Tarayıcı önbelleği ----------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  # HTML: kısa (içerik güncellemeleri hızlı görünsün)
+  ExpiresByType text/html "access plus 1 hour"
+  # Statik varlıklar: uzun
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/xml "access plus 1 day"
+</IfModule>
+
+# ---------- MIME tipleri ----------
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType image/svg+xml .svg
+  AddType application/manifest+json .webmanifest
+  AddCharset UTF-8 .html .css .js .json .xml .txt
+</IfModule>
+
+# ---------- Geliştirme dosyalarına erişimi engelle ----------
+<FilesMatch "^(server\.js|build-sitemap\.js|package(-lock)?\.json|\.gitignore|.*\.md)$">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 /\.git
+RedirectMatch 404 /\.claude
