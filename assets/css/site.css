@@ -192,7 +192,12 @@ code{font-family:ui-monospace,Consolas,monospace;font-size:.9em;background:var(-
 /* ============================================================
    SEMPTOM KAPISI — konseptin imzası
    ============================================================ */
-.symptom-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:1rem}
+/* 8 semptom kartı — kolon sayısı sabit: 4 / 2 / 1.
+   auto-fit ile 820-1080px arasında 3 kolon oluşuyor ve son satırda
+   tek kart yalnız kalıyordu; bu şema her genişlikte satırları eşitler. */
+.symptom-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+@media (max-width:1080px){.symptom-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.symptom-grid{grid-template-columns:1fr}}
 .symptom-card{
   display:flex;flex-direction:column;gap:.55rem;
   background:#fff;border:1px solid var(--line);border-radius:var(--r-md);
