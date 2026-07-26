@@ -1,36 +1,30 @@
 ---
 # cPanel Git™ Version Control dağıtım tarifi
 # ------------------------------------------------------------
-# Kurulum (cPanel'de bir kez):
-#   Git Version Control → Create
-#     Clone URL       : https://github.com/tasarimmaniayapayzeka/ramazan-ersoy-web.git
-#     Repository Path : /home/drramazanersoy/repos/ramazan-ersoy-web
-#     Repository Name : ramazan-ersoy-web
-#   Sonra: Manage → Pull or Deploy → "Update from Remote" → "Deploy HEAD Commit"
+# NOT: rsync bu sunucuda çalışmadı (mt-lunar / LiteSpeed, shell erişimi
+# kapalı). Bu yüzden yalnızca /bin/cp ve /bin/rm kullanılıyor.
 #
-# Bundan sonra her yayın: GitHub'a push → cPanel'de tek "Deploy" tıklaması.
-# (İstenirse GitHub webhook ile bu tıklama da otomatikleşir.)
+# Kabuk globu (*) gizli dosyaları KAPSAMAZ — bu bizim işimize geliyor:
+# .git, .gitignore, .cpanel.yml kendiliğinden dışarıda kalıyor.
+# .htaccess ise gizli olduğu için AYRICA kopyalanmak zorunda.
 #
-# NOT: --delete BİLİNÇLİ olarak kapalı. Açılırsa public_html'de repoda
-# olmayan her şey (cgi-bin, e-posta klasörleri, sonradan eklenen PHP
-# chatbot dosyaları) SİLİNİR. Sadece ne yaptığını bilerek aç.
+# Kurulum (bir kez yapıldı): Git Version Control → Create →
+#   Clone URL: https://github.com/tasarimmaniayapayzeka/ramazan-ersoy-web.git
+#   Path: repositories/ramazan-ersoy-web
+# Sonraki her yayın: GitHub'a push → Update from Remote → Deploy HEAD Commit
 deployment:
   tasks:
     - export DEPLOYPATH=$HOME/public_html
     - /bin/mkdir -p $DEPLOYPATH
-    - >
-      /usr/bin/rsync -a
-      --exclude='.git'
-      --exclude='.gitignore'
-      --exclude='.cpanel.yml'
-      --exclude='.claude'
-      --exclude='server.js'
-      --exclude='build-sitemap.js'
-      --exclude='yayin-paketi-olustur.js'
-      --exclude='assets/fonts/css2.txt'
-      --exclude='assets/fonts/fraunces.txt'
-      --exclude='assets/fonts/manifest.json'
-      --exclude='*.md'
-      --exclude='cgi-bin'
-      ./ $DEPLOYPATH/
-    - /bin/echo "Yayin tamamlandi: $(date)" >> $HOME/deploy.log
+    # site dosyaları (glob gizli dosyaları atlar)
+    - /bin/cp -R * $DEPLOYPATH/
+    # .htaccess gizli olduğu için ayrıca
+    - /bin/cp -f .htaccess $DEPLOYPATH/.htaccess
+    # sunucuda işi olmayan geliştirme dosyalarını temizle
+    - /bin/rm -f $DEPLOYPATH/server.js
+    - /bin/rm -f $DEPLOYPATH/build-sitemap.js
+    - /bin/rm -f $DEPLOYPATH/yayin-paketi-olustur.js
+    - /bin/rm -f $DEPLOYPATH/assets/fonts/css2.txt
+    - /bin/rm -f $DEPLOYPATH/assets/fonts/fraunces.txt
+    - /bin/rm -f $DEPLOYPATH/assets/fonts/manifest.json
+    - /bin/echo "Yayin: $(date)" >> $HOME/deploy.log
