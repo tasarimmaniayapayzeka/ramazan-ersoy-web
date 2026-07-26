@@ -40,11 +40,16 @@ ErrorDocument 404 /404.html
   Header always unset X-Powered-By
   Header unset Server
 
-  # HSTS — 26 Tem 2026'da açıldı. Ön koşul doğrulandı:
-  # https 200 döndü, http→https ve www→non-www 301'leri çalışıyor,
-  # AutoSSL sertifikası etkin. Sorun çıkarsa bu satırı yorum yapmak
-  # tek başına YETMEZ; tarayıcılar süreyi hatırlar (chrome://net-internals/#hsts).
-  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  # HSTS — 26 Tem 2026'da KADEMELİ olarak açıldı (max-age=1 gün).
+  # Ön koşullar doğrulandı: https 200, http→https ve www→non-www 301'leri
+  # çalışıyor, AutoSSL etkin.
+  # NEDEN 1 GÜN: HSTS tek yönlü kapıdır — tarayıcı süreyi hatırlar ve
+  # sertifika yenilenmezse ziyaretçi siteye GİREMEZ (tıklayıp geçemez).
+  # Site yeni yayında; bir hafta sorunsuz çalıştıktan sonra kademeli
+  # olarak yükseltilecek: 86400 → 2592000 (1 ay) → 31536000 (1 yıl).
+  # Geri alma: bu satırı yorum yapmak yetmez, süre dolana kadar beklenir
+  # (test makinesinde: chrome://net-internals/#hsts ile temizlenir).
+  Header always set Strict-Transport-Security "max-age=86400"
 </IfModule>
 ServerSignature Off
 
