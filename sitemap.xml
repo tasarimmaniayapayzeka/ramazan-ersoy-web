@@ -102,6 +102,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.guzel.net.tr/alerji-rehberi/</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.guzel.net.tr/alerji-rehberi/ev-tozu-akari-yatak-odasi.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.guzel.net.tr/alerji-rehberi/yetiskinlikte-baslayan-astim.html</loc>
+    <lastmod>2026-07-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.guzel.net.tr/araclar/alerji-mi-soguk-alginligi-mi.html</loc>
     <lastmod>2026-07-26</lastmod>
     <priority>0.6</priority>
@@ -159,21 +174,6 @@
   </url>
   <url>
     <loc>https://www.guzel.net.tr/iletisim.html</loc>
-    <lastmod>2026-07-26</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.guzel.net.tr/saglik-rehberi/</loc>
-    <lastmod>2026-07-26</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.guzel.net.tr/saglik-rehberi/ev-tozu-akari-yatak-odasi.html</loc>
-    <lastmod>2026-07-26</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.guzel.net.tr/saglik-rehberi/yetiskinlikte-baslayan-astim.html</loc>
     <lastmod>2026-07-26</lastmod>
     <priority>0.6</priority>
   </url>
