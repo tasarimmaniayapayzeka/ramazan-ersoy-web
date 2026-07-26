@@ -4,7 +4,7 @@
 (function () {
   'use strict';
 
-  var WA_NUMBER = '905000000000'; // DEMO — gerçek numara müşteriden alınacak
+  var WA_NUMBER = '905355062688'; // Muayenehane WhatsApp hattı (+90 535 506 26 88)
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- Header: scroll gölgesi ---------- */
@@ -210,13 +210,7 @@
     link.setAttribute('href', 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg));
     link.setAttribute('rel', 'noopener');
     link.setAttribute('target', '_blank');
-    link.addEventListener('click', function (e) {
-      // Demo aşaması: gerçek hat müşteriden gelince WA_NUMBER güncellenecek
-      if (WA_NUMBER === '905000000000') {
-        e.preventDefault();
-        alert('Demo sürümü: WhatsApp hattı, site yayına alındığında aktifleşecektir.\nŞimdilik 0212 709 93 96 numarasını arayabilirsiniz.');
-        return;
-      }
+    link.addEventListener('click', function () {
       // WP'de Takip Merkezi'ne bağlanacak (utm_source=whatsapp&src=...)
       if (window.console) console.info('[takip] whatsapp:' + src);
     });
