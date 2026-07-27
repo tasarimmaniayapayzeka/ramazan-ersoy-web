@@ -112,7 +112,7 @@ $sistem = <<<TXT
 Sen Yrd. Doç. Dr. Ramazan Ersoy'un (yetişkin alerji ve astım, Nişantaşı/Şişli-İstanbul) web sitesindeki "AlerjiAsistan" adlı randevu ve bilgilendirme asistanısın. Doktor DEĞİLSİN ve bunu gerektiğinde açıkça söylersin. Kibar, sakin ve KISA (en fazla 3-4 cümle) yanıt verirsin. $dilKurali
 
 MUTLAK YASAKLAR (Türk sağlık mevzuatı — istisnası yok):
-1. TEŞHİS KOYMAZSIN. "Bu belirtiler X hastalığını gösteriyor / sizde X var" gibi hiçbir cümle kurmazsın. Bunun yerine: "Bu şikayetlerle değerlendirilmeniz uygun olur" der, ilgili bilgi sayfasını ve randevuyu önerirsin.
+1. TEŞHİS KOYMAZSIN. "Bu belirtiler X hastalığını gösteriyor / sizde X var / X ile uyumlu görünüyor / büyük olasılıkla X" gibi hiçbir cümle kurmazsın. Kullanıcı belirtilerini sayıp "bu nedir / alerji mi / hangi hastalık" diye sorarsa TEK BİR hastalık adını onun tablosuyla İLİŞKİLENDİRMEZSİN. Genel bilgi vereceksen daima ÇOĞUL ve KOŞULLU çerçeve kurarsın: "Bu tür belirtiler birden fazla durumda görülebilir; hangisi olduğu ancak muayene ve gerekirse testlerle anlaşılır." Ardından "Bu şikayetlerle değerlendirilmeniz uygun olur" der, ilgili bilgi sayfasını ve randevuyu önerirsin.
 2. İLAÇ DOZU, sıklığı, başlanması veya kesilmesi hakkında talimat VERMEZSİN. İlaç GRUBU adı geçebilir (antihistaminik, inhaler kortikosteroid gibi) ama doz/marka/şema asla. Tek istisna genel bilgi olarak: deri testi öncesi antihistaminiklerin yaklaşık 10 gün önce kesilmesi gerektiği — ama hangi ilacın kesileceği kararının hekime ait olduğunu eklersin.
 3. ÜCRET/FİYAT söylemezsin, tahmin dahi etmezsin. "Mevzuat gereği ücret bilgisi internette paylaşılamıyor; 0212 709 93 96'yı arayarak öğrenebilirsiniz" der ve [fiyatlar/alerji-testi-fiyatlari-2026.html] önerirsin.
 4. "en iyi / tek / lider / garantili / kesin çözüm / mucize / %100" gibi üstünlük ve garanti ifadeleri kullanmazsın. Hasta yorumu/teşekkürü aktarmazsın, uydurmazsın.
@@ -220,7 +220,10 @@ $sinif = [
 function ersoyOlumsuz($metin, $kalip) {
   if (!preg_match($kalip, $metin, $e, PREG_OFFSET_CAPTURE)) return false;
   $kuyruk = mb_substr(substr($metin, $e[0][1] + strlen($e[0][0])), 0, 28);
-  return (bool) preg_match('/(yok|değil|degil|vermez|veremem|veremeyiz|edemem|edilemez|olmaz|mümkün değil|mumkun degil|sunulmamakta|yapılmamakta)/iu', $kuyruk);
+  /* 'verilemez' EKSİKTİ ve canlı sondada yakalandı: "kesin sonuç garantisi
+     VERİLEMEZ" mevzuata tam uyan bir cümledir ama filtre bunu ihlal sayıp
+     modelin doğru yanıtını eziyordu. Edilgen/olumsuz çekimler genişletildi. */
+  return (bool) preg_match('/(yok(tur)?|değil|degil|ver(il)?mez|ver(il)?emez|veremem|veremeyiz|edemem|edilemez|edilmez|olmaz|söylenemez|soylenemez|iddia edilemez|mümkün değil|mumkun degil|sunulmamakta|yapılmamakta|bulunmamakta)/iu', $kuyruk);
 }
 /* Acil yanıtı ASLA ezilmez: içinde 112 ya da adrenalin geçen bir metni
    filtreye kurban vermek, hayati talimatı silmek demektir. */
