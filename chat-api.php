@@ -42,11 +42,28 @@ if (!is_array($mesajlar) || count($mesajlar) < 1 || count($mesajlar) > 16) {
 
 /* Görsel KABUL EDİLMEZ: tıbbi fotoğraf yorumu bu bot için mutlak yasak
    (döküntü/tahlil fotoğrafı = teşhis riski + özel nitelikli sağlık verisi). */
+/* VERİ MİNİMİZASYONU (KVKK m.4/1-ç): mesaj yurt dışına (OpenAI/ABD) çıkmadan
+   ÖNCE tanımlayıcılar maskelenir. Kullanıcı uyarılara rağmen TC kimlik, telefon
+   ya da e-posta yazabilir; bunların yanıt üretmek için hiçbir faydası yok, o
+   yüzden hiç gönderilmezler. KVKK aydınlatma metnindeki taahhüdün kod karşılığı. */
+function ersoyMaskele($s) {
+  /* TC kimlik: 11 hane, başında 0 olmaz */
+  $s = preg_replace('/\b[1-9][0-9]{10}\b/u', '[gizlendi]', $s);
+  /* e-posta */
+  $s = preg_replace('/\b[\w.+-]+@[\w-]+\.[\w.]{2,}\b/u', '[gizlendi]', $s);
+  /* telefon: +90..., 0(5xx)..., boşluk/nokta/tire ayraçlı 10-11 hane.
+     ÖNEMLİ: 112 ve 155 gibi acil numaraları KISA olduğu için etkilenmez —
+     acil kapısının 112 tespiti bozulmamalı. */
+  $s = preg_replace('/(?:\+?90[\s.-]?)?\(?0?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{2}[\s.-]?\d{2}\b/u', '[gizlendi]', $s);
+  return $s;
+}
 $temiz = [];
 foreach ($mesajlar as $m) {
   $rol    = (($m['rol'] ?? '') === 'bot') ? 'assistant' : 'user';
   $icerik = mb_substr(trim((string)($m['icerik'] ?? '')), 0, 500);
   if ($icerik === '') continue;
+  if ($rol === 'user') $icerik = ersoyMaskele($icerik);
+  if (trim($icerik) === '' || trim($icerik) === '[gizlendi]') continue;
   $temiz[] = ['role' => $rol, 'content' => $icerik];
 }
 if (!$temiz) { http_response_code(400); echo '{"hata":"girdi"}'; exit; }

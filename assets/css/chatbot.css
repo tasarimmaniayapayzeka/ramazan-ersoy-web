@@ -299,6 +299,34 @@ input.cb-yaz,textarea.cb-yaz{display:block; align-items:initial; gap:0; border-t
 /* alt-not girişin altındaysa girişin alt boşluğunu devral */
 .cb-yaz + .cb-alt-not{padding-top:.1rem}
 
+/* ---------- AI yanıt künyesi (Tanıtım Yönetmeliği md.5/1-i) ----------
+   Yanıtın PARÇASI gibi görünmemeli: balonun dışında, sönük ve küçük.
+   Yalnız AI üretimi yanıtların altına düşer; kural motorunun sabit
+   metinleri hekim onaylı olduğu için künye almaz. */
+.cb-kunye{
+  margin:-.15rem 0 .55rem; padding:0 .2rem;
+  font-size:.68rem; line-height:1.35; color:var(--muted);
+  opacity:.85; max-width:90%;
+}
+
+/* ---------- KVKK rıza kapısı (serbest metin öncesi tek seferlik) ---------- */
+.cb-riza{
+  margin:.2rem 0 .6rem; padding:.7rem .8rem;
+  background:var(--mint-bg); border:1px solid var(--mint);
+  border-radius:10px; font-size:var(--fs-xs); line-height:1.5; color:var(--ink);
+}
+.cb-riza b{color:var(--anchor)}
+.cb-riza a{color:var(--mint-ink); text-decoration:underline}
+.cb-riza-dugmeler{display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.6rem}
+.cb-riza-onay,.cb-riza-vazgec{
+  font:inherit; font-weight:600; cursor:pointer;
+  border-radius:8px; padding:.45rem .8rem; min-height:38px;
+}
+.cb-riza-onay{background:var(--coral); color:#fff; border:1px solid var(--coral)}
+.cb-riza-onay:hover{filter:brightness(1.08)}
+.cb-riza-vazgec{background:transparent; color:var(--mint-ink); border:1px solid var(--mint)}
+.cb-riza-vazgec:hover{background:#fff}
+
 /* ============================================================
    MOBİL (<=820px) — pencere neredeyse tam ekran,
    balon 72px sticky-bar'ın ÜSTÜNDE
