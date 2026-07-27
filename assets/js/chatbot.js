@@ -124,7 +124,6 @@
       araBtn: TEL_GORUNEN + '’yı ara',
       randevuBtn: 'Randevu talebi oluştur',
       anaMenuBtn: 'Ana menüye dön',
-      serbestYer: 'Sorunuzu yazın',
       serbestAcik: 'Sorunuzu yazabilirsiniz. Tanı, ilaç dozu ve ücret bilgisi veremediğimi hatırlatayım.',
       serbestKapali: 'Serbest soru şu an yanıtlanamıyor. Aşağıdaki başlıklardan seçebilir ya da WhatsApp’tan yazabilirsiniz.',
       aiLimit: 'Bu saat içindeki soru sınırına ulaşıldı. Aşağıdaki başlıklardan seçebilir ya da doğrudan arayabilirsiniz.',
@@ -152,7 +151,6 @@
       araBtn: 'Call ' + TEL_GORUNEN,
       randevuBtn: 'Request an appointment',
       anaMenuBtn: 'Back to main menu',
-      serbestYer: 'Type your question',
       serbestAcik: 'Go ahead and type your question. A reminder: I cannot diagnose, give drug doses or share fees.',
       serbestKapali: 'Free-text questions cannot be answered right now. Please pick a topic below or message us on WhatsApp.',
       aiLimit: 'The hourly question limit has been reached. Please pick a topic below or call us directly.',
@@ -232,11 +230,42 @@
     'basim donuyor ve sisiyor',
     'morarma', 'morardim', 'moraruyor',
     'anafilaksi', 'alerjik sok',
-    'ari soktu ve sisti', 'tum vucudum kizardi',
-    'yaygin kurdesen ve kusma', 'kusma ve sislik',
-    'tansiyonum dustu', 'carpinti ve sislik',
+    'tansiyonum dustu',
     'otoenjektor yaptim', 'otoenjektor uyguladim', 'epipen yaptim', 'adrenalin yaptim'
   ];
+
+  /* --- BİRLİKTE-GEÇME KURALLARI (acil) ---
+     Bileşik kalıplar ("ari soktu ve sisti") DOĞAL cümlede kaçıyordu:
+     "arı soktu ve HER YERİM şişti" araya kelime girdiği için eşleşmiyor,
+     oysa bu klasik anafilaksi tablosu. Bu yüzden kalıp yerine iki sinyal
+     GRUBUNUN aynı cümlede birlikte geçmesine bakılıyor.
+     Not: tek başına "elim şişti" (yerel reaksiyon) acil DEĞİLDİR —
+     bu yüzden şişlik ancak YAYGINLIK ya da TETİKLEYİCİ ile birleşince sayılır. */
+  var YAYGINLIK = ['her yerim', 'her tarafim', 'her yer', 'tum vucud', 'butun vucud',
+    'vucudumun her', 'vucudum', 'yaygin', 'bastan asagi'];
+  var REAKSIYON = ['sisti', 'sisiyor', 'sislik', 'kizardi', 'kizariyor', 'kizariklik',
+    'kurdesen', 'dokuntu', 'kabardi', 'kasiniyor'];
+  var TETIKLEYICI = ['ari sok', 'ari beni', 'bocek sok', 'esek arisi', 'yaban arisi',
+    'igneden sonra', 'asidan sonra', 'ilaci aldiktan sonra', 'ilac aldiktan sonra',
+    'yedikten sonra', 'yedim ve', 'ictikten sonra'];
+  var SISTEMIK = ['kusma', 'kustum', 'kusuyorum', 'ishal', 'karin agri',
+    'carpinti', 'kalbim hizli', 'bayil', 'halsiz', 'morar', 'tansiyon',
+    'nefes', 'bogaz', 'dil sis', 'goz kararma', 'terleme'];
+
+  /* İki grubun kesişimi varsa acil kabul edilir. */
+  function acilBirlikte(t, tokens) {
+    var yayginVar   = herhangi(t, tokens, YAYGINLIK);
+    var reaksiyonVar = herhangi(t, tokens, REAKSIYON);
+    var tetikVar    = herhangi(t, tokens, TETIKLEYICI);
+    var sistemikVar = herhangi(t, tokens, SISTEMIK);
+    /* 1) yaygın + reaksiyon  → "her yerim şişti", "tüm vücudum kızardı" */
+    if (yayginVar && reaksiyonVar) return true;
+    /* 2) tetikleyici + sistemik → "arı soktu, kusuyorum" */
+    if (tetikVar && sistemikVar) return true;
+    /* 3) tetikleyici + yaygın reaksiyon → "arı soktu ve her yerim şişti" */
+    if (tetikVar && yayginVar && reaksiyonVar) return true;
+    return false;
+  }
   var ACIL_EN = [
     'anaphylaxis', 'anaphylactic', 'cannot breathe', "can't breathe", 'cant breathe',
     'trouble breathing', 'throat swelling', 'throat is closing', 'tongue swelling',
@@ -283,15 +312,15 @@
   /* --- Serbest metinden hızlı menü akışlarına niyet eşleme ---
      (AI olmasa da bot işe yarar kalsın diye; ACİL ve kapılardan SONRA çalışır) */
   var NIYETLER = [
-    { k: ['randevu', 'muayene olmak', 'saat almak', 'gorusmek istiyorum', 'appointment', 'book'], f: null, ad: 'randevu' },
+    { k: ['randevu', 'muayene olmak', 'saat almak', 'gorusmek istiyorum', 'appointment', 'book'], ad: 'randevu' },
     { k: ['hangi test', 'test yaptirmak', 'prick', 'deri testi', 'kan testi', 'yama testi',
-      'solunum testi', 'which test', 'skin test'], f: null, ad: 'test' },
+      'solunum testi', 'which test', 'skin test'], ad: 'test' },
     { k: ['testten once', 'test oncesi', 'hazirlan', 'antihistamin', 'ilac kesme',
-      'before the test', 'preparation'], f: null, ad: 'hazirlik' },
-    { k: ['alerji asisi', 'immunoterapi', 'asi tedavi', 'immunotherapy', 'allergy shot'], f: null, ad: 'asi' },
-    { k: ['polen', 'polen takvimi', 'agac poleni', 'cim poleni', 'pollen'], f: null, ad: 'polen' },
+      'before the test', 'preparation'], ad: 'hazirlik' },
+    { k: ['alerji asisi', 'immunoterapi', 'asi tedavi', 'immunotherapy', 'allergy shot'], ad: 'asi' },
+    { k: ['polen', 'polen takvimi', 'agac poleni', 'cim poleni', 'pollen'], ad: 'polen' },
     { k: ['adres', 'nerede', 'nasil gelinir', 'ulasim', 'calisma saat', 'kacta', 'acik mi',
-      'metro', 'otopark', 'address', 'opening hours', 'where'], f: null, ad: 'adres' }
+      'metro', 'otopark', 'address', 'opening hours', 'where'], ad: 'adres' }
   ];
 
   /* ============ 8) DURUM ============ */
@@ -549,6 +578,9 @@
     for (var i = 0; i < ACIL_EN.length; i++) {
       if (t.indexOf(norm(ACIL_EN[i])) !== -1) return true;
     }
+    /* Birlikte-geçme kuralları: tek kalıpla yakalanamayan doğal anlatımlar
+       ("arı soktu ve her yerim şişti", "yedikten sonra kusuyorum ve şiştim") */
+    if (acilBirlikte(t, tokens)) return true;
     return false;
   }
 
