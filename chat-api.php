@@ -242,7 +242,7 @@ $sinif = [
      yakınında sağlayıcıyı anlatan bir sözcük varsa tetikliyor.
      Sonuç/garanti iddiaları (garanti, kesin çözüm, %100, mucize) ise
      kime dair olursa olsun yasak kaldı. */
-  'ustunluk' => '/(\bgaranti(li|)\b)|(kesin (çözüm|sonuç|tedavi))|(%\s?100)|(mucize)|((en iyi|en başarılı|en deneyimli|en üstün|lider|bir numara|tek adres|rakipsiz)\W{0,25}(hekim|doktor|klinik|merkez|muayenehane|uzman|adres|kurum))|((hekim|doktor|klinik|merkez|muayenehane|uzman)\W{0,25}(en iyi|en başarılı|en deneyimli|rakipsiz))/iu',
+  'ustunluk' => '/(\bgaranti(li|)\b)|(kesin (çözüm|sonuç|tedavi))|(%\s?100)|(mucize)|((en iyi|en başarılı|en basarili|en deneyimli|en üstün|lider|bir numara|tek adres|rakipsiz).{0,28}(hekim|doktor|klini|merkez|muayenehane|uzman|kurum))/iu',
   'uzaktan' => '/(online|çevrim ?içi|cevrim ?ici|uzaktan|video|görüntülü|goruntulu|tele ?tıp|tele ?tip)\s*(muayene|konsültasyon|konsultasyon|vizit)/iu',
 ];
 /* Olumsuzlama kalkanı: kalıbın hemen ardındaki ~28 karakterde "yok / değil /
