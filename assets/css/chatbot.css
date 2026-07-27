@@ -1,0 +1,343 @@
+/* ============================================================
+   AlerjiAsistan — sohbet widget'ı (SESSİZ LÜKS uyumlu)
+   Yrd. Doç. Dr. Ramazan Ersoy · Yetişkin Alerji & Astım
+   ------------------------------------------------------------
+   KURALLAR:
+   1. Yalnız tokens.css değişkenleri. Yeni renk YOK.
+      Şeffaf tonlar color-mix() ile yalnızca token renklerinden
+      üretilir; her color-mix satırının önünde token fallback var.
+   2. --red YALNIZ .cb-acil (112) kartında.
+   3. Diğer tüm uyarılar --amber (.cb-uyari).
+   4. --coral-soft yalnız koyu zemin (.cb-baslik) üstünde.
+   5. Emoji YASAK — ikonlar JS tarafında çizgi SVG.
+   ------------------------------------------------------------
+   z-index katmanları: sticky-bar 90 · site-header 100
+   → karşılama 120 · balon 121 · pencere 122
+   ============================================================ */
+
+/* ---------- Tetik balonu (sağ alt) ---------- */
+.cb-balon{
+  position:fixed; right:1.25rem; bottom:1.25rem; z-index:121;
+  width:60px; height:60px; padding:0; border:none; border-radius:var(--r-pill);
+  background:var(--coral); color:var(--white); cursor:pointer;
+  display:grid; place-items:center;
+  font-family:var(--font-body); line-height:1;
+  box-shadow:var(--shadow-lift);
+  transition:transform var(--t-fast) var(--ease),background-color var(--t-fast) var(--ease);
+}
+.cb-balon:hover{background:var(--coral-hover); transform:translateY(-2px)}
+.cb-balon:focus-visible{outline:3px solid var(--mint); outline-offset:3px}
+.cb-balon svg{width:26px; height:26px; display:block}
+.cb-balon[hidden],.cb-balon.is-gizli{display:none}
+/* okunur etiket (ekran okuyucu dışı gizleme JS'e bırakılmadıysa) */
+.cb-balon .cb-balon-et{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+
+/* ---------- Karşılama baloncuğu (balonun üstünde, pencere kapalıyken) ---------- */
+.cb-karsilama{
+  position:fixed; right:1.25rem; bottom:calc(1.25rem + 60px + .6rem); z-index:120;
+  max-width:16rem; padding:.8rem 1rem;
+  background:var(--white); color:var(--body);
+  border:1px solid var(--line);
+  border-radius:var(--r-md) var(--r-md) var(--r-sm) var(--r-md);
+  box-shadow:var(--shadow-md);
+  font-family:var(--font-body); font-size:var(--fs-xs); line-height:1.5;
+  cursor:pointer; text-align:left;
+  opacity:0; transform:translateY(8px);
+  transition:opacity var(--t-mid) var(--ease),transform var(--t-mid) var(--ease);
+}
+.cb-karsilama.acik,.cb-karsilama.is-acik,.cb-karsilama.girdi{opacity:1; transform:none}
+.cb-karsilama[hidden]{display:none}
+.cb-karsilama strong{display:block; color:var(--ink); font-weight:700; margin-bottom:.15rem}
+.cb-karsilama-x{
+  position:absolute; top:-.5rem; left:-.5rem; width:1.5rem; height:1.5rem;
+  border:none; border-radius:var(--r-pill); cursor:pointer; padding:0;
+  background:var(--anchor); color:var(--white); line-height:1;
+  display:grid; place-items:center; box-shadow:var(--shadow-sm);
+}
+.cb-karsilama-x svg{width:11px; height:11px}
+/* JS karşılamayı gövde içine basarsa: normal bot balonu gibi davran */
+.cb-govde .cb-karsilama{
+  position:static; max-width:88%; opacity:1; transform:none; cursor:default;
+  background:var(--mint-bg); border-color:var(--mint-line);
+  box-shadow:none; font-size:var(--fs-sm); align-self:flex-start;
+}
+
+/* ---------- Pencere ---------- */
+.cb-pencere{
+  position:fixed; right:1.25rem; bottom:calc(1.25rem + 60px + .75rem); z-index:122;
+  width:380px; max-width:calc(100vw - 2rem);
+  height:560px; max-height:calc(100dvh - 8rem);
+  background:var(--white);
+  border:1px solid var(--line); border-radius:var(--r-lg);
+  box-shadow:var(--shadow-lift);
+  font-family:var(--font-body); color:var(--body);
+  overflow:hidden; display:none; flex-direction:column;
+}
+/* açılış kancaları — JS hangi kalıbı kullanırsa çalışsın */
+.cb-pencere.acik,
+.cb-pencere.is-acik,
+.cb-pencere[data-acik="1"],
+.cb-pencere[aria-hidden="false"]{display:flex}
+.cb-pencere[hidden]{display:none !important}
+
+/* ---------- Başlık ---------- */
+.cb-baslik{
+  flex:none; display:flex; align-items:center; gap:.6rem;
+  padding:.85rem 1rem;
+  background:var(--anchor); color:var(--white);
+  border-bottom:1px solid var(--gold);
+}
+.cb-baslik .cb-baslik-metin{min-width:0; display:flex; flex-direction:column; gap:.1rem}
+.cb-baslik strong{
+  font-family:var(--font-display); font-weight:600; font-size:1rem;
+  line-height:var(--lh-tight); color:var(--white);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+/* alt satır YALNIZ metin bloğuna scope'lanır; aksi halde
+   .cb-baslik span (0,1,1) rozetin rengini (0,1,0) ezerdi */
+.cb-baslik .cb-baslik-metin span{font-size:var(--fs-xs); color:var(--mint); line-height:1.35}
+.cb-baslik svg{width:20px; height:20px}
+
+/* AI rozeti — koyu zeminde --coral-soft (token kuralı 1) */
+.cb-baslik .cb-rozet,
+.cb-rozet{
+  flex:none; display:inline-flex; align-items:center; gap:.3rem;
+  padding:.2rem .55rem; border-radius:var(--r-pill);
+  font-size:var(--fs-xs); font-weight:700; letter-spacing:.04em;
+  color:var(--coral-soft);
+  background:var(--anchor-deep);
+  background:color-mix(in srgb,var(--coral-soft) 14%,transparent);
+  border:1px solid var(--mint-ink);
+  border-color:color-mix(in srgb,var(--coral-soft) 45%,transparent);
+}
+.cb-rozet svg{width:13px; height:13px}
+/* AI köprüsü kapalı/erişilemez durumu — vurgu düşer, kırmızı kullanılmaz */
+.cb-baslik .cb-rozet--kapali,.cb-baslik .cb-rozet[data-durum="kapali"],
+.cb-rozet--kapali,.cb-rozet[data-durum="kapali"]{
+  color:var(--mint);
+  background:var(--anchor-deep);
+  background:color-mix(in srgb,var(--white) 12%,transparent);
+  border-color:var(--mint-ink);
+}
+
+.cb-kapat{
+  margin-left:auto; flex:none; width:2rem; height:2rem; padding:0;
+  border:none; border-radius:var(--r-pill); cursor:pointer;
+  color:var(--white); display:grid; place-items:center;
+  background:var(--anchor-deep);
+  background:color-mix(in srgb,var(--white) 16%,transparent);
+  transition:background-color var(--t-fast) var(--ease);
+}
+.cb-kapat:hover{background:color-mix(in srgb,var(--white) 30%,transparent)}
+.cb-kapat:focus-visible{outline:2px solid var(--coral-soft); outline-offset:2px}
+.cb-kapat svg{width:14px; height:14px}
+
+/* ---------- Gövde (kaydırılabilir) ---------- */
+.cb-govde{
+  flex:1 1 auto; min-height:0; overflow-y:auto; overscroll-behavior:contain;
+  padding:1rem; background:var(--bg);
+  display:flex; flex-direction:column; gap:.6rem;
+  scrollbar-width:thin; scrollbar-color:var(--mint) var(--mint-bg);
+}
+.cb-govde::-webkit-scrollbar{width:8px}
+.cb-govde::-webkit-scrollbar-track{background:var(--mint-bg)}
+.cb-govde::-webkit-scrollbar-thumb{background:var(--mint); border-radius:var(--r-pill)}
+
+/* ---------- Mesaj balonları ---------- */
+.cb-msg{
+  max-width:88%; margin:0; padding:.65rem .9rem;
+  font-size:var(--fs-sm); line-height:1.6;
+  border-radius:var(--r-md); word-break:break-word;
+  animation:cbGir var(--t-mid) var(--ease);
+}
+@keyframes cbGir{from{opacity:0; transform:translateY(6px)}to{opacity:1; transform:none}}
+.cb-msg--bot{
+  align-self:flex-start; background:var(--mint-bg); color:var(--ink);
+  border:1px solid var(--mint-line); border-bottom-left-radius:var(--r-sm);
+}
+.cb-msg--kul{
+  align-self:flex-end; background:var(--anchor); color:var(--white);
+  border:1px solid var(--anchor); border-bottom-right-radius:var(--r-sm);
+}
+.cb-msg strong{font-weight:700}
+.cb-msg p{margin:0 0 .5rem}
+.cb-msg p:last-child{margin-bottom:0}
+.cb-msg ul{margin:.25rem 0 .25rem 1.1rem; padding:0}
+.cb-msg li{margin-bottom:.25rem}
+.cb-msg--bot a{color:var(--coral); font-weight:700; text-decoration:underline}
+.cb-msg--kul a{color:var(--coral-soft); font-weight:700; text-decoration:underline}
+
+/* ---------- Seçenek butonları (kural motoru başlıkları) ---------- */
+.cb-secenekler{
+  align-self:stretch; display:grid; grid-template-columns:1fr; gap:.4rem;
+  margin:.15rem 0 .1rem;
+}
+.cb-sec{
+  width:100%; text-align:left; cursor:pointer;
+  padding:.6rem .85rem; font-family:inherit;
+  font-size:var(--fs-sm); font-weight:600; line-height:1.45;
+  color:var(--anchor); background:var(--white);
+  border:1px solid var(--mint-line); border-radius:var(--r-sm);
+  transition:border-color var(--t-fast) var(--ease),color var(--t-fast) var(--ease),background-color var(--t-fast) var(--ease);
+}
+.cb-sec:hover{border-color:var(--coral); color:var(--coral); background:var(--mint-bg)}
+.cb-sec:focus-visible{outline:2px solid var(--coral); outline-offset:2px}
+.cb-sec[aria-pressed="true"],.cb-sec.secili{border-color:var(--coral); color:var(--coral)}
+
+/* ---------- Sayfa yönlendirme butonları ([sayfa.html] → buton) ---------- */
+.cb-linkler{
+  align-self:stretch; display:grid; grid-template-columns:1fr; gap:.4rem;
+  margin:.15rem 0 .1rem;
+}
+.cb-link{
+  display:flex; align-items:center; justify-content:space-between; gap:.5rem;
+  padding:.65rem .9rem; text-decoration:none;
+  font-size:var(--fs-sm); font-weight:700; line-height:1.4;
+  color:var(--white); background:var(--coral);
+  border:1px solid var(--coral); border-radius:var(--r-sm);
+  box-shadow:var(--shadow-sm);
+  transition:background-color var(--t-fast) var(--ease),transform var(--t-fast) var(--ease);
+}
+.cb-link:hover{background:var(--coral-hover); border-color:var(--coral-hover); transform:translateY(-1px)}
+.cb-link:focus-visible{outline:2px solid var(--anchor); outline-offset:2px}
+.cb-link svg{width:15px; height:15px; flex:none}
+/* ikincil (dış bağlantı / WhatsApp) */
+.cb-link--dis{
+  color:var(--anchor); background:var(--white); border-color:var(--mint-line); box-shadow:none;
+}
+.cb-link--dis:hover{background:var(--mint-bg); color:var(--coral); border-color:var(--coral)}
+
+/* ---------- 112 acil kartı (--red YALNIZ burada) ---------- */
+.cb-acil{
+  align-self:stretch; max-width:100%;
+  padding:.8rem .95rem; border:2px solid var(--red); border-radius:var(--r-md);
+  background:var(--cream);
+  background:color-mix(in srgb,var(--red) 7%,var(--white));
+  color:var(--ink); font-size:var(--fs-sm); line-height:1.6;
+}
+.cb-acil strong{display:block; color:var(--red); font-weight:800; margin-bottom:.2rem}
+.cb-acil a{
+  display:inline-flex; align-items:center; gap:.35rem; margin-top:.5rem;
+  padding:.5rem .9rem; border-radius:var(--r-sm);
+  background:var(--red); color:var(--white);
+  font-weight:800; text-decoration:none;
+}
+.cb-acil a:hover{text-decoration:underline}
+.cb-acil a:focus-visible{outline:2px solid var(--anchor); outline-offset:2px}
+.cb-acil ul{margin:.4rem 0 0 1.1rem; padding:0}
+
+/* ---------- Uyarı (KVKK / WhatsApp / AI erişilemez) — --amber ---------- */
+.cb-uyari{
+  align-self:stretch; padding:.7rem .9rem;
+  background:var(--cream); border:1px solid var(--cream-line);
+  border-left:3px solid var(--amber); border-radius:var(--r-sm);
+  color:var(--body); font-size:var(--fs-xs); line-height:1.55;
+}
+.cb-uyari strong{color:var(--amber); font-weight:700}
+.cb-uyari a{color:var(--coral); font-weight:700; text-decoration:underline}
+
+/* ---------- Yazıyor göstergesi ---------- */
+.cb-yaziyor{
+  align-self:flex-start; display:flex; gap:.28rem; align-items:center;
+  padding:.7rem .9rem; background:var(--mint-bg);
+  border:1px solid var(--mint-line);
+  border-radius:var(--r-md); border-bottom-left-radius:var(--r-sm);
+}
+.cb-yaziyor[hidden]{display:none}
+.cb-yaziyor i,.cb-yaziyor span{
+  width:6px; height:6px; border-radius:var(--r-pill);
+  background:var(--mint-ink); animation:cbNokta 1.2s var(--ease) infinite;
+}
+.cb-yaziyor i:nth-child(2),.cb-yaziyor span:nth-child(2){animation-delay:.18s}
+.cb-yaziyor i:nth-child(3),.cb-yaziyor span:nth-child(3){animation-delay:.36s}
+@keyframes cbNokta{30%{transform:translateY(-4px); opacity:.5}}
+
+/* ---------- Giriş alanı ---------- */
+/* .cb-yaz hem sarmalayıcı hem alanın kendisi olarak çalışır */
+.cb-yaz{
+  flex:none; display:flex; align-items:flex-end; gap:.5rem;
+  padding:.7rem .8rem calc(.7rem + env(safe-area-inset-bottom,0px));
+  background:var(--white); border-top:1px solid var(--line);
+}
+.cb-yaz input,.cb-yaz textarea,
+input.cb-yaz,textarea.cb-yaz{
+  flex:1 1 auto; min-width:0; min-height:2.75rem; max-height:6rem;
+  padding:.65rem .95rem; font-family:inherit; font-size:1rem; /* 16px: iOS yakınlaştırmasını engeller */
+  line-height:1.45; color:var(--ink); background:var(--white);
+  border:1px solid var(--mint-line); border-radius:var(--r-md);
+  outline:none; resize:none;
+}
+.cb-yaz input::placeholder,.cb-yaz textarea::placeholder,
+input.cb-yaz::placeholder,textarea.cb-yaz::placeholder{color:var(--muted)}
+.cb-yaz input:focus,.cb-yaz textarea:focus,
+input.cb-yaz:focus,textarea.cb-yaz:focus{border-color:var(--coral); box-shadow:0 0 0 3px var(--mint-bg)}
+.cb-yaz input:disabled,.cb-yaz textarea:disabled,
+input.cb-yaz:disabled,textarea.cb-yaz:disabled{background:var(--mint-bg); color:var(--muted); cursor:not-allowed}
+/* alan doğrudan .cb-yaz ise flex/padding kalıbı bozulmasın */
+input.cb-yaz,textarea.cb-yaz{display:block; align-items:initial; gap:0; border-top:1px solid var(--mint-line)}
+
+.cb-gonder{
+  flex:none; width:2.75rem; height:2.75rem; padding:0;
+  border:none; border-radius:var(--r-md); cursor:pointer;
+  background:var(--coral); color:var(--white);
+  display:grid; place-items:center; box-shadow:var(--shadow-sm);
+  transition:background-color var(--t-fast) var(--ease),transform var(--t-fast) var(--ease);
+}
+.cb-gonder:hover{background:var(--coral-hover); transform:translateY(-1px)}
+.cb-gonder:focus-visible{outline:2px solid var(--anchor); outline-offset:2px}
+.cb-gonder:disabled{background:var(--muted); cursor:not-allowed; transform:none; box-shadow:none}
+.cb-gonder svg{width:18px; height:18px}
+
+/* ---------- Kalıcı mikro-metin (yasal not) ---------- */
+.cb-alt-not{
+  flex:none; margin:0; /* <p> ise site.css'in gövde margin'ini devralmasın */
+  padding:0 .9rem calc(.7rem + env(safe-area-inset-bottom,0px));
+  background:var(--white); border-top:none;
+  font-size:var(--fs-xs); line-height:1.4; color:var(--muted); text-align:center;
+}
+.cb-alt-not a{color:var(--mint-ink); text-decoration:underline}
+/* alt-not girişin altındaysa girişin alt boşluğunu devral */
+.cb-yaz + .cb-alt-not{padding-top:.1rem}
+
+/* ============================================================
+   MOBİL (<=820px) — pencere neredeyse tam ekran,
+   balon 72px sticky-bar'ın ÜSTÜNDE
+   ============================================================ */
+@media (max-width:820px){
+  .cb-balon{
+    right:.9rem;
+    bottom:calc(72px + .75rem);        /* sticky-bar yüksekliği + pay */
+    bottom:calc(var(--bar-h) + .75rem);/* --bar-h = 72px (<=820px) */
+    width:54px; height:54px;
+  }
+  .cb-balon svg{width:23px; height:23px}
+  .cb-karsilama{
+    right:.9rem; left:.9rem; max-width:none;
+    bottom:calc(72px + .75rem + 54px + .5rem);
+    bottom:calc(var(--bar-h) + 54px + 1.25rem);
+  }
+  .cb-pencere{
+    inset:0; right:0; bottom:0;
+    width:auto; max-width:none; height:auto; max-height:none;
+    border:none; border-radius:0;
+  }
+  .cb-baslik{padding:.9rem 1rem; padding-top:calc(.9rem + env(safe-area-inset-top,0px))}
+  .cb-msg{max-width:92%}
+}
+/* pencere açıkken arka plan kaydırmasını kilitle (JS body'ye ekler) */
+body.cb-kilit{overflow:hidden}
+
+/* ---------- Hareket duyarlılığı ---------- */
+@media (prefers-reduced-motion:reduce){
+  .cb-balon,.cb-karsilama,.cb-pencere,.cb-msg,.cb-sec,.cb-link,.cb-gonder,.cb-kapat{
+    transition:none !important; animation:none !important;
+  }
+  .cb-balon:hover,.cb-link:hover,.cb-gonder:hover{transform:none}
+  .cb-karsilama{opacity:1; transform:none}
+  .cb-yaziyor i,.cb-yaziyor span{animation:none !important}
+}
+
+/* ---------- Yazdırma: bot tamamen gizli ---------- */
+@media print{
+  .cb-balon,.cb-pencere,.cb-karsilama,.cb-karsilama-x{display:none !important}
+}

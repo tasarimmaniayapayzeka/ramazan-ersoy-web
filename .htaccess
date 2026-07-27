@@ -84,7 +84,17 @@ ServerSignature Off
 </IfModule>
 
 # ---------- Geliştirme dosyalarına erişimi engelle ----------
-<FilesMatch "^(server\.js|build-sitemap\.js|package(-lock)?\.json|\.gitignore|.*\.md)$">
+<FilesMatch "^(server\.js|build-sitemap\.js|yayin-paketi-olustur\.js|package(-lock)?\.json|\.gitignore|\.cpanel\.yml|.*\.md)$">
+  Require all denied
+</FilesMatch>
+
+# ---------- Chatbot yapılandırması ----------
+# chat-config.php OpenAI anahtarını tutar. PHP olarak çalıştığı için
+# içeriği normalde dışarı sızmaz; ama PHP bir gün devre dışı kalırsa
+# (modül hatası, yanlış handler) dosya DÜZ METİN olarak servis edilir
+# ve anahtar açığa çıkar. Bu yüzden web erişimi tamamen kapatılıyor —
+# chat-api.php dosyayı sunucu tarafında require ile okur, etkilenmez.
+<FilesMatch "^chat-config(\.ornek)?\.php$">
   Require all denied
 </FilesMatch>
 RedirectMatch 404 /\.git
