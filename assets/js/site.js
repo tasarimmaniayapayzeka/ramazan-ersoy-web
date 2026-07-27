@@ -29,30 +29,61 @@
     });
   }
 
-  /* ---------- Açılır menüler (tıkla + klavye) ---------- */
+  /* ---------- Açılır menüler ----------
+     ESKİ DAVRANIŞ HATALIYDI: menü yalnız TIKLAMAYLA açılıyor ama fare
+     çıkınca kapanıyordu. Yani kullanıcı tıklayıp açıyor, faresini geri
+     getirdiğinde menü kapanmış oluyordu (asimetrik, kafa karıştırıcı).
+     YENİ: masaüstünde fare/klavye ile açılır-kapanır, mobilde tıklama. */
+  var MASAUSTU = 960;
   document.querySelectorAll('.has-drop').forEach(function (item) {
     var btn = item.querySelector('button');
     if (!btn) return;
-    var close = function () {
-      item.setAttribute('data-open', 'false');
-      btn.setAttribute('aria-expanded', 'false');
-    };
-    btn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var open = item.getAttribute('data-open') === 'true';
+    var kapatmaZaman = null;
+    var masaustu = function () { return window.innerWidth > MASAUSTU; };
+
+    var ac = function () {
+      clearTimeout(kapatmaZaman);
+      // aynı anda tek menü açık kalsın
       document.querySelectorAll('.has-drop[data-open="true"]').forEach(function (o) {
+        if (o === item) return;
         o.setAttribute('data-open', 'false');
         var b = o.querySelector('button');
         if (b) b.setAttribute('aria-expanded', 'false');
       });
-      item.setAttribute('data-open', String(!open));
-      btn.setAttribute('aria-expanded', String(!open));
+      item.setAttribute('data-open', 'true');
+      btn.setAttribute('aria-expanded', 'true');
+    };
+    var kapa = function () {
+      clearTimeout(kapatmaZaman);
+      item.setAttribute('data-open', 'false');
+      btn.setAttribute('aria-expanded', 'false');
+    };
+    // Küçük gecikme: fare çapraz hareket ederken menü aniden kaçmasın
+    var gecikmeliKapa = function () {
+      clearTimeout(kapatmaZaman);
+      kapatmaZaman = setTimeout(kapa, 140);
+    };
+
+    /* Masaüstü — fare */
+    item.addEventListener('mouseenter', function () { if (masaustu()) ac(); });
+    item.addEventListener('mouseleave', function () { if (masaustu()) gecikmeliKapa(); });
+
+    /* Masaüstü — klavye: butona sekmeyle gelince açılır,
+       menüden tamamen çıkınca kapanır */
+    item.addEventListener('focusin', function () { if (masaustu()) ac(); });
+    item.addEventListener('focusout', function (e) {
+      if (masaustu() && !item.contains(e.relatedTarget)) kapa();
     });
-    item.addEventListener('mouseleave', function () {
-      if (window.innerWidth > 960) close();
+
+    /* Mobil — tıklama ile aç/kapa (masaüstünde hover yönetiyor) */
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (masaustu()) return;
+      if (item.getAttribute('data-open') === 'true') kapa(); else ac();
     });
+
     item.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') { close(); btn.focus(); }
+      if (e.key === 'Escape') { kapa(); btn.blur(); }
     });
   });
   document.addEventListener('click', function () {
