@@ -58,6 +58,12 @@
     return String(s == null ? '' : s)
       .toLocaleLowerCase('tr-TR')
       .replace(/[ığşçöüâîû]/g, function (h) { return KATLA[h] || h; })
+      /* Kıvrık kesme/tırnak işaretleri DÜZ karşılığına iner. iOS ve Android
+         klavyelerinde kıvrık apostrof VARSAYILANDIR: "can’t breathe" (U+2019)
+         listedeki "can't breathe" ile eşleşmiyordu ve acil kapısı sessizce
+         ölüyordu. Türkçe tarafta da "boğazım kapanıyor’" gibi girdileri düzler. */
+      .replace(/[‘’ʼ´`]/g, "'")
+      .replace(/[“”]/g, '"')
       .replace(/\s+/g, ' ');
   }
   function tokenla(s) {
@@ -231,8 +237,41 @@
     'morarma', 'morardim', 'moraruyor',
     'anafilaksi', 'alerjik sok',
     'tansiyonum dustu',
-    'otoenjektor yaptim', 'otoenjektor uyguladim', 'epipen yaptim', 'adrenalin yaptim'
+    'otoenjektor yaptim', 'otoenjektor uyguladim', 'epipen yaptim', 'adrenalin yaptim',
+
+    /* AĞIR ASTIM ATAĞI — bu sözlük tümüyle eksikti. Astım uzmanı sitesinde
+       en olası acil tablo buydu ve deterministik kapı tamamen kördü.
+       Kalıplar EN KISA gövdeyle yazılır: alt dizge eşleşmesi olduğu için
+       'konusamiyor' hem "konuşamıyorum" hem "konuşamıyor"u yakalar;
+       'konusamiyorum' yazılsaydı 3. şahıs anlatımı kaçardı. */
+    'gogsum sikis', 'gogsumde sikis', 'gogsume baski', 'gogsum daral',
+    'konusamiyor', 'cumle kuramiyor', 'cumleyi tamamlayamiyor',
+    'astim atagi', 'astim krizi', 'atak geciriyor',
+    'boguluyor', 'havasiz kaldim', 'nefesim kesil', 'nefesim tikan',
+    'yutkunamiyor', 'bogazim kapandi', 'sesim gitti', 'sesim cikmiyor',
+    'dudaklarim morardi', 'dudaklari morardi', 'dudagi morardi'
   ];
+
+  /* --- KÖK-ÇİFTİ KALIPLARI (acil) ---
+     Sözlükteki çok kelimeli kalıplar BİTİŞİK alt dizge arıyordu; bu yüzden
+     kip/şahıs/araya-kelime değişince toptan ölüyorlardı:
+       "boğazım kapandı"     → listede yalnız 'bogazim kapaniyor' (şimdiki z.)
+       "dudakları morardı"   → 'morarma/morardim/moraruyor' hiçbiri tutmuyor
+       "tansiyonum ÇOK düştü"→ 'tansiyonum dustu' bitişik değil
+     Çözüm: bölge kökü + belirti kökü arasına 15 karaktere kadar araya girmeye
+     izin veren regex. İyelik ekinden ve şahıstan bağımsız çalışır, böylece
+     "oğlumun dudakları şişti" (3. şahıs) de yakalanır. */
+  var ACIL_KALIP = [
+    /\b(bogaz|dudak|dil|girtlak|girtlag)\w*.{0,15}?(sis|kapan|daral|tikan|morar)/,
+    /\b(tansiyon|nefes|solunum)\w*.{0,15}?(dus|kesil|daral|alam|yetmi|tikan)/,
+    /\b(ventolin|pompa|sprey|inhaler|nefes acici)\w*.{0,25}?(fayda etmedi|ise yaramiyor|ise yaramadi|etkisiz|yetmiyor|ise yaramadi)/
+  ];
+  function acilKalipVar(t) {
+    for (var i = 0; i < ACIL_KALIP.length; i++) {
+      if (ACIL_KALIP[i].test(t)) return true;
+    }
+    return false;
+  }
 
   /* --- BİRLİKTE-GEÇME KURALLARI (acil) ---
      Bileşik kalıplar ("ari soktu ve sisti") DOĞAL cümlede kaçıyordu:
@@ -244,63 +283,127 @@
   var YAYGINLIK = ['her yerim', 'her tarafim', 'her yer', 'tum vucud', 'butun vucud',
     'vucudumun her', 'vucudum', 'yaygin', 'bastan asagi'];
   var REAKSIYON = ['sisti', 'sisiyor', 'sislik', 'kizardi', 'kizariyor', 'kizariklik',
-    'kurdesen', 'dokuntu', 'kabardi', 'kasiniyor'];
+    'kurdesen', 'dokuntu', 'kabardi', 'kasiniyor', 'kasindi', 'kasinti',
+    'karincalan', 'uyusma', 'kabariyor'];
+  /* Tetikleyicide BİTİŞİK kalıp yerine basit geçmiş zaman KÖKleri kullanılır:
+     'yedim ve' kalıbı "fıstık yedim, boğazım kaşınıyor" cümlesinde araya
+     virgül girdiği için ölüyordu — ders kitabı erken anafilaksi tablosu. */
   var TETIKLEYICI = ['ari sok', 'ari beni', 'bocek sok', 'esek arisi', 'yaban arisi',
     'igneden sonra', 'asidan sonra', 'ilaci aldiktan sonra', 'ilac aldiktan sonra',
-    'yedikten sonra', 'yedim ve', 'ictikten sonra'];
-  var SISTEMIK = ['kusma', 'kustum', 'kusuyorum', 'ishal', 'karin agri',
-    'carpinti', 'kalbim hizli', 'bayil', 'halsiz', 'morar', 'tansiyon',
-    'nefes', 'bogaz', 'dil sis', 'goz kararma', 'terleme'];
+    'yedikten sonra', 'ictikten sonra',
+    /* 'yedi' ve 'icti' BİLEREK yok: token-önek eşleşmesinde SAYI olan "yedi"
+       ile çakışıyorlar ("yedi gündür halsizim" → yanlış acil). 3. şahıs
+       anlatımı ACIL_KALIP regexleri ve çocuk ön-kontrolüyle karşılanıyor. */
+    'yedim', 'ictim', 'soktu', 'isirdi',
+    'asi oldum', 'igne oldum', 'ilaci aldim', 'ilac aldim'];
+  /* SİSTEMİK sinyaller GÜÇ'e göre ikiye ayrılır. Eski tek liste iki ayrı
+     soruna yol açıyordu:
+     · "aşıdan sonra halsizlik oluyor, normal mi?" (immünoterapi hastasının
+       EN SIK sorusu) tetikleyici+sistemik kuralına düşüp acil kartı açıyor
+       ve sohbeti kalıcı kilitliyordu — ciddi bir yanlış pozitif.
+     · Buna karşılık "kustum, çarpıntım var, halsizim" gibi tetikleyicisi
+       YAZILMAMIŞ çok-sistemli tablo hiçbir kurala girmiyordu — hasta çoğu
+       zaman tetikleyiciyi bilmez (idiyopatik, bifazik, gıda-egzersiz). */
+  var SISTEMIK_GUCLU = ['carpinti', 'kalbim hizli', 'bayil', 'morar', 'tansiyon',
+    'nefes', 'bogaz', 'dil sis', 'goz kararma', 'bilincim', 'sesim kisil',
+    'yutkunamiyor', 'boguluyor'];
+  var SISTEMIK_ZAYIF = ['kusma', 'kustum', 'kusuyorum', 'ishal', 'karin agri',
+    'mide bulan', 'halsiz', 'terleme'];
 
-  /* İki grubun kesişimi varsa acil kabul edilir. */
+  /* BİLGİ SORUSU çerçevesi: "normal mi / olağan mı / her seferinde" gibi
+     ifadeler akut bir olayı değil GENEL bir merakı anlatır. Yalnızca ZAYIF
+     yolu iptal eder — güçlü sinyaller (nefes, morarma, tansiyon) ya da
+     yaygın reaksiyon varsa bu çerçeveye BAKILMAZ, çünkü "arı soktu, her
+     yerim şişti, bu normal mi?" gerçek bir acildir. */
+  var BILGI_CERCEVE = ['normal mi', 'olagan mi', 'sik mi', 'her seferinde',
+    'genelde', 'genellikle', 'olur mu', 'oluyor mu', 'beklenir mi', 'dogal mi'];
+
+  /* Sinyal gruplarının kesişimi varsa acil kabul edilir. */
   function acilBirlikte(t, tokens) {
-    var yayginVar   = herhangi(t, tokens, YAYGINLIK);
+    var yayginVar    = herhangi(t, tokens, YAYGINLIK);
     var reaksiyonVar = herhangi(t, tokens, REAKSIYON);
-    var tetikVar    = herhangi(t, tokens, TETIKLEYICI);
-    var sistemikVar = herhangi(t, tokens, SISTEMIK);
-    /* 1) yaygın + reaksiyon  → "her yerim şişti", "tüm vücudum kızardı" */
+    var tetikVar     = herhangi(t, tokens, TETIKLEYICI);
+    var gucluVar     = herhangi(t, tokens, SISTEMIK_GUCLU);
+    var zayifVar     = herhangi(t, tokens, SISTEMIK_ZAYIF);
+    var bilgiSorusu  = herhangi(t, tokens, BILGI_CERCEVE);
+
+    /* 1) yaygın + reaksiyon → "her yerim şişti", "tüm vücudum kızardı" */
     if (yayginVar && reaksiyonVar) return true;
-    /* 2) tetikleyici + sistemik → "arı soktu, kusuyorum" */
-    if (tetikVar && sistemikVar) return true;
-    /* 3) tetikleyici + yaygın reaksiyon → "arı soktu ve her yerim şişti" */
-    if (tetikVar && yayginVar && reaksiyonVar) return true;
+    /* 2) tetikleyici + GÜÇLÜ sistemik → "arı soktu, nefesim daralıyor" */
+    if (tetikVar && gucluVar) return true;
+    /* 3) tetikleyici + reaksiyon → "fıstık yedim, dudaklarım şişti" */
+    if (tetikVar && reaksiyonVar) return true;
+    /* 4) ÇOK SİSTEMLİ tablo: klinik anafilaksi ölçütü iki organ sistemi
+          tutulumudur; tetikleyici yazılmamış olsa bile acildir. */
+    if (gucluVar && (zayifVar || reaksiyonVar)) return true;
+    /* 5) tetikleyici + ZAYIF sistemik → "arı soktu, kusuyorum".
+          Bilgi sorusu çerçevesi varsa akut sayılmaz. */
+    if (tetikVar && zayifVar && !bilgiSorusu) return true;
     return false;
   }
+  /* İngilizce liste de kalıp-bağımlıydı: "lip swelling" vardı ama hastanın
+     doğal yazımı "my lips are swollen"dır. Kısa gövdelerle genişletildi.
+     (Kıvrık apostrof sorunu norm() içinde çözüldü.) */
   var ACIL_EN = [
     'anaphylaxis', 'anaphylactic', 'cannot breathe', "can't breathe", 'cant breathe',
-    'trouble breathing', 'throat swelling', 'throat is closing', 'tongue swelling',
-    'lip swelling', 'wheezing', 'fainting', 'passing out', 'allergic shock', 'epipen'
+    'trouble breathing', 'difficulty breathing', 'hard to breathe', 'short of breath',
+    'throat swelling', 'throat is closing', 'throat closing', 'throat closed',
+    'tongue swelling', 'tongue is swollen', 'lip swelling', 'lips are swollen',
+    'swollen lips', 'swollen tongue', 'swollen throat',
+    'chest tightness', 'chest is tight', 'tight chest', 'cannot speak', 'cant speak',
+    'wheezing', 'fainting', 'passing out', 'passed out', 'blue lips', 'turning blue',
+    'hives all over', 'allergic shock', 'epipen', 'auto-injector', 'inhaler not working'
   ];
 
   /* --- FİYAT kapısı --- */
-  var FIYAT_TR = ['fiyat', 'ucret', 'kac para', 'ne kadar', 'tutar', 'indirim', 'kampanya',
-    'taksit', 'sgk oder mi', 'sgk karsiliyor', 'kaca'];
+  /* 'tutar' çıkarıldı: 5 harfli olduğu için token-öneki modunda çalışıyor ve
+     "sonuçlar TUTARLI mı, güvenilir mi?" sorusunu ücret sorusu sanıp
+     güvenilirlik sorusuna "mevzuat gereği ücret paylaşılamıyor" döndürüyordu.
+     Yerine ekle çekimli spesifik biçimler kondu. */
+  var FIYAT_TR = ['fiyat', 'ucret', 'kac para', 'ne kadar', 'tutari', 'ne tutar', 'indirim',
+    'kampanya', 'taksit', 'sgk oder mi', 'sgk karsiliyor', 'kaca'];
   var FIYAT_EN = ['price', 'pricing', 'cost', 'how much', 'fee', 'discount', 'installment'];
   /* "ne kadar sürer / ne kadar zaman" bir SÜRE sorusudur, ücret sorusu değil;
-     "ücretsiz otopark" da fiyat kapısına düşmemeli. Bu kalıplar kapıyı iptal eder. */
-  var FIYAT_ISTISNA = ['ne kadar sur', 'ne kadar zaman', 'ne kadar bekle', 'ne kadar once',
-    'ne kadar siklik', 'ucretsiz', 'how long', 'free of charge'];
+     "ücretsiz otopark" da fiyat kapısına düşmemeli. Bu kalıplar metinden
+     SİLİNİR (bkz. kapilar) — böylece cümlenin geri kalanındaki gerçek ücret
+     sorusu görünmeye devam eder. */
+  var FIYAT_ISTISNA_SIL = /ne kadar sur\w*|ne kadar zaman|ne kadar bekle\w*|ne kadar once|ne kadar siklik\w*|ucretsiz|how long|free of charge/g;
 
   /* --- İLAÇ DOZU kapısı --- */
+  /* "günde ne kadar almalıyım" kalıpları EKSİKTİ: 'ne kadar' fiyat listesinde
+     olduğu için doz sorusu ÜCRET kapısına düşüyor ve hastaya doz uyarısı
+     yerine "mevzuat gereği ücret paylaşılamıyor" dönüyordu. */
   var DOZ_TR = ['kac mg', 'doz', 'kac tablet', 'gunde kac', 'kac kez kullan',
     'ilacimi kesmeli miyim', 'ilaci kesmeli miyim', 'ilaci birakmali miyim',
     'hangi ilaci icsem', 'hangi ilaci kullansam', 'ilac onerir misin', 'ilac onerebilir misin',
-    'hangi hapi', 'recete yazar misin', 'kac gun kullan'];
+    'hangi hapi', 'recete yazar misin', 'kac gun kullan',
+    'gunde ne kadar', 'ne kadar almali', 'ne kadar icmeli', 'ne kadar kullanmali',
+    'ne siklikla', 'kac kere al', 'kac kere icmeli', 'sabah mi aksam mi',
+    'ac karnina mi', 'tok karnina mi'];
   var DOZ_EN = ['how many mg', 'dosage', 'dose', 'how many tablets', 'which medicine should i',
-    'recommend a medicine', 'stop my medication', 'prescribe'];
+    'recommend a medicine', 'stop my medication', 'prescribe', 'how often should i take'];
+  /* Serbest miligram/tablet yazımı da doz sorusudur: "10 mg mı 20 mg mı" */
+  var DOZ_KALIP = /\b\d+\s*(mg|miligram|ml|tablet|hap|damla|puf)\b/;
 
   /* --- ÇOCUK kapısı (yalnız yetişkin hasta kabul edilir) --- */
   var COCUK_TR = ['cocugum', 'kizim', 'oglum', 'bebek', 'bebegim', 'cocuk', 'evladim',
     'torunum', 'kizimin', 'oglumun'];
   var COCUK_EN = ['my child', 'my son', 'my daughter', 'my baby', 'infant', 'toddler',
     'my kid', 'paediatric', 'pediatric'];
-  /* "çocukluğumdan beri alerjim var" / "çocukken astımım vardı" YETİŞKİN
-     anlatısıdır — token öneki "cocuk" ile eşleştiği için ayrıca dışlanır. */
-  var COCUK_ISTISNA = ['cocuklug', 'cocukken', 'cocuklukta', 'cocuklugumdan', 'as a child',
-    'in my childhood', 'childhood'];
+  /* (COCUK_ISTISNA listesi ISTISNA_SIL regexine dönüştürüldü — liste hâli
+     kapının tamamını veto ediyordu, regex hâli yalnız o parçayı siliyor.) */
   /* 1-17 arası bağımsız yaş sayısı da çocuk kapısını açar; "45 yasindayim"
-     tetiklemez çünkü sayının solunda rakam vardır. */
-  var YAS_18ALTI = /(^|[^0-9])([1-9]|1[0-7])\s*(yas|yasind|year|years old)/;
+     tetiklemez çünkü sayının solunda rakam vardır.
+     'yas' çıplak hâli KELİME SONU şartına bağlandı: "5 yaşımdan beri astımım
+     var" cümlesinde eski regex "5 yas" parçasını "yasimdan" içinde yakalayıp
+     YETİŞKİN hastayı çocuk uzmanına yolluyordu. 'yasin' 1. tekil iyelik
+     ekiyle ("yasimda") eşleşmez, 3. şahıs ekiyle ("yasinda") eşleşir. */
+  var YAS_18ALTI = /(^|[^0-9])([1-9]|1[0-7])\s*(yasin|yas\b|year)/;
+  /* Yetişkin anlatısı kalıplarını METİNDEN SİLİP öyle bakarız; eski kod
+     istisna görünce kapının TAMAMINI iptal ediyordu, oysa "çocukluğumdan
+     beri alerjim var; 7 yaşındaki oğlumda da başladı" cümlesinde hem
+     yetişkin geçmişi hem GERÇEK bir çocuk sorusu birlikte var. */
+  var ISTISNA_SIL = /cocuklug\w*|cocukken|cocuklukta|bebeklig\w*|bebekken|kucukken|ufakken|in my childhood|as a child|childhood/g;
 
   /* --- TEŞHİS / SONUÇ YORUMU kapısı --- */
   var TESHIS_TR = ['bende ne var', 'bende hangi', 'hangi hastalik', 'teshis', 'tani koy',
@@ -578,6 +681,16 @@
     for (var i = 0; i < ACIL_EN.length; i++) {
       if (t.indexOf(norm(ACIL_EN[i])) !== -1) return true;
     }
+    /* Kök-çifti kalıpları: kip/şahıs/araya-kelime değişimine dayanıklı
+       ("boğazım kapandı", "oğlumun dudakları şişti", "tansiyonum çok düştü") */
+    if (acilKalipVar(t)) return true;
+    /* ÇOCUKTA ACİL ÖNCELİĞİ: çocuk işareti + herhangi bir reaksiyon/sistemik
+       sinyal doğrudan acildir. Aksi hâlde kapilar() içindeki ÇOCUK kapısı
+       tabloyu yutuyor ve panikteki ebeveyne 112 kartı yerine "çocuk
+       uzmanına başvurun" sevk mesajı dönüyordu. Çocukta eşik DÜŞER. */
+    if (herhangi(t, tokens, COCUK_TR) || herhangi(t, tokens, COCUK_EN)) {
+      if (herhangi(t, tokens, REAKSIYON) || herhangi(t, tokens, SISTEMIK_GUCLU)) return true;
+    }
     /* Birlikte-geçme kuralları: tek kalıpla yakalanamayan doğal anlatımlar
        ("arı soktu ve her yerim şişti", "yedikten sonra kusuyorum ve şiştim") */
     if (acilBirlikte(t, tokens)) return true;
@@ -624,19 +737,28 @@
   /* Kapı sırası tek yerde toplanır ki isle() okunur kalsın.
      Dönüş: true = kapı yanıtladı, AI'ya gitmeyecek. */
   function kapilar(t, tokens) {
-    /* ÇOCUK — istisnalar ("çocukluğumdan beri") yetişkin anlatısıdır */
-    if (!herhangi(t, tokens, COCUK_ISTISNA)) {
-      if (herhangi(t, tokens, COCUK_TR) || herhangi(t, tokens, COCUK_EN) || YAS_18ALTI.test(t)) {
-        kapiCocuk(); return true;
-      }
+    /* ÇOCUK — yetişkin anlatısı kalıpları metinden SİLİNİR, kalanda çocuk
+       işareti aranır. Böylece "çocukluğumdan beri alerjim var" kapıyı
+       açmaz ama "...7 yaşındaki oğlumda da başladı" açar. */
+    var tCocuk = t.replace(ISTISNA_SIL, ' ');
+    var tokCocuk = tCocuk.split(/[^a-z0-9]+/).filter(Boolean);
+    if (herhangi(tCocuk, tokCocuk, COCUK_TR) || herhangi(tCocuk, tokCocuk, COCUK_EN) || YAS_18ALTI.test(tCocuk)) {
+      kapiCocuk(); return true;
     }
-    /* FİYAT — "ne kadar sürer" bir SÜRE sorusudur, istisna listesi iptal eder */
-    if (!herhangi(t, tokens, FIYAT_ISTISNA)) {
-      if (herhangi(t, tokens, FIYAT_TR) || herhangi(t, tokens, FIYAT_EN)) {
-        kapiFiyat(); return true;
-      }
+    /* DOZ, FİYAT'tan ÖNCE gelir. "Zyrtec'i günde ne kadar almalıyım?" içindeki
+       "ne kadar" fiyat listesindeydi ve doz sorusuna ÜCRET yanıtı dönüyordu —
+       yani ilaç dozu kapısı hiç çalışmıyordu. Doz her zaman daha spesifiktir. */
+    if (herhangi(t, tokens, DOZ_TR) || herhangi(t, tokens, DOZ_EN) || DOZ_KALIP.test(t)) { kapiDoz(); return true; }
+    /* FİYAT — istisna kalıpları metinden SİLİNİR, kalanda ücret sinyali aranır.
+       Eski kod istisna görünce kapıyı TAMAMEN iptal ediyordu: "İlk görüşme
+       ücretsiz mi? Değilse tutarı ne kadar?" cümlesinde 'ucretsiz' yüzünden
+       apaçık ücret sorusu AI'ya düşüyordu. Silme yöntemi ikisini de doğru
+       çözer: "ücretsiz otopark" kapıyı açmaz, yukarıdaki cümle açar. */
+    var tFiyat = t.replace(FIYAT_ISTISNA_SIL, ' ');
+    var tokFiyat = tFiyat.split(/[^a-z0-9]+/).filter(Boolean);
+    if (herhangi(tFiyat, tokFiyat, FIYAT_TR) || herhangi(tFiyat, tokFiyat, FIYAT_EN)) {
+      kapiFiyat(); return true;
     }
-    if (herhangi(t, tokens, DOZ_TR) || herhangi(t, tokens, DOZ_EN)) { kapiDoz(); return true; }
     if (herhangi(t, tokens, TESHIS_TR) || herhangi(t, tokens, TESHIS_EN)) { kapiTeshis(); return true; }
     return false;
   }
@@ -897,6 +1019,11 @@
       if (!kilit) gonderBtn.disabled = false;
       rozetGuncelle();
       if (!j || !j.yanit) throw new Error('bos');
+      /* SUNUCU ACİL BAYRAĞI: chat-api.php kendi deterministik acil kapısında
+         bir şey yakalarsa acil:true döner. İstemci kapısının kaçırdığı bir
+         tablo burada yakalanmış demektir; düz bot balonu yerine KIRMIZI
+         acil kartı gösterilir (ikinci ağ, birinci ağla aynı görünür). */
+      if (j.acil) { acilKarti(); return; }
       gecmis.push({ rol: 'bot', icerik: String(j.yanit).slice(0, GIRDI_SINIR) });
       if (gecmis.length > GECMIS_SINIR) gecmis = gecmis.slice(-GECMIS_SINIR);
       aiYaz(j.yanit);
