@@ -233,7 +233,16 @@ if ($metin === '') { http_response_code(502); echo '{"hata":"bos"}'; exit; }
    Yeni hâli: sınıf bazlı, olumsuzlama duyarlı ve acil yanıtına dokunmaz. */
 $sinif = [
   'fiyat' => '/(\b\d{2,}\s?(tl|₺|lira|euro|avro|eur|€|dolar|usd)\b)|([$€]\s?\d{2,})|((bir|iki|uc|üç|dort|dört|bes|beş|alti|altı|yedi|sekiz|dokuz|on|yirmi|otuz|kirk|kırk|elli|yuz|yüz)\s+(bin|yuz|yüz)\s*(lira|tl|euro|avro|dolar)?)/iu',
-  'ustunluk' => '/(\bgaranti(li|)\b)|(\ben iyi\b)|(\btek adres\b)|(kesin (çözüm|sonuç|tedavi))|(%\s?100)|(mucize)/iu',
+  /* ÜSTÜNLÜK: çıplak "en iyi" ÇOK GENİŞTİ — canlıda yanlış pozitif verdi.
+     "Kedi alerjisi olan biri kedi besleyebilir mi?" sorusuna model
+     "en iyi yöntem alerjenden uzak durmaktır" dedi ve filtre bunu ihlal
+     sayıp yanıtı sildi. Oysa yönetmeliğin yasakladığı şey HEKİM/KURULUŞ
+     hakkında üstünlük iddiasıdır; genel tıbbi tavsiyede "en iyi yöntem"
+     olağan bir ifadedir. Bu yüzden üstünlük sözcükleri artık yalnızca
+     yakınında sağlayıcıyı anlatan bir sözcük varsa tetikliyor.
+     Sonuç/garanti iddiaları (garanti, kesin çözüm, %100, mucize) ise
+     kime dair olursa olsun yasak kaldı. */
+  'ustunluk' => '/(\bgaranti(li|)\b)|(kesin (çözüm|sonuç|tedavi))|(%\s?100)|(mucize)|((en iyi|en başarılı|en deneyimli|en üstün|lider|bir numara|tek adres|rakipsiz)\W{0,25}(hekim|doktor|klinik|merkez|muayenehane|uzman|adres|kurum))|((hekim|doktor|klinik|merkez|muayenehane|uzman)\W{0,25}(en iyi|en başarılı|en deneyimli|rakipsiz))/iu',
   'uzaktan' => '/(online|çevrim ?içi|cevrim ?ici|uzaktan|video|görüntülü|goruntulu|tele ?tıp|tele ?tip)\s*(muayene|konsültasyon|konsultasyon|vizit)/iu',
 ];
 /* Olumsuzlama kalkanı: kalıbın hemen ardındaki ~28 karakterde "yok / değil /
