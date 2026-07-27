@@ -1,5 +1,5 @@
 /* ============================================================
-   AlerjiAsistan — Yrd. Doç. Dr. Ramazan Ersoy sitesi sohbet widget'ı v1
+   AlerjiAsistan — Uzm. Dr. Ramazan Ersoy sitesi sohbet widget'ı v1
    ------------------------------------------------------------
    MİMARİ (bakirkoy-tip-v2/chatbot.js'ten uyarlandı):
    1. DETERMİNİSTİK KAPILAR istemcide, LLM'e HİÇ GİTMEDEN çalışır.
