@@ -99,7 +99,9 @@ code{font-family:ui-monospace,Consolas,monospace;font-size:.9em;background:var(-
 .site-header .wrap{display:flex;align-items:center;gap:1.25rem;min-height:74px}
 .brand{display:flex;align-items:center;gap:.7rem;flex:none}
 .brand:hover{color:inherit}
-.brand-mark{width:38px;height:38px;flex:none}
+/* Gerçek logo amblemi 1.2:1 (318x264); eski gömülü SVG kareydi.
+   width SABİT kalırsa amblem yatayda eziliyor → yükseklik sabit, genişlik serbest. */
+.brand-mark{width:auto;height:38px;flex:none}
 .brand-text strong{display:block;font-family:var(--font-display);font-size:1.0625rem;font-weight:600;color:var(--ink);line-height:1.15;letter-spacing:.005em}
 .brand-text span{display:block;font-size:.6875rem;letter-spacing:.11em;text-transform:uppercase;color:var(--mint-ink);font-weight:700}
 
@@ -452,7 +454,7 @@ a.proof-item:hover .go{opacity:1;transform:translateX(0)}
   .nav-toggle,.skip-link,.wave-divider,.read-progress,.toc,[data-wa]{display:none !important}
   body{padding-bottom:0;font-size:12pt;color:#000;background:#fff}
   body::before{
-    content:"Yrd. Doç. Dr. Ramazan Ersoy — Yetişkin Alerji ve Astım · ☎ 0212 709 93 96 · guzel.net.tr";
+    content:"Uzm. Dr. Ramazan Ersoy — Yetişkin Alerji ve Astım · ☎ 0212 709 93 96 · drramazanersoy.tr";
     display:block;font-weight:700;font-size:11pt;border-bottom:2pt solid #000;
     padding-bottom:6pt;margin-bottom:14pt;
   }
