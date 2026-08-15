@@ -3,9 +3,9 @@
   "configurations": [
     {
       "name": "ersoy-demo",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["-y", "serve", "-l", "7920", "."],
-      "port": 7920
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["server.js"],
+      "port": 7960
     }
   ]
 }

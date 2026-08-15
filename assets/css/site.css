@@ -100,8 +100,22 @@ code{font-family:ui-monospace,Consolas,monospace;font-size:.9em;background:var(-
 .brand{display:flex;align-items:center;gap:.7rem;flex:none}
 .brand:hover{color:inherit}
 /* Gerçek logo amblemi 1.2:1 (318x264); eski gömülü SVG kareydi.
-   width SABİT kalırsa amblem yatayda eziliyor → yükseklik sabit, genişlik serbest. */
+   width SABİT kalırsa amblem yatayda eziliyor → yükseklik sabit, genişlik serbest.
+   NOT: amblem artık YALNIZ İngilizce sayfalarda kullanılıyor — tam logonun
+   içindeki yazı Türkçe olduğu için EN başlığında amblem + İngilizce metin durur. */
 .brand-mark{width:auto;height:38px;flex:none}
+
+/* TAM LOGO (amblem + yazı, tek parça marka görseli) — TR sayfaları.
+   Oran 3.52:1 (929×264). Yükseklik sabitlenir, genişlik serbest bırakılır;
+   aksi hâlde logo yatayda ezilir. Header min-height 74px olduğu için
+   masaüstünde 50px logo üstte/altta 12'şer px nefes payı bırakır.
+   Dar ekranda menü düğmesiyle yan yana sığması için kademeli küçülür. */
+.brand-logo{height:50px;width:auto;flex:none;max-width:100%}
+/* Logonun ALT SATIRI ("Yetişkin Alerji ve İç Hastalıkları Uzmanı") toplam
+   yüksekliğin küçük bir kısmı; 32px'e düşünce okunmaz oluyordu. 375px'te
+   menü düğmesine ~160px boşluk kaldığı ölçüldü, o yüzden az küçültülüyor. */
+@media (max-width:600px){ .brand-logo{height:42px} }
+@media (max-width:380px){ .brand-logo{height:38px} }
 .brand-text strong{display:block;font-family:var(--font-display);font-size:1.0625rem;font-weight:600;color:var(--ink);line-height:1.15;letter-spacing:.005em}
 .brand-text span{display:block;font-size:.6875rem;letter-spacing:.11em;text-transform:uppercase;color:var(--mint-ink);font-weight:700}
 
