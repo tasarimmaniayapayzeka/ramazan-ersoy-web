@@ -101,23 +101,24 @@ code{font-family:ui-monospace,Consolas,monospace;font-size:.9em;background:var(-
 .brand:hover{color:inherit}
 /* Gerçek logo amblemi 1.2:1 (318x264); eski gömülü SVG kareydi.
    width SABİT kalırsa amblem yatayda eziliyor → yükseklik sabit, genişlik serbest.
-   NOT: amblem artık YALNIZ İngilizce sayfalarda kullanılıyor — tam logonun
-   içindeki yazı Türkçe olduğu için EN başlığında amblem + İngilizce metin durur. */
-.brand-mark{width:auto;height:38px;flex:none}
 
-/* TAM LOGO (amblem + yazı, tek parça marka görseli) — TR sayfaları.
-   Oran 3.52:1 (929×264). Yükseklik sabitlenir, genişlik serbest bırakılır;
-   aksi hâlde logo yatayda ezilir. Header min-height 74px olduğu için
-   masaüstünde 50px logo üstte/altta 12'şer px nefes payı bırakır.
-   Dar ekranda menü düğmesiyle yan yana sığması için kademeli küçülür. */
-.brand-logo{height:50px;width:auto;flex:none;max-width:100%}
-/* Logonun ALT SATIRI ("Yetişkin Alerji ve İç Hastalıkları Uzmanı") toplam
-   yüksekliğin küçük bir kısmı; 32px'e düşünce okunmaz oluyordu. 375px'te
-   menü düğmesine ~160px boşluk kaldığı ölçüldü, o yüzden az küçültülüyor. */
-@media (max-width:600px){ .brand-logo{height:42px} }
-@media (max-width:380px){ .brand-logo{height:38px} }
-.brand-text strong{display:block;font-family:var(--font-display);font-size:1.0625rem;font-weight:600;color:var(--ink);line-height:1.15;letter-spacing:.005em}
+   NEDEN TAM LOGO DEĞİL: tek parça logo (amblem+yazı) 3.51:1 olduğu için
+   header'a 50px yükseklikle giriyor, o boyutta İÇİNDEKİ yazı ~10px'e
+   düşüyor ve okunmuyordu. Yazı görselin parçası olduğundan büyütmenin tek
+   yolu logoyu büyütmek, o da header'ı şişirir. Çözüm: amblem GÖRSEL kalır
+   (pembe kıvrım orada), yazı GERÇEK METİN olur — her boyutta net, aranabilir,
+   ekran okuyucuya açık, İngilizce sayfada çevrilebilir. */
+.brand-mark{width:auto;height:48px;flex:none}
+@media (max-width:600px){ .brand-mark{height:42px} }
+@media (max-width:380px){ .brand-mark{height:38px} }
+
+.brand-text strong{display:block;font-family:var(--font-display);font-size:1.125rem;font-weight:600;color:var(--ink);line-height:1.15;letter-spacing:.005em}
 .brand-text span{display:block;font-size:.6875rem;letter-spacing:.11em;text-transform:uppercase;color:var(--mint-ink);font-weight:700}
+/* Dar ekranda "Uzm. Dr. Ramazan Ersoy" iki satıra kırılmasın */
+@media (max-width:600px){
+  .brand-text strong{font-size:1rem;white-space:nowrap}
+  .brand-text span{font-size:.625rem;letter-spacing:.08em}
+}
 
 .nav{margin-left:auto;display:flex;align-items:center;gap:.1rem}
 /* 7 menü öğesi + CTA dar alana sığmıyordu: flex öğeleri sıkışıp
@@ -155,7 +156,15 @@ code{font-family:ui-monospace,Consolas,monospace;font-size:.9em;background:var(-
 .drop a{display:block;padding:.6rem .8rem;border-radius:var(--r-sm);font-size:.9375rem}
 .drop a small{display:block;color:var(--muted);font-weight:400;font-size:var(--fs-xs)}
 
-@media (max-width:960px){
+/* Eşik 960 → 1100. ÖLÇÜLDÜ: yatay menü 7 madde + CTA ile ~794px, marka ~285px;
+   toplam ~1080px. Eşik 960'ta olduğu için 961–1180px arası ekranlarda
+   "Randevu Talep Et" düğmesi sağdan taşıp overflow-x:clip ile KIRPILIYOR,
+   yani ana çağrı düğmesi görünmez oluyordu (1000px'te 154px dışarıda ölçüldü).
+   Bu kusur unvan değişiminden ÖNCE de vardı (eski markayla 90px taşma).
+   Artık menü, taşmadan önce hamburger'a dönüyor.
+   NOT: assets/js/site.js içindeki MASAUSTU sabiti bu değerle AYNI olmalı —
+   aksi hâlde çekmece açılır ama JS masaüstü sanıp hover mantığı çalıştırır. */
+@media (max-width:1180px){
   .nav-toggle{display:block}
   .nav{
     position:fixed;inset:0 0 auto;top:0;margin:0;flex-direction:column;align-items:stretch;gap:.15rem;
