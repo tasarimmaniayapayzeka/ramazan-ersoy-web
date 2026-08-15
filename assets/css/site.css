@@ -96,7 +96,15 @@ code{font-family:ui-monospace,Consolas,monospace;font-size:.9em;background:var(-
 
 .site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:box-shadow var(--t-fast) var(--ease)}
 .site-header.is-scrolled{box-shadow:var(--shadow-sm)}
-.site-header .wrap{display:flex;align-items:center;gap:1.25rem;min-height:74px}
+/* min-height 74 → 88: amblem 60px'e çıktı, marka bloğu iki satır yazıyla
+   birlikte ~60px yer kaplıyor; 74px'te üstten/alttan nefes payı kalmıyordu.
+
+   max-width: header İÇERİKTEN daha geniş. ÖLÇÜLDÜ: büyütülmüş marka 330px +
+   yatay menü 794px = 1144px yer istiyor, oysa site --wrap'i 1160px olduğu
+   için kullanılabilir alan yalnız 1080px — 64px eksik kalıyor ve CTA
+   kırpılıyordu. Sayfa içeriğinin genişliğini değiştirmek tüm bölümlerin
+   düzenini bozardı; bunun yerine SADECE header genişletildi. */
+.site-header .wrap{display:flex;align-items:center;gap:1.25rem;min-height:88px;max-width:1320px}
 .brand{display:flex;align-items:center;gap:.7rem;flex:none}
 .brand:hover{color:inherit}
 /* Gerçek logo amblemi 1.2:1 (318x264); eski gömülü SVG kareydi.
@@ -108,16 +116,26 @@ code{font-family:ui-monospace,Consolas,monospace;font-size:.9em;background:var(-
    yolu logoyu büyütmek, o da header'ı şişirir. Çözüm: amblem GÖRSEL kalır
    (pembe kıvrım orada), yazı GERÇEK METİN olur — her boyutta net, aranabilir,
    ekran okuyucuya açık, İngilizce sayfada çevrilebilir. */
-.brand-mark{width:auto;height:48px;flex:none}
-@media (max-width:600px){ .brand-mark{height:42px} }
-@media (max-width:380px){ .brand-mark{height:38px} }
+.brand-mark{width:auto;height:60px;flex:none}
+@media (max-width:600px){ .brand-mark{height:48px} }
+@media (max-width:380px){ .brand-mark{height:42px} }
 
-.brand-text strong{display:block;font-family:var(--font-display);font-size:1.125rem;font-weight:600;color:var(--ink);line-height:1.15;letter-spacing:.005em}
-.brand-text span{display:block;font-size:.6875rem;letter-spacing:.11em;text-transform:uppercase;color:var(--mint-ink);font-weight:700}
-/* Dar ekranda "Uzm. Dr. Ramazan Ersoy" iki satıra kırılmasın */
+.brand-text strong{display:block;font-family:var(--font-display);font-size:1.1875rem;font-weight:600;color:var(--ink);line-height:1.15;letter-spacing:.005em}
+/* Alt yazı logodaki resmi ibarenin tamamı: "Yetişkin Alerji ve İç Hastalıkları
+   Uzmanı". Eski kısa ibareden (193px) çok daha uzun — ÖLÇÜLDÜ: eski stille
+   (.6875rem/.11em) 299px tutuyordu ve marka bloğunu 368px'e çıkarıp menüyü
+   eziyordu. Punto ve harf aralığı düşürülerek 247px'e indirildi; hâlâ rahat
+   okunuyor çünkü büyük harf + kalın. */
+.brand-text span{display:block;font-size:.625rem;letter-spacing:.05em;text-transform:uppercase;color:var(--mint-ink);font-weight:700;white-space:nowrap}
+/* Dar ekranda isim ve alt yazı satır kırmasın */
 @media (max-width:600px){
   .brand-text strong{font-size:1rem;white-space:nowrap}
-  .brand-text span{font-size:.625rem;letter-spacing:.08em}
+  .brand-text span{font-size:.5625rem;letter-spacing:.03em}
+}
+/* Çok dar telefonda uzun alt yazı taşırdı; orada kısa ibareye düşer */
+@media (max-width:430px){
+  .brand-text span{font-size:0;letter-spacing:0}
+  .brand-text span::after{content:"Alerji ve İç Hastalıkları";font-size:.5625rem;letter-spacing:.03em}
 }
 
 .nav{margin-left:auto;display:flex;align-items:center;gap:.1rem}
@@ -157,14 +175,14 @@ code{font-family:ui-monospace,Consolas,monospace;font-size:.9em;background:var(-
 .drop a small{display:block;color:var(--muted);font-weight:400;font-size:var(--fs-xs)}
 
 /* Eşik 960 → 1100. ÖLÇÜLDÜ: yatay menü 7 madde + CTA ile ~794px, marka ~285px;
-   toplam ~1080px. Eşik 960'ta olduğu için 961–1180px arası ekranlarda
+   toplam ~1080px. Eşik 960'ta olduğu için 1181–1240px arası ekranlarda
    "Randevu Talep Et" düğmesi sağdan taşıp overflow-x:clip ile KIRPILIYOR,
    yani ana çağrı düğmesi görünmez oluyordu (1000px'te 154px dışarıda ölçüldü).
    Bu kusur unvan değişiminden ÖNCE de vardı (eski markayla 90px taşma).
    Artık menü, taşmadan önce hamburger'a dönüyor.
    NOT: assets/js/site.js içindeki MASAUSTU sabiti bu değerle AYNI olmalı —
    aksi hâlde çekmece açılır ama JS masaüstü sanıp hover mantığı çalıştırır. */
-@media (max-width:1180px){
+@media (max-width:1240px){
   .nav-toggle{display:block}
   .nav{
     position:fixed;inset:0 0 auto;top:0;margin:0;flex-direction:column;align-items:stretch;gap:.15rem;

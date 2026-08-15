@@ -34,10 +34,10 @@
      çıkınca kapanıyordu. Yani kullanıcı tıklayıp açıyor, faresini geri
      getirdiğinde menü kapanmış oluyordu (asimetrik, kafa karıştırıcı).
      YENİ: masaüstünde fare/klavye ile açılır-kapanır, mobilde tıklama. */
-  /* site.css'teki nav medya sorgusuyla AYNI değer olmalı (@media max-width:1180px).
-     Ayrışırsa 961–1180px arasında menü çekmece olur ama JS masaüstü sanıp
+  /* site.css'teki nav medya sorgusuyla AYNI değer olmalı (@media max-width:1240px).
+     Ayrışırsa 1181–1240px arasında menü çekmece olur ama JS masaüstü sanıp
      hover mantığı çalıştırır; açılır menüler tıklamayla açılmaz. */
-  var MASAUSTU = 1180;
+  var MASAUSTU = 1240;
   document.querySelectorAll('.has-drop').forEach(function (item) {
     var btn = item.querySelector('button');
     if (!btn) return;
