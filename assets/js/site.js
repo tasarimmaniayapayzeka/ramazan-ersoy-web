@@ -250,7 +250,17 @@
     });
   });
 
-  /* ---------- Randevu formu (demo doğrulaması) ---------- */
+  /* ---------- Randevu formu ----------
+     ÖNCEDEN BOZUKTU: gönderim preventDefault() ile durduruluyor, alanlar
+     doğrulanıyor ve doğrudan "talebiniz alındı" kutusu açılıyordu. Hiçbir
+     action/fetch yoktu — hasta talebini ilettiğini SANIYOR, muayenehaneye
+     HİÇBİR ŞEY ulaşmıyordu. Site 26 Tem'den beri böyle yayındaydı.
+
+     YENİ AKIŞ: önce sunucuya POST (kayıt + bildirim e-postası), sonra
+     hastanın WhatsApp'ı ön-dolu mesajla açılır. Onay kutusu ancak bu iki
+     adımdan SONRA gösterilir.
+     Sunucu ulaşılamazsa bile WhatsApp yine açılır — hasta kaybedilmez;
+     onay metni o durumda "kaydedildi" demez, dürüst kalır. */
   var form = document.querySelector('[data-appointment-form]');
   if (form) {
     form.addEventListener('submit', function (e) {
@@ -266,13 +276,64 @@
         if (!valid && ok) { input.focus(); ok = false; }
       });
       if (!ok) return;
-      form.hidden = true;
-      var done = document.querySelector('[data-appointment-done]');
-      if (done) {
-        done.classList.add('is-visible');
-        done.setAttribute('tabindex', '-1');
-        done.focus();
-      }
+
+      var d = function (ad) {
+        var el = form.querySelector('[name="' + ad + '"]');
+        if (!el) return '';
+        return el.type === 'checkbox' ? (el.checked ? 1 : 0) : el.value.trim();
+      };
+      var veri = {
+        ad: d('ad'), tel: d('tel'), sikayet: d('sikayet'), gun: d('gun'),
+        kvkk: d('kvkk'), ticari: d('ticari'), website: d('website'),
+        kaynak: location.pathname.split('/').pop() || 'index.html'
+      };
+
+      var btn = form.querySelector('[type="submit"]');
+      if (btn) { btn.disabled = true; btn.dataset.eski = btn.textContent; btn.textContent = 'Gönderiliyor…'; }
+
+      var waMetin = 'Merhaba, randevu talebim var.\n' +
+        'Ad Soyad: ' + veri.ad + '\n' +
+        'Telefon: ' + veri.tel +
+        (veri.sikayet ? '\nŞikayet: ' + veri.sikayet : '') +
+        (veri.gun ? '\nTercih: ' + veri.gun : '');
+
+      var bitir = function (kayitli) {
+        window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(waMetin), '_blank', 'noopener');
+        form.hidden = true;
+        var done = document.querySelector('[data-appointment-done]');
+        if (done) {
+          var not = done.querySelector('[data-kayit-notu]');
+          if (not) {
+            not.textContent = kayitli
+              ? 'Talebiniz kaydedildi ve WhatsApp penceresi açıldı. Mesajı göndererek talebinizi tamamlayabilirsiniz.'
+              : 'WhatsApp penceresi açıldı. Talebinizin bize ulaşması için mesajı göndermeniz gerekir.';
+          }
+          done.classList.add('is-visible');
+          done.setAttribute('tabindex', '-1');
+          done.focus();
+        }
+        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.eski || 'Gönder'; }
+      };
+
+      /* Alt klasördeki sayfalar için kök yolu hesaplanır; chatbot.js'teki
+         kokYolu() ile aynı mantık. Sabit './' verilirse hastaliklar/ ya da
+         randevu.html dışındaki sayfalardan POST 404'e gider. */
+      var ALT = ['hastaliklar', 'testler', 'tedaviler', 'araclar',
+                 'hasta-merkezi', 'alerji-rehberi', 'fiyatlar', 'en'];
+      var pr = location.pathname.split('/');
+      var kok = ALT.indexOf(pr[pr.length - 2] || '') !== -1 ? '../' : '';
+
+      fetch(kok + 'randevu-kaydet.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(veri)
+      }).then(function (r) {
+        return r.ok ? r.json() : null;
+      }).then(function (j) {
+        bitir(!!(j && j.durum === 'ok'));
+      })['catch'](function () {
+        bitir(false);   /* sunucu yoksa bile hastayı WhatsApp'a taşı */
+      });
     });
     form.querySelectorAll('input,select').forEach(function (input) {
       input.addEventListener('input', function () {

@@ -304,6 +304,9 @@
             <label for="ticari" style="font-weight:400">Bilgilendirme mesajları almak istiyorum. (İsteğe bağlıdır; dosya göndermek için gerekli değildir.)</label>
           </div>
           <p class="form-note" style="margin:0 0 .9rem">Sağlık verileriniz <strong>özel nitelikli kişisel veridir</strong>; yalnızca açık rızanızla ve güvenli bağlantı üzerinden işlenir, üçüncü kişilerle paylaşılmaz. Dilediğiniz an rızanızı geri çekebilirsiniz.</p>
+          <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">
+            <label>Web sitesi<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
           <button class="btn btn--primary" type="submit" style="width:100%">Sonucumu gönder</button>
           <p class="form-note">Bu form bir görüşme <strong>talebidir</strong>; ön incelemenin ardından sekreterimiz sizi arayarak süreci planlar.</p>
           <p class="form-note">(Demo not: Bu sayfa tanıtım amaçlı bir ön izlemedir. Dosya alanı gerçek bir yükleme yapmaz; form gönderimi ve güvenli dosya aktarımı WordPress aşamasında etkinleştirilecektir.)</p>
@@ -311,7 +314,8 @@
         <div class="form-ok" data-appointment-done>
           <strong>Talebiniz alındı.</strong>
           <p style="margin:.5rem 0 0">Belgeleriniz ön incelemeye alınacak ve aynı gün içinde sizi arayacağız. Acil bir durumunuz varsa lütfen 112'yi arayın.</p>
-          <p class="xs muted" style="margin:.75rem 0 0">(Demo: form gönderimi ve dosya yükleme WordPress aşamasında etkinleştirilecektir.)</p>
+          <p class="xs muted" style="margin:.75rem 0 0">Tahlil ve raporlarınızı muayeneye getirmeniz yeterlidir; siteden dosya yüklemenize gerek yoktur.</p>
+          <p class="xs muted" style="margin:.75rem 0 0" data-kayit-notu></p>
         </div>
       </div>
     </div>
