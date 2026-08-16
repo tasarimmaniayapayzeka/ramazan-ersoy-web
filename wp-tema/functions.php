@@ -17,6 +17,15 @@ if (!defined('ABSPATH')) exit;
 define('DRRE_KOK', '/');
 
 /* ============================================================
+   0) PARÇALAR
+   İçerik tipleri (hastalik/test/tedavi/rehber + alan kutuları) ve
+   tıbbi şema üreteci ayrı dosyalarda. Bu satırlar olmadan CPT'ler
+   kaydolmaz ve JSON-LD basılmaz — tema sessizce yarım çalışır.
+   ============================================================ */
+require_once get_template_directory() . '/inc/icerik-tipleri.php';
+require_once get_template_directory() . '/inc/sema.php';
+
+/* ============================================================
    1) STİL VE BETİKLER
    ============================================================ */
 function drre_varliklar() {

@@ -5,3 +5,9 @@ Thumbs.db
 
 # Chatbot API anahtari — SUNUCUDA durur, repoya ASLA girmez
 chat-config.php
+
+# Higgsfield 4K ham çıktıları (5504x3072 PNG, tanesi ~25 MB, toplam ~534 MB).
+# Siteye assets/img/icerik/ altındaki WebP türevleri gider; ham dosyalar
+# yalnızca ileride yeniden kırpma/türetme gerekirse diye yerelde ve yedekte
+# durur. Depoya girerse hem GitHub sınırını zorlar hem her klonu şişirir.
+gorsel-orijinal/
