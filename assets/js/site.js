@@ -312,10 +312,20 @@
       box.setAttribute('aria-label', 'Tanıtım videosu');
       box.style.cssText = 'position:fixed;inset:0;z-index:200;background:rgba(20,30,29,.92);' +
         'display:flex;align-items:center;justify-content:center;padding:5vw';
-      box.innerHTML = '<div style="width:min(900px,100%);aspect-ratio:16/9;position:relative">' +
+      /* En-boy oranı butondan okunur. Kanaldaki videolar YouTube Shorts,
+         yani DİKEY (9:16). Işık kutusu 16:9'a sabitlenirse dikey video
+         iki yanında siyah bantla açılıyordu — oran artık videoya uyuyor.
+         Dikeyde genişlik değil YÜKSEKLİK sınırlanır, aksi hâlde uzun
+         telefon ekranlarında video alt-üst taşar. */
+      var oran = btn.getAttribute('data-en-boy') || '16/9';
+      var kutuStil = (oran === '9/16')
+        ? 'height:min(86vh,780px);aspect-ratio:9/16;position:relative'
+        : 'width:min(900px,100%);aspect-ratio:16/9;position:relative';
+      var baslik = btn.getAttribute('data-baslik') || 'Dr. Ramazan Ersoy videosu';
+      box.innerHTML = '<div style="' + kutuStil + '">' +
         '<iframe style="width:100%;height:100%;border:0;border-radius:14px" ' +
         'src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0" ' +
-        'title="Dr. Ramazan Ersoy tanıtım videosu" allow="autoplay; encrypted-media" allowfullscreen></iframe>' +
+        'title="' + baslik.replace(/"/g, '&quot;') + '" allow="autoplay; encrypted-media" allowfullscreen></iframe>' +
         '</div><button aria-label="Kapat" style="position:absolute;top:18px;right:22px;background:none;' +
         'border:none;color:#fff;font-size:34px;cursor:pointer;line-height:1">&times;</button>';
       var close = function () { box.remove(); document.body.style.overflow = ''; btn.focus(); };

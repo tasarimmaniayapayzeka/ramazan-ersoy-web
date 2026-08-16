@@ -459,6 +459,54 @@ a.proof-item:hover .go{opacity:1;transform:translateX(0)}
 .video-thumb{position:relative;aspect-ratio:16/9;border-radius:var(--r-sm);overflow:hidden;background:var(--mint-bg);margin-bottom:.9rem}
 .video-thumb svg{width:100%;height:100%}
 
+/* ---------- DİKEY VİDEO KARTI (YouTube Shorts) ----------
+   Kanaldaki videolar Shorts, yani 9:16 DİKEY. Yatay (16:9) çerçeveye
+   konulunca iki yanda siyah bant oluşuyordu; kart da ışık kutusu da
+   artık videonun kendi oranında.
+   Kartlar yatay değil DİKEY olduğu için ızgara sütunu dar tutulur;
+   auto-fill ile ekrana kaç tane sığıyorsa o kadar dizilir. */
+/* Sütun genişliği ALT VE ÜST sınırlı: 1fr verilseydi az kartta sütunlar
+   gereksiz genişler, 9:16 oran yüzünden poster aşırı uzardı; auto-fill de
+   boş sütun bırakıyordu. Sabit üst sınır + ortalama ikisini birden çözer. */
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,225px));justify-content:center;gap:1.5rem 1.25rem}
+.vcard{display:flex;flex-direction:column}
+.vcard h3{font-size:1rem;line-height:1.3;margin:.85rem 0 .35rem}
+.vcard p{margin:0}
+
+.vcard-poster{
+  position:relative;display:block;width:100%;aspect-ratio:9/16;
+  padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  background:var(--mint-bg);cursor:pointer;
+  transition:transform var(--t-fast) var(--ease),box-shadow var(--t-fast) var(--ease);
+}
+.vcard-poster svg{width:100%;height:100%;display:block}
+.vcard-poster:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm)}
+.vcard-poster:hover .vcard-play{transform:translate(-50%,-50%) scale(1.08)}
+
+.vcard-play{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:56px;height:56px;border-radius:50%;
+  background:rgba(255,255,255,.94);color:var(--coral);
+  display:grid;place-items:center;box-shadow:0 6px 18px -8px rgba(11,59,56,.5);
+  transition:transform var(--t-fast) var(--ease);
+}
+.vcard-play svg{width:26px;height:26px;margin-left:3px}
+
+/* Süre rozeti: koyu zemin + beyaz yazı, her posterde okunur kalsın */
+.vcard-sure{
+  position:absolute;right:.5rem;bottom:.5rem;
+  background:rgba(11,59,56,.82);color:#fff;
+  font-size:.6875rem;font-weight:700;letter-spacing:.02em;
+  padding:.15rem .4rem;border-radius:5px;font-variant-numeric:tabular-nums;
+}
+
+@media (max-width:520px){
+  .vgrid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1.25rem .85rem}
+  .vcard-play{width:46px;height:46px}
+  .vcard-play svg{width:21px;height:21px}
+  .vcard h3{font-size:.9375rem}
+}
+
 /* SSS açılış animasyonu */
 @keyframes faqIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 .faq[open] .faq-body{animation:faqIn var(--t-mid) var(--ease)}

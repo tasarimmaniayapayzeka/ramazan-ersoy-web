@@ -154,10 +154,14 @@
 
     <figure class="hero-media" style="margin:0">
       <img src="assets/img/hero-placeholder.svg" alt="Bahar penceresinden görünen açık hava — klinik atmosferi" width="800" height="1000" fetchpriority="high">
-      <button class="play-badge" data-video="" aria-label="Dr. Ramazan Ersoy tanıtım videosunu izle">
+      <button class="play-badge" data-video="" data-en-boy="9/16"
+              data-baslik="Uzm. Dr. Ramazan Ersoy — tanışma"
+              aria-label="Uzm. Dr. Ramazan Ersoy tanışma videosunu izle (36 saniye)">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
       </button>
-      <figcaption class="play-label">Tanışma videosu · 90 saniye</figcaption>
+      <!-- Süre GERÇEK videodan: kanaldaki tanışma videosu 0:36.
+           Önceki "90 saniye" ibaresi temsilîydi ve gerçeği yansıtmıyordu. -->
+      <figcaption class="play-label">Tanışma videosu · 36 saniye</figcaption>
     </figure>
   </div>
   <svg class="wave-divider" viewBox="0 0 1200 48" preserveAspectRatio="none" aria-hidden="true">
@@ -541,79 +545,63 @@
     <div class="section-head reveal">
       <p class="eyebrow">Video</p>
       <h2>Dr. Ersoy anlatıyor</h2>
-      <p>Sık sorulan konuları kısa videolarda topladık.</p>
+      <p>Merak edilen konular kısa videolarda: kimlere bakılıyor, ne zaman başvurmalı, muayenede ne oluyor ve testler nasıl yapılıyor.</p>
     </div>
-    <div class="grid-3 reveal">
-      <article class="card">
-        <div class="video-thumb" aria-hidden="true">
-          <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
-            <defs>
-              <linearGradient id="vt-g1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#EAF6F4"/><stop offset="1" stop-color="#CFE7E3"/>
-              </linearGradient>
-            </defs>
-            <rect width="320" height="180" fill="url(#vt-g1)"/>
-            <path d="M0 128 q40 -34 80 0 t80 0 t80 0 t80 0" fill="none" stroke="#6DBEBB" stroke-width="3" stroke-linecap="round" opacity=".7"/>
-            <g transform="translate(30,26)" fill="none" stroke="#2E7C78" stroke-width="3" stroke-linecap="round" opacity=".85">
-              <path d="M17 2C17 2 4 18 4 27a13 13 0 0026 0C30 18 17 2 17 2z"/>
-              <path d="M11 27a6 6 0 006 6"/>
-            </g>
-            <circle cx="160" cy="90" r="27" fill="#FFFFFF"/>
-            <path d="M153 78l22 12-22 12z" fill="#2E7C78"/>
-          </svg>
-        </div>
-        <h3>Alerji aşısı nedir, kimlere uygulanır?</h3>
-        <p class="sm muted">İmmünoterapinin kimler için uygun olduğu ve sürecin nasıl işlediği.</p>
-        <button class="btn btn--ghost btn--sm" data-video="">İzle</button>
+    <div class="vgrid reveal">
+
+      <article class="vcard">
+        <button class="vcard-poster" data-video="" data-en-boy="9/16"
+                data-baslik="Yetişkin alerji uzmanı neye bakar?"
+                aria-label="Yetişkin alerji uzmanı neye bakar? — videoyu izle (0:44)">
+          <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hv0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF6F4"/><stop offset="1" stop-color="#CFE7E3"/></linearGradient></defs><rect width="270" height="480" fill="url(#hv0)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
+          <span class="vcard-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="vcard-sure" aria-hidden="true">0:44</span>
+        </button>
+        <h3>Yetişkin alerji uzmanı neye bakar?</h3>
+        <p class="sm muted">Alerjik hastalıklar yalnızca kaşıntı ve hapşırıktan ibaret değil.</p>
       </article>
-      <article class="card">
-        <div class="video-thumb" aria-hidden="true">
-          <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
-            <defs>
-              <linearGradient id="vt-g2" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#EAF6F4"/><stop offset="1" stop-color="#CFE7E3"/>
-              </linearGradient>
-            </defs>
-            <rect width="320" height="180" fill="url(#vt-g2)"/>
-            <path d="M0 128 q40 -34 80 0 t80 0 t80 0 t80 0" fill="none" stroke="#6DBEBB" stroke-width="3" stroke-linecap="round" opacity=".7"/>
-            <g transform="translate(26,24)" fill="none" stroke="#2E7C78" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".85">
-              <path d="M4 26v10a6 6 0 006 6h20a6 6 0 006-6V22l-6-4"/>
-              <path d="M4 26l8-3 8 3 8-3"/>
-              <path d="M27 4c0 0-5 6-5 9.5a5 5 0 0010 0C32 10 27 4 27 4z"/>
-            </g>
-            <circle cx="160" cy="90" r="27" fill="#FFFFFF"/>
-            <path d="M153 78l22 12-22 12z" fill="#2E7C78"/>
-          </svg>
-        </div>
-        <h3>Deri testi nasıl yapılır?</h3>
-        <p class="sm muted">Test öncesi hazırlık, uygulama ve sonuçların okunması.</p>
-        <button class="btn btn--ghost btn--sm" data-video="">İzle</button>
+
+      <article class="vcard">
+        <button class="vcard-poster" data-video="" data-en-boy="9/16"
+                data-baslik="Ne zaman doktora başvurmalıyız?"
+                aria-label="Ne zaman doktora başvurmalıyız? — videoyu izle (0:38)">
+          <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hv1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3EFE4"/><stop offset="1" stop-color="#E3DCC7"/></linearGradient></defs><rect width="270" height="480" fill="url(#hv1)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
+          <span class="vcard-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="vcard-sure" aria-hidden="true">0:38</span>
+        </button>
+        <h3>Ne zaman doktora başvurmalıyız?</h3>
+        <p class="sm muted">“Geçer” diye beklenen şikayetler alerjik bir hastalığın belirtisi olabilir.</p>
       </article>
-      <article class="card">
-        <div class="video-thumb" aria-hidden="true">
-          <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
-            <defs>
-              <linearGradient id="vt-g3" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#EAF6F4"/><stop offset="1" stop-color="#CFE7E3"/>
-              </linearGradient>
-            </defs>
-            <rect width="320" height="180" fill="url(#vt-g3)"/>
-            <path d="M0 128 q40 -34 80 0 t80 0 t80 0 t80 0" fill="none" stroke="#6DBEBB" stroke-width="3" stroke-linecap="round" opacity=".7"/>
-            <g transform="translate(26,22)" fill="none" stroke="#2E7C78" stroke-width="3" stroke-linecap="round" opacity=".85">
-              <path d="M22 4v12M15 12q-6 3-6 10.5T16.5 30 22 22.5V16M29 12q6 3 6 10.5T27.5 30 22 22.5"/>
-            </g>
-            <circle cx="160" cy="90" r="27" fill="#FFFFFF"/>
-            <path d="M153 78l22 12-22 12z" fill="#2E7C78"/>
-          </svg>
-        </div>
-        <h3>Yetişkinlerde astım belirtileri</h3>
-        <p class="sm muted">Hangi öksürük normal değil? Ne zaman doktora başvurmalı?</p>
-        <button class="btn btn--ghost btn--sm" data-video="">İzle</button>
+
+      <article class="vcard">
+        <button class="vcard-poster" data-video="" data-en-boy="9/16"
+                data-baslik="Muayene süreci nasıl ilerler?"
+                aria-label="Muayene süreci nasıl ilerler? — videoyu izle (0:37)">
+          <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hv2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EDF4F7"/><stop offset="1" stop-color="#D5E6EE"/></linearGradient></defs><rect width="270" height="480" fill="url(#hv2)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
+          <span class="vcard-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="vcard-sure" aria-hidden="true">0:37</span>
+        </button>
+        <h3>Muayene süreci nasıl ilerler?</h3>
+        <p class="sm muted">İlk adım test değil, hikâyeyi dinlemektir.</p>
       </article>
+
+      <article class="vcard">
+        <button class="vcard-poster" data-video="" data-en-boy="9/16"
+                data-baslik="Alerji testleri nedir, nasıl yapılır?"
+                aria-label="Alerji testleri nedir, nasıl yapılır? — videoyu izle (0:47)">
+          <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hv3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1F0F6"/><stop offset="1" stop-color="#DEDBEA"/></linearGradient></defs><rect width="270" height="480" fill="url(#hv3)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
+          <span class="vcard-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="vcard-sure" aria-hidden="true">0:47</span>
+        </button>
+        <h3>Alerji testleri nedir, nasıl yapılır?</h3>
+        <p class="sm muted">Deri prick testi başta olmak üzere yöntemler ve değerlendirmesi.</p>
+      </article>
+
     </div>
-    <p class="center" style="margin-top:1.5rem"><a class="link-arrow" href="araclar/video-kutuphanesi.html">Tüm videolar →</a></p>
+    <p class="center" style="margin-top:1.75rem"><a class="link-arrow" href="araclar/video-kutuphanesi.html">Tüm videolar</a></p>
   </div>
 </section>
+
 
 <!-- ═══ 13 · SSS ═══ -->
 <section class="section section--cream">
