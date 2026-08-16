@@ -71,8 +71,14 @@ $kayit = [
   'ticari'  => $ticari ? 1 : 0,
   'kaynak'  => tek($g['kaynak'] ?? '', 60),   /* hangi sayfadan geldi */
 ];
+$dosya = $dizin . '/' . date('Y-m') . '.jsonl';
 $satir = json_encode($kayit, JSON_UNESCAPED_UNICODE) . "\n";
-$yazildi = @file_put_contents($dizin . '/' . date('Y-m') . '.jsonl', $satir, FILE_APPEND | LOCK_EX);
+$yazildi = @file_put_contents($dosya, $satir, FILE_APPEND | LOCK_EX);
+/* Dosya varsayılan umask ile 0644 doğuyor; içinde hasta adı ve telefonu var.
+   Dizin 0700 olduğu için dışarıdan girilemiyor ama dosyayı da kısıtlıyoruz —
+   paylaşımlı barındırmada ikinci kat koruma. Koşulsuz çalışır: yalnız yeni
+   dosyada yapılsaydı önceden 0644 doğmuş dosyalar öyle kalırdı. */
+if ($yazildi !== false && (@fileperms($dosya) & 0777) !== 0600) @chmod($dosya, 0600);
 
 /* — bildirim e-postası (adres varsa) — */
 $cfg = dirname(__DIR__) . '/gizli/randevu-config.php';
