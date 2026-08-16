@@ -1,0 +1,26 @@
+/*
+Theme Name: DRRE — Uzm. Dr. Ramazan Ersoy
+Theme URI: https://drramazanersoy.tr/
+Author: TasarımMania
+Description: Uzm. Dr. Ramazan Ersoy muayenehanesi için özel tema. Tasarım sistemi
+  statik siteden AYNEN taşınır (tokens.css + site.css); bu dosya yalnızca WordPress'in
+  zorunlu tema künyesidir, stil içermez. Sayfa kurucu kullanılmaz.
+Version: 0.1.0
+Requires at least: 6.5
+Requires PHP: 7.4
+License: Tüm hakları saklıdır
+Text Domain: drre
+*/
+
+/* ============================================================
+   BU DOSYA BİLEREK BOŞ.
+
+   Stil TEK KAYNAKTAN gelir: assets/css/tokens.css + site.css.
+   Bunlar statik sitede zaten kullanılan, üzerinde aylarca çalışılmış
+   dosyalardır (palet, tipografi, erişilebilirlik düzeltmeleri,
+   yazdırma stili, chatbot). Buraya kopyalanmaz, functions.php içinde
+   wp_enqueue_style ile ASIL DOSYALARDAN bağlanır — böylece statik
+   site ile WordPress arasında stil sapması imkânsız olur.
+
+   Buraya kural yazma. Yeni stil gerekiyorsa site.css'e ekle.
+   ============================================================ */

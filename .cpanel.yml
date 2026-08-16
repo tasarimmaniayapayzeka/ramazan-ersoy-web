@@ -27,4 +27,13 @@ deployment:
     - /bin/rm -f $DEPLOYPATH/assets/fonts/css2.txt
     - /bin/rm -f $DEPLOYPATH/assets/fonts/fraunces.txt
     - /bin/rm -f $DEPLOYPATH/assets/fonts/manifest.json
+    # ---------- WordPress teması ----------
+    # Tema deponun wp-tema/ klasöründe geliştirilir, sunucuda WordPress'in
+    # beklediği yere kopyalanır. Böylece tema da git geçmişine girer ve
+    # bozulursa "git revert + deploy" ile bir dakikada geri alınır.
+    # NOT: yukarıdaki "cp -R *" wp-tema/ klasörünü public_html köküne de
+    # bırakıyor; web'den erişilmemesi için sonra siliniyor.
+    - /bin/mkdir -p $DEPLOYPATH/wp-yeni/wp-content/themes/drre
+    - /bin/cp -R wp-tema/. $DEPLOYPATH/wp-yeni/wp-content/themes/drre/
+    - /bin/rm -rf $DEPLOYPATH/wp-tema
     - /bin/echo "Yayin: $(date)" >> $HOME/deploy.log
