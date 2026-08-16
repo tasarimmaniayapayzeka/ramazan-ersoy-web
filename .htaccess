@@ -46,7 +46,16 @@ ErrorDocument 404 /404.html
   RewriteRule ^tedaviler/(alerji-asisi-immunoterapi|alerji-asisi-sss)\.html$ /tedaviler/$1/ [R=301,L]
   RewriteRule ^alerji-rehberi/(ev-tozu-akari-yatak-odasi|evcil-hayvan-alerjisi|gebelikte-alerji-ve-astim|klima-ve-ic-ortam-alerjenleri|yetiskinlikte-baslayan-astim)\.html$ /alerji-rehberi/$1/ [R=301,L]
 
-  # 5) WORDPRESS GERİ-DÜŞÜŞÜ — EN SONDA KALMALI.
+  # 5) ARŞİV KÖKLERİ WP'YE — geri-düşüşten ÖNCE gelmeli.
+  #    hastaliklar/ ve tedaviler/ diskte GERÇEK klasör (yedek .html'ler
+  #    içinde durur); aşağıdaki !-d koşulu bu yüzden onları yakalayamaz
+  #    ve klasörde index.html olmadığı için 404 dönerdi. Oysa WP arşivi
+  #    tam bu adreste yayın yapıyor ve kırıntılar oraya bağlanıyor.
+  #    testler/ ve alerji-rehberi/ BİLEREK listede YOK: onların statik
+  #    pillar index.html'leri var ve servis edilmeye devam ediyor.
+  RewriteRule ^(hastaliklar|tedaviler)/?$ /index.php [L]
+
+  # 6) WORDPRESS GERİ-DÜŞÜŞÜ — EN SONDA KALMALI.
   #    Diskte dosya ya da dizin olarak karşılığı OLMAYAN her adres kökteki
   #    index.php'ye (WP yükleyici) gider: /hastaliklar/astim/ WP'den döner,
   #    /randevu.html diskte var ve statik servis edilir. 404'ler artık
