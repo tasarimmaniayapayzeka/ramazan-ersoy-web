@@ -7,7 +7,12 @@
 # ============================================================
 
 # ---------- Varsayılan dosya ----------
-DirectoryIndex index.html
+# SIRA ÖNEMLİ: index.html ÖNCE gelir — kök dizin statik siteyi servis etmeye
+# devam etsin. index.php sonradan eklendi çünkü /wp-yeni/ altındaki WordPress
+# kurulumunun açılış dosyası index.php; yalnız index.html tanımlıyken Apache
+# o dizinde açılış dosyası bulamıyor ve 404 dönüyordu (kurulum başarılıydı,
+# sorun tamamen bu satırdaydı).
+DirectoryIndex index.html index.php
 
 # ---------- 404 sayfası ----------
 ErrorDocument 404 /404.html
