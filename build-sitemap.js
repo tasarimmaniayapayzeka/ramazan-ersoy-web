@@ -31,6 +31,27 @@ const prio = (u) => {
   return '0.6';
 };
 
+/* HİBRİT GEÇİŞ (17 Ağu 2026): 21 içerik sayfası WordPress'e taşındı.
+   Diskteki .html dosyaları 301 ile WP adresine gidiyor (.htaccess §4);
+   sitemap'e artık HEDEF adresler yazılır — Google'a 301 zinciri yerine
+   doğrudan kanonik adresi vermek taşınmanın en temiz sinyalidir.
+   Liste .htaccess'teki yönlendirme kümesiyle AYNI olmak zorunda. */
+const WPYE_TASINDI = new Set([
+  'hastaliklar/alerjik-rinit', 'hastaliklar/astim', 'hastaliklar/urtiker',
+  'hastaliklar/besin-alerjisi', 'hastaliklar/ilac-alerjisi', 'hastaliklar/ari-alerjisi',
+  'hastaliklar/herediter-anjiyoodem', 'hastaliklar/mastositoz', 'hastaliklar/anafilaksi',
+  'testler/deri-prick-testi', 'testler/spesifik-ige-kan-testi',
+  'testler/solunum-fonksiyon-testi', 'testler/yama-testi', 'testler/provokasyon-testleri',
+  'tedaviler/alerji-asisi-immunoterapi', 'tedaviler/alerji-asisi-sss',
+  'alerji-rehberi/ev-tozu-akari-yatak-odasi', 'alerji-rehberi/evcil-hayvan-alerjisi',
+  'alerji-rehberi/gebelikte-alerji-ve-astim', 'alerji-rehberi/klima-ve-ic-ortam-alerjenleri',
+  'alerji-rehberi/yetiskinlikte-baslayan-astim',
+]);
+for (const p of pages) {
+  const rel = p.url.slice(BASE.length + 1).replace(/\.html$/, '');
+  if (WPYE_TASINDI.has(rel)) p.url = BASE + '/' + rel + '/';
+}
+
 pages.sort((a, b) => prio(b.url) - prio(a.url) || a.url.localeCompare(b.url));
 
 const xml = '<?xml version="1.0" encoding="UTF-8"?>\n' +

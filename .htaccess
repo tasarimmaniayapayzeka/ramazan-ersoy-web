@@ -34,6 +34,26 @@ ErrorDocument 404 /404.html
 
   # 3) Klasör adresinde index.html'i göster (/alerji-rehberi/ gibi)
   #    Apache DirectoryIndex zaten yapar; ek kurala gerek yok.
+
+  # 4) İÇERİK SAYFALARI WORDPRESS'E TAŞINDI (17 Ağu 2026, hibrit geçiş)
+  #    Eski .html adresleri kalıcı olarak WP'nin dizin adreslerine gider.
+  #    Liste BİLEREK sınırlı: testler/index.html ve alerji-rehberi/index.html
+  #    statik kalır (pillar sayfalar), yalnız 21 içerik sayfası taşındı.
+  #    Statik dosyalar diskte yedek olarak durur; bu kurallar dosya
+  #    servisinden ÖNCE çalıştığı için ziyaretçi onları asla görmez.
+  RewriteRule ^hastaliklar/(alerjik-rinit|astim|urtiker|besin-alerjisi|ilac-alerjisi|ari-alerjisi|herediter-anjiyoodem|mastositoz|anafilaksi)\.html$ /hastaliklar/$1/ [R=301,L]
+  RewriteRule ^testler/(deri-prick-testi|spesifik-ige-kan-testi|solunum-fonksiyon-testi|yama-testi|provokasyon-testleri)\.html$ /testler/$1/ [R=301,L]
+  RewriteRule ^tedaviler/(alerji-asisi-immunoterapi|alerji-asisi-sss)\.html$ /tedaviler/$1/ [R=301,L]
+  RewriteRule ^alerji-rehberi/(ev-tozu-akari-yatak-odasi|evcil-hayvan-alerjisi|gebelikte-alerji-ve-astim|klima-ve-ic-ortam-alerjenleri|yetiskinlikte-baslayan-astim)\.html$ /alerji-rehberi/$1/ [R=301,L]
+
+  # 5) WORDPRESS GERİ-DÜŞÜŞÜ — EN SONDA KALMALI.
+  #    Diskte dosya ya da dizin olarak karşılığı OLMAYAN her adres kökteki
+  #    index.php'ye (WP yükleyici) gider: /hastaliklar/astim/ WP'den döner,
+  #    /randevu.html diskte var ve statik servis edilir. 404'ler artık
+  #    WP temasının "İçerik bulunamadı" sayfasıyla döner.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.php [L]
 </IfModule>
 
 # ---------- Güvenlik başlıkları ----------
