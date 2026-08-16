@@ -39,4 +39,10 @@ deployment:
     - /bin/mkdir -p $DEPLOYPATH/wp-yeni/wp-content/themes/drre
     - /bin/cp -R wp-tema/. $DEPLOYPATH/wp-yeni/wp-content/themes/drre/
     - /bin/rm -rf $DEPLOYPATH/wp-tema
+    # mu-plugin: adres sabitleyici (17 Agu kazasi — Ayarlar>Genel'de iki adres
+    # birden koke cevrilince panel kilitlendi; adresler artik koddan gelir).
+    # cPanel API ile dosya olusturma guvenilmez cikti, git deploy tek dogru yol.
+    - /bin/mkdir -p $DEPLOYPATH/wp-yeni/wp-content/mu-plugins
+    - /bin/cp -R wp-mu/. $DEPLOYPATH/wp-yeni/wp-content/mu-plugins/
+    - /bin/rm -rf $DEPLOYPATH/wp-mu
     - /bin/echo "Yayin: $(date)" >> $HOME/deploy.log
