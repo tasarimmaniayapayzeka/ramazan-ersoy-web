@@ -62,6 +62,14 @@ while (have_posts()) : the_post();
   </div>
 </section>
 
+<?php
+/* Sayfa görseli. Görseller WP medya kütüphanesine KOPYALANMADI (bilinçli:
+   statik siteyle tek kaynak — assets/img/icerik/). Dosya adı sözleşmesi
+   slug'la birebir: {slug}-640/960/1440/1920.webp. Öne çıkan görsel
+   atanmışsa o kazanır; yoksa sözleşmeden bulunur. */
+$slugAd  = get_post_field('post_name', $id);
+$gorselKok = dirname(ABSPATH) . '/assets/img/icerik/' . $slugAd;
+?>
 <?php if (has_post_thumbnail()) : ?>
 <div class="wrap" style="margin-bottom:2rem">
   <figure style="margin:0">
@@ -71,6 +79,23 @@ while (have_posts()) : the_post();
         'decoding' => 'async',
     ]); ?>
     <?php /* Görsellerin tamamı yapay zekâ ile üretildi; ifşa her sayfada durur. */ ?>
+    <figcaption class="xs muted" style="margin-top:.5rem">Görsel yapay zekâ ile üretilmiştir.</figcaption>
+  </figure>
+</div>
+<?php elseif (file_exists($gorselKok . '-1440.webp')) :
+    $gy = DRRE_KOK . 'assets/img/icerik/' . $slugAd;
+    $alt = function_exists('drre_gorsel_alt') ? drre_gorsel_alt($slugAd) : '';
+    if ($alt === '') $alt = get_the_title() . ' — konu görseli';
+?>
+<div class="wrap" style="margin-bottom:2rem">
+  <figure style="margin:0">
+    <img src="<?php echo esc_url($gy); ?>-1440.webp"
+         srcset="<?php echo esc_url($gy); ?>-640.webp 640w, <?php echo esc_url($gy); ?>-960.webp 960w, <?php echo esc_url($gy); ?>-1440.webp 1440w, <?php echo esc_url($gy); ?>-1920.webp 1920w"
+         sizes="(max-width:900px) 100vw, 1140px"
+         width="1440" height="804" loading="lazy" decoding="async"
+         alt="<?php echo esc_attr($alt); ?>"
+         style="width:100%;height:auto;border-radius:var(--r-lg);display:block">
+    <?php /* Ticari Reklam Yönetmeliği (RG 01.07.2026/33297) md.18/8: AI ifşası zorunlu */ ?>
     <figcaption class="xs muted" style="margin-top:.5rem">Görsel yapay zekâ ile üretilmiştir.</figcaption>
   </figure>
 </div>

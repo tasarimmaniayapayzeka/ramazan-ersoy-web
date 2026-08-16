@@ -24,6 +24,7 @@ define('DRRE_KOK', '/');
    ============================================================ */
 require_once get_template_directory() . '/inc/icerik-tipleri.php';
 require_once get_template_directory() . '/inc/sema.php';
+require_once get_template_directory() . '/inc/gorsel-alt.php';
 
 /* ============================================================
    1) STİL VE BETİKLER
