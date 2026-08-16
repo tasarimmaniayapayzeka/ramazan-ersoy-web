@@ -22,6 +22,9 @@ deployment:
     - /bin/cp -f .htaccess $DEPLOYPATH/.htaccess
     # sunucuda işi olmayan geliştirme dosyalarını temizle
     - /bin/rm -f $DEPLOYPATH/server.js
+    # WP ice aktarma dosyasi: repo'da durur, web'den ERISILMEMELI
+    # (icerik zaten sayfalarda ama ham dump'i servis etmeye gerek yok)
+    - /bin/rm -f $DEPLOYPATH/wp-icerik.xml
     - /bin/rm -f $DEPLOYPATH/build-sitemap.js
     - /bin/rm -f $DEPLOYPATH/yayin-paketi-olustur.js
     - /bin/rm -f $DEPLOYPATH/assets/fonts/css2.txt
