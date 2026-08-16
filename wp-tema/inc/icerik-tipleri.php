@@ -23,32 +23,36 @@ function drre_icerik_tipleri() {
         'has_archive'  => true,
         'menu_position'=> 20,
         'supports'     => ['title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields'],
-        'rewrite'      => ['with_front' => false],
     ];
 
-    register_post_type('hastalik', $ortak + [
+    /* DİKKAT: array_merge kullanılıyor, + DEĞİL. PHP'nin + birleşimi
+       SOLDAKİ diziyi korur; ilk sürümde $ortak'taki 'rewrite' anahtarı
+       buradaki slug ayarlarını sessizce eziyordu ve adresler /hastalik/
+       (tekil) kuruldu — statik sitenin /hastaliklar/... yapısıyla
+       uyuşmayınca 301 haritası ikinci bir yönlendirmeye düşüyordu. */
+    register_post_type('hastalik', array_merge($ortak, [
         'labels' => drre_etiket('Hastalık', 'Hastalıklar'),
         'rewrite' => ['slug' => 'hastaliklar', 'with_front' => false],
         'menu_icon' => 'dashicons-heart',
-    ]);
+    ]));
 
-    register_post_type('test', $ortak + [
+    register_post_type('test', array_merge($ortak, [
         'labels' => drre_etiket('Test', 'Testler'),
         'rewrite' => ['slug' => 'testler', 'with_front' => false],
         'menu_icon' => 'dashicons-clipboard',
-    ]);
+    ]));
 
-    register_post_type('tedavi', $ortak + [
+    register_post_type('tedavi', array_merge($ortak, [
         'labels' => drre_etiket('Tedavi', 'Tedaviler'),
         'rewrite' => ['slug' => 'tedaviler', 'with_front' => false],
         'menu_icon' => 'dashicons-shield',
-    ]);
+    ]));
 
-    register_post_type('rehber', $ortak + [
+    register_post_type('rehber', array_merge($ortak, [
         'labels' => drre_etiket('Rehber Yazısı', 'Alerji Rehberi'),
         'rewrite' => ['slug' => 'alerji-rehberi', 'with_front' => false],
         'menu_icon' => 'dashicons-media-document',
-    ]);
+    ]));
 }
 add_action('init', 'drre_icerik_tipleri');
 
