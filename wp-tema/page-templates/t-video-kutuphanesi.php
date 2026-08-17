@@ -26,9 +26,6 @@ get_header();
     <h1>Dr. Ersoy anlatıyor — video kütüphanesi</h1>
     <p class="hero-lede" style="max-width:62ch">Dr. Ersoy'un YouTube kanalında alerji ve astım üzerine <strong>70'ten fazla video</strong> bulunuyor. Bu sayfa, o içerikleri konuya göre düzenleyen merkezi kütüphanedir: aradığınız konuyu bulun, tıklayın, izleyin. Videolar kısa tutulmuştur ve hasta diliyle anlatılır.</p>
 
-    <div class="caution" style="margin-top:1.5rem;max-width:72ch">
-      <b>Dürüstlük notu:</b> Kütüphane, kanaldaki videoların seçimiyle doldurulmaktadır; aşağıdaki başlıklar temsilidir. Seçim tamamlanana kadar "İzle" düğmeleri "Video hazırlanıyor" bilgisini gösterir. Tüm videolara kanaldan şimdi ulaşabilirsiniz.
-    </div>
 
     <div class="btn-row" style="margin-top:1.25rem">
       <a class="btn btn--primary" href="https://www.youtube.com/@dr.ramazanersoy1012" target="_blank" rel="noopener">YouTube kanalına gidin</a>
