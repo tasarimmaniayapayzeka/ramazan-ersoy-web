@@ -60,12 +60,7 @@ add_action('admin_init', function () {
             foreach (drre_video_tanimlari() as $anahtar => $t) {
                 $temiz[$anahtar] = drre_video_id_ayikla($girdi[$anahtar] ?? '');
             }
-            /* yeni girilen videonun kapagini kendi sunucumuza indir —
-               ziyaretci tarayicisi i.ytimg'e hic gitmesin (KVKK durusu) */
-            foreach ( as ) {
-                if () drre_video_kapak_indir();
-            }
-            return ;
+            return $temiz;
         },
     ]);
 });
@@ -102,17 +97,4 @@ function drre_video_sayfasi() {
       </form>
     </div>
     <?php
-}
-
-/** Kapagi assets/img/video/{id}.jpg olarak indirir (varsa dokunmaz). */
-function drre_video_kapak_indir() {
-     = dirname(ABSPATH) . '/assets/img/video/' .  . '.jpg';
-    if (file_exists()) return;
-    foreach (['oar2', 'maxresdefault', 'hqdefault'] as ) {
-         = wp_remote_get('https://i.ytimg.com/vi/' .  . '/' .  . '.jpg', ['timeout' => 8]);
-        if (!is_wp_error() && wp_remote_retrieve_response_code() === 200) {
-            @file_put_contents(, wp_remote_retrieve_body());
-            return;
-        }
-    }
 }

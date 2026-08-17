@@ -460,16 +460,7 @@ get_header();
         <button class="vcard-poster" data-video="<?php echo esc_attr(drre_video('neye-bakar')); ?>" data-en-boy="9/16"
                 data-baslik="Yetişkin alerji uzmanı neye bakar?"
                 aria-label="Yetişkin alerji uzmanı neye bakar? — videoyu izle (0:44)">
-          <?php /* drre-vkapak: gerceklestirilmis kapak — kendi sunucumuzdan
-                   (i.ytimg'e ziyaretci istegi YOK); dosya yoksa soyut poster */
-           = drre_video('neye-bakar');
-           = '/assets/img/video/' .  . '.jpg';
-          if ( && file_exists(dirname(ABSPATH) . )) : ?>
-          <img src="<?php echo esc_url(); ?>" alt="" loading="lazy" decoding="async"
-               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit">
-          <?php else : ?>
           <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hv0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF6F4"/><stop offset="1" stop-color="#CFE7E3"/></linearGradient></defs><rect width="270" height="480" fill="url(#hv0)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
-          <?php endif; ?>
           <span class="vcard-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="vcard-sure" aria-hidden="true">0:44</span>
         </button>
@@ -481,16 +472,7 @@ get_header();
         <button class="vcard-poster" data-video="<?php echo esc_attr(drre_video('ne-zaman')); ?>" data-en-boy="9/16"
                 data-baslik="Ne zaman doktora başvurmalıyız?"
                 aria-label="Ne zaman doktora başvurmalıyız? — videoyu izle (0:38)">
-          <?php /* drre-vkapak: gerceklestirilmis kapak — kendi sunucumuzdan
-                   (i.ytimg'e ziyaretci istegi YOK); dosya yoksa soyut poster */
-           = drre_video('ne-zaman');
-           = '/assets/img/video/' .  . '.jpg';
-          if ( && file_exists(dirname(ABSPATH) . )) : ?>
-          <img src="<?php echo esc_url(); ?>" alt="" loading="lazy" decoding="async"
-               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit">
-          <?php else : ?>
           <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hv1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3EFE4"/><stop offset="1" stop-color="#E3DCC7"/></linearGradient></defs><rect width="270" height="480" fill="url(#hv1)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
-          <?php endif; ?>
           <span class="vcard-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="vcard-sure" aria-hidden="true">0:38</span>
         </button>
@@ -502,16 +484,7 @@ get_header();
         <button class="vcard-poster" data-video="<?php echo esc_attr(drre_video('muayene')); ?>" data-en-boy="9/16"
                 data-baslik="Muayene süreci nasıl ilerler?"
                 aria-label="Muayene süreci nasıl ilerler? — videoyu izle (0:37)">
-          <?php /* drre-vkapak: gerceklestirilmis kapak — kendi sunucumuzdan
-                   (i.ytimg'e ziyaretci istegi YOK); dosya yoksa soyut poster */
-           = drre_video('muayene');
-           = '/assets/img/video/' .  . '.jpg';
-          if ( && file_exists(dirname(ABSPATH) . )) : ?>
-          <img src="<?php echo esc_url(); ?>" alt="" loading="lazy" decoding="async"
-               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit">
-          <?php else : ?>
           <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hv2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EDF4F7"/><stop offset="1" stop-color="#D5E6EE"/></linearGradient></defs><rect width="270" height="480" fill="url(#hv2)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
-          <?php endif; ?>
           <span class="vcard-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="vcard-sure" aria-hidden="true">0:37</span>
         </button>
@@ -523,16 +496,7 @@ get_header();
         <button class="vcard-poster" data-video="<?php echo esc_attr(drre_video('testler')); ?>" data-en-boy="9/16"
                 data-baslik="Alerji testleri nedir, nasıl yapılır?"
                 aria-label="Alerji testleri nedir, nasıl yapılır? — videoyu izle (0:47)">
-          <?php /* drre-vkapak: gerceklestirilmis kapak — kendi sunucumuzdan
-                   (i.ytimg'e ziyaretci istegi YOK); dosya yoksa soyut poster */
-           = drre_video('testler');
-           = '/assets/img/video/' .  . '.jpg';
-          if ( && file_exists(dirname(ABSPATH) . )) : ?>
-          <img src="<?php echo esc_url(); ?>" alt="" loading="lazy" decoding="async"
-               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit">
-          <?php else : ?>
           <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hv3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1F0F6"/><stop offset="1" stop-color="#DEDBEA"/></linearGradient></defs><rect width="270" height="480" fill="url(#hv3)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
-          <?php endif; ?>
           <span class="vcard-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="vcard-sure" aria-hidden="true">0:47</span>
         </button>
