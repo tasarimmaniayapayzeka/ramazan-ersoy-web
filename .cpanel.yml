@@ -45,4 +45,7 @@ deployment:
     - /bin/mkdir -p $DEPLOYPATH/wp-yeni/wp-content/mu-plugins
     - /bin/cp -R wp-mu/. $DEPLOYPATH/wp-yeni/wp-content/mu-plugins/
     - /bin/rm -rf $DEPLOYPATH/wp-mu
+    # yoast-tazele.php tek seferlikti (bayat canonical temizligi, 17 Agu);
+    # cp silinen dosyayi sunucudan kaldirmaz, bu satir kaldirir.
+    - /bin/rm -f $DEPLOYPATH/wp-yeni/wp-content/mu-plugins/yoast-tazele.php
     - /bin/echo "Yayin: $(date)" >> $HOME/deploy.log
