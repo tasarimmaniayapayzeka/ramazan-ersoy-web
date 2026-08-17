@@ -1,0 +1,383 @@
+<?php
+/**
+ * Template Name: Randevuya Hazırlık ve İlaç Kesme Kuralları
+ * Statik siteden otomatik devşirildi (tam-devir.js, 17 Ağu 2026).
+ * Kaynak içerik hekim onaylı; düzenleme GEREKİYORSA bu dosyada yapılır,
+ * WP editöründe değil (sayfa gövdesi bilinçli olarak boş).
+ */
+if (!defined('ABSPATH')) exit;
+get_header();
+?>
+<main id="icerik">
+
+<!-- ═══ BREADCRUMB ═══ -->
+<div class="wrap">
+  <nav class="crumbs" aria-label="Site yolu">
+    <a href="/">Anasayfa</a> <span aria-hidden="true">›</span>
+    <span>Hasta Merkezi</span> <span aria-hidden="true">›</span>
+    <span aria-current="page">Randevunuza Hazırlanın</span>
+  </nav>
+</div>
+
+<!-- ═══ BAŞLIK ═══ -->
+<section class="section section--tight">
+  <div class="wrap">
+    <p class="eyebrow">Hasta Merkezi · Pratik hazırlık rehberi</p>
+    <h1>Randevunuza hazırlanın</h1>
+    <p class="hero-lede" style="max-width:62ch">İyi bir alerji muayenesinin yarısı, siz kapıdan girmeden önce başlar. Yanınızda getirdiğiniz birkaç belge, doğru zamanda kesilen bir ilaç ve önceden not edilmiş birkaç soru; muayenenin verimini gözle görülür şekilde artırır. Bu sayfada hepsini adım adım topladık.</p>
+    <div class="btn-row" style="margin-top:1.25rem">
+      <a class="btn btn--primary" href="/randevu/">Randevu Talep Et</a>
+      <a class="btn btn--wa" data-wa="Merhaba, randevu hazırlığı sayfanızı okudum. Randevu almak ve kullandığım ilaçları bildirmek istiyorum." data-wa-src="randevunuza-hazirlanin" href="#">WhatsApp'tan yazın</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GÖVDE ═══ -->
+<section class="section" style="padding-top:0">
+  <div class="wrap article-layout">
+
+    <!-- İÇİNDEKİLER -->
+    <nav class="toc" aria-label="İçindekiler">
+      <h2>İçindekiler</h2>
+      <ol>
+        <li><a href="#bir-bakista">Bir bakışta</a></li>
+        <li><a href="#yaninizda-getirin">Yanınızda getirin</a></li>
+        <li><a href="#ilac-kesme">İlaç kesme kuralları</a></li>
+        <li><a href="#sorular">Doktora sorabileceğiniz sorular</a></li>
+        <li><a href="#randevu-gunu">Randevu günü akışı</a></li>
+        <li><a href="#giyim">Test günü giyim önerisi</a></li>
+        <li><a href="#cocuk-hasta">Çocuk hastalar hakkında</a></li>
+        <li><a href="#sss">Sık sorulan sorular</a></li>
+      </ol>
+    </nav>
+
+    <!-- YAZI -->
+    <div class="prose">
+
+      <!-- BİR BAKIŞTA -->
+      <div class="at-glance" id="bir-bakista">
+        <h3>
+          <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M10 3C5.5 3 2 10 2 10s3.5 7 8 7 8-7 8-7-3.5-7-8-7zm0 11a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4z"/></svg>
+          Bir bakışta
+        </h3>
+        <ul>
+          <li><b>Getirin:</b> Önceki test/tahlil sonuçları, ilaç listeniz (veya kutuları), varsa sevk/rapor, kimlik.</li>
+          <li><b>En kritik kural:</b> Deri testi planlanıyorsa antihistaminikler <b>yaklaşık 10 gün önce</b> kesilir — ama hiçbir ilacı kendi başınıza kesmeyin, randevu alırken bildirin.</li>
+          <li><b>Süre:</b> İlk muayene 20–30 dakika; aynı gün test yapılırsa toplam <b>yaklaşık 1 saat</b> ayırın.</li>
+          <li><b>Giyim:</b> Test ön kolun iç yüzüne yapılır; kolu kolayca sıvanabilen bir giysi tercih edin.</li>
+          <li><b>Not:</b> Muayenehanede yetişkin hastalar kabul edilmektedir.</li>
+        </ul>
+      </div>
+
+      <!-- KÜNYE -->
+      <div class="byline">
+        <span>Yazan / İnceleyen: <b>Uzm. Dr. Ramazan Ersoy</b></span>
+        <span>Yayın: 19 Temmuz 2026</span>
+        <span>Son güncelleme: 19 Temmuz 2026</span>
+        <span class="xs">Bu sayfadaki ilaç kesme süreleri genel kurallardır; kişiye özel liste randevu alınırken belirlenir.</span>
+      </div>
+
+      <h2 id="yaninizda-getirin">Yanınızda getirin</h2>
+      <p>Aşağıdaki dört kalem, ilk muayenede zaman kaybını önler ve gereksiz test tekrarının önüne geçer. Hepsini bulamıyorsanız sorun değil — elinizde olanları getirmeniz bile büyük katkı sağlar.</p>
+
+      <div class="grid-2" style="margin:1.25rem 0">
+        <article class="card">
+          <span class="badge">1 · En değerlisi</span>
+          <h3 style="margin-top:.75rem">Önceki test ve tahlil sonuçları</h3>
+          <ul class="sm" style="margin:0;padding-left:1.2rem">
+            <li>Daha önce yaptırdığınız <b>alerji deri testi</b> veya <b>kan testi (IgE)</b> sonuçları</li>
+            <li>Solunum fonksiyon testi raporları</li>
+            <li>Akciğer filmi, sinüs tomografisi gibi görüntüleme sonuçları (varsa)</li>
+            <li>e-Nabız üzerinden erişebildiğiniz eski tetkikler de işimizi görür</li>
+          </ul>
+          <p class="xs muted" style="margin-top:.75rem">Eski sonuçlar "geçersiz" değildir; şikayetinizin yıllar içindeki seyrini gösterdiği için çok değerlidir.</p>
+        </article>
+        <article class="card">
+          <span class="badge">2 · İkinci en değerlisi</span>
+          <h3 style="margin-top:.75rem">Kullandığınız ilaçların listesi</h3>
+          <ul class="sm" style="margin:0;padding-left:1.2rem">
+            <li>Düzenli kullandığınız <b>tüm</b> ilaçlar — alerjiyle ilgili olmayanlar dahil</li>
+            <li>En pratiği: ilaç <b>kutularını</b> bir poşete koyup getirmek</li>
+            <li>Vitamin, bitkisel ürün ve takviyeleri de listeye ekleyin</li>
+            <li>Ara sıra kullandığınız ağrı kesici ve soğuk algınlığı ilaçlarını unutmayın</li>
+          </ul>
+          <p class="xs muted" style="margin-top:.75rem">İlaç listesi hem deri testinin planlanması hem de olası ilaç etkileşimleri için gereklidir.</p>
+        </article>
+        <article class="card">
+          <span class="badge">3</span>
+          <h3 style="margin-top:.75rem">Sevk, rapor ve reçeteler</h3>
+          <ul class="sm" style="margin:0;padding-left:1.2rem">
+            <li>Başka bir hekimden sevk veya yönlendirme yazısı (varsa)</li>
+            <li>Kronik hastalık raporları</li>
+            <li>Daha önce yazılmış reçeteler veya reçete geçmişi</li>
+            <li>Hastane yatışı olduysa çıkış özeti (epikriz)</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="badge">4</span>
+          <h3 style="margin-top:.75rem">Kimlik ve küçük bir not</h3>
+          <ul class="sm" style="margin:0;padding-left:1.2rem">
+            <li>Kimliğiniz (T.C. kimlik kartı veya pasaport)</li>
+            <li>Şikayetlerinizin <b>hangi ay, hangi ortam ve hangi saatte</b> arttığını yazdığınız kısa bir not</li>
+            <li>Varsa, reaksiyon anında çekilmiş <b>fotoğraflar</b> (döküntü, şişlik) — muayene sırasında görünmeyen bulguları belgelemenin pratik bir yolu</li>
+          </ul>
+          <p class="xs muted" style="margin-top:.75rem">"Yazlıkta hiç şikayetim olmuyor" gibi tek bir cümle bile tetikleyiciyi işaret edebilir.</p>
+        </article>
+      </div>
+
+      <h2 id="ilac-kesme">İlaç kesme kuralları</h2>
+      <p>Bu bölüm, sayfanın en önemli kısmıdır. Deri prick testinin doğru sonuç verebilmesi için bazı ilaçların testten önce belirli bir süre kesilmiş olması gerekir. Aksi halde test <em>yanlış negatif</em> çıkar; yani alerjiniz olduğu hâlde test "temiz" görünür ve tanı gecikir.</p>
+
+      <div class="caution">
+        <b>Ana kural:</b> Deri testi planlanıyorsa <b>antihistaminik grubu ilaçlar yaklaşık 10 gün önce</b> kesilmelidir. Bu süre ilacın türüne göre değişebilir; kesin süre, randevunuz alınırken kullandığınız ilaca göre size bildirilir.
+      </div>
+
+      <h3>Hangi ilaç grupları testi etkiler?</h3>
+      <p>Aşağıdaki bilgiler <em>grup düzeyindedir</em>; marka veya etken madde adı vermiyoruz, çünkü karar her hastada ilaca ve duruma göre verilir.</p>
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th>İlaç grubu</th><th>Deri testini etkiler mi?</th><th>Açıklama</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Antihistaminikler</b> (ağızdan alınan alerji ilaçları)</td>
+              <td>Evet — en belirgin etki</td>
+              <td>Testin ölçtüğü deri tepkisini baskılar; genellikle yaklaşık 10 gün önce kesilmesi gerekir.</td>
+            </tr>
+            <tr>
+              <td><b>Bazı soğuk algınlığı ve grip ilaçları</b></td>
+              <td>Evet — içeriğine bağlı</td>
+              <td>Birçoğunun bileşiminde antihistaminik bulunur; "alerji ilacı kullanmıyorum" diyen hastalarda en sık gözden kaçan grup budur.</td>
+            </tr>
+            <tr>
+              <td><b>Bazı mide ilaçları</b></td>
+              <td>Kısmen</td>
+              <td>Bir bölümü histamin üzerinden çalıştığı için test tepkisini hafifletebilir; randevu alınırken bildirilmesi yeterlidir.</td>
+            </tr>
+            <tr>
+              <td><b>Bazı uyku ve ruh sağlığı ilaçları</b></td>
+              <td>Bazıları</td>
+              <td>Bir kısmının antihistaminik etkisi vardır. Bu ilaçlar <b>asla kendi kararınızla kesilmez</b>; planlama hekiminizle ve ilgili uzmanla birlikte yapılır.</td>
+            </tr>
+            <tr>
+              <td><b>Astım spreyleri (nefes ilaçları)</b></td>
+              <td>Hayır</td>
+              <td>Deri testini etkilemez; tedavinize devam edin. (Solunum fonksiyon testi planlanırsa ayrıca bilgilendirilirsiniz.)</td>
+            </tr>
+            <tr>
+              <td><b>Tansiyon ve kalp ilaçları</b></td>
+              <td>Genellikle hayır</td>
+              <td>Deri tepkisini genellikle etkilemez; ancak bazıları test planlamasında önemlidir. Mutlaka bildirin, kesmeyin.</td>
+            </tr>
+            <tr>
+              <td><b>Burun spreyleri</b></td>
+              <td>Genellikle hayır</td>
+              <td>Çoğu deri testini etkilemez; kullandığınızı bildirmeniz yeterlidir.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="caution">
+        <b>En önemli uyarı — lütfen okuyun:</b> Bu tablo genel bilgilendirme içindir. <b>Hiçbir ilacı kendi başınıza kesmeyin.</b> Tansiyon, kalp, astım, şeker veya ruh sağlığı ilacınızı aniden bırakmak, testin yanlış çıkmasından çok daha büyük bir soruna yol açabilir. Doğru yol şudur: <b>randevunuzu alırken kullandığınız tüm ilaçları bildirin</b>; hangilerinin, ne kadar süre önce ve nasıl kesileceği size özel olarak söylenir. İlaç kesilemiyorsa deri testi yerine ilaç kesmeye gerek olmayan <a href="/testler/">kan testi (spesifik IgE)</a> planlanabilir.
+      </div>
+
+      <p class="sm"><a class="link-arrow" href="/testler/deri-prick-testi/">Deri prick testi nasıl yapılır? — testi tanıyın</a></p>
+
+      <h2 id="sorular">Doktora sorabileceğiniz sorular</h2>
+      <p>Muayene sırasında akla gelen sorular kapıdan çıkınca hatırlanır — hepimiz biliriz. Aşağıdaki listeyi yazdırıp ya da telefonunuza kaydedip gelin; size uyanları işaretleyin, kendi sorularınızı ekleyin.</p>
+
+      <div class="card" style="margin:1.25rem 0">
+        <h3 style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+          <span>Soru listesi</span>
+          <button class="btn btn--ghost btn--sm" type="button" onclick="window.print()">Bu sayfayı yazdır</button>
+        </h3>
+        <ol style="margin:1rem 0 0;padding-left:1.4rem;font-size:var(--fs-sm);line-height:1.7">
+          <li>Şikayetlerimin en olası nedeni nedir? Alerji dışında hangi ihtimaller var?</li>
+          <li>Bana hangi test(ler)i öneriyorsunuz ve bu testler tam olarak neyi gösterecek?</li>
+          <li>Test sonuçları ne zaman çıkar, sonuçları birlikte nasıl değerlendireceğiz?</li>
+          <li>Hangi maddelerden veya ortamlardan kaçınmam gerekiyor? Evimde ve iş yerimde ne değiştirmeliyim?</li>
+          <li>Önerdiğiniz tedavi ne kadar sürecek? İlaçları ne zaman ve nasıl bırakacağımı nereden bileceğim?</li>
+          <li>Alerji aşısı (immünoterapi) benim durumum için değerlendirilebilecek bir seçenek mi?</li>
+          <li>Şikayetlerim aniden kötüleşirse ilk olarak ne yapmalıyım? Hangi belirtiler acildir?</li>
+          <li>Spor, seyahat ve beslenme alışkanlıklarımda dikkat etmem gereken bir şey var mı?</li>
+          <li>Kontrol muayenesine ne zaman gelmeliyim ve kontrole gelirken ne getirmeliyim?</li>
+          <li>Bu şikayet uzun vadede nasıl seyredebilir? Takipte nelere bakacağız?</li>
+        </ol>
+      </div>
+
+      <h2 id="randevu-gunu">Randevu günü akışı</h2>
+      <p>Belirsizlik kaygı yaratır; o yüzden randevu gününü baştan sona anlatalım. İlk muayeneye gelirken <strong>yaklaşık 1 saat</strong> ayırmanızı öneririz — muayene daha kısa sürebilir, ancak aynı gün test yapılırsa süre bu civarda olur.</p>
+
+      <ol class="steps" style="margin:1.5rem 0">
+        <li>
+          <span class="step-n">1</span>
+          <h3>Karşılama ve kayıt</h3>
+          <p>Sekreterimiz sizi karşılar; getirdiğiniz belgeler dosyanıza eklenir. <b>~5–10 dakika</b></p>
+        </li>
+        <li>
+          <span class="step-n">2</span>
+          <h3>Muayene ve hikâye</h3>
+          <p>Muayenenin en uzun ve en değerli bölümü: şikayetlerinizin ne zaman, nerede ve nasıl arttığını konuşuruz; ardından muayene yapılır. <b>~20–30 dakika</b></p>
+        </li>
+        <li>
+          <span class="step-n">3</span>
+          <h3>Gerekirse test</h3>
+          <p>Deri testi uygun görülürse aynı gün yapılabilir: uygulama kısa sürer, sonuç <b>yaklaşık 15 dakikada</b> okunur. Bekleme dahil <b>~20–30 dakika</b></p>
+        </li>
+        <li>
+          <span class="step-n">4</span>
+          <h3>Değerlendirme ve plan</h3>
+          <p>Bulgular birlikte değerlendirilir; kaçınma önerileri ve tedavi planı yazılı olarak elinize verilir. <b>~10 dakika</b></p>
+        </li>
+      </ol>
+
+      <p class="sm muted">Deri testinin aynı gün yapılabilmesi, ilaç kesme kurallarına uyulmuş olmasına bağlıdır. Bu yüzden randevu alırken ilaçlarınızı bildirmeniz çok önemlidir — hazır gelirseniz her şey tek seferde biter.</p>
+
+      <h2 id="giyim">Test günü giyim önerisi</h2>
+      <p>Deri prick testi <strong>ön kolun iç yüzüne</strong> uygulanır. Küçük ama gününüzü kolaylaştıracak birkaç öneri:</p>
+      <ul>
+        <li><b>Kolu kolayca sıvanabilen veya açılabilen</b> bir giysi giyin: gömlek, geniş kollu kazak ya da kısa kollu bir üst idealdir.</li>
+        <li>Dar ve uzun kollu giysilerden kaçının; test sonrası bölgenin bir süre açık kalması gerekir.</li>
+        <li>Test günü <b>ön kolunuza krem, losyon veya yağ sürmeyin</b> — test damlalarının deriyle temasını bozabilir.</li>
+        <li>Test sırasında hafif kaşıntı hissedebilirsiniz; bu beklenen bir durumdur ve kısa sürede geçer. Test bölgesini kaşımamanız istenecektir.</li>
+      </ul>
+
+      <h2 id="cocuk-hasta">Çocuk hastalar hakkında</h2>
+      <p>Muayenehanemizde <strong>yetişkin hastalar</strong> kabul edilmektedir. 18 yaş altındaki çocuğunuz için alerji değerlendirmesi gerekiyorsa, <strong>çocuk alerji ve immünoloji uzmanına</strong> başvurmanızı öneririz — çocuklarda test seçimi, doz ve takip yetişkinlerden farklıdır ve bu alanın kendi uzmanlık eğitimi vardır. Randevu alırken yaş bilgisini belirtirseniz sekreterimiz sizi doğru şekilde yönlendirir.</p>
+
+      <!-- ACİL KUTUSU -->
+      <div class="emergency" style="margin:1.75rem 0">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v5h2v-5z"/></svg>
+        <div>
+          <strong>Acil durumlar için</strong>
+          <p>Nefes darlığı, dilde veya boğazda şişme, konuşmakta zorlanma, baygınlık hissi veya yaygın döküntü varsa randevuyu beklemeyin — hemen <a href="tel:112">112</a>'yi arayın.</p>
+        </div>
+      </div>
+
+      <!-- SSS -->
+      <h2 id="sss">Sık sorulan sorular</h2>
+
+      <details class="faq"><summary>İlacımı kesmeyi unuttum, randevuya yine de geleyim mi?</summary>
+        <div class="faq-body"><p>Evet, gelin. Muayene ve hikâye alma bölümü ilaçtan etkilenmez; ilk görüşme her durumda yapılır. Deri testi gerekiyorsa ya ileri bir tarihe planlanır ya da ilaç kesmeye gerek olmayan kan testi (spesifik IgE) tercih edilir. Randevunuzu iptal etmeniz gerekmez; durumu sekreterimize bildirmeniz yeterlidir.</p></div>
+      </details>
+
+      <details class="faq"><summary>Aç mı gelmeliyim? Yemek yiyebilir miyim?</summary>
+        <div class="faq-body"><p>Alerji deri testi ve muayene için aç olmanız gerekmez; normal şekilde yiyip içebilirsiniz. Aynı gün kan tahlili planlanırsa ve açlık gerektiren bir parametre varsa, bu size randevu alınırken ayrıca söylenir.</p></div>
+      </details>
+
+      <details class="faq"><summary>Test sonrası araba kullanabilir miyim, işe dönebilir miyim?</summary>
+        <div class="faq-body"><p>Evet. Deri prick testi günlük yaşamı kısıtlamaz; test sonrası araç kullanabilir, işinize dönebilirsiniz. Test bölgesinde birkaç saat hafif kızarıklık ve kaşıntı olabilir; bu beklenen bir durumdur.</p></div>
+      </details>
+
+      <details class="faq"><summary>Yanımda refakatçi getirebilir miyim?</summary>
+        <div class="faq-body"><p>Elbette. Özellikle şikayet hikâyesi uzun olan hastalarda, yaşananları birlikte hatırlayan bir yakının muayeneye katılması işimizi kolaylaştırır. Muayene sırasında yalnız görüşmek isterseniz bu tercihiniz de elbette geçerlidir.</p></div>
+      </details>
+
+      <details class="faq"><summary>Randevumu ertelemem gerekirse ne yapmalıyım?</summary>
+        <div class="faq-body"><p>Telefonla (<a href="tel:+902127099396">0212 709 93 96</a>) ya da WhatsApp üzerinden bildirmeniz yeterlidir. Erken haber verirseniz hem size uygun yeni bir saat bulmak kolaylaşır hem de bekleyen başka bir hastaya yer açılmış olur.</p></div>
+      </details>
+
+      <!-- DOKTOR NOTU -->
+      <div class="doctor-note" style="margin-top:2.5rem">
+        <div class="dn-body">
+          <p>“Hazırlıklı gelen hastayla yaptığımız ilk muayene, bambaşka geçer. Eski bir test sonucu, bir poşet ilaç kutusu ve ‘şikayetim şu aylarda artıyor’ diye tutulmuş iki satırlık bir not — bu üçü, bazen en gelişmiş tetkikten daha çok şey anlatır. Siz hazırlığı yapın; gerisini birlikte hallederiz.”</p>
+          <span class="dn-who">Uzm. Dr. Ramazan Ersoy · İç Hastalıkları, Alerji ve Klinik İmmünoloji</span>
+        </div>
+      </div>
+
+      <p class="xs muted" style="margin-top:1.5rem">Bu sayfadaki bilgiler genel bilgilendirme amaçlıdır; hekim muayenesinin, tanı ve tedavinin yerine geçmez. İlaç kesme kararları yalnızca hekim bilgisi dahilinde verilir. Kişisel durumunuz için hekiminize başvurunuz.</p>
+
+    </div><!-- /.prose -->
+  </div><!-- /.article-layout -->
+</section>
+
+<!-- ═══ İLGİLİ SAYFALAR ═══ -->
+<section class="section section--mint">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Devamı</p>
+      <h2>Randevu öncesi işinize yarayabilecek sayfalar</h2>
+    </div>
+    <div class="grid-3 reveal">
+      <a class="tool-card" href="/testler/deri-prick-testi/">
+        <svg class="t-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 20h20M9 20v-5M15 20v-9M21 20v-6"/><circle cx="26" cy="9" r="3"/></svg>
+        <h3>Deri Prick Testi</h3>
+        <p>20–30 dakika, kanatmaz, sonucu 15 dakikada okunur. Test gününü ayrıntısıyla anlattık.</p>
+      </a>
+      <a class="tool-card" href="/araclar/alerji-mi-soguk-alginligi-mi/">
+        <svg class="t-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="12"/><path d="M12 13a4 4 0 116 3.5V19"/><path d="M16 23v.5"/></svg>
+        <h3>Alerji mi, soğuk algınlığı mı?</h3>
+        <p>Randevudan önce 6 soruluk kısa değerlendirmeyle fikir edinin.</p>
+      </a>
+      <a class="tool-card" href="/iletisim/">
+        <svg class="t-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M16 28s10-9 10-16A10 10 0 106 12c0 7 10 16 10 16z"/><circle cx="16" cy="12" r="3.5"/></svg>
+        <h3>Ulaşım ve yol tarifi</h3>
+        <p>Nişantaşı'ndaki muayenehanemize nasıl gelirsiniz? Metro ve otopark bilgisi.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KAPANIŞ CTA ═══ -->
+<section class="section section--cream">
+  <div class="wrap wrap-narrow center" style="padding-inline:0">
+    <p class="eyebrow">Randevu</p>
+    <h2>Hazırlığınız tamam, sıra randevuda</h2>
+    <p>Kullandığınız ilaçları randevu alırken bildirmeyi unutmayın; deri testi gerekiyorsa kesilmesi gerekenler size özel olarak söylenir. Formu doldurun ya da doğrudan yazın; <strong>aynı gün içinde</strong> sizi arayalım.</p>
+    <div class="btn-row" style="justify-content:center;margin-top:1.5rem">
+      <a class="btn btn--primary" href="/randevu/">Randevu Talep Et</a>
+      <a class="btn btn--wa" data-wa="Merhaba, randevu almak istiyorum. Hazırlık sayfanızı okudum; kullandığım ilaçları da bildirmek isterim." data-wa-src="randevunuza-hazirlanin-kapanis" href="#">WhatsApp'tan yazın</a>
+      <a class="btn btn--ghost" href="tel:+902127099396">0212 709 93 96</a>
+    </div>
+    <p class="sm muted" style="margin-top:1.25rem">Harbiye Mah. Teşvikiye Cad. 37/3 · Şişli / İstanbul (Nişantaşı)</p>
+  </div>
+</section>
+
+</main>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
+    {"@type":"ListItem","position":2,"name":"Hasta Merkezi","item":"https://drramazanersoy.tr/hasta-merkezi/"},
+    {"@type":"ListItem","position":3,"name":"Randevunuza Hazırlanın","item":"https://drramazanersoy.tr/hasta-merkezi/randevunuza-hazirlanin.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"MedicalWebPage",
+  "name":"Randevunuza Hazırlanın — alerji muayenesi öncesi hazırlık rehberi",
+  "url":"https://drramazanersoy.tr/hasta-merkezi/randevunuza-hazirlanin.html",
+  "inLanguage":"tr",
+  "datePublished":"2026-07-19",
+  "dateModified":"2026-07-19",
+  "audience":{"@type":"MedicalAudience","audienceType":"Patient"},
+  "reviewedBy":{
+    "@type":"Physician",
+    "name":"Uzm. Dr. Ramazan Ersoy",
+    "medicalSpecialty":"Allergy",
+    "url":"https://drramazanersoy.tr/dr-ramazan-ersoy.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Alerji muayenesine gelirken yanımda ne getirmeliyim?","acceptedAnswer":{"@type":"Answer","text":"Daha önce yaptırdığınız test ve tahlil sonuçlarını, kullandığınız ilaçların listesini veya kutularını, varsa sevk ya da rapor belgelerinizi ve kimliğinizi getirin. Şikayetlerinizin hangi ay, ortam ve saatte arttığını kısaca not etmeniz de muayeneyi çok kolaylaştırır."}},
+    {"@type":"Question","name":"Deri testi öncesi hangi ilaçlar kesilmeli?","acceptedAnswer":{"@type":"Answer","text":"Deri testi planlanıyorsa antihistaminik grubu ilaçların genellikle yaklaşık 10 gün önce kesilmesi gerekir. Bileşiminde antihistaminik bulunan bazı soğuk algınlığı ilaçları ve bazı mide ilaçları da testi etkileyebilir. Astım spreyleri ve tansiyon ilaçları testi genellikle etkilemez. Ancak hiçbir ilacı kendi başınıza kesmeyin; randevu alırken kullandığınız tüm ilaçları bildirin, kesilmesi gerekenler size özel olarak belirtilir."}},
+    {"@type":"Question","name":"İlk muayene ve testler ne kadar sürer?","acceptedAnswer":{"@type":"Answer","text":"İlk muayene, ayrıntılı hikâye alınması nedeniyle yaklaşık 20-30 dakika sürer. Aynı gün deri testi yapılırsa uygulama ve sonucun okunmasıyla birlikte toplam süre yaklaşık 1 saati bulur."}},
+    {"@type":"Question","name":"Test günü nasıl giyinmeliyim?","acceptedAnswer":{"@type":"Answer","text":"Deri testi ön kolun iç yüzüne uygulanır. Kolu kolayca sıvanabilen veya açılabilen bir giysi tercih edin; dar ve uzun kollu giysilerden kaçının. Test günü ön kolunuza krem veya losyon sürmeyin."}},
+    {"@type":"Question","name":"Çocuğumu muayeneye getirebilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Muayenehanede yetişkin hastalar kabul edilmektedir. 18 yaş altı hastalar için çocuk alerji ve immünoloji uzmanına başvurulması önerilir."}}
+  ]
+}
+</script>
+<?php get_footer(); ?>

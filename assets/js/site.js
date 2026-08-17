@@ -323,7 +323,7 @@
       var pr = location.pathname.split('/');
       var kok = ALT.indexOf(pr[pr.length - 2] || '') !== -1 ? '../' : '';
 
-      fetch(kok + 'randevu-kaydet.php', {
+      fetch('/randevu-kaydet.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(veri)

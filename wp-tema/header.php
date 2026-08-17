@@ -33,7 +33,7 @@ $k = DRRE_KOK;
     </div>
     <div class="tb-group">
       <a href="tel:+902127099396">0212 709 93 96</a>
-      <a href="<?php echo esc_url($k . 'en/index.html'); ?>" hreflang="en">EN</a>
+      <a href="<?php echo esc_url($k . 'en/'); ?>" hreflang="en">EN</a>
     </div>
   </div>
 </div>
@@ -55,33 +55,33 @@ $k = DRRE_KOK;
       <div class="has-drop" data-open="false">
         <button aria-expanded="false">Şikayetler</button>
         <div class="drop">
-          <a href="<?php echo esc_url($k); ?>hastaliklar/alerjik-rinit.html">Alerjik Rinit <small>Burun akıntısı, tıkanıklık, hapşırık</small></a>
-          <a href="<?php echo esc_url($k); ?>hastaliklar/astim.html">Yetişkinlerde Astım <small>Öksürük, hırıltı, nefes darlığı</small></a>
-          <a href="<?php echo esc_url($k); ?>hastaliklar/urtiker.html">Ürtiker (Kurdeşen) <small>Kaşıntılı kabarıklıklar</small></a>
-          <a href="<?php echo esc_url($k); ?>hastaliklar/besin-alerjisi.html">Besin Alerjisi <small>Yiyeceklere karşı reaksiyon</small></a>
-          <a href="<?php echo esc_url($k); ?>hastaliklar/ilac-alerjisi.html">İlaç Alerjisi <small>İlaç reaksiyonları</small></a>
-          <a href="<?php echo esc_url($k); ?>hastaliklar/ari-alerjisi.html">Arı Alerjisi <small>Arı sokması reaksiyonları</small></a>
-          <a href="<?php echo esc_url($k); ?>hastaliklar/herediter-anjiyoodem.html">Herediter Anjiyoödem <small>Tekrarlayan kaşıntısız şişlik</small></a>
-          <a href="<?php echo esc_url($k); ?>hastaliklar/mastositoz.html">Mastositoz <small>Ani kızarma, ciltte lekeler</small></a>
+          <a href="<?php echo esc_url($k); ?>hastaliklar/alerjik-rinit/">Alerjik Rinit <small>Burun akıntısı, tıkanıklık, hapşırık</small></a>
+          <a href="<?php echo esc_url($k); ?>hastaliklar/astim/">Yetişkinlerde Astım <small>Öksürük, hırıltı, nefes darlığı</small></a>
+          <a href="<?php echo esc_url($k); ?>hastaliklar/urtiker/">Ürtiker (Kurdeşen) <small>Kaşıntılı kabarıklıklar</small></a>
+          <a href="<?php echo esc_url($k); ?>hastaliklar/besin-alerjisi/">Besin Alerjisi <small>Yiyeceklere karşı reaksiyon</small></a>
+          <a href="<?php echo esc_url($k); ?>hastaliklar/ilac-alerjisi/">İlaç Alerjisi <small>İlaç reaksiyonları</small></a>
+          <a href="<?php echo esc_url($k); ?>hastaliklar/ari-alerjisi/">Arı Alerjisi <small>Arı sokması reaksiyonları</small></a>
+          <a href="<?php echo esc_url($k); ?>hastaliklar/herediter-anjiyoodem/">Herediter Anjiyoödem <small>Tekrarlayan kaşıntısız şişlik</small></a>
+          <a href="<?php echo esc_url($k); ?>hastaliklar/mastositoz/">Mastositoz <small>Ani kızarma, ciltte lekeler</small></a>
         </div>
       </div>
       <div class="has-drop" data-open="false">
         <button aria-expanded="false">Testler</button>
         <div class="drop">
-          <a href="<?php echo esc_url($k); ?>testler/deri-prick-testi.html">Deri Prick Testi <small>20-30 dk · kanatmaz · 15 dk'da sonuç</small></a>
-          <a href="<?php echo esc_url($k); ?>testler/yama-testi.html">Yama Testi <small>Temas alerjisi · 48-72 saat</small></a>
-          <a href="<?php echo esc_url($k); ?>testler/spesifik-ige-kan-testi.html">Kan Testi (Spesifik IgE) <small>İlaç kesmeden · moleküler tanı</small></a>
-          <a href="<?php echo esc_url($k); ?>testler/solunum-fonksiyon-testi.html">Solunum Fonksiyon Testi <small>Astım tanısı · 10-15 dk</small></a>
-          <a href="<?php echo esc_url($k); ?>testler/provokasyon-testleri.html">Provokasyon Testleri <small>Kontrollü doğrulama</small></a>
-          <a href="<?php echo esc_url($k); ?>testler/index.html">Tüm testler <small>Yama, IgE, solunum fonksiyon testi</small></a>
+          <a href="<?php echo esc_url($k); ?>testler/deri-prick-testi/">Deri Prick Testi <small>20-30 dk · kanatmaz · 15 dk'da sonuç</small></a>
+          <a href="<?php echo esc_url($k); ?>testler/yama-testi/">Yama Testi <small>Temas alerjisi · 48-72 saat</small></a>
+          <a href="<?php echo esc_url($k); ?>testler/spesifik-ige-kan-testi/">Kan Testi (Spesifik IgE) <small>İlaç kesmeden · moleküler tanı</small></a>
+          <a href="<?php echo esc_url($k); ?>testler/solunum-fonksiyon-testi/">Solunum Fonksiyon Testi <small>Astım tanısı · 10-15 dk</small></a>
+          <a href="<?php echo esc_url($k); ?>testler/provokasyon-testleri/">Provokasyon Testleri <small>Kontrollü doğrulama</small></a>
+          <a href="<?php echo esc_url($k); ?>testler/">Tüm testler <small>Yama, IgE, solunum fonksiyon testi</small></a>
         </div>
       </div>
-      <a href="<?php echo esc_url($k); ?>tedaviler/alerji-asisi-immunoterapi.html">Alerji Aşısı</a>
-      <a href="<?php echo esc_url($k); ?>dr-ramazan-ersoy.html">Doktor</a>
-      <a href="<?php echo esc_url($k); ?>alerji-rehberi/index.html">Alerji Rehberi</a>
-      <a href="<?php echo esc_url($k); ?>araclar/polen-takvimi.html">Polen Takvimi</a>
-      <a href="<?php echo esc_url($k); ?>iletisim.html">İletişim</a>
-      <span class="nav-cta"><a class="btn btn--primary btn--sm" href="<?php echo esc_url($k); ?>randevu.html">Randevu Talep Et</a></span>
+      <a href="<?php echo esc_url($k); ?>tedaviler/alerji-asisi-immunoterapi/">Alerji Aşısı</a>
+      <a href="<?php echo esc_url($k); ?>dr-ramazan-ersoy/">Doktor</a>
+      <a href="<?php echo esc_url($k); ?>alerji-rehberi/">Alerji Rehberi</a>
+      <a href="<?php echo esc_url($k); ?>araclar/polen-takvimi/">Polen Takvimi</a>
+      <a href="<?php echo esc_url($k); ?>iletisim/">İletişim</a>
+      <span class="nav-cta"><a class="btn btn--primary btn--sm" href="<?php echo esc_url($k); ?>randevu/">Randevu Talep Et</a></span>
     </nav>
   </div>
 </header>

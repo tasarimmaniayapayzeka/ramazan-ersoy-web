@@ -7,15 +7,14 @@
 # ============================================================
 
 # ---------- Varsayılan dosya ----------
-# SIRA ÖNEMLİ: index.html ÖNCE gelir — kök dizin statik siteyi servis etmeye
-# devam etsin. index.php sonradan eklendi çünkü /wp-yeni/ altındaki WordPress
-# kurulumunun açılış dosyası index.php; yalnız index.html tanımlıyken Apache
-# o dizinde açılış dosyası bulamıyor ve 404 dönüyordu (kurulum başarılıydı,
-# sorun tamamen bu satırdaydı).
+# TAM DEVİR (17 Ağu 2026): kök index.html kaldırıldı, / artık WP'nin
+# front-page.php şablonundan döner. index.html hâlâ önde duruyor çünkü
+# en/ dizini statik kaldı ve kendi index.html'ini servis etmeye devam
+# ediyor.
 DirectoryIndex index.html index.php
 
-# ---------- 404 sayfası ----------
-ErrorDocument 404 /404.html
+# 404: statik 404.html kaldırıldı; diskte olmayan her adres zaten WP
+# geri-düşüşüne gider ve temanın 404.php şablonuyla döner.
 
 # ---------- Yönlendirmeler ----------
 <IfModule mod_rewrite.c>
@@ -45,6 +44,21 @@ ErrorDocument 404 /404.html
   RewriteRule ^testler/(deri-prick-testi|spesifik-ige-kan-testi|solunum-fonksiyon-testi|yama-testi|provokasyon-testleri)\.html$ /testler/$1/ [R=301,L]
   RewriteRule ^tedaviler/(alerji-asisi-immunoterapi|alerji-asisi-sss)\.html$ /tedaviler/$1/ [R=301,L]
   RewriteRule ^alerji-rehberi/(ev-tozu-akari-yatak-odasi|evcil-hayvan-alerjisi|gebelikte-alerji-ve-astim|klima-ve-ic-ortam-alerjenleri|yetiskinlikte-baslayan-astim)\.html$ /alerji-rehberi/$1/ [R=301,L]
+
+  # 4b) TAM DEVİR (17 Ağu 2026): kalan statik sayfalar da WP'ye taşındı.
+  #     en/ İSTİSNA — İngilizce iskelet statik kaldı, adresleri değişmedi.
+  RewriteRule ^index\.html$ / [R=301,L]
+  RewriteRule ^(basinda|cerez-politikasi|dr-ramazan-ersoy|iletisim|randevu|kvkk-aydinlatma|yasal-uyari|yayinlar-ve-oduller)\.html$ /$1/ [R=301,L]
+  RewriteRule ^fiyatlar/alerji-testi-fiyatlari-2026\.html$ /alerji-testi-fiyatlari-2026/ [R=301,L]
+  RewriteRule ^fiyatlar/?$ /alerji-testi-fiyatlari-2026/ [R=301,L]
+  RewriteRule ^araclar/(alerji-mi-soguk-alginligi-mi|astim-kontrol-testi|polen-takvimi|video-kutuphanesi)\.html$ /araclar/$1/ [R=301,L]
+  RewriteRule ^hasta-merkezi/(ikinci-gorus|online-on-degerlendirme|randevunuza-hazirlanin)\.html$ /hasta-merkezi/$1/ [R=301,L]
+  RewriteRule ^testler/index\.html$ /testler/ [R=301,L]
+  RewriteRule ^alerji-rehberi/index\.html$ /alerji-rehberi/ [R=301,L]
+
+  # 4c) Yönetim kısayolu: kökten /wp-admin yazan doğrudan panele gitsin
+  RewriteRule ^wp-admin(/.*)?$ /wp-yeni/wp-admin$1 [R=301,L]
+  RewriteRule ^wp-login\.php$ /wp-yeni/wp-login.php [R=301,L]
 
   # 5) ARŞİV KÖKLERİ WP'YE — geri-düşüşten ÖNCE gelmeli.
   #    hastaliklar/ ve tedaviler/ diskte GERÇEK klasör (yedek .html'ler
@@ -83,7 +97,9 @@ ErrorDocument 404 /404.html
   # olarak yükseltilecek: 86400 → 2592000 (1 ay) → 31536000 (1 yıl).
   # Geri alma: bu satırı yorum yapmak yetmez, süre dolana kadar beklenir
   # (test makinesinde: chrome://net-internals/#hsts ile temizlenir).
-  Header always set Strict-Transport-Security "max-age=86400"
+  # 17 Ağu 2026: 3 hafta sorunsuz — 1 güne yükseltilmişti, şimdi 1 AY.
+  # Sonraki basamak (eylül ortası, yine sorunsuzsa): 31536000 (1 yıl).
+  Header always set Strict-Transport-Security "max-age=2592000"
 </IfModule>
 ServerSignature Off
 

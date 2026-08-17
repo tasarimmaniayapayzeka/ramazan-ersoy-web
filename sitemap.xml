@@ -2,214 +2,234 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://drramazanersoy.tr/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://drramazanersoy.tr/en/"/>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://drramazanersoy.tr/hasta-merkezi/randevunuza-hazirlanin.html</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://drramazanersoy.tr/randevu.html</loc>
-    <lastmod>2026-08-16</lastmod>
+    <loc>https://drramazanersoy.tr/randevu/</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://drramazanersoy.tr/tedaviler/alerji-asisi-immunoterapi/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://drramazanersoy.tr/hastaliklar/alerjik-rinit/</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://drramazanersoy.tr/hastaliklar/anafilaksi/</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://drramazanersoy.tr/hastaliklar/ari-alerjisi/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://drramazanersoy.tr/hastaliklar/astim/</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://drramazanersoy.tr/hastaliklar/besin-alerjisi/</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://drramazanersoy.tr/hastaliklar/herediter-anjiyoodem/</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://drramazanersoy.tr/hastaliklar/ilac-alerjisi/</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://drramazanersoy.tr/hastaliklar/mastositoz/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://drramazanersoy.tr/hastaliklar/urtiker/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://drramazanersoy.tr/tedaviler/alerji-asisi-sss/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <loc>https://drramazanersoy.tr/hastaliklar/besin-alerjisi/</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drramazanersoy.tr/hastaliklar/ilac-alerjisi/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drramazanersoy.tr/hastaliklar/ari-alerjisi/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drramazanersoy.tr/hastaliklar/herediter-anjiyoodem/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drramazanersoy.tr/hastaliklar/mastositoz/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drramazanersoy.tr/hastaliklar/anafilaksi/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drramazanersoy.tr/hastaliklar/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://drramazanersoy.tr/testler/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://drramazanersoy.tr/testler/deri-prick-testi/</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://drramazanersoy.tr/testler/provokasyon-testleri/</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://drramazanersoy.tr/testler/solunum-fonksiyon-testi/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://drramazanersoy.tr/testler/spesifik-ige-kan-testi/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drramazanersoy.tr/testler/solunum-fonksiyon-testi/</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://drramazanersoy.tr/testler/yama-testi/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drramazanersoy.tr/testler/provokasyon-testleri/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drramazanersoy.tr/tedaviler/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drramazanersoy.tr/tedaviler/alerji-asisi-sss/</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://drramazanersoy.tr/alerji-rehberi/</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://drramazanersoy.tr/alerji-rehberi/ev-tozu-akari-yatak-odasi/</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://drramazanersoy.tr/alerji-rehberi/evcil-hayvan-alerjisi/</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://drramazanersoy.tr/alerji-rehberi/gebelikte-alerji-ve-astim/</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://drramazanersoy.tr/alerji-rehberi/klima-ve-ic-ortam-alerjenleri/</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://drramazanersoy.tr/alerji-rehberi/yetiskinlikte-baslayan-astim/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drramazanersoy.tr/dr-ramazan-ersoy/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drramazanersoy.tr/yayinlar-ve-oduller/</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://drramazanersoy.tr/araclar/alerji-mi-soguk-alginligi-mi.html</loc>
-    <lastmod>2026-08-16</lastmod>
+    <loc>https://drramazanersoy.tr/basinda/</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://drramazanersoy.tr/araclar/astim-kontrol-testi.html</loc>
-    <lastmod>2026-08-16</lastmod>
+    <loc>https://drramazanersoy.tr/iletisim/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drramazanersoy.tr/alerji-testi-fiyatlari-2026/</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://drramazanersoy.tr/araclar/polen-takvimi.html</loc>
-    <lastmod>2026-08-16</lastmod>
+    <loc>https://drramazanersoy.tr/araclar/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://drramazanersoy.tr/araclar/alerji-mi-soguk-alginligi-mi/</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://drramazanersoy.tr/araclar/video-kutuphanesi.html</loc>
-    <lastmod>2026-08-16</lastmod>
+    <loc>https://drramazanersoy.tr/araclar/astim-kontrol-testi/</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://drramazanersoy.tr/basinda.html</loc>
-    <lastmod>2026-08-16</lastmod>
+    <loc>https://drramazanersoy.tr/araclar/polen-takvimi/</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://drramazanersoy.tr/dr-ramazan-ersoy.html</loc>
-    <lastmod>2026-08-16</lastmod>
+    <loc>https://drramazanersoy.tr/araclar/video-kutuphanesi/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://drramazanersoy.tr/hasta-merkezi/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://drramazanersoy.tr/hasta-merkezi/ikinci-gorus/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://drramazanersoy.tr/hasta-merkezi/online-on-degerlendirme/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://drramazanersoy.tr/hasta-merkezi/randevunuza-hazirlanin/</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://drramazanersoy.tr/en/</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <xhtml:link rel="alternate" hreflang="tr" href="https://drramazanersoy.tr/"/>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://drramazanersoy.tr/en/international-patients.html</loc>
-    <lastmod>2026-08-15</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://drramazanersoy.tr/fiyatlar/alerji-testi-fiyatlari-2026.html</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://drramazanersoy.tr/hasta-merkezi/ikinci-gorus.html</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://drramazanersoy.tr/hasta-merkezi/online-on-degerlendirme.html</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://drramazanersoy.tr/iletisim.html</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://drramazanersoy.tr/yayinlar-ve-oduller.html</loc>
-    <lastmod>2026-08-16</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://drramazanersoy.tr/cerez-politikasi.html</loc>
-    <lastmod>2026-08-16</lastmod>
+    <loc>https://drramazanersoy.tr/kvkk-aydinlatma/</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://drramazanersoy.tr/kvkk-aydinlatma.html</loc>
-    <lastmod>2026-08-16</lastmod>
+    <loc>https://drramazanersoy.tr/cerez-politikasi/</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://drramazanersoy.tr/yasal-uyari.html</loc>
-    <lastmod>2026-08-16</lastmod>
+    <loc>https://drramazanersoy.tr/yasal-uyari/</loc>
+    <lastmod>2026-08-17</lastmod>
     <priority>0.3</priority>
   </url>
 </urlset>

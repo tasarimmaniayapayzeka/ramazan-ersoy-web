@@ -1,0 +1,431 @@
+<?php
+/**
+ * Template Name: Randevu Talebi — Alerji Uzmanı İstanbul
+ * Statik siteden otomatik devşirildi (tam-devir.js, 17 Ağu 2026).
+ * Kaynak içerik hekim onaylı; düzenleme GEREKİYORSA bu dosyada yapılır,
+ * WP editöründe değil (sayfa gövdesi bilinçli olarak boş).
+ */
+if (!defined('ABSPATH')) exit;
+get_header();
+?>
+<main id="icerik">
+
+<div class="wrap">
+  <nav class="crumbs" aria-label="Sayfa yolu">
+    <a href="/">Anasayfa</a> <span aria-hidden="true">/</span>
+    <span aria-current="page">Randevu talebi</span>
+  </nav>
+</div>
+
+<!-- ═══ 1 · BAŞLIK + FORM ═══ -->
+<section class="section section--tight">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="eyebrow">Randevu · İstanbul Nişantaşı</p>
+      <h1>Randevu talebi oluşturun</h1>
+      <p class="hero-lede">Formu doldurmanız yaklaşık bir dakika sürer. Talebiniz bize ulaştıktan sonra sekreterimiz sizi arar, size uygun gün ve saati birlikte belirleriz. Randevunuz bu görüşmeyle kesinleşir.</p>
+
+      <div class="at-glance" style="margin:1.5rem 0">
+        <h3>
+          <svg viewBox="0 0 20 20" width="18" height="18" fill="var(--mint-ink)" aria-hidden="true"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 8V5H9v6h5v-2z"/></svg>
+          Bir bakışta
+        </h3>
+        <ul>
+          <li><b>Üç yol var:</b> form, telefon (0212 709 93 96) ya da WhatsApp. Üçü de aynı randevu defterine düşer.</li>
+          <li><b>Form randevu değil, taleptir.</b> Randevu, sekreterimizin sizi aramasıyla kesinleşir.</li>
+          <li><b>Geri dönüş:</b> mesai içinde genellikle aynı gün; mesai dışı talepler ertesi iş günü.</li>
+          <li><b>Muayenehanede yetişkin hastalar</b> kabul edilmektedir.</li>
+          <li><b>Acil durum randevu konusu değildir</b> — nefes darlığı veya şişme varsa 112.</li>
+        </ul>
+      </div>
+
+      <div class="btn-row" style="margin:1.5rem 0">
+        <a class="btn btn--wa" data-wa="Merhaba, Dr. Ramazan Ersoy için randevu talebi oluşturmak istiyorum." data-wa-src="randevu" href="#">WhatsApp'tan yazın</a>
+        <a class="btn btn--ghost" href="tel:+902127099396">Telefonla arayın</a>
+      </div>
+
+      <div class="emergency">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v5h2v-5z"/></svg>
+        <div>
+          <strong>Acil durumlar için randevu beklemeyin</strong>
+          <p>Nefes darlığı, dilde veya boğazda şişme, yutkunma güçlüğü, baygınlık hissi varsa hemen <a href="tel:112">112</a>'yi arayın ya da en yakın acil servise başvurun. Bu sayfadaki form ve WhatsApp hattı acil durumlar için kullanılamaz.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="form-card">
+        <form data-appointment-form novalidate>
+          <div class="field">
+            <label for="ad">Ad Soyad <span class="req">*</span></label>
+            <input type="text" id="ad" name="ad" autocomplete="name" required>
+            <span class="err">Lütfen adınızı yazın.</span>
+          </div>
+          <div class="field">
+            <label for="tel">Telefon <span class="req">*</span></label>
+            <input type="tel" id="tel" name="tel" autocomplete="tel" placeholder="05XX XXX XX XX" required>
+            <span class="err">Size ulaşabilmemiz için geçerli bir numara gerekiyor.</span>
+          </div>
+          <div class="field">
+            <label for="sikayet">Şikayetiniz</label>
+            <select id="sikayet" name="sikayet">
+              <option value="">Seçiniz (isteğe bağlı)</option>
+              <option>Burun akıntısı / tıkanıklık</option>
+              <option>Öksürük / nefes darlığı</option>
+              <option>Ciltte kaşıntı / kurdeşen</option>
+              <option>Besin alerjisi şüphesi</option>
+              <option>İlaç alerjisi şüphesi</option>
+              <option>Alerji aşısı hakkında bilgi</option>
+              <option>Diğer</option>
+            </select>
+            <span class="hint">Lütfen bu alana tıbbi ayrıntı yazmayınız.</span>
+          </div>
+          <div class="field">
+            <label for="gun">Tercih ettiğiniz gün</label>
+            <select id="gun" name="gun">
+              <option value="">Fark etmez</option>
+              <option>Hafta içi sabah</option>
+              <option>Hafta içi öğleden sonra</option>
+              <option>Cumartesi</option>
+            </select>
+          </div>
+          <div class="consent">
+            <input type="checkbox" id="kvkk" name="kvkk" required>
+            <label for="kvkk" style="font-weight:400">
+              <a href="/kvkk-aydinlatma/">KVKK Aydınlatma Metni</a>'ni okudum; iletişim bilgilerimin randevu amacıyla işlenmesini kabul ediyorum. <span class="req">*</span>
+            </label>
+          </div>
+          <div class="consent">
+            <input type="checkbox" id="ticari" name="ticari">
+            <label for="ticari" style="font-weight:400">Bilgilendirme mesajları almak istiyorum. (İsteğe bağlıdır, randevu için gerekli değildir.)</label>
+          </div>
+          <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">
+            <label>Web sitesi<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <button class="btn btn--primary" type="submit" style="width:100%">Randevu talebi gönder</button>
+          <p class="form-note">Bu form bir randevu <strong>talebidir</strong>; randevunuz, sekreterimizin sizi araması ile kesinleşir.</p>
+        </form>
+        <div class="form-ok" data-appointment-done>
+          <strong>Talebiniz alındı.</strong>
+          <p style="margin:.5rem 0 0">Mesai saatleri içindeyse aynı gün, mesai dışıysa ertesi iş günü sizi arayacağız. Acil bir durumunuz varsa lütfen 112'yi arayın.</p>
+          <p class="xs muted" style="margin:.75rem 0 0" data-kayit-notu></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 2 · ÜÇ İLETİŞİM KANALI ═══ -->
+<section class="section section--mint">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Kanallar</p>
+      <h2>Hangi yoldan ulaşmalısınız?</h2>
+      <p>Üç kanal da aynı yere ulaşır; aralarındaki tek fark hız ve size uygunluktur.</p>
+    </div>
+    <div class="grid-3 reveal">
+      <article class="tool-card">
+        <svg class="t-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 5h5l2 5-3 2a13 13 0 007 7l2-3 5 2v5a2 2 0 01-2 2A22 22 0 017 7a2 2 0 012-2z"/></svg>
+        <h3>Telefon — en hızlısı</h3>
+        <p>Mesai saatlerinde ararsanız çoğu zaman aynı görüşmede gün ve saat belirlenir; ilaç kesme gerekiyorsa hemen orada söylenir.</p>
+        <p class="xs muted"><b>Ne zaman:</b> Pzt–Cum 09:00–18:00, Cmt 09:00–14:00. Acele eden ya da yakın tarihe randevu isteyen hastalar için.</p>
+        <a class="link-arrow sm" href="tel:+902127099396">0212 709 93 96</a>
+      </article>
+      <article class="tool-card">
+        <svg class="t-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M16 4a12 12 0 00-10.3 18.2L4 28l5.9-1.6A12 12 0 1016 4z"/><path d="M12 12.5c0 4 3.5 7.5 7.5 7.5"/></svg>
+        <h3>WhatsApp — yazarak anlatmak için</h3>
+        <p>Şikayetinizi yazmak, elinizdeki eski tetkiklerin varlığını bildirmek ya da uygun saat aralıklarınızı iletmek istiyorsanız pratiktir.</p>
+        <p class="xs muted"><b>Ne zaman:</b> Konuşmaya uygun olmadığınız saatlerde. Mesajlar mesai içinde okunur. Tahlil ve belge iletimi için en uygun yolu sekreterimiz sizinle birlikte belirler.</p>
+        <a class="link-arrow sm" data-wa="Merhaba, randevu için uygun günleri öğrenmek istiyorum." data-wa-src="randevu-kart" href="#">WhatsApp'tan yazın</a>
+      </article>
+      <article class="tool-card">
+        <svg class="t-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="4" width="22" height="24" rx="3"/><path d="M11 11h10M11 16h10M11 21h6"/></svg>
+        <h3>Form — mesai dışı için</h3>
+        <p>Akşam, hafta sonu veya tatilde talebinizi bırakırsınız; sıraya girer, iş günü başında ilk aramalarda size dönülür.</p>
+        <p class="xs muted"><b>Ne zaman:</b> Kapalı saatlerde ya da telefonla uğraşmak istemediğinizde. Talebiniz kaybolmaz, sıraya alınır.</p>
+        <a class="link-arrow sm" href="#icerik">Formu doldurun</a>
+      </article>
+    </div>
+
+    <div class="caution reveal" style="max-width:var(--wrap-narrow);margin-inline:auto;margin-top:1.5rem">
+      <b>Mesai dışı bilgilendirmesi:</b> Mesai saatleri dışında, hafta sonu ya da resmî tatillerde gönderilen randevu talepleri ve WhatsApp mesajları <strong>ertesi iş günü</strong> yanıtlanır. Bu süre içinde şikayetiniz ağırlaşırsa randevu beklemeyin; acil servise başvurun.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3 · RANDEVU NASIL KESİNLEŞİR ═══ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Süreç</p>
+      <h2>Randevu nasıl kesinleşir?</h2>
+      <p>Üç adım. Hiçbirinde sürpriz yok; her aşamada ne olacağını önceden bilirsiniz.</p>
+    </div>
+    <ol class="steps reveal">
+      <li>
+        <span class="step-n">1</span>
+        <h3>Talebinizi iletirsiniz</h3>
+        <p>Formu doldurur, arar ya da WhatsApp'tan yazarsınız. Bu aşamada yalnızca adınız, telefonunuz ve genel şikayet başlığınız gerekir. Tıbbi ayrıntı yazmanıza gerek yoktur.</p>
+      </li>
+      <li>
+        <span class="step-n">2</span>
+        <h3>Sekreterimiz sizi arar</h3>
+        <p>Uygun gün ve saati birlikte belirleriz. Bu görüşmede kullandığınız ilaçları sorarız: deri testi planlanıyorsa antihistaminik grubu ilaçların yaklaşık 10 gün önce kesilmesi gerekebilir, bunu size özel olarak söyleriz.</p>
+      </li>
+      <li>
+        <span class="step-n">3</span>
+        <h3>Randevunuz kesinleşir</h3>
+        <p>Gün, saat ve varsa hazırlık talimatı netleşir. Randevu gününden önce hatırlatma yapılır. Planınız değişirse önceden haber vermeniz, sıra bekleyen başka bir hastaya yer açar.</p>
+      </li>
+    </ol>
+
+    <div class="caution reveal" style="max-width:var(--wrap-narrow);margin-inline:auto;margin-top:1.75rem">
+      <b>Neden doğrudan çevrimiçi takvim yok?</b> Alerji muayenesinde randevu süresi, aynı gün test yapılıp yapılamayacağına göre değişir. Bu da ancak kullandığınız ilaçlar öğrenildikten sonra belli olur. Kısa bir telefon görüşmesi, boşuna gelmenizi ve testin ertelenmesini önler.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4 · ÇALIŞMA SAATLERİ + HAZIRLIK ═══ -->
+<section class="section section--cream">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="eyebrow">Çalışma saatleri</p>
+      <h2>Ne zaman açığız?</h2>
+      <p>Randevular bu saatler içinde planlanır. Cumartesi çalışma saatleri hafta içine göre daha kısadır; hafta sonuna randevu isteyecekseniz mümkün olduğunca erken haber vermeniz uygun olur.</p>
+
+      <div class="tablewrap" style="border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;margin:1.25rem 0;background:#fff">
+        <table style="width:100%;border-collapse:collapse;font-size:var(--fs-sm)">
+          <caption class="xs muted" style="text-align:left;padding:.75rem 1rem;border-bottom:1px solid var(--line)">Muayenehane çalışma saatleri — Nişantaşı, Şişli</caption>
+          <tbody>
+            <tr><td style="padding:.6rem 1rem;border-bottom:1px solid var(--line)">Pazartesi</td><td style="padding:.6rem 1rem;border-bottom:1px solid var(--line);text-align:right"><b>09:00 – 18:00</b></td></tr>
+            <tr><td style="padding:.6rem 1rem;border-bottom:1px solid var(--line)">Salı</td><td style="padding:.6rem 1rem;border-bottom:1px solid var(--line);text-align:right"><b>09:00 – 18:00</b></td></tr>
+            <tr><td style="padding:.6rem 1rem;border-bottom:1px solid var(--line)">Çarşamba</td><td style="padding:.6rem 1rem;border-bottom:1px solid var(--line);text-align:right"><b>09:00 – 18:00</b></td></tr>
+            <tr><td style="padding:.6rem 1rem;border-bottom:1px solid var(--line)">Perşembe</td><td style="padding:.6rem 1rem;border-bottom:1px solid var(--line);text-align:right"><b>09:00 – 18:00</b></td></tr>
+            <tr><td style="padding:.6rem 1rem;border-bottom:1px solid var(--line)">Cuma</td><td style="padding:.6rem 1rem;border-bottom:1px solid var(--line);text-align:right"><b>09:00 – 18:00</b></td></tr>
+            <tr><td style="padding:.6rem 1rem;border-bottom:1px solid var(--line)">Cumartesi</td><td style="padding:.6rem 1rem;border-bottom:1px solid var(--line);text-align:right"><b>09:00 – 14:00</b></td></tr>
+            <tr><td style="padding:.6rem 1rem">Pazar</td><td style="padding:.6rem 1rem;text-align:right;color:var(--muted)">Kapalı</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="sm"><strong>Harbiye Mah. Teşvikiye Cad. 37/3</strong><br>Şişli / İstanbul (Nişantaşı) — Osmanbey metro durağına yürüme mesafesindedir. Çevrede ücretli otopark bulunmaktadır.</p>
+      <p class="xs muted">Resmî tatillerde muayenehane kapalıdır. Tatil öncesi ve sonrası günlerde randevu yoğunluğu artabilir.</p>
+      <div class="btn-row" style="margin-top:1.25rem">
+        <a class="btn btn--primary" href="tel:+902127099396">0212 709 93 96</a>
+        <a class="btn btn--ghost" href="/iletisim/">Yol tarifi ve iletişim</a>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="card">
+        <span class="badge">Randevu öncesi</span>
+        <h3 style="margin-top:.75rem">Randevunuza hazırlanın</h3>
+        <p class="sm">Doğru hazırlık, tek ziyarette daha çok yol almanızı sağlar. Yanınızda getirmeniz iyi olanlar:</p>
+        <ul class="stack" style="padding-left:1.2rem;font-size:var(--fs-sm);gap:.4rem;display:block;margin:1rem 0">
+          <li>Daha önce yaptırdığınız <b>test sonuçları</b> (deri testi, kan testi, solunum fonksiyon testi).</li>
+          <li>Kullandığınız <b>ilaçların listesi</b> — en pratiği kutularını getirmektir.</li>
+          <li>Varsa <b>önceki reçeteler</b> ve epikriz belgeleri.</li>
+          <li>Şikayetlerinizin <b>ne zaman ve nerede arttığına</b> dair kısa notunuz (mevsim, ev, iş yeri, evcil hayvan, temizlik ürünü).</li>
+          <li>Sormak istediğiniz soruların yazılı listesi.</li>
+        </ul>
+        <div class="caution">
+          <b>Deri testi düşünüyorsanız:</b> Antihistaminik grubu ilaçların testten <strong>yaklaşık 10 gün önce</strong> kesilmesi gerekir; aksi halde sonuç yanlış çıkabilir. Astım, tansiyon ve kalp ilaçlarınız için kendi başınıza karar vermeyin — hangilerinin kesileceğini randevu görüşmesinde birlikte belirleriz.
+        </div>
+        <a class="link-arrow sm" href="/hasta-merkezi/randevunuza-hazirlanin/">Ayrıntılı hazırlık listesini görün</a>
+      </div>
+
+      <div class="card" style="margin-top:1.25rem">
+        <span class="badge">Gelmeden önce</span>
+        <h3 style="margin-top:.75rem">Kliniğe gelmeden yapabilecekleriniz</h3>
+        <p class="sm">Süreci planlamak için kullanabileceğiniz iki hizmet:</p>
+        <ul class="stack" style="padding-left:1.2rem;font-size:var(--fs-sm);gap:.4rem;display:block;margin:1rem 0 .75rem">
+          <li><a href="/hasta-merkezi/online-on-degerlendirme/">Online ön değerlendirme</a> — şikayetinizi ve varsa tetkiklerinizi önceden paylaşın.</li>
+          <li><a href="/hasta-merkezi/ikinci-gorus/">Sonucunuzu yükleyin</a> — başka merkezde yapılan testler için ikinci görüş.</li>
+        </ul>
+        <p class="xs muted">Bu hizmetler muayenenin, tanının ve tedavinin yerine geçmez; acil durumlarda kullanılmaz.</p>
+      </div>
+
+      <div class="card" style="margin-top:1.25rem">
+        <span class="badge">Bilgilendirme</span>
+        <h3 style="margin-top:.75rem">Ücret ve ödeme hakkında</h3>
+        <p class="sm">Mevzuat gereği ücret bilgisi web sitesinde yayınlanmamaktadır. Muayene ücreti, özel sağlık sigortası belgelendirmesi ve ödeme seçenekleri hakkında bilgiyi telefonla alabilirsiniz.</p>
+        <p style="margin-bottom:0"><a class="btn btn--ghost btn--sm" href="tel:+902127099396">0212 709 93 96</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 5 · KİMLER İÇİN ═══ -->
+<section class="section section--tight">
+  <div class="wrap wrap-narrow" style="padding-inline:0">
+    <div class="section-head reveal">
+      <p class="eyebrow">Kapsam</p>
+      <h2>Hangi şikayetler için randevu alınır?</h2>
+      <p>Muayenehanede yetişkin hastalar kabul edilmektedir. En sık başvurulan başlıklar:</p>
+    </div>
+    <div class="grid-2 reveal">
+      <article class="card">
+        <h3>Solunum yolu şikayetleri</h3>
+        <p class="sm muted">Sürekli burun akıntısı ve tıkanıklık, hapşırık nöbetleri, geniz akıntısı, geceleri artan öksürük, göğüste hırıltı, efor sonrası nefes darlığı.</p>
+        <p class="sm"><a href="/hastaliklar/alerjik-rinit/">Alerjik rinit</a> · <a href="/hastaliklar/astim/">Astım</a></p>
+      </article>
+      <article class="card">
+        <h3>Cilt şikayetleri</h3>
+        <p class="sm muted">Tekrarlayan kaşıntılı kabarıklıklar, kurdeşen atakları, göz kapağı veya dudakta şişme, uzun süren kaşıntı ve egzama benzeri döküntüler.</p>
+        <p class="sm"><a href="/hastaliklar/urtiker/">Ürtiker</a></p>
+      </article>
+      <article class="card">
+        <h3>Besin, ilaç ve arı</h3>
+        <p class="sm muted">Belirli yiyeceklerden sonra döküntü, şişme veya mide şikayeti; ilaç aldıktan sonra gelişen reaksiyonlar; arı sokmasından sonra yaygın reaksiyon öyküsü.</p>
+        <p class="sm"><a href="/hastaliklar/besin-alerjisi/">Besin alerjisi</a> · <a href="/hastaliklar/ilac-alerjisi/">İlaç alerjisi</a> · <a href="/hastaliklar/ari-alerjisi/">Arı alerjisi</a></p>
+      </article>
+      <article class="card">
+        <h3>Tedavi ve takip</h3>
+        <p class="sm muted">Alerji aşısı (immünoterapi) uygunluk değerlendirmesi, mevcut tedavinin gözden geçirilmesi, başka merkezde yapılmış testler için ikinci görüş, kontrol randevuları.</p>
+        <p class="sm"><a href="/tedaviler/alerji-asisi-immunoterapi/">Alerji aşısı rehberi</a></p>
+      </article>
+    </div>
+    <div class="caution reveal">
+      <b>18 yaş altı:</b> Muayenehanede yetişkin hastalar kabul edilmektedir. Çocuklar için çocuk alerji ve immünoloji uzmanına başvurmanızı öneririz.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6 · SSS ═══ -->
+<section class="section section--mint">
+  <div class="wrap wrap-narrow" style="padding-inline:0">
+    <div class="section-head reveal">
+      <p class="eyebrow">Sık sorulanlar</p>
+      <h2>Randevu hakkında merak edilenler</h2>
+    </div>
+    <div class="reveal">
+      <details class="faq"><summary>Formu doldurunca randevum kesinleşmiş oluyor mu?</summary>
+        <div class="faq-body"><p>Hayır. Form bir randevu <strong>talebidir</strong>. Sekreterimiz sizi arayıp gün ve saat üzerinde anlaştıktan sonra randevunuz kesinleşir. Bu görüşmede kullandığınız ilaçlar ve varsa test öncesi hazırlık da konuşulur. Aramamızı kaçırırsanız endişelenmeyin; farklı bir saatte tekrar denenir.</p></div>
+      </details>
+      <details class="faq"><summary>Ne kadar sürede geri dönüş yapılıyor?</summary>
+        <div class="faq-body"><p>Mesai saatleri içinde (Pzt–Cum 09:00–18:00, Cmt 09:00–14:00) gönderilen talepler genellikle <strong>aynı gün içinde</strong> yanıtlanır. Mesai dışında, hafta sonu ya da resmî tatillerde gönderilen talepler <strong>ertesi iş günü</strong> yanıtlanır. Yoğun dönemlerde geri dönüş süresi uzayabilir.</p></div>
+      </details>
+      <details class="faq"><summary>Telefon mu, WhatsApp mı, form mu tercih etmeliyim?</summary>
+        <div class="faq-body"><p>En hızlı yol telefondur; mesai saatlerinde aradığınızda çoğu zaman aynı görüşmede gün belirlenebilir. Yazarak anlatmayı tercih ediyorsanız veya konuşmaya uygun olmadığınız bir saatteyseniz WhatsApp, mesai dışındaysanız form daha uygundur. Üç kanal da aynı randevu defterine düşer; birinden yazdıysanız diğerinden tekrar yazmanıza gerek yoktur.</p></div>
+      </details>
+      <details class="faq"><summary>Randevuya ne getirmeliyim?</summary>
+        <div class="faq-body"><p>Daha önce yaptırdığınız test sonuçlarını, kullandığınız ilaçların listesini (kutularını getirmeniz en pratiğidir) ve varsa önceki reçetelerinizi getirin. Şikayetlerinizin ne zaman ve hangi ortamlarda arttığını not etmeniz de muayeneyi belirgin şekilde kolaylaştırır. Ayrıntılı liste için <a href="/hasta-merkezi/randevunuza-hazirlanin/">randevunuza hazırlanın</a> sayfasına bakabilirsiniz.</p></div>
+      </details>
+      <details class="faq"><summary>İlk muayenede deri testi de yapılır mı?</summary>
+        <div class="faq-body"><p>Bazen yapılır, bazen yapılamaz. <a href="/testler/deri-prick-testi/">Deri prick testinin</a> güvenilir olması için antihistaminik grubu ilaçların yaklaşık <strong>10 gün önce</strong> kesilmiş olması gerekir. Bu ilaçları kullanmaya devam ediyorsanız test ertelenir. Bu nedenle randevu görüşmesinde kullandığınız tüm ilaçları belirtmeniz, boşuna gelmenizi önler.</p></div>
+      </details>
+      <details class="faq"><summary>Randevumu iptal etmek veya ertelemek istersem ne yapmalıyım?</summary>
+        <div class="faq-body"><p>Randevu saatinden mümkün olduğunca önce <a href="tel:+902127099396">0212 709 93 96</a> numaralı telefondan haber vermeniz yeterlidir. Erken bildirilen iptaller, sıra bekleyen başka bir hastaya yer açtığı için önemlidir. Yeni bir gün için aynı görüşmede planlama yapılabilir.</p></div>
+      </details>
+      <details class="faq"><summary>Çocuğum için randevu alabilir miyim?</summary>
+        <div class="faq-body"><p>Muayenehanede <strong>yetişkin hastalar</strong> kabul edilmektedir. 18 yaş altı hastalar için çocuk alerji ve immünoloji uzmanına başvurmanızı öneririz.</p></div>
+      </details>
+      <details class="faq"><summary>Şehir dışından geliyorum, aynı gün her şey tamamlanır mı?</summary>
+        <div class="faq-body"><p>Çoğu durumda muayene ve gerekiyorsa deri testi aynı ziyarette yapılabilir; deri testinin sonucu yaklaşık 15 dakikada okunur ve aynı muayenede değerlendirilir. Ancak ilaç kesme kuralı nedeniyle testin o gün yapılıp yapılamayacağı ancak randevu görüşmesinde netleşir. Şehir dışından geleceğinizi arama sırasında mutlaka söyleyin; planlamayı buna göre yaparız. Kan testi (spesifik IgE) sonuçları laboratuvara göre birkaç iş günü sürebilir.</p></div>
+      </details>
+      <details class="faq"><summary>Online ön değerlendirme randevunun yerine geçer mi?</summary>
+        <div class="faq-body"><p>Hayır. <a href="/hasta-merkezi/online-on-degerlendirme/">Online ön değerlendirme</a>, süreci planlamak ve elinizdeki belgeleri önceden paylaşmak içindir; muayenenin, tanının ve tedavinin yerine geçmez. Acil durumlarda kullanılmaz.</p></div>
+      </details>
+      <details class="faq"><summary>Bilgilerim ne kadar süreyle saklanıyor?</summary>
+        <div class="faq-body"><p>Form üzerinden ilettiğiniz ad ve telefon bilgisi yalnızca randevu talebinizi karşılamak amacıyla, <a href="/kvkk-aydinlatma/">KVKK Aydınlatma Metni</a>'nde belirtilen süre ve şartlarla işlenir. İkinci onay kutusu (bilgilendirme mesajları) isteğe bağlıdır; işaretlemeseniz de randevu talebiniz işleme alınır. Bu onayı dilediğiniz zaman geri çekebilirsiniz.</p></div>
+      </details>
+      <details class="faq"><summary>Form alanına şikayetimi ayrıntılı yazabilir miyim?</summary>
+        <div class="faq-body"><p>Lütfen forma tıbbi ayrıntı yazmayın. Yalnızca listeden genel başlığı seçmeniz yeterlidir. Sağlık verileri özel nitelikli kişisel veridir; ayrıntıları telefonda ve muayenede güvenli şekilde konuşuruz.</p></div>
+      </details>
+      <details class="faq"><summary>Acil bir durumda ne yapmalıyım?</summary>
+        <div class="faq-body"><p>Nefes darlığı, dilde veya boğazda şişme, yutkunma güçlüğü, ses kısıklığı ya da baygınlık hissi varsa randevu beklemeyin; hemen <a href="tel:112">112</a>'yi arayın veya en yakın acil servise başvurun. Bu belirtiler ağır bir alerjik reaksiyonun (anafilaksi) işareti olabilir ve zaman kaybedilmemelidir.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7 · KÜNYE + DOKTOR NOTU ═══ -->
+<section class="section">
+  <div class="wrap wrap-narrow" style="padding-inline:0">
+    <div class="byline">
+      <span>Yazan / İnceleyen: <b>Uzm. Dr. Ramazan Ersoy</b> — İç Hastalıkları, Alerji ve Klinik İmmünoloji</span>
+      <span>Yayın: <b>19 Temmuz 2026</b></span>
+      <span>Son güncelleme: <b>19 Temmuz 2026</b></span>
+    </div>
+    <p class="xs muted">Bu sayfadaki hazırlık ve test öncesi ilaç bilgileri, EAACI (European Academy of Allergy and Clinical Immunology) ve GINA (Global Initiative for Asthma) rehberlerindeki genel yaklaşımla uyumlu olarak hazırlanmıştır. İçerik yalnızca bilgilendirme amaçlıdır; sizin için geçerli hazırlık talimatı muayene sonrası hekiminiz tarafından belirlenir. <strong>Sonuçlar kişiden kişiye farklılık gösterebilir.</strong></p>
+
+    <div class="doctor-note" style="margin-top:1.75rem">
+      <div class="dn-body">
+        <p>“Randevu almak, çoğu hastanın en zorlandığı adım değildir; asıl zor olan, yıllardır süren bir şikayet için ‘bu kadarı için gidilir mi?' diye düşünmektir. Gidilir. Burnunuz her sabah tıkanıyorsa, geceleri öksürükten uyanıyorsanız ya da nedenini bilmediğiniz kabarıklıklar çıkıyorsa, bunun bir açıklaması vardır ve çoğu zaman bulunabilir. İlk adımı atın; gerisini birlikte planlarız.”</p>
+        <span class="dn-who">Uzm. Dr. Ramazan Ersoy · İç Hastalıkları, Alerji ve Klinik İmmünoloji</span>
+      </div>
+    </div>
+
+    <div class="btn-row center" style="margin-top:1.75rem;justify-content:center">
+      <a class="btn btn--primary" href="#icerik">Randevu formuna dön</a>
+      <a class="btn btn--ghost" href="tel:+902127099396">0212 709 93 96</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
+    {"@type":"ListItem","position":2,"name":"Randevu talebi","item":"https://drramazanersoy.tr/randevu.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"MedicalWebPage",
+  "name":"Randevu talebi oluşturun",
+  "description":"Uzm. Dr. Ramazan Ersoy muayenehanesinden randevu talebi oluşturma yolları, çalışma saatleri ve randevunun kesinleşme süreci.",
+  "url":"https://drramazanersoy.tr/randevu.html",
+  "inLanguage":"tr-TR",
+  "datePublished":"2026-07-19",
+  "dateModified":"2026-07-19",
+  "audience":{"@type":"MedicalAudience","audienceType":"Patient"},
+  "about":{"@type":"MedicalSpecialty","name":"Allergy"},
+  "mainEntityOfPage":{
+    "@type":"Physician",
+    "name":"Uzm. Dr. Ramazan Ersoy",
+    "medicalSpecialty":["Allergy","Pulmonary"],
+    "telephone":"+902127099396",
+    "url":"https://drramazanersoy.tr/",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Harbiye Mah. Teşvikiye Cad. 37/3",
+      "addressLocality":"Şişli",
+      "addressRegion":"İstanbul",
+      "addressCountry":"TR"
+    },
+    "openingHoursSpecification":[
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:00"}
+    ]
+  },
+  "reviewedBy":{"@type":"Physician","name":"Uzm. Dr. Ramazan Ersoy"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Formu doldurunca randevum kesinleşmiş oluyor mu?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Form bir randevu talebidir. Sekreterimiz sizi arayıp gün ve saat üzerinde anlaştıktan sonra randevunuz kesinleşir. Bu görüşmede kullandığınız ilaçlar ve varsa test öncesi hazırlık da konuşulur."}},
+    {"@type":"Question","name":"Ne kadar sürede geri dönüş yapılıyor?","acceptedAnswer":{"@type":"Answer","text":"Mesai saatleri içinde gönderilen talepler genellikle aynı gün içinde yanıtlanır. Mesai dışında, hafta sonu veya resmî tatillerde gönderilen talepler ertesi iş günü yanıtlanır."}},
+    {"@type":"Question","name":"Telefon mu, WhatsApp mı, form mu tercih etmeliyim?","acceptedAnswer":{"@type":"Answer","text":"En hızlı yol telefondur; mesai saatlerinde aradığınızda çoğu zaman aynı görüşmede gün belirlenebilir. Yazarak anlatmak isterseniz WhatsApp, mesai dışındaysanız form daha uygundur. Üç kanal da aynı randevu defterine düşer."}},
+    {"@type":"Question","name":"Randevuya ne getirmeliyim?","acceptedAnswer":{"@type":"Answer","text":"Daha önce yaptırdığınız test sonuçlarını, kullandığınız ilaçların listesini veya kutularını ve varsa önceki reçetelerinizi getirin. Şikayetlerinizin ne zaman ve hangi ortamlarda arttığını not etmeniz muayeneyi belirgin şekilde kolaylaştırır."}},
+    {"@type":"Question","name":"İlk muayenede deri testi de yapılır mı?","acceptedAnswer":{"@type":"Answer","text":"Bazen yapılır, bazen yapılamaz. Antihistaminik grubu ilaç kullanıyorsanız deri testinin güvenilir olması için bu ilaçların yaklaşık 10 gün önce kesilmiş olması gerekir. Bu nedenle randevu görüşmesinde kullandığınız ilaçları mutlaka belirtin."}},
+    {"@type":"Question","name":"Randevumu iptal etmek veya ertelemek istersem ne yapmalıyım?","acceptedAnswer":{"@type":"Answer","text":"Randevu saatinden mümkün olduğunca önce 0212 709 93 96 numaralı telefondan haber vermeniz yeterlidir. Erken bildirilen iptaller, sıra bekleyen başka bir hastaya yer açtığı için önemlidir."}},
+    {"@type":"Question","name":"Çocuğum için randevu alabilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Muayenehanede yetişkin hastalar kabul edilmektedir. 18 yaş altı hastalar için çocuk alerji ve immünoloji uzmanına başvurmanızı öneririz."}},
+    {"@type":"Question","name":"Şehir dışından geliyorum, aynı gün her şey tamamlanır mı?","acceptedAnswer":{"@type":"Answer","text":"Çoğu durumda muayene ve gerekiyorsa deri testi aynı ziyarette yapılabilir; deri testinin sonucu yaklaşık 15 dakikada okunur. Ancak ilaç kesme kuralı nedeniyle testin aynı gün yapılıp yapılamayacağı randevu görüşmesinde netleşir. Kan testi sonuçları laboratuvara göre birkaç iş günü sürebilir."}},
+    {"@type":"Question","name":"Online ön değerlendirme randevunun yerine geçer mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Online ön değerlendirme, süreci planlamak ve elinizdeki belgeleri önceden paylaşmak içindir; muayenenin, tanının ve tedavinin yerine geçmez. Acil durumlarda kullanılmaz."}},
+    {"@type":"Question","name":"Bilgilerim ne kadar süreyle saklanıyor?","acceptedAnswer":{"@type":"Answer","text":"Form üzerinden ilettiğiniz ad ve telefon bilgisi yalnızca randevu talebinizi karşılamak amacıyla, KVKK Aydınlatma Metni'nde belirtilen süre ve şartlarla işlenir. Bilgilendirme mesajı onayı isteğe bağlıdır ve randevu için gerekli değildir."}},
+    {"@type":"Question","name":"Form alanına şikayetimi ayrıntılı yazabilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Lütfen forma tıbbi ayrıntı yazmayın. Yalnızca genel başlığı seçmeniz yeterlidir; ayrıntıları telefonda ve muayenede güvenli şekilde konuşuruz."}},
+    {"@type":"Question","name":"Acil bir durumda ne yapmalıyım?","acceptedAnswer":{"@type":"Answer","text":"Nefes darlığı, dilde veya boğazda şişme, yutkunma güçlüğü ya da baygınlık hissi varsa randevu beklemeyin; hemen 112'yi arayın veya en yakın acil servise başvurun."}}
+  ]
+}
+</script>
+<?php get_footer(); ?>

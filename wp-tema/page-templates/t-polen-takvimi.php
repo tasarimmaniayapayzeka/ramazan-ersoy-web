@@ -1,0 +1,479 @@
+<?php
+/**
+ * Template Name: İstanbul Polen Takvimi: Hangi Ayda Ne Var?
+ * Statik siteden otomatik devşirildi (tam-devir.js, 17 Ağu 2026).
+ * Kaynak içerik hekim onaylı; düzenleme GEREKİYORSA bu dosyada yapılır,
+ * WP editöründe değil (sayfa gövdesi bilinçli olarak boş).
+ */
+if (!defined('ABSPATH')) exit;
+get_header();
+?>
+<main id="icerik">
+
+<!-- ═══ BREADCRUMB ═══ -->
+<div class="wrap">
+  <nav class="crumbs" aria-label="Site içi konum">
+    <a href="/">Anasayfa</a> <span aria-hidden="true">›</span>
+    <a href="/#araclar">Araçlar</a> <span aria-hidden="true">›</span>
+    <span aria-current="page">İstanbul polen takvimi</span>
+  </nav>
+</div>
+
+<!-- ═══ BAŞLIK ═══ -->
+<section class="section section--tight">
+  <div class="wrap">
+    <p class="eyebrow">Ücretsiz araç · Güncel</p>
+    <h1>İstanbul polen takvimi — bu ay havada ne var?</h1>
+    <p style="max-width:70ch;font-size:1.1875rem;color:var(--ink);margin-top:1rem">
+      Şikayetleriniz her yıl aynı haftalarda mı başlıyor? Bu, çoğu zaman tesadüf değildir. İstanbul'un havasında yılın hangi döneminde hangi polenin baskın olduğunu bilmek, hem şikayetinizin kaynağını tahmin etmenizi hem de mevsim gelmeden hazırlıklı olmanızı sağlar. Aşağıdaki takvim, içinde bulunduğunuz ayı otomatik olarak vurgular.
+    </p>
+    <div class="btn-row" style="margin-top:1.25rem">
+      <a class="btn btn--primary" href="/randevu/">Randevu talep edin</a>
+      <a class="btn btn--wa" data-wa="Merhaba, polen takvimini inceledim. Mevsimsel şikayetlerim için randevu almak istiyorum." data-wa-src="polen-takvimi" href="#">WhatsApp'tan yazın</a>
+    </div>
+
+    <div class="byline">
+      <span>Yazan / İnceleyen: <b>Uzm. Dr. Ramazan Ersoy</b> · İç Hastalıkları, Alerji ve Klinik İmmünoloji</span>
+      <span>Yayın: <b>19 Temmuz 2026</b></span>
+      <span>Son güncelleme: <b>19 Temmuz 2026</b></span>
+      <span class="xs">Kaynak notu: İçerik, EAACI (Avrupa Alerji ve Klinik İmmünoloji Akademisi) ve GINA (Global Initiative for Asthma) rehber ilkeleri ile Türkiye aerobiyoloji yayınlarındaki mevsimsel dağılım verileri esas alınarak hazırlanmıştır.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TAKVİM ═══ -->
+<section class="section section--mint section--tight">
+  <div class="wrap">
+    <div class="card">
+      <p class="eyebrow">Genel görünüm</p>
+      <h2 id="takvim">İstanbul polen takvimi — <span data-now-month>Temmuz</span></h2>
+      <p class="sm muted" style="margin-top:.5rem">Şeritteki koyu renkler yoğun, açık renkler düşük dönemi gösterir. Bulunduğunuz ay çerçeveyle işaretlenmiştir.</p>
+
+      <div class="pollen-cal pc-big" role="img" aria-label="İstanbul aylık polen yoğunluğu takvimi: ağaç polenleri şubat-nisan, çim polenleri mayıs-temmuz, yabani ot polenleri ağustos-ekim döneminde yoğundur; kasım, aralık ve ocak aylarında polen yükü düşüktür">
+        <div class="pc-col"><div class="pc-month">Oca</div><div class="pc-bar" style="background:#CFE7E3"></div></div>
+        <div class="pc-col"><div class="pc-month">Şub</div><div class="pc-bar" style="background:#8FC9C2"></div></div>
+        <div class="pc-col"><div class="pc-month">Mar</div><div class="pc-bar" style="background:#4E9E96"></div></div>
+        <div class="pc-col"><div class="pc-month">Nis</div><div class="pc-bar" style="background:#4E9E96"></div></div>
+        <div class="pc-col"><div class="pc-month">May</div><div class="pc-bar" style="background:#B08D4A"></div></div>
+        <div class="pc-col"><div class="pc-month">Haz</div><div class="pc-bar" style="background:#B08D4A"></div></div>
+        <div class="pc-col"><div class="pc-month">Tem</div><div class="pc-bar" style="background:#C9A96B"></div></div>
+        <div class="pc-col"><div class="pc-month">Ağu</div><div class="pc-bar" style="background:#B45309"></div></div>
+        <div class="pc-col"><div class="pc-month">Eyl</div><div class="pc-bar" style="background:#B45309"></div></div>
+        <div class="pc-col"><div class="pc-month">Eki</div><div class="pc-bar" style="background:#D9A05B"></div></div>
+        <div class="pc-col"><div class="pc-month">Kas</div><div class="pc-bar" style="background:#CFE7E3"></div></div>
+        <div class="pc-col"><div class="pc-month">Ara</div><div class="pc-bar" style="background:#CFE7E3"></div></div>
+      </div>
+      <div class="pc-legend">
+        <span><i style="background:#4E9E96"></i> Ağaç polenleri (Şub–Nis)</span>
+        <span><i style="background:#B08D4A"></i> Çim polenleri (May–Tem)</span>
+        <span><i style="background:#B45309"></i> Yabani ot polenleri (Ağu–Eki)</span>
+        <span><i style="background:#CFE7E3"></i> Düşük dönem (Kas–Oca)</span>
+      </div>
+
+      <h3 style="margin-top:2.25rem">Polen türüne göre ayrıntılı dağılım</h3>
+      <p class="sm muted">Aynı ayda birden fazla polen havada bulunabilir. Aşağıdaki üç şerit, türlerin birbirine göre seyrini gösterir.</p>
+
+      <div class="pc-detail" style="margin-top:1.25rem">
+        <div class="pc-strip">
+          <span class="pc-name">Ağaç poleni</span>
+          <div class="pc-track" role="img" aria-label="Ağaç polenleri: ocak düşük, şubat orta, mart ve nisan yoğun, mayıs orta, haziran itibarıyla düşük">
+            <span style="background:#CFE7E3"></span><span style="background:#8FC9C2"></span><span style="background:#4E9E96"></span><span style="background:#4E9E96"></span>
+            <span style="background:#8FC9C2"></span><span style="background:#CFE7E3"></span><span style="background:#CFE7E3"></span><span style="background:#CFE7E3"></span>
+            <span style="background:#CFE7E3"></span><span style="background:#CFE7E3"></span><span style="background:#CFE7E3"></span><span style="background:#CFE7E3"></span>
+          </div>
+        </div>
+        <div class="pc-strip">
+          <span class="pc-name">Çim poleni</span>
+          <div class="pc-track" role="img" aria-label="Çim polenleri: nisan sonunda başlar, mayıs ve haziran yoğun, temmuz orta, ağustos itibarıyla azalır">
+            <span style="background:#CFE7E3"></span><span style="background:#CFE7E3"></span><span style="background:#CFE7E3"></span><span style="background:#C9A96B"></span>
+            <span style="background:#B08D4A"></span><span style="background:#B08D4A"></span><span style="background:#C9A96B"></span><span style="background:#CFE7E3"></span>
+            <span style="background:#CFE7E3"></span><span style="background:#CFE7E3"></span><span style="background:#CFE7E3"></span><span style="background:#CFE7E3"></span>
+          </div>
+        </div>
+        <div class="pc-strip">
+          <span class="pc-name">Yabani ot poleni</span>
+          <div class="pc-track" role="img" aria-label="Yabani ot polenleri: temmuz sonunda başlar, ağustos ve eylül yoğun, ekim orta, kasımda biter">
+            <span style="background:#CFE7E3"></span><span style="background:#CFE7E3"></span><span style="background:#CFE7E3"></span><span style="background:#CFE7E3"></span>
+            <span style="background:#CFE7E3"></span><span style="background:#CFE7E3"></span><span style="background:#D9A05B"></span><span style="background:#B45309"></span>
+            <span style="background:#B45309"></span><span style="background:#D9A05B"></span><span style="background:#CFE7E3"></span><span style="background:#CFE7E3"></span>
+          </div>
+        </div>
+        <div class="pc-strip" aria-hidden="true">
+          <span class="pc-name"></span>
+          <div class="pc-track pc-axis">
+            <span>O</span><span>Ş</span><span>M</span><span>N</span><span>M</span><span>H</span><span>T</span><span>A</span><span>E</span><span>E</span><span>K</span><span>A</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc-scale">
+        <span><i style="background:#CFE7E3"></i> Düşük / eser miktarda</span>
+        <span><i style="background:#8FC9C2"></i> Orta</span>
+        <span><i style="background:#4E9E96"></i> Yoğun</span>
+      </div>
+
+      <div class="caution" style="margin-top:1.5rem">
+        <b>Önemli:</b> Bu takvim genel bilgilendirme amaçlıdır ve tıbbi tavsiye yerine geçmez. Polen sezonlarının başlangıç ve bitiş tarihleri <strong>yıllık hava koşullarına göre değişebilir</strong>; ılık geçen bir kışın ardından sezon haftalar öncesinden başlayabilir, serin ve yağışlı bir ilkbaharda ise gecikebilir. Bölgesel bitki örtüsü ve rüzgâr yönü de İstanbul'un ilçeleri arasında farklılık yaratır. Sonuçlar ve şikayetlerin şiddeti kişiden kişiye farklılık gösterebilir.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GÖVDE ═══ -->
+<section class="section">
+  <div class="wrap article-layout">
+
+    <aside class="toc">
+      <h2>İçindekiler</h2>
+      <ol>
+        <li><a href="#nedir">Polen nedir, neden alerji yapar?</a></li>
+        <li><a href="#agac">Ağaç polenleri (Şubat–Nisan)</a></li>
+        <li><a href="#cim">Çim polenleri (Mayıs–Temmuz)</a></li>
+        <li><a href="#ot">Yabani ot polenleri (Ağustos–Ekim)</a></li>
+        <li><a href="#kis">Kış ayları: polen düşükken şikayet sürüyorsa</a></li>
+        <li><a href="#korunma">Polen mevsiminde korunma önerileri</a></li>
+        <li><a href="#ayirt">Polen alerjisi mi, başka bir şey mi?</a></li>
+        <li><a href="#doktor">Hangi belirtilerde hekime başvurmalı?</a></li>
+        <li><a href="#sss">Sık sorulan sorular</a></li>
+      </ol>
+      <p class="sm" style="margin:1rem 0 0"><a class="link-arrow" href="/randevu/">Randevu talep edin</a></p>
+    </aside>
+
+    <div class="prose">
+
+      <div class="at-glance">
+        <h3>Bir bakışta</h3>
+        <ul>
+          <li><strong>Ağaç polenleri</strong> şubat–nisan arasında baskındır: kızılağaç, fındık, meşe, çınar ve zeytin İstanbul'un öne çıkan kaynaklarıdır.</li>
+          <li><strong>Çim polenleri</strong> mayıs–temmuz döneminde zirve yapar; park, çayır ve boş arsaların yakınında yükselir.</li>
+          <li><strong>Yabani ot polenleri</strong> ağustos–ekim arasında öne geçer: pelin otu, sinirotu ve ambrosia (kanadaotu).</li>
+          <li>Polen tanecikleri <strong>rüzgârla kilometrelerce</strong> taşınabilir; şehir merkezinde ağaç görmemeniz maruziyetin olmadığı anlamına gelmez.</li>
+          <li>Şikayetler her yıl <strong>aynı haftalarda</strong> tekrarlıyorsa bu, mevsimsel alerjik rinit (polinozis) lehine güçlü bir ipucudur.</li>
+          <li>Kesin ayrım <strong>deri testi</strong> veya kan testi ile yapılır; takvim yalnızca yönlendiricidir.</li>
+        </ul>
+      </div>
+
+      <h2 id="nedir">Polen nedir, neden alerji yapar?</h2>
+      <p>Polen, bitkilerin üreme hücrelerini taşıyan mikroskobik tozdur. Renkli çiçekleri olan bitkilerin çoğu polenini arılar ve böcekler aracılığıyla taşır; bu polenler ağır ve yapışkandır, havaya karışmaz. Alerjiden sorumlu olanlar ise <strong>rüzgârla döllenen</strong> bitkilerdir: gösterişsiz çiçekleri vardır, buna karşılık hafif ve son derece bol miktarda polen üretirler. Tek bir kızılağaç ağacının bir sezonda milyarlarca tanecik saldığı bilinmektedir. Bu tanecikler rüzgârla onlarca kilometre taşınabilir — bu yüzden apartman dairesinde oturan, çevresinde ağaç bulunmayan bir kişi de mart ayında şikayet yaşayabilir.</p>
+
+      <p>Polen kendi başına zararlı bir madde değildir. Sorun, bağışıklık sisteminin onu tehdit sanmasıyla başlar. Duyarlı kişilerde ilk karşılaşmalarda vücut polene karşı <em>IgE</em> adı verilen özel antikorlar üretir. Bu antikorlar burun, göz ve solunum yolu mukozasındaki mast hücrelerinin yüzeyine yerleşir. Sonraki sezonda aynı polen mukozaya ulaştığında bu antikorlara bağlanır ve hücrelerden <strong>histamin</strong> başta olmak üzere iltihap habercileri boşalır. Sonuç tanıdıktır: kaşınan burun, seri hâlde gelen hapşırıklar, su gibi akıntı, tıkanıklık, kızaran ve sulanan gözler, damakta kaşıntı, kimi kişide öksürük ve hırıltı.</p>
+
+      <p>Bu tablonun tıbbi adı <strong>mevsimsel alerjik rinit</strong>, halk arasındaki adıyla saman nezlesi ya da polinozistir. Duyarlılığın gelişmesi genellikle yıllar alır; bu nedenle yıllarca sorunsuz yaşamış bir kişide otuzlu ya da kırklı yaşlarda ilk kez polen alerjisi ortaya çıkabilir. Yetişkinlikte başlayan mevsimsel şikayetlerin “geç kaldım, artık bir şey yapılmaz” diye yorumlanması yanlıştır; tanı ve tedavi seçenekleri her yaşta geçerlidir.</p>
+
+      <p>Polen mevsimini ağırlaştıran bir başka etken hava kirliliğidir. Egzoz kaynaklı partiküller polen taneciklerinin yüzeyine tutunarak mukozadaki etkilerini artırabilir; bu, şehirde yaşayan alerjik kişilerin şikayetlerinin neden daha belirgin olabildiğini açıklayan mekanizmalardan biridir. Rüzgârlı ve kuru günlerde polen sayımı yükselir, yağmur ise havadaki poleni geçici olarak yıkar — ancak yağmurdan hemen önceki fırtınalı saatlerde tanecikler parçalanıp daha derine ulaşabildiği için kimi hastada şikayetler paradoksal biçimde artabilir.</p>
+
+      <h2 id="agac">Ağaç polenleri: şubat–nisan</h2>
+      <p>İstanbul'da polen mevsimini açan grup ağaçlardır. Kışın son haftalarında, çoğu insan daha baharı düşünmezken havada ilk tanecikler belirir. Bu dönemin öne çıkan kaynakları şunlardır:</p>
+      <ul>
+        <li><strong>Kızılağaç ve fındık</strong> — mevsimin ilk habercileri. Şubat, hatta ılık kışlarda ocak sonu itibarıyla polen salmaya başlarlar. Ocak–şubatta “grip geçmiyor” diye tarif edilen şikayetlerin ardında sıklıkla bu iki kaynak vardır.</li>
+        <li><strong>Meşe</strong> — mart sonundan nisan boyunca yoğun polen üretir. İstanbul'un kuzey ormanlık kuşağında yaygındır ve rüzgârla şehir merkezine kadar taşınır.</li>
+        <li><strong>Çınar</strong> — İstanbul'un cadde ve meydan ağacıdır. Nisan başında polen salar; ayrıca yaprak ve meyve tüycükleri mekanik tahriş yaparak şikayetleri artırabilir.</li>
+        <li><strong>Zeytin</strong> — nisan sonu ve mayısta devreye girer. Akdeniz ikliminin klasik alerjenidir; Marmara kıyı şeridinde de belirgin bir yük oluşturur.</li>
+        <li><strong>Huş, dişbudak, kavak, servi ve sedir</strong> — bölgesel olarak değişen katkılar sağlar; özellikle huş poleni bazı meyvelerle çapraz reaksiyon açısından önemlidir.</li>
+      </ul>
+
+      <h3>Bu dönemde ne yapmalı?</h3>
+      <p>Ağaç poleni mevsiminin en pratik özelliği <strong>öngörülebilir olmasıdır</strong>. Şikayetleriniz her yıl şubat ortasında başlıyorsa, hazırlığa şubat başında başlamak mantıklıdır. Bu, mevsim ortasında yangını söndürmeye çalışmaktan daha az zahmetlidir. Sezon öncesi kontrol randevusu almak, kullandığınız burun spreyi ve ilaçların planını sezon başlamadan gözden geçirmek, evde havalandırma alışkanlığınızı erkenden ayarlamak bu hazırlığın parçalarıdır.</p>
+      <p>Ağaç polenleri günün ilk saatlerinde en yüksek düzeye ulaşır. Sabah 05.00–10.00 arasında pencereleri kapalı tutmak, sabah yürüyüşünü mümkünse öğleden sonraya kaydırmak ya da yağmur sonrasına planlamak belirgin fark yaratabilir. Kapalı ve nemli hava ile yağmur, mart–nisan döneminde en rahat günleri sunar.</p>
+      <div class="caution">
+        <b>Not:</b> Bu dönemde ortaya çıkan yorgunluk, konsantrasyon güçlüğü ve uyku bölünmesi çoğu zaman “bahar yorgunluğu” sanılır. Oysa burun tıkanıklığının uykuyu bölmesi bu tablonun bilinen bir sonucudur ve tedaviyle düzelebilir. Yanıt kişiden kişiye farklılık gösterebilir.
+      </div>
+
+      <h2 id="cim">Çim polenleri: mayıs–temmuz</h2>
+      <p>Ağaçların yükü azalırken devir çimlere geçer. Buğdaygiller ailesinden çayır otları — çayır kelp kuyruğu, ayrık otu, salkım otu, yumak, ve tarım alanlarında buğday, arpa, yulaf gibi ekinler — mayıs ve haziranda İstanbul havasının baskın alerjeni hâline gelir. Çim polenleri dünya genelinde mevsimsel alerjik rinitin en sık nedenlerinden biri kabul edilir.</p>
+      <p>Bu dönemin en tipik özelliği, şikayetlerin <strong>mekâna çok bağlı olmasıdır</strong>. Piknik, futbol sahası, park, boş arsa kenarı ya da yeni biçilmiş bir çim alanın yakınından geçmek dakikalar içinde hapşırık ve göz kaşıntısı başlatabilir. Çim biçme işlemi poleni ve bitki parçacıklarını havaya kaldırdığı için özellikle güçlü bir tetikleyicidir.</p>
+
+      <h3>Bu dönemde ne yapmalı?</h3>
+      <ul>
+        <li>Çim biçme işini mümkünse başkasına devredin. Devredemiyorsanız iyi oturan bir maske ve koruyucu gözlükle çalışın, işlem sonrası hemen duş alın ve kıyafetlerinizi değiştirin.</li>
+        <li>Yeni biçilmiş alanlarda oturmaktan, çim üzerine doğrudan uzanmaktan kaçının; battaniye yerine kalın bir örtü kullanın ve eve dönünce dışarıda silkeleyin.</li>
+        <li>Çim polenleri genellikle öğleden sonra ve akşamüstü zirve yapar. Açık havada geçirilecek zamanı sabahın geç saatlerine veya yağmur sonrasına kaydırmak yardımcı olur.</li>
+        <li>Otomobil camlarını kapalı tutun, klimayı iç hava sirkülasyonu konumunda çalıştırın ve <strong>polen filtresini</strong> sezon öncesinde değiştirtin.</li>
+        <li>Mayıs–haziran döneminde şikayetleri belirgin artan astım hastalarında kontrol muayenesini sezon başlamadan planlamak yerinde olur.</li>
+      </ul>
+
+      <h2 id="ot">Yabani ot polenleri: ağustos–ekim</h2>
+      <p>Yaz sonu, polen alerjisinin en çok gözden kaçan dönemidir. “Bahar bitti, rahatladım” diye düşünen kişide temmuz sonundan itibaren şikayetlerin yeniden başlaması şaşırtıcı gelir. Sorumlular yabani otlardır:</p>
+      <ul>
+        <li><strong>Pelin otu (Artemisia)</strong> — Türkiye'de yaz sonu şikayetlerinin başlıca kaynaklarındandır. Ağustos ve eylülde zirve yapar. Bazı baharatlar, papatya ve ayçiçeği ailesinden bitkilerle çapraz reaksiyon gösterebilir.</li>
+        <li><strong>Sinirotu (Plantago)</strong> — yol kenarları, park köşeleri ve bakımsız alanlarda yaygındır; mayıstan eylüle uzanan geniş bir dönemde polen salar.</li>
+        <li><strong>Ambrosia (kanadaotu, ragweed)</strong> — Türkiye'de yayılımı son yıllarda artan istilacı bir türdür. Ağustos sonu ve eylülde yoğunlaşır, çok küçük ve son derece hafif polen üretir; bu nedenle uzun mesafelere taşınır.</li>
+        <li><strong>Isırgan, kazayağı ve pıtrak</strong> — kentsel boşluklarda ve inşaat çevrelerinde yaygın, yaz sonu yüküne katkı veren diğer türlerdir.</li>
+      </ul>
+      <p>Bu dönemde küf mantarı sporları da devreye girer. Nemli ve sıcak havada, dökülen yapraklar altında ve ıslak toprakta çoğalan küfler, yabani ot polenleriyle üst üste binerek şikayetleri ağırlaştırabilir. Sonbaharda hem polen hem küf yükü olduğu için, ekim ayında süren şikayetlerin yalnızca “okul dönemi virüsleri” ile açıklanması yanıltıcı olur.</p>
+
+      <h3>Bu dönemde ne yapmalı?</h3>
+      <ul>
+        <li>Bakımsız arsa, dere kenarı ve yol kenarı yürüyüşlerinde ağustos–eylül aylarında dikkatli olun; rota değişikliği bile fark yaratabilir.</li>
+        <li>Bahçenizde yabani ot varsa, çiçeklenmeden önce (yaz başında) temizlenmesi sezon yükünü azaltır. Temizliği kendiniz yapıyorsanız maske kullanın.</li>
+        <li>Islak yaprak yığınlarını karıştırmaktan kaçının; küf sporları bu sırada yoğun biçimde havaya karışır.</li>
+        <li>Çiğ meyve veya sebze yerken ağzınızda kaşıntı, karıncalanma oluyorsa bunu not edin ve muayenede belirtin — pelin otu duyarlılığında çapraz reaksiyon görülebilir.</li>
+      </ul>
+
+      <div class="emergency">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v5h2v-5z"/></svg>
+        <div>
+          <strong>Acil durum — beklemeyin</strong>
+          <p>Nefes darlığı, dilde veya boğazda şişme, konuşmada zorlanma, yaygın döküntüyle birlikte baygınlık hissi varsa hemen <a href="tel:112">112</a>'yi arayın. Bu belirtiler polen mevsimiyle açıklanmaz ve acil değerlendirme gerektirir.</p>
+        </div>
+      </div>
+
+      <h2 id="kis">Kış ayları: polen düşükken şikayet sürüyorsa</h2>
+      <p>Kasım, aralık ve ocak, İstanbul'da polen yükünün en düşük olduğu aylardır. Buna rağmen bu aylarda da burun akıntısı, tıkanıklık ve hapşırık yaşıyorsanız, tablonun kaynağı büyük olasılıkla polen değildir. Bu durumda akla gelmesi gereken başlıklar şunlardır:</p>
+      <ul>
+        <li><strong>Ev tozu akarı</strong> — yatak, yorgan, yastık ve halıda yaşayan mikroskobik canlılardır. Kapalı ve ısıtılan ortamda kış aylarında şikayet artabilir. Tipik ipucu: sabah uyanınca hapşırık nöbeti ve burun tıkanıklığı.</li>
+        <li><strong>Küf mantarı</strong> — banyo, mutfak, bodrum ve rutubetli duvarlarda; nem oranı yüksek evlerde yıl boyu etkilidir.</li>
+        <li><strong>Evcil hayvan alerjenleri</strong> — kedi ve köpek tüyünden çok, deri döküntüsü ve salgılarıyla ilişkilidir; kapalı mevsimde maruziyet yoğunlaşır.</li>
+        <li><strong>Alerjik olmayan rinit</strong> — soğuk hava, keskin kokular, sigara dumanı ve bazı ilaçlarla tetiklenen, alerji testi negatif olan bir tablodur ve farklı bir yaklaşım gerektirir.</li>
+      </ul>
+      <p>Yıl boyu süren, mevsimle net biçimde ilişkilendirilemeyen şikayetler için <a href="/hastaliklar/alerjik-rinit/">alerjik rinit sayfamızı</a> okumanızı öneririz.</p>
+
+      <h2 id="korunma">Polen mevsiminde korunma önerileri</h2>
+      <p>Polen tamamen kaçınılabilecek bir alerjen değildir; amaç maruziyeti azaltmaktır. Aşağıdaki önlemler günlük hayatı kısıtlamadan uygulanabilecek, etkisi hastaların çoğunda hissedilen adımlardır.</p>
+
+      <h3>Evde</h3>
+      <ul>
+        <li><strong>Havalandırma saatini seçin.</strong> Pencereleri sabahın erken saatlerinde (yaklaşık 05.00–10.00) ve akşamüstü kapalı tutun. Havalandırma için gece geç saatleri ya da yağmurdan hemen sonrasını tercih edin.</li>
+        <li><strong>Çamaşırları dışarıda kurutmayın.</strong> Balkonda kuruyan nevresim ve havlular polen tutar; o polen doğrudan yüzünüze ve yatağınıza taşınır. Sezon boyunca iç mekânda veya kurutma makinesinde kurutun.</li>
+        <li><strong>Dışarıdan gelince duş alın ve kıyafet değiştirin.</strong> Özellikle saçınız polen tutar; akşam duşu, poleni yatağa taşımanızı engellediği için uyku kalitesi üzerinde belirgin etki yapar. Dış kıyafetleri yatak odasının dışında bırakın.</li>
+        <li><strong>Sık ve ıslak temizlik yapın.</strong> Kuru süpürge poleni yeniden havalandırır; nemli bez ve HEPA filtreli süpürge tercih edin.</li>
+        <li><strong>Yatak odasını sadeleştirin.</strong> Sezon boyunca yatak odası penceresini gündüz kapalı tutmak, odada kuru çiçek ve tüylü tekstil bulundurmamak yardımcı olur.</li>
+        <li><strong>Hava temizleyici kullanacaksanız</strong> HEPA filtreli ve oda hacmine uygun bir cihaz seçin; en çok yatak odasında fayda sağlar.</li>
+      </ul>
+
+      <h3>Dışarıda</h3>
+      <ul>
+        <li><strong>Saatinizi ayarlayın.</strong> Ağaç polenleri sabah erken, çim polenleri öğleden sonra ve akşamüstü zirve yapar. Spor ve yürüyüş için yağmur sonrası saatler en rahatıdır.</li>
+        <li><strong>Güneş gözlüğü takın.</strong> Basit ama etkilidir: göze ulaşan polen miktarını azaltır, kaşıntı ve sulanmayı hafifletir. Geniş çerçeveli modeller daha iyi korur.</li>
+        <li><strong>Yüksek maruziyetli işlerde maske kullanın.</strong> Bahçe işi, çim biçme, budama ve kırsal alanda uzun yürüyüşlerde iyi oturan bir maske belirgin fark yaratır.</li>
+        <li><strong>Şapka ve saç toplama</strong> saçta biriken polen miktarını azaltır.</li>
+        <li><strong>Rüzgârlı ve kuru günlerde</strong> açık havada geçirilen süreyi kısaltın; kapalı, nemli ve yağmurlu günler en rahat günlerdir.</li>
+      </ul>
+
+      <h3>Araçta ve yolculukta</h3>
+      <ul>
+        <li><strong>Camları kapalı tutun</strong>, klimayı iç hava sirkülasyonu (resirkülasyon) konumunda çalıştırın.</li>
+        <li><strong>Araç polen filtresini (kabin filtresi) sezon öncesinde değiştirtin.</strong> Tıkalı bir filtre polen kadar toz ve küf de geçirir; bu, çoğu sürücünün atladığı bir ayrıntıdır.</li>
+        <li><strong>Tatil planınızı duyarlılığınıza göre yapın.</strong> Rüzgârın denizden estiği kıyı şeridinde polen yükü genellikle daha düşüktür; buna karşılık çayırlık yaylalarda çim poleni yüksek olabilir.</li>
+      </ul>
+
+      <h3>Günlük alışkanlıklar</h3>
+      <ul>
+        <li><strong>Burun yıkama</strong> (izotonik tuzlu su ile) mukozadaki poleni mekanik olarak uzaklaştırır; ilaç değildir, günlük rutine kolayca eklenebilir.</li>
+        <li><strong>Sigara dumanından uzak durun.</strong> Dumana maruziyet mukozayı tahriş eder ve tedaviye yanıtı zorlaştırır.</li>
+        <li><strong>Şikayet günlüğü tutun.</strong> Hangi gün, hangi saatte, nerede kötüleştiğinizi bir hafta boyunca not etmek, muayenede en değerli belgedir.</li>
+      </ul>
+
+      <div class="caution">
+        <b>İlaçlar hakkında:</b> Bu sayfada bilinçli olarak ilaç adı, dozu veya kullanım süresi verilmemektedir. Burun spreyleri, antihistaminikler ve astım ilaçları gibi grupların hangisinin size uygun olduğu, ne zaman başlanacağı ve ne kadar süreceği muayene sonrasında hekiminizce belirlenir. Tek istisna testle ilgilidir: <strong>deri testi planlanıyorsa antihistaminik grubu ilaçların genellikle yaklaşık 10 gün önce kesilmesi gerekir</strong> — diğer ilaçlarınız için kendi başınıza karar vermeyin.
+      </div>
+
+      <h2 id="ayirt">Polen alerjisi mi, başka bir şey mi?</h2>
+      <p>Mevsimsel şikayetler kolayca başka tablolarla karıştırılır. Aşağıdaki tablo yönlendirici bir özet sunar; tanı yerine geçmez.</p>
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th>Özellik</th><th>Polen alerjisi</th><th>Soğuk algınlığı</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Başlangıç</td><td>Ani, polen yükseldiği gün</td><td>Kademeli, 1–2 günde</td></tr>
+            <tr><td>Süre</td><td>Haftalar–aylar, sezon boyunca</td><td>Genellikle 7–10 gün</td></tr>
+            <tr><td>Akıntı</td><td>Berrak, su gibi, bol</td><td>Başta berrak, sonra koyulaşır</td></tr>
+            <tr><td>Kaşıntı</td><td>Belirgin: burun, damak, göz, kulak</td><td>Genellikle yok</td></tr>
+            <tr><td>Hapşırık</td><td>Seri hâlinde, arka arkaya</td><td>Seyrek</td></tr>
+            <tr><td>Ateş / kas ağrısı</td><td>Yok</td><td>Olabilir</td></tr>
+            <tr><td>Tekrarlama</td><td>Her yıl aynı haftalarda</td><td>Rastgele, yıl içinde dağınık</td></tr>
+            <tr><td>Yağmurla değişim</td><td>Belirgin rahatlama</td><td>Değişmez</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Şikayetlerin ardında yalnızca polen olmayabilir. Aynı kişide ev tozu akarı ve polen duyarlılığı bir arada bulunabilir; bu durumda sezon dışında da devam eden bir zemin şikayetin üzerine ilkbaharda alevlenme eklenir. Burun tıkanıklığının tek taraflı ve inatçı olması, koku kaybının kalıcı hâle gelmesi, tekrarlayan sinüzit veya burun poliplerinin eşlik etmesi ayrı bir değerlendirme gerektirir.</p>
+
+      <p><strong>Nasıl netleşir?</strong> Ayrımı yapan iki temel yol vardır. Birincisi <a href="/testler/deri-prick-testi/">deri prick testidir</a>: ön kol derisine damlatılan standart alerjen sıvılarının üzerinden çok yüzeysel bir çizik yapılır, iğne batırılmaz ve kanama olmaz; sonuç yaklaşık 15 dakikada okunur ve aynı muayenede değerlendirilir. İkincisi kan testidir (spesifik IgE); ilaç kesmeyi gerektirmediği için deri testinin yapılamadığı durumlarda tercih edilir. Öksürük ve nefes darlığı da tabloya eşlik ediyorsa solunum fonksiyon testi eklenebilir. <a href="/testler/">Tüm testleri buradan inceleyebilirsiniz.</a></p>
+
+      <p>Hangi polene duyarlı olduğunuzu bilmek pratik sonuçlar doğurur: takvimde kendi haftalarınızı işaretleyebilir, tatil planınızı buna göre yapabilir, çapraz reaksiyon veren besinleri tanıyabilir ve uygunsanız <a href="/tedaviler/alerji-asisi-immunoterapi/">alerji aşısı (immünoterapi)</a> seçeneğini hekiminizle değerlendirebilirsiniz. İmmünoterapi, şikayeti bastırmak yerine bağışıklık sistemini ilgili alerjene karşı yeniden eğitmeyi amaçlar; uygunluk ancak muayene ve test sonrasında belirlenir ve yanıt kişiden kişiye farklılık gösterebilir.</p>
+
+      <p class="sm muted">Emin olamadığınız bir noktadaysanız, <a href="/araclar/alerji-mi-soguk-alginligi-mi/">“Alerji mi, soğuk algınlığı mı?” kısa değerlendirmesi</a> ile başlayabilir; nefes şikayetiniz varsa <a href="/araclar/astim-kontrol-testi/">Astım Kontrol Testi</a>'ni doldurabilirsiniz. Her ikisi de bilgilendirme amaçlıdır, tanı koymaz.</p>
+
+      <h2 id="doktor">Hangi belirtilerde hekime başvurmalı?</h2>
+      <p>Mevsimsel şikayetlerin çoğu “katlanılabilir” kabul edildiği için yıllarca ertelenir. Oysa aşağıdaki başlıklardan biri sizde varsa, değerlendirme ertelenmemelidir:</p>
+      <ul>
+        <li>Şikayetleriniz <strong>her yıl aynı dönemde tekrarlıyor</strong> ve birkaç haftadan uzun sürüyorsa.</li>
+        <li>Burun tıkanıklığı <strong>uykunuzu bölüyor</strong>, sabah yorgun kalkıyor, gün içinde konsantre olmakta zorlanıyorsanız.</li>
+        <li>Şikayetler <strong>iş veriminizi, okul başarınızı veya araç kullanımınızı</strong> etkiliyorsa.</li>
+        <li><strong>Öksürük, hırıltı veya göğüste sıkışma</strong> tabloya eklendiyse — bu, alerjinin alt solunum yollarına ilerlediğinin habercisi olabilir; <a href="/hastaliklar/astim/">astım sayfamızı</a> okuyun.</li>
+        <li>Reçetesiz kullandığınız ilaçlar <strong>eskisi kadar işe yaramıyorsa</strong> ya da sürekli kullanma ihtiyacı duyuyorsanız.</li>
+        <li><strong>Koku alma duyunuz azaldıysa</strong> veya tekrarlayan sinüzit atakları yaşıyorsanız.</li>
+        <li>Ciltte <strong>kaşıntılı kabarıklıklar</strong> ya da yeni başlayan egzama benzeri döküntüler eşlik ediyorsa (<a href="/hastaliklar/urtiker/">ürtiker</a>).</li>
+        <li>Çiğ meyve/sebze yerken ağızda kaşıntı ve şişme oluyorsa — polen–besin çapraz reaksiyonu açısından değerlendirilmelidir (<a href="/hastaliklar/besin-alerjisi/">besin alerjisi</a>).</li>
+      </ul>
+      <p class="sm muted">Muayenehanemizde <strong>yetişkin hastalar</strong> kabul edilmektedir. 18 yaş altı için çocuk alerji ve immünoloji uzmanına başvurmanızı öneririz.</p>
+
+      <div class="btn-row" style="margin:1.75rem 0">
+        <a class="btn btn--primary" href="/randevu/">Randevu talep edin</a>
+        <a class="btn btn--ghost" href="tel:+902127099396">0212 709 93 96</a>
+        <a class="btn btn--wa" data-wa="Merhaba, polen mevsiminde artan şikayetlerim için değerlendirilmek istiyorum." data-wa-src="polen-takvimi-alt" href="#">WhatsApp'tan yazın</a>
+      </div>
+      <p class="sm muted">Kliniğe gelmeden önce <a href="/hasta-merkezi/randevunuza-hazirlanin/">randevunuza hazırlanın</a> sayfasındaki listeye göz atabilir; başka bir merkezde yaptırdığınız sonuçlar için <a href="/hasta-merkezi/online-on-degerlendirme/">online ön değerlendirme</a> adımını kullanabilirsiniz.</p>
+
+      <h2 id="sss">Sık sorulan sorular</h2>
+
+      <details class="faq"><summary>Polen takvimi her yıl aynı mı işler?</summary>
+        <div class="faq-body"><p>Hayır. Takvim genel bir bilgilendirmedir. Kışın ılık geçtiği yıllarda ağaç polenleri iki–üç hafta erken başlayabilir; serin ve yağışlı bir ilkbaharda ise gecikebilir. Yağmur havadaki poleni geçici olarak yıkar, rüzgârlı ve kuru günlerde polen yükü artar. Bu nedenle takvimi “kesin tarih listesi” değil, hazırlık takvimi olarak kullanın.</p></div>
+      </details>
+
+      <details class="faq"><summary>Polen sayımına bakarak ilaç almayı planlayabilir miyim?</summary>
+        <div class="faq-body"><p>Tedavi planı hekiminizle birlikte yapılır. Takvim, mevsiminizin ne zaman başlayacağını öngörmenize ve hazırlıklı olmanıza yardımcı olur; ilaçların hangisi, ne zaman ve ne kadar süre kullanılacağı ise muayene sonrasında belirlenir. Reçetesiz ilaçların sürekli ve kontrolsüz kullanımı, altta yatan tablonun gözden kaçmasına yol açabilir.</p></div>
+      </details>
+
+      <details class="faq"><summary>Şikayetlerim yaz ortasında da sürüyor, bu polen olabilir mi?</summary>
+        <div class="faq-body"><p>Olabilir. İstanbul'da temmuz sonundan itibaren yabani ot polenleri devreye girer ve ekim ayına kadar sürebilir. Ayrıca ev tozu akarı, küf mantarı ve evcil hayvan alerjenleri mevsimden bağımsız şikayet yaratabilir. Ayrımı deri testi veya kan testi netleştirir.</p></div>
+      </details>
+
+      <details class="faq"><summary>Polen alerjisi ile soğuk algınlığını nasıl ayırt ederim?</summary>
+        <div class="faq-body"><p>Alerjide akıntı berrak ve suludur, kaşıntı belirgindir, hapşırıklar seri hâlinde gelir, ateş olmaz ve şikayetler haftalarca aynı şiddette sürer. Soğuk algınlığında boğaz ağrısı ve halsizlik ön plandadır, akıntı birkaç gün içinde koyulaşır ve tablo 7–10 günde geriler. Yukarıdaki karşılaştırma tablosu ayrıntılı bir özet sunar.</p></div>
+      </details>
+
+      <details class="faq"><summary>Pencerelerimi hiç mi açmamalıyım?</summary>
+        <div class="faq-body"><p>Hayır, havalandırma gereklidir; kapalı ve havasız bir ortam ev tozu akarı ve küf açısından ayrı bir sorun yaratır. Polen yoğunluğunun düştüğü saatleri seçmek yeterlidir: yağmurdan hemen sonra ve gece geç saatlerde havalandırmak, sabahın erken saatleri ile akşamüstünü kapalı geçirmek çoğu hastada belirgin fark yaratır.</p></div>
+      </details>
+
+      <details class="faq"><summary>Maske polene karşı işe yarar mı?</summary>
+        <div class="faq-body"><p>Polen tanecikleri görece büyüktür; iyi oturan bir maske dışarıda geçirilen sürede burna ulaşan polen miktarını azaltabilir. Bahçe işi, çim biçme veya kırsal alanda uzun yürüyüş gibi yüksek maruziyetli işlerde koruyucu gözlükle birlikte kullanmak mantıklıdır. Gün boyu maske takmak çoğu kişi için gerekli değildir.</p></div>
+      </details>
+
+      <details class="faq"><summary>Deniz kenarı veya yayla tatili şikayetlerimi azaltır mı?</summary>
+        <div class="faq-body"><p>Rüzgârın denizden karaya estiği kıyı şeridinde polen yükü genellikle daha düşüktür. Buna karşılık çayırlık yaylalarda çim polenleri yüksek olabilir; nemli orman içi bölgelerde ise küf sporları öne çıkabilir. Tatil planınızı hangi polene duyarlı olduğunuzu bildikten sonra yapmak daha isabetli olur.</p></div>
+      </details>
+
+      <details class="faq"><summary>Bazı meyveleri yiyince ağzım kaşınıyor, polenle ilgisi var mı?</summary>
+        <div class="faq-body"><p>Olabilir. Polen–besin çapraz reaksiyonu denilen durumda, huş/kızılağaç poleni ile elma, kiraz, fındık gibi besinler; pelin otu poleni ile bazı baharatlar, kereviz ve havuç arasında benzerlik nedeniyle ağızda kaşıntı, karıncalanma ve hafif şişlik görülebilir. Şikayet ağız ve boğaz bölgesiyle sınırlı kalmıyor, döküntü, kusma veya nefes darlığı ekleniyorsa vakit kaybetmeden değerlendirilmelidir.</p></div>
+      </details>
+
+      <details class="faq"><summary>Polen mevsiminde astımım da kötüleşir mi?</summary>
+        <div class="faq-body"><p>Alerjik astımı olan kişilerde polen yükünün yüksek olduğu dönemlerde öksürük, hırıltı ve nefes darlığı artabilir; özellikle fırtınalı günlerde şikayetlerin yoğunlaştığı bildirilmiştir (GINA rehberlerinde de tetikleyici olarak yer alır). Astım tanınız varsa polen mevsimi öncesinde kontrol muayenesi planlamak yerinde olur. Yanıt ve şiddet kişiden kişiye farklılık gösterebilir.</p></div>
+      </details>
+
+      <details class="faq"><summary>Alerji aşısı polen alerjisinde uygulanır mı?</summary>
+        <div class="faq-body"><p>Uygun görülen hastalarda polen duyarlılığı alerjen immünoterapinin klasik endikasyonlarındandır. Uygunluk; deri testi veya kan testiyle duyarlılığın gösterilmesi ve şikayetlerin bu duyarlılıkla örtüşmesi koşuluna bağlıdır. Karar muayene sonrasında verilir, yanıt kişiden kişiye değişebilir. Ayrıntılar için <a href="/tedaviler/alerji-asisi-immunoterapi/">alerji aşısı rehberimizi</a> okuyabilirsiniz.</p></div>
+      </details>
+
+      <details class="faq"><summary>Polen takvimi çocuklar için de geçerli mi?</summary>
+        <div class="faq-body"><p>Polenlerin mevsimsel dağılımı yaşa göre değişmez; korunma önerileri de benzerdir. Ancak muayenehanemizde <strong>yetişkin hastalar</strong> kabul edilmektedir; 18 yaş altı için çocuk alerji ve immünoloji uzmanına başvurulmalıdır.</p></div>
+      </details>
+
+      <details class="faq"><summary>Test yaptırmadan önce ilaçlarımı kesmem gerekir mi?</summary>
+        <div class="faq-body"><p>Deri testi planlanıyorsa antihistaminik grubu ilaçların genellikle <strong>yaklaşık 10 gün önce</strong> kesilmesi gerekir; aksi hâlde test yanlış sonuç verebilir. Astım, tansiyon ve diğer ilaçlarınız için kendi başınıza karar vermeyin — randevu alırken kullandığınız ilaçları bildirin, kesilmesi gerekenleri size özel olarak söyleyelim. Kan testinde (spesifik IgE) ilaç kesmek gerekmez.</p></div>
+      </details>
+
+      <div class="doctor-note" style="margin-top:2.5rem">
+        <div class="dn-body">
+          <p>“Hastalarımın çoğu bana yıllar sonra geliyor. ‘Her mart ayında böyle olurum, alıştım’ diyorlar. Oysa bu bir alışkanlık değil, ertelenmiş bir teşhis. Havadaki poleni değiştiremeyiz; ama hangi polenin sizi etkilediğini öğrenip mevsiminizi önceden planlayabilir, size uygun bir yol haritası çıkarabiliriz. Takvimdeki renkli şeritler sizin haftalarınızı işaretlemek içindir — bahar gelince şaşırmayasınız diye.”</p>
+          <span class="dn-who">Uzm. Dr. Ramazan Ersoy · İç Hastalıkları, Alerji ve Klinik İmmünoloji</span>
+        </div>
+      </div>
+
+      <p class="xs muted" style="margin-top:1.5rem">Bu sayfa yalnızca bilgilendirme amaçlıdır ve hekim muayenesinin yerine geçmez. Aktarılan mevsimsel dağılımlar genel eğilimleri yansıtır; kişisel duyarlılığınız ve şikayetlerinizin şiddeti farklılık gösterebilir. Tanı ve tedavi için hekiminize başvurunuz.</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ İLGİLİ SAYFALAR ═══ -->
+<section class="section section--cream section--tight">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Devamı</p>
+      <h2>Bu sayfayı okuyanlar bunları da inceledi</h2>
+    </div>
+    <div class="grid-3 reveal">
+      <a class="tool-card" href="/hastaliklar/alerjik-rinit/">
+        <h3>Alerjik Rinit</h3>
+        <p>Burun akıntısı, tıkanıklık, hapşırık: mevsimsel ve yıl boyu süren biçimleri.</p>
+        <span class="link-arrow sm">Okuyun</span>
+      </a>
+      <a class="tool-card" href="/testler/deri-prick-testi/">
+        <h3>Deri Prick Testi</h3>
+        <p>20–30 dakika, kanatmaz, sonucu 15 dakikada okunur. Hangi polene duyarlısınız?</p>
+        <span class="link-arrow sm">Testi tanıyın</span>
+      </a>
+      <a class="tool-card" href="/tedaviler/alerji-asisi-immunoterapi/">
+        <h3>Alerji Aşısı (İmmünoterapi)</h3>
+        <p>Şikayeti bastırmak yerine kaynağı hedefleyen tedavi yaklaşımı.</p>
+        <span class="link-arrow sm">Rehberi açın</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"MedicalWebPage",
+  "name":"İstanbul polen takvimi — bu ay havada ne var?",
+  "description":"İstanbul'da ağaç, çim ve yabani ot polenlerinin aylara göre dağılımı; polen mevsiminde korunma önerileri ve hekime başvuru ölçütleri.",
+  "url":"https://drramazanersoy.tr/araclar/polen-takvimi.html",
+  "inLanguage":"tr-TR",
+  "datePublished":"2026-07-19",
+  "dateModified":"2026-07-19",
+  "audience":{"@type":"PeopleAudience","suggestedMinAge":18},
+  "about":{
+    "@type":"MedicalCondition",
+    "name":"Mevsimsel alerjik rinit (polinozis, saman nezlesi)",
+    "signOrSymptom":[
+      {"@type":"MedicalSymptom","name":"Hapşırık nöbetleri"},
+      {"@type":"MedicalSymptom","name":"Burun akıntısı ve tıkanıklık"},
+      {"@type":"MedicalSymptom","name":"Göz kaşıntısı ve sulanması"},
+      {"@type":"MedicalSymptom","name":"Öksürük ve hırıltı"}
+    ]
+  },
+  "author":{
+    "@type":"Physician",
+    "name":"Uzm. Dr. Ramazan Ersoy",
+    "medicalSpecialty":"Allergy",
+    "url":"https://drramazanersoy.tr/dr-ramazan-ersoy.html"
+  },
+  "reviewedBy":{
+    "@type":"Physician",
+    "name":"Uzm. Dr. Ramazan Ersoy",
+    "medicalSpecialty":"Allergy"
+  },
+  "isPartOf":{"@type":"WebSite","name":"Uzm. Dr. Ramazan Ersoy","url":"https://drramazanersoy.tr/"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
+    {"@type":"ListItem","position":2,"name":"Araçlar","item":"https://drramazanersoy.tr/araclar/"},
+    {"@type":"ListItem","position":3,"name":"İstanbul polen takvimi","item":"https://drramazanersoy.tr/araclar/polen-takvimi.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Polen takvimi her yıl aynı mı işler?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Takvim genel bir bilgilendirmedir. Kışın ılık geçtiği yıllarda ağaç polenleri iki–üç hafta erken başlayabilir; serin ve yağışlı bir ilkbaharda ise gecikebilir. Yağmur havadaki poleni geçici olarak yıkar, rüzgârlı ve kuru günlerde polen yükü artar."}},
+    {"@type":"Question","name":"Polen sayımına bakarak ilaç almayı planlayabilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Tedavi planı hekiminizle birlikte yapılır. Takvim, mevsiminizin ne zaman başlayacağını öngörmenize ve hazırlıklı olmanıza yardımcı olur; ilaçların hangisi, ne zaman ve ne kadar süre kullanılacağı ise muayene sonrasında belirlenir."}},
+    {"@type":"Question","name":"Şikayetlerim yaz ortasında da sürüyor, bu polen olabilir mi?","acceptedAnswer":{"@type":"Answer","text":"Olabilir. İstanbul'da temmuz sonundan itibaren yabani ot polenleri devreye girer ve ekim ayına kadar sürebilir. Ayrıca ev tozu akarı, küf mantarı ve evcil hayvan alerjenleri mevsimden bağımsız şikayet yaratabilir. Ayrımı deri testi veya kan testi netleştirir."}},
+    {"@type":"Question","name":"Polen alerjisi ile soğuk algınlığını nasıl ayırt ederim?","acceptedAnswer":{"@type":"Answer","text":"Alerjide akıntı berrak ve suludur, kaşıntı belirgindir, hapşırıklar seri hâlinde gelir, ateş olmaz ve şikayetler haftalarca aynı şiddette sürer. Soğuk algınlığında boğaz ağrısı ve halsizlik ön plandadır, akıntı birkaç gün içinde koyulaşır ve tablo 7–10 günde geriler."}},
+    {"@type":"Question","name":"Pencerelerimi hiç mi açmamalıyım?","acceptedAnswer":{"@type":"Answer","text":"Hayır, havalandırma gereklidir. Polen yoğunluğunun düştüğü saatleri seçmek yeterlidir: yağmurdan hemen sonra ve gece geç saatlerde havalandırmak, sabahın erken saatleri ile akşamüstünü ise kapalı geçirmek çoğu hastada belirgin fark yaratır."}},
+    {"@type":"Question","name":"Maske polene karşı işe yarar mı?","acceptedAnswer":{"@type":"Answer","text":"Polen tanecikleri görece büyüktür; iyi oturan bir maske dışarıda geçirilen sürede burna ulaşan polen miktarını azaltabilir. Bahçe işi, çim biçme veya kırsal alanda uzun yürüyüş gibi yüksek maruziyetli işlerde koruyucu gözlükle birlikte kullanmak mantıklıdır."}},
+    {"@type":"Question","name":"Deniz kenarı veya yayla tatili şikayetlerimi azaltır mı?","acceptedAnswer":{"@type":"Answer","text":"Rüzgârın denizden karaya estiği kıyı şeridinde polen yükü genellikle daha düşüktür. Buna karşılık çayırlık yaylalarda çim polenleri yüksek olabilir. Tatil planınızı hangi polene duyarlı olduğunuzu bildikten sonra yapmak daha isabetli olur."}},
+    {"@type":"Question","name":"Bazı meyveleri yiyince ağzım kaşınıyor, polenle ilgisi var mı?","acceptedAnswer":{"@type":"Answer","text":"Olabilir. Polen–besin çapraz reaksiyonu denilen durumda, huş/kızılağaç veya pelin otu polenine duyarlı kişilerde bazı çiğ meyve ve sebzeler ağızda kaşıntı, karıncalanma ve hafif şişlik yapabilir. Şikayet ağız ve boğaz bölgesiyle sınırlı kalmıyorsa mutlaka değerlendirilmelidir."}},
+    {"@type":"Question","name":"Polen mevsiminde astımım da kötüleşir mi?","acceptedAnswer":{"@type":"Answer","text":"Alerjik astımı olan kişilerde polen yükünün yüksek olduğu dönemlerde öksürük, hırıltı ve nefes darlığı artabilir. Özellikle fırtınalı günlerde şikayetlerin yoğunlaştığı bildirilmiştir. Astım tanınız varsa polen mevsimi öncesinde kontrol muayenesi planlamak yerinde olur."}},
+    {"@type":"Question","name":"Alerji aşısı polen alerjisinde uygulanır mı?","acceptedAnswer":{"@type":"Answer","text":"Uygun görülen hastalarda polen duyarlılığı alerjen immünoterapinin klasik endikasyonlarındandır. Uygunluk, deri testi veya kan testiyle duyarlılığın gösterilmesi ve şikayetlerin bu duyarlılıkla örtüşmesi koşuluna bağlıdır; karar muayene sonrasında verilir ve yanıt kişiden kişiye değişebilir."}},
+    {"@type":"Question","name":"Polen takvimi çocuklar için de geçerli mi?","acceptedAnswer":{"@type":"Answer","text":"Polenlerin mevsimsel dağılımı yaşa göre değişmez. Ancak muayenehanemizde yetişkin hastalar kabul edilmektedir; 18 yaş altı için çocuk alerji ve immünoloji uzmanına başvurulmalıdır."}},
+    {"@type":"Question","name":"Test yaptırmadan önce ilaçlarımı kesmem gerekir mi?","acceptedAnswer":{"@type":"Answer","text":"Deri testi planlanıyorsa antihistaminik grubu ilaçların genellikle yaklaşık 10 gün önce kesilmesi gerekir; aksi hâlde test yanlış sonuç verebilir. Astım, tansiyon ve diğer ilaçlarınız için kendi başınıza karar vermeyin, randevu alırken kullandığınız ilaçları bildirin."}}
+  ]
+}
+</script>
+<?php get_footer(); ?>

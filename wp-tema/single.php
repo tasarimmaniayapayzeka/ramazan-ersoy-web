@@ -53,7 +53,7 @@ while (have_posts()) : the_post();
     <?php endif; ?>
 
     <div class="btn-row">
-      <a class="btn btn--primary" href="<?php echo esc_url($k); ?>randevu.html">Randevu Talep Et</a>
+      <a class="btn btn--primary" href="<?php echo esc_url($k); ?>randevu/">Randevu Talep Et</a>
       <a class="btn btn--wa"
          data-wa="Merhaba, <?php echo esc_attr(get_the_title()); ?> hakkında randevu almak istiyorum."
          data-wa-src="<?php echo esc_attr($tip . '-' . get_post_field('post_name', $id)); ?>"
@@ -154,7 +154,7 @@ drre_sss_yaz($id);
           if ($inceleme) {
             echo ' · Tıbbi inceleme: ' . esc_html(date_i18n('j F Y', strtotime($inceleme)));
           } ?>.
-        İçerik sorumlusu: <a href="<?php echo esc_url($k); ?>iletisim.html">iletişim sayfası</a>.<br>
+        İçerik sorumlusu: <a href="<?php echo esc_url($k); ?>iletisim/">iletişim sayfası</a>.<br>
         Bu sayfa yalnızca bilgilendirme amaçlıdır ve hekim muayenesinin yerine geçmez.
         Tanı ve tedavi kararları kişiye özeldir. Acil durumlarda <a href="tel:112">112</a>'yi arayınız.
       </p>
@@ -169,7 +169,7 @@ drre_sss_yaz($id);
     <p>Randevu talebinize <strong>aynı gün içinde</strong> dönüş yapılır;
        randevunuz sekreterimiz sizinle görüştükten sonra kesinleşir.</p>
     <div class="btn-row" style="justify-content:center;margin:1.5rem 0">
-      <a class="btn btn--primary" href="<?php echo esc_url($k); ?>randevu.html">Randevu Talep Et</a>
+      <a class="btn btn--primary" href="<?php echo esc_url($k); ?>randevu/">Randevu Talep Et</a>
       <a class="btn btn--ghost" href="tel:+902127099396">0212 709 93 96</a>
     </div>
     <p class="sm muted">Harbiye Mah. Teşvikiye Cad. 37/3 · Şişli / İstanbul (Nişantaşı)</p>

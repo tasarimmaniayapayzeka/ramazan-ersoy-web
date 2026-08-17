@@ -54,7 +54,7 @@ get_header();
     <h2>Aradığınızı bulamadınız mı?</h2>
     <p>Şikayetinizi kısaca yazın, hangi başlığın size uyduğunu birlikte belirleyelim.</p>
     <div class="btn-row" style="justify-content:center;margin:1.5rem 0">
-      <a class="btn btn--primary" href="<?php echo esc_url(DRRE_KOK); ?>randevu.html">Randevu Talep Et</a>
+      <a class="btn btn--primary" href="<?php echo esc_url(DRRE_KOK); ?>randevu/">Randevu Talep Et</a>
       <a class="btn btn--ghost" href="tel:+902127099396">0212 709 93 96</a>
     </div>
   </div>

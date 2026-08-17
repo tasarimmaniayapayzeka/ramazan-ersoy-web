@@ -44,7 +44,7 @@
     return '';
   }
   var KOK = kokYolu();
-  var AI_URL = KOK + 'chat-api.php';
+  var AI_URL = '/chat-api.php';  /* tam devir: site kokten yayinda, mutlak yol her sayfada dogru */
 
   /* ============ 3) YARDIMCILAR ============ */
   /* TR küçültme + diakritik katlama.

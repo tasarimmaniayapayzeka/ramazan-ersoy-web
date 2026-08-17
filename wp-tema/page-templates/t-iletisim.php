@@ -1,0 +1,457 @@
+<?php
+/**
+ * Template Name: İletişim ve Ulaşım — Nişantaşı, İstanbul
+ * Statik siteden otomatik devşirildi (tam-devir.js, 17 Ağu 2026).
+ * Kaynak içerik hekim onaylı; düzenleme GEREKİYORSA bu dosyada yapılır,
+ * WP editöründe değil (sayfa gövdesi bilinçli olarak boş).
+ */
+if (!defined('ABSPATH')) exit;
+get_header();
+?>
+<main id="icerik">
+
+<!-- ═══ BREADCRUMB + BAŞLIK ═══ -->
+<div class="wrap">
+  <nav class="crumbs" aria-label="Sayfa yolu">
+    <a href="/">Anasayfa</a> <span aria-hidden="true">›</span>
+    <span aria-current="page">İletişim ve Ulaşım</span>
+  </nav>
+</div>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <p class="eyebrow">İletişim · Nişantaşı, Şişli</p>
+    <h1>Bize ulaşın</h1>
+    <p class="hero-lede" style="max-width:60ch">Muayenehanemiz Nişantaşı'nda, Teşvikiye Caddesi üzerindedir. Aşağıda adresi, çalışma saatlerini ve kliniğe metroyla, otobüsle veya araçla nasıl geleceğinizi adım adım bulacaksınız. Yola çıkmadan önce bir kez arayıp randevunuzu netleştirmenizi öneririz.</p>
+
+    <div class="btn-row" style="margin:1.5rem 0">
+      <a class="btn btn--primary" href="tel:+902127099396">0212 709 93 96</a>
+      <a class="btn btn--wa" data-wa="Merhaba, Dr. Ramazan Ersoy'un muayenehanesine ulaşım ve randevu hakkında bilgi almak istiyorum." data-wa-src="iletisim" href="#">WhatsApp'tan yazın</a>
+      <a class="btn btn--ghost" href="/randevu/">Randevu talep formu</a>
+    </div>
+
+    <div class="at-glance">
+      <h3>
+        <svg viewBox="0 0 20 20" fill="currentColor" width="19" height="19" aria-hidden="true"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 8V5H9v6h5v-2z"/></svg>
+        Bir bakışta
+      </h3>
+      <ul>
+        <li><b>Adres:</b> Harbiye Mah. Teşvikiye Cad. 37/3, Şişli / İstanbul (Nişantaşı)</li>
+        <li><b>Telefon:</b> <a href="tel:+902127099396">0212 709 93 96</a> — tek numara, hem randevu hem bilgi için</li>
+        <li><b>Çalışma saatleri:</b> Pazartesi–Cuma 09:00–18:00 · Cumartesi 09:00–14:00 · Pazar kapalı</li>
+        <li><b>En yakın metro:</b> M2 Osmanbey — yaklaşık 6–8 dakika yürüme mesafesi</li>
+        <li><b>Otopark:</b> Binaya ait misafir otoparkı yoktur; çevrede ücretli otoparklar bulunur</li>
+        <li><b>Randevu:</b> Telefon, WhatsApp veya form ile; talebiniz sekreterimizin araması ile kesinleşir</li>
+        <li><b>Hasta kabulü:</b> Muayenehanede yetişkin hastalar kabul edilmektedir</li>
+      </ul>
+    </div>
+
+    <div class="byline">
+      <span>Yazan / İnceleyen: <b>Uzm. Dr. Ramazan Ersoy</b> — İç Hastalıkları, Alerji ve Klinik İmmünoloji</span>
+      <span>Yayın: <b>19 Temmuz 2026</b></span>
+      <span>Son güncelleme: <b>19 Temmuz 2026</b></span>
+      <span class="xs">Klinik bilgiler EAACI ve GINA rehberleri esas alınarak hazırlanmıştır.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GÖVDE ═══ -->
+<section class="section" style="padding-top:0">
+  <div class="wrap article-layout">
+
+    <!-- İçindekiler -->
+    <aside class="toc" aria-label="İçindekiler">
+      <h2>İçindekiler</h2>
+      <ol>
+        <li><a href="#adres">Adresimiz tam olarak nerede?</a></li>
+        <li><a href="#saatler">Çalışma saatlerimiz nedir?</a></li>
+        <li><a href="#telefon">Nasıl iletişime geçebilirim?</a></li>
+        <li><a href="#ulasim">Kliniğe nasıl gelinir?</a></li>
+        <li><a href="#harita">Harita ve yol tarifi</a></li>
+        <li><a href="#hazirlik">Randevunuza nasıl hazırlanırsınız?</a></li>
+        <li><a href="#ucret">Ücret ve ödeme hakkında</a></li>
+        <li><a href="#acil">Acil bir durumda ne yapmalıyım?</a></li>
+        <li><a href="#form">Kısa iletişim formu</a></li>
+        <li><a href="#sss">Sık sorulan sorular</a></li>
+      </ol>
+    </aside>
+
+    <div class="prose">
+
+      <h2 id="adres">Adresimiz tam olarak nerede?</h2>
+      <p>Muayenehane, İstanbul'un Şişli ilçesinde, Nişantaşı olarak bilinen bölgede yer alır. Açık adres şudur:</p>
+
+      <div class="card" style="margin:1.25rem 0">
+        <p style="margin-bottom:.35rem"><strong>Uzm. Dr. Ramazan Ersoy</strong><br>Yetişkin Alerji ve Astım — İç Hastalıkları, Alerji ve Klinik İmmünoloji</p>
+        <p style="margin-bottom:.35rem">Harbiye Mahallesi, Teşvikiye Caddesi No: 37, Daire 3<br>34367 Şişli / İstanbul</p>
+        <p style="margin-bottom:0">Telefon: <a href="tel:+902127099396"><strong>0212 709 93 96</strong></a></p>
+      </div>
+
+      <p>Teşvikiye Caddesi, Nişantaşı'nın ana aksıdır ve Harbiye ile Teşvikiye arasında uzanır. Bina, caddenin üzerinde olduğu için taksiye ya da yakınlarınıza tarif verirken <em>"Teşvikiye Caddesi 37 numara"</em> demeniz genellikle yeterli olur. Daire numarası 3'tür; binanın ana girişinden girip zil panelinden ilgili daireyi arayabilirsiniz.</p>
+
+      <div class="caution">
+        <b>Sık yapılan karışıklık:</b> Nişantaşı'nda birbirine paralel uzanan Teşvikiye Caddesi ile Abdi İpekçi Caddesi sık sık karıştırılır. Navigasyon uygulamasına adresi yazarken <b>"Teşvikiye Caddesi"</b> ve <b>"Şişli"</b> ilçesini birlikte seçtiğinizden emin olun.
+      </div>
+
+      <h2 id="saatler">Çalışma saatlerimiz nedir?</h2>
+      <p>Muayenehane hafta içi tam gün, cumartesi yarım gün hizmet verir. Pazar günleri kapalıyız. Aşağıdaki saatler muayenehanenin açık olduğu saatlerdir; randevu saatleri bu aralık içinde planlanır.</p>
+
+      <div class="tablewrap">
+        <table>
+          <caption class="visually-hidden">Muayenehane haftalık çalışma saatleri</caption>
+          <thead>
+            <tr><th scope="col">Gün</th><th scope="col">Saat</th><th scope="col">Not</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Pazartesi</td><td><b>09:00 – 18:00</b></td><td>Randevu ile</td></tr>
+            <tr><td>Salı</td><td><b>09:00 – 18:00</b></td><td>Randevu ile</td></tr>
+            <tr><td>Çarşamba</td><td><b>09:00 – 18:00</b></td><td>Randevu ile</td></tr>
+            <tr><td>Perşembe</td><td><b>09:00 – 18:00</b></td><td>Randevu ile</td></tr>
+            <tr><td>Cuma</td><td><b>09:00 – 18:00</b></td><td>Randevu ile</td></tr>
+            <tr><td>Cumartesi</td><td><b>09:00 – 14:00</b></td><td>Yoğun talep görür, erken planlayın</td></tr>
+            <tr><td>Pazar</td><td class="muted">Kapalı</td><td class="muted">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Deri testi gibi sonucu aynı gün okunan işlemler için gün içinde yeterli zamana ihtiyaç duyulur. Bu nedenle test planlanan randevuların, kapanış saatine çok yakın değil, günün daha erken saatlerine alınması tercih edilir. Randevu alırken "test yaptırmam gerekebilir" derseniz saatinizi buna göre ayarlayabiliriz.</p>
+
+      <p class="sm muted">Resmî tatiller, dinî bayramlar ve yıllık izin dönemlerinde çalışma saatleri değişebilir. Uzun tatil dönemlerinden önce arayıp teyit etmeniz, boşuna yola çıkmanızı önler.</p>
+
+      <h2 id="telefon">Nasıl iletişime geçebilirim?</h2>
+      <p>Bize üç yoldan ulaşabilirsiniz. Hangisini seçerseniz seçin, üç kanal da aynı muayenehaneye ulaşır:</p>
+
+      <div class="grid-3" style="margin:1.25rem 0">
+        <article class="tool-card">
+          <svg class="t-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 14a15 15 0 009 9l3-3a1.5 1.5 0 011.5-.4 16 16 0 005 .8 1.5 1.5 0 011.5 1.5V27a1.5 1.5 0 01-1.5 1.5A23 23 0 013.5 5.5 1.5 1.5 0 015 4h5a1.5 1.5 0 011.5 1.5 16 16 0 00.8 5A1.5 1.5 0 0112 12z"/></svg>
+          <h3>Telefon</h3>
+          <p>En hızlı yol. <a href="tel:+902127099396"><b>0212 709 93 96</b></a> — çalışma saatleri içinde arayın.</p>
+          <p class="xs muted">Muayene sırasında telefon her zaman açılamayabilir; ulaşamazsanız lütfen tekrar deneyin ya da yazın.</p>
+        </article>
+        <article class="tool-card">
+          <svg class="t-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M16 4a12 12 0 00-10.3 18L4 28l6.2-1.6A12 12 0 1016 4z"/><path d="M12 13c0 4 3 7 7 7"/></svg>
+          <h3>WhatsApp</h3>
+          <p>Yazmayı tercih edenler için: <a data-wa="Merhaba, randevu için bilgi almak istiyorum." data-wa-src="iletisim-kart-numara" href="#"><b>0535 506 26 88</b></a> — adınızı ve şikayetinizi kısaca yazın, size dönelim.</p>
+          <p><a class="link-arrow sm" data-wa="Merhaba, randevu için bilgi almak istiyorum." data-wa-src="iletisim-kart" href="#">WhatsApp'tan yazın</a></p>
+        </article>
+        <article class="tool-card">
+          <svg class="t-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="7" width="24" height="18" rx="3"/><path d="M5 9l11 8 11-8"/></svg>
+          <h3>Form</h3>
+          <p>Sayfanın altındaki kısa formu doldurun; çalışma saatleri içinde sizi arayalım.</p>
+          <p><a class="link-arrow sm" href="#form">Forma gidin</a></p>
+        </article>
+      </div>
+
+      <p><strong>Dönüş süremiz:</strong> Çalışma saatleri içinde iletilen taleplere <strong>aynı gün</strong>, mesai bitiminden sonra veya pazar günü iletilenlere ise ertesi iş günü dönüş yapılır. Randevunuz, sekreterimiz sizinle görüşüp gün ve saati teyit ettikten sonra kesinleşir.</p>
+
+      <div class="caution">
+        <b>Lütfen dikkat:</b> Telefon, WhatsApp ve form kanalları randevu ve genel bilgilendirme içindir. Bu kanallar üzerinden teşhis konulmaz, reçete yazılmaz ve tedavi başlatılmaz. Tahlil ve belge iletimi için en uygun yolu sekreterimiz sizinle birlikte belirler. Şikayetlerinizi ve varsa tetkiklerinizi muayeneden önce paylaşmak isterseniz <a href="/hasta-merkezi/online-on-degerlendirme/">online ön değerlendirme</a> sayfasındaki adımları izleyebilirsiniz; bu hizmet muayenenin yerine geçmez.
+      </div>
+
+      <h2 id="ulasim">Kliniğe nasıl gelinir?</h2>
+      <p>Nişantaşı, İstanbul'un toplu taşımayla en kolay ulaşılan semtlerinden biridir; buna karşılık araç trafiği ve park sorunu yoğundur. Aşağıda her seçeneği ayrı ayrı anlattık. İlk kez geliyorsanız <strong>metro</strong> ile gelmenizi öneririz.</p>
+
+      <h3>Metro ile (önerilen)</h3>
+      <p>Size en yakın istasyon <strong>M2 Yenikapı–Hacıosman hattının Osmanbey durağıdır</strong>. Osmanbey çıkışından sonra Halaskargazi Caddesi'ne çıkar, Teşvikiye yönüne doğru yürürsünüz. Yürüyüş <strong>yaklaşık 6–8 dakika</strong> sürer ve düz bir güzergâhtır; dik yokuş yoktur.</p>
+      <ul>
+        <li><strong>Adım 1:</strong> Osmanbey metro durağında inin, yön tabelalarında Teşvikiye / Nişantaşı yazan çıkışı kullanın.</li>
+        <li><strong>Adım 2:</strong> Yer üstüne çıktığınızda Halaskargazi Caddesi üzerindesiniz. Şişli'ye değil, <em>Harbiye–Taksim</em> yönüne dönün.</li>
+        <li><strong>Adım 3:</strong> Nişantaşı'nın mağazalarının bulunduğu ara sokaklardan geçerek Teşvikiye Caddesi'ne inin.</li>
+        <li><strong>Adım 4:</strong> Teşvikiye Caddesi üzerinde 37 numarayı bulun; muayenehane 3 numaralı dairededir.</li>
+      </ul>
+      <p>Metrobüs kullanıyorsanız <strong>Mecidiyeköy</strong> durağında inip aynı noktadaki M2 metroya aktarma yapabilir, iki durak sonra Osmanbey'de inebilirsiniz. Marmaray ile geliyorsanız Yenikapı'dan M2 hattına aktarma yapmanız en pratik yoldur.</p>
+
+      <h3>Otobüs ile</h3>
+      <p>Şişli–Osmanbey–Harbiye aksından geçen İETT otobüslerinin büyük bölümü <strong>Halaskargazi Caddesi üzerindeki Osmanbey durağında</strong> durur. Bu duraktan itibaren yürüyüş mesafesi metro çıkışıyla hemen hemen aynıdır. Taksim, Beşiktaş, Mecidiyeköy ve Kadıköy (metro/vapur aktarmalı) yönlerinden gelen hatlar bu aksı kullanır. Otobüs seferleri trafiğe bağlı olarak gecikebildiği için, randevu saatinize yetişmeyi garantilemek isterseniz metroyu tercih edin.</p>
+
+      <h3>Özel araç ile</h3>
+      <p>Araçla geliyorsanız Barbaros Bulvarı veya Büyükdere Caddesi üzerinden Nişantaşı'na yönelebilirsiniz. Ancak <strong>Teşvikiye Caddesi ve çevresi hafta içi 08:00–10:00 ile 17:00–19:30 arasında yoğun trafik taşır</strong>. Navigasyonun gösterdiği süreye 15–20 dakika eklemenizi öneririz.</p>
+
+      <h3>Otopark</h3>
+      <p>Binaya ait misafir otoparkı <strong>bulunmamaktadır</strong>. Çevrede iki seçeneğiniz var:</p>
+      <ul>
+        <li><strong>Yol kenarı ücretli park:</strong> Teşvikiye ve çevre sokaklarda ücretli yol kenarı park alanları bulunur. Öğle saatlerinde boş yer bulmak zordur.</li>
+        <li><strong>Kapalı/açık ücretli otoparklar:</strong> Nişantaşı ve Teşvikiye çevresindeki alışveriş noktalarının otoparkları gün içinde kullanılabilir; yürüyüş mesafesindedirler.</li>
+      </ul>
+      <p>Park yeri aramak zaman aldığından, araçla geliyorsanız <strong>randevu saatinizden en az 20 dakika önce</strong> bölgede olmanızı öneririz.</p>
+
+      <h3>Taksi ile</h3>
+      <p>Taksi şoförüne <em>"Nişantaşı, Teşvikiye Caddesi, 37 numara"</em> demeniz yeterlidir. Uygulama üzerinden çağırıyorsanız varış noktası olarak Teşvikiye Camii çevresini seçip son bölümü yürüyerek tamamlamak, tek yönlü sokaklarda dolaşmaktan genellikle daha hızlıdır.</p>
+
+      <h3>Erişilebilirlik</h3>
+      <p>Tekerlekli sandalye kullanıyorsanız, refakatçiyle geliyorsanız ya da merdiven çıkmakta zorlanıyorsanız lütfen <strong>gelmeden önce bizi arayın</strong>. Bina girişi, asansör durumu ve size en uygun karşılama düzeni hakkında güncel bilgiyi telefonda paylaşalım; gerekiyorsa randevu saatinizi daha sakin bir zaman dilimine alalım.</p>
+
+      <div class="caution">
+        <b>Nefes şikayeti olanlar için not:</b> Nişantaşı çevresinde trafik yoğunluğu ve egzoz kokusu şikayetlerinizi geçici olarak artırabilir. Astım tanınız varsa kurtarıcı nefes açıcı ilacınızı yanınızda bulundurun; polen mevsiminde yolculuk sırasında araç camlarını kapalı tutmanız da yardımcı olur.
+      </div>
+
+      <h2 id="harita">Harita ve yol tarifi</h2>
+      <p>Kliniğin konumunu aşağıdaki haritada görebilirsiniz. Navigasyonla gelmek isterseniz "Yol tarifi al" bağlantısını kullanabilirsiniz.</p>
+
+      <div style="border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-md);background:var(--mint-bg);aspect-ratio:16/9;margin:1.25rem 0">
+        <iframe src="https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1zVGXFn3Zpa2l5ZSBDYWRkZXNpIDM3IMWeacWfbGkgxLBzdGFuYnVs!6i16!3m1!1str!5m1!1str" title="Muayenehane konumu — Teşvikiye Caddesi, Nişantaşı" width="100%" height="100%" style="border:0;min-height:320px" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+
+      <p><a class="btn btn--ghost btn--sm" href="https://www.google.com/maps/dir/?api=1&destination=Te%C5%9Fvikiye+Caddesi+37%2C+%C5%9Ei%C5%9Fli+%C4%B0stanbul" target="_blank" rel="noopener">Yol tarifi al</a></p>
+
+      <p class="xs muted">Harita, Google Haritalar hizmetiyle gösterilmektedir; görüntüleme sırasında çerez ve veri aktarımı söz konusu olabilir. Ayrıntı için <a href="/cerez-politikasi/">Çerez Politikası</a> sayfasına bakabilirsiniz.</p>
+
+      <h2 id="hazirlik">Randevunuza nasıl hazırlanırsınız?</h2>
+      <p>İlk muayeneden en iyi sonucu almanın yolu, hikâyenizi eksiksiz anlatabilmekten geçer. Yanınızda getirmeniz iyi olacak şeyler:</p>
+      <ul>
+        <li>Daha önce yaptırdığınız <strong>test ve tahlil sonuçları</strong> (alerji testi, kan tahlili, akciğer filmi, solunum fonksiyon testi)</li>
+        <li><strong>Kullandığınız ilaçların listesi</strong> — kutularını getirmeniz en pratik yoldur</li>
+        <li>Varsa <strong>eski reçeteleriniz</strong> ve epikriz belgeleriniz</li>
+        <li><strong>Kimlik belgeniz</strong></li>
+        <li>Şikayetlerinizin <strong>ne zaman ve nerede arttığına dair kısa notunuz</strong>: hangi mevsim, ev mi iş yeri mi, evde hayvan var mı, yeni bir halı/yastık/nem sorunu oldu mu</li>
+      </ul>
+
+      <div class="caution">
+        <b>Deri testi planlanıyorsa:</b> Antihistaminik grubu ilaçların testten <b>yaklaşık 10 gün önce</b> kesilmesi gerekir; aksi halde test yanlış negatif sonuç verebilir. Buna karşılık astım, tansiyon ve kalp ilaçlarınızı <b>kendi başınıza bırakmayın</b>. Randevu alırken kullandığınız tüm ilaçları bildirin; hangisinin ne zaman kesileceğine hekim karar verir.
+      </div>
+
+      <p>Ayrıntılı hazırlık listesi için <a href="/hasta-merkezi/randevunuza-hazirlanin/">Randevunuza hazırlanın</a> sayfasına, testlerin nasıl yapıldığını merak ediyorsanız <a href="/testler/deri-prick-testi/">Deri prick testi</a> sayfasına göz atabilirsiniz.</p>
+
+      <p class="sm muted">Muayenehanede <strong>yetişkin hastalar</strong> kabul edilmektedir. 18 yaş altı hastalar için çocuk alerji ve immünoloji uzmanına başvurmanızı öneririz.</p>
+
+      <h2 id="ucret">Ücret ve ödeme hakkında</h2>
+      <div class="card" style="margin:1.25rem 0">
+        <p>Mevzuat gereği ücret bilgisi web sitesinde yayınlanmamaktadır. Muayene ücreti, özel sağlık sigortası belgelendirmesi ve ödeme seçenekleri hakkında bilgiyi telefonla alabilirsiniz.</p>
+        <p style="margin-bottom:0"><a class="btn btn--ghost btn--sm" href="tel:+902127099396">0212 709 93 96</a></p>
+      </div>
+
+      <h2 id="acil">Acil bir durumda ne yapmalıyım?</h2>
+      <p>Alerjik şikayetlerin çoğu planlı bir muayeneyle değerlendirilir. Ancak bazı belirtiler beklemeye gelmez. Aşağıdaki durumda muayenehaneyi aramayın, doğrudan acil yardım isteyin:</p>
+
+      <div class="emergency">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v5h2v-5z"/></svg>
+        <div>
+          <strong>Hemen 112'yi arayın</strong>
+          <p>Nefes darlığı, dilde veya boğazda şişme, konuşurken hırıltı, yutkunmada zorluk, baygınlık hissi, ani yaygın döküntüyle birlikte fenalaşma varsa beklemeyin — hemen <a href="tel:112">112</a>'yi arayın. Size reçete edilmiş adrenalin oto-enjektörünüz varsa, hekiminizin tarif ettiği şekilde kullanın ve yine 112'yi arayın.</p>
+        </div>
+      </div>
+
+      <p class="sm muted" style="margin-top:1rem">Bu site sağlık hizmeti vermez; içerik yalnızca bilgilendirme amaçlıdır ve hekim muayenesinin yerine geçmez.</p>
+
+      <h2 id="form">Kısa iletişim formu</h2>
+      <p>Telefonla konuşmak yerine yazmayı tercih ediyorsanız aşağıdaki formu doldurun. Sadece adınız ve telefonunuz yeterli; gerisini görüşürken konuşuruz.</p>
+
+      <div class="form-card" style="margin:1.25rem 0">
+        <form data-appointment-form novalidate>
+          <div class="field">
+            <label for="ad">Ad Soyad <span class="req">*</span></label>
+            <input type="text" id="ad" name="ad" autocomplete="name" required>
+            <span class="err">Lütfen adınızı yazın.</span>
+          </div>
+          <div class="field">
+            <label for="tel">Telefon <span class="req">*</span></label>
+            <input type="tel" id="tel" name="tel" autocomplete="tel" placeholder="05XX XXX XX XX" required>
+            <span class="err">Size ulaşabilmemiz için geçerli bir numara gerekiyor.</span>
+          </div>
+          <div class="field">
+            <label for="konu">Konu</label>
+            <select id="konu" name="konu">
+              <option value="">Seçiniz (isteğe bağlı)</option>
+              <option>Randevu almak istiyorum</option>
+              <option>Ulaşım / adres hakkında bilgi</option>
+              <option>Alerji testi hakkında bilgi</option>
+              <option>Alerji aşısı (immünoterapi) hakkında bilgi</option>
+              <option>Mevcut randevumu değiştirmek istiyorum</option>
+              <option>Diğer</option>
+            </select>
+            <span class="hint">Lütfen bu alana tıbbi ayrıntı yazmayınız.</span>
+          </div>
+          <div class="field">
+            <label for="zaman">Size ne zaman ulaşalım?</label>
+            <select id="zaman" name="zaman">
+              <option value="">Fark etmez</option>
+              <option>Hafta içi sabah</option>
+              <option>Hafta içi öğleden sonra</option>
+              <option>Cumartesi</option>
+            </select>
+          </div>
+          <div class="consent">
+            <input type="checkbox" id="kvkk" name="kvkk" required>
+            <label for="kvkk" style="font-weight:400">
+              <a href="/kvkk-aydinlatma/">KVKK Aydınlatma Metni</a>'ni okudum; iletişim bilgilerimin randevu amacıyla işlenmesini kabul ediyorum. <span class="req">*</span>
+            </label>
+          </div>
+          <div class="consent">
+            <input type="checkbox" id="ticari" name="ticari">
+            <label for="ticari" style="font-weight:400">Bilgilendirme mesajları almak istiyorum. (İsteğe bağlıdır, randevu için gerekli değildir.)</label>
+          </div>
+          <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">
+            <label>Web sitesi<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <button class="btn btn--primary" type="submit" style="width:100%">Gönder</button>
+          <p class="form-note">Bu form bir randevu <strong>talebidir</strong>; randevunuz, sekreterimizin sizi araması ile kesinleşir. Acil durumlarda formu değil, 112'yi kullanın.</p>
+        </form>
+        <div class="form-ok" data-appointment-done>
+          <strong>Mesajınız alındı.</strong>
+          <p style="margin:.5rem 0 0">Çalışma saatleri içinde sizi arayacağız. Acil bir durumunuz varsa lütfen 112'yi arayın.</p>
+          <p class="xs muted" style="margin:.75rem 0 0" data-kayit-notu></p>
+        </div>
+      </div>
+
+      <h2 id="sss">Sık sorulan sorular</h2>
+
+      <details class="faq"><summary>Randevu almadan gelebilir miyim?</summary>
+        <div class="faq-body"><p>Muayenehane randevu ile çalışmaktadır. Randevusuz geldiğinizde o gün içinde yer bulunamayabilir ve uzun süre beklemek zorunda kalabilirsiniz. Yola çıkmadan önce <a href="tel:+902127099396">0212 709 93 96</a> numaralı telefondan arayın ya da WhatsApp'tan yazın; size en yakın uygun saati birlikte belirleyelim.</p></div>
+      </details>
+
+      <details class="faq"><summary>Telefonla aradığımda kimse açmazsa ne yapmalıyım?</summary>
+        <div class="faq-body"><p>Muayene sırasında telefonlar her zaman yanıtlanamayabilir. Böyle bir durumda <a data-wa="Merhaba, telefonla ulaşamadım. Randevu için bilgi almak istiyorum." data-wa-src="iletisim-sss" href="#">WhatsApp üzerinden yazabilir</a> veya bu sayfadaki formu doldurabilirsiniz. Çalışma saatleri içinde iletilen taleplere aynı gün, mesai bitiminden sonra iletilenlere ertesi iş günü dönüş yapılır.</p></div>
+      </details>
+
+      <details class="faq"><summary>Muayenehaneye toplu taşıma ile nasıl gelebilirim?</summary>
+        <div class="faq-body"><p>En pratik yol M2 metro hattının <strong>Osmanbey</strong> durağıdır; muayenehane bu duraktan yaklaşık 6–8 dakikalık düz bir yürüyüş mesafesindedir. Metrobüs kullanıyorsanız Mecidiyeköy'de M2'ye aktarma yapıp iki durak sonra Osmanbey'de inebilirsiniz. Şişli–Osmanbey aksından geçen İETT otobüsleri de Halaskargazi Caddesi üzerindeki duraklarda durur.</p></div>
+      </details>
+
+      <details class="faq"><summary>Otopark var mı, aracımı nereye bırakabilirim?</summary>
+        <div class="faq-body"><p>Binaya ait misafir otoparkı bulunmamaktadır. Teşvikiye ve Nişantaşı çevresinde ücretli yol kenarı park alanları ile kapalı otoparklar mevcuttur. Bölgede park yeri aramak özellikle öğle saatlerinde zaman aldığı için, randevu saatinizden en az 20 dakika önce çevrede olmanızı öneririz.</p></div>
+      </details>
+
+      <details class="faq"><summary>Muayenehane hangi kata ve girişte?</summary>
+        <div class="faq-body"><p>Adres Harbiye Mah. Teşvikiye Cad. No: 37, <strong>Daire 3</strong>'tür. Binanın ana girişinden girip zil panelinden ilgili daireyi arayabilirsiniz. Bina girişi, asansör ve tekerlekli sandalye erişimi hakkında güncel bilgi için gelmeden önce bizi arayın; size uygun düzenlemeyi birlikte planlayalım.</p></div>
+      </details>
+
+      <details class="faq"><summary>İlk muayeneye ne getirmeliyim?</summary>
+        <div class="faq-body"><p>Daha önce yaptırdığınız test ve tahlil sonuçlarını, kullandığınız ilaçların listesini veya kutularını, varsa eski reçetelerinizi ve kimliğinizi getirin. Şikayetlerinizin hangi mevsimde ve hangi ortamda arttığını kısaca not etmeniz de tanı sürecini belirgin biçimde hızlandırır. Ayrıntılı liste için <a href="/hasta-merkezi/randevunuza-hazirlanin/">Randevunuza hazırlanın</a> sayfasına bakın.</p></div>
+      </details>
+
+      <details class="faq"><summary>Deri testi yaptıracaksam ilaçlarımı kesmeli miyim?</summary>
+        <div class="faq-body"><p>Deri testi planlanıyorsa antihistaminik grubu ilaçların genellikle <strong>yaklaşık 10 gün önce</strong> kesilmesi gerekir; aksi halde test yanlış sonuç verebilir. Ancak astım, tansiyon ve kalp ilaçlarınız için kendi başınıza karar vermeyin. Randevu alırken kullandığınız tüm ilaçları bildirin; hangisinin kesileceğini hekim size özel olarak söyleyecektir.</p></div>
+      </details>
+
+      <details class="faq"><summary>Çocuğum için randevu alabilir miyim?</summary>
+        <div class="faq-body"><p>Muayenehanede <strong>yetişkin hastalar</strong> kabul edilmektedir. 18 yaş altı hastalar için çocuk alerji ve immünoloji uzmanına başvurmanızı öneririz.</p></div>
+      </details>
+
+      <details class="faq"><summary>Yurt dışından geliyorum, İngilizce hizmet var mı?</summary>
+        <div class="faq-body"><p>Evet, uluslararası hastalar için İngilizce iletişim sağlanabilmektedir. Seyahat tarihinizi ve şikayetlerinizi önceden bildirirseniz muayene ve test planınızı geliş takviminize göre düzenlemeye çalışırız. Ayrıntı için <a href="/en/international-patients.html" hreflang="en">International patients</a> sayfasına bakabilirsiniz.</p></div>
+      </details>
+
+      <details class="faq"><summary>Test sonuçlarımı gelmeden gönderebilir miyim?</summary>
+        <div class="faq-body"><p>Evet. Başka bir merkezde yaptırdığınız test sonuçlarını randevunuzdan önce güvenli bağlantı üzerinden iletebilirsiniz. Bu bir <strong>online ön değerlendirmedir</strong>; muayenenin ve kesin tanının yerine geçmez, acil durumlarda kullanılmaz. Nasıl çalıştığını <a href="/hasta-merkezi/ikinci-gorus/">ikinci görüş</a> sayfasında anlattık.</p></div>
+      </details>
+
+      <details class="faq"><summary>Randevumu iptal etmem veya ertelemem gerekirse ne yapmalıyım?</summary>
+        <div class="faq-body"><p>Gelemeyeceğinizi anladığınız anda — mümkünse en az 24 saat önce — bizi arayın veya WhatsApp'tan yazın. Boşalan saati bekleyen başka bir hastaya açabilir, size de en uygun yeni günü birlikte belirleyebiliriz.</p></div>
+      </details>
+
+      <details class="faq"><summary>Şikayetimi bu sayfadaki forma detaylı yazabilir miyim?</summary>
+        <div class="faq-body"><p>Lütfen forma ayrıntılı sağlık bilgisi yazmayın. Form yalnızca sizinle iletişime geçebilmemiz içindir; tıbbi ayrıntıları telefonda veya muayenede paylaşmanız hem daha güvenli hem de daha doğrudur. Kişisel verilerinizin nasıl işlendiğini <a href="/kvkk-aydinlatma/">KVKK Aydınlatma Metni</a>'nde bulabilirsiniz.</p></div>
+      </details>
+
+      <div class="doctor-note" style="margin-top:2.5rem">
+        <div class="dn-body">
+          <p>“Bir hastanın kapımdan içeri girene kadar geçirdiği yol da tedavinin parçasıdır. Trafikte sıkışıp, park yeri arayıp, yanlış caddeye sapıp gergin bir halde muayeneye başlamanızı istemiyorum. Bu yüzden adresi, saatleri ve yürüyüş tarifini olabildiğince açık yazdık. Kafanıza takılan en küçük ayrıntıda bile çekinmeden arayın; gelmeden önce sorulan sorular, geldikten sonra kazanılan zamandır.”</p>
+          <span class="dn-who">Uzm. Dr. Ramazan Ersoy · İç Hastalıkları, Alerji ve Klinik İmmünoloji</span>
+        </div>
+      </div>
+
+      <p style="margin-top:1.75rem"><a class="link-arrow" href="/dr-ramazan-ersoy/">Doktoru yakından tanıyın</a></p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KAPANIŞ CTA ═══ -->
+<section class="section section--mint">
+  <div class="wrap center">
+    <p class="eyebrow" style="justify-content:center">Randevu</p>
+    <h2>İlk adım bir telefon kadar yakın</h2>
+    <p style="max-width:56ch;margin-inline:auto">Şikayetinizin adını koymak için önce tanışmamız yeterli. Arayın, yazın ya da formu doldurun; gerisini birlikte planlayalım.</p>
+    <div class="btn-row" style="justify-content:center;margin-top:1.5rem">
+      <a class="btn btn--primary" href="tel:+902127099396">0212 709 93 96</a>
+      <a class="btn btn--wa" data-wa="Merhaba, Dr. Ramazan Ersoy için randevu almak istiyorum." data-wa-src="iletisim-kapanis" href="#">WhatsApp'tan yazın</a>
+      <a class="btn btn--ghost" href="/randevu/">Randevu talep formu</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Physician",
+  "@id":"https://drramazanersoy.tr/#muayenehane",
+  "name":"Uzm. Dr. Ramazan Ersoy Muayenehanesi",
+  "alternateName":"Uzm. Dr. Ramazan Ersoy — Yetişkin Alerji ve Astım",
+  "medicalSpecialty":["Allergy","Pulmonary"],
+  "description":"Yetişkin alerji ve astım muayenehanesi. Alerjik rinit, astım, ürtiker, besin ve ilaç alerjisi; deri testleri ve alerji aşısı (immünoterapi). Nişantaşı, Şişli / İstanbul.",
+  "url":"https://drramazanersoy.tr/",
+  "telephone":"+902127099396",
+  "areaServed":{"@type":"City","name":"İstanbul"},
+  "availableLanguage":["tr","en"],
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Harbiye Mah. Teşvikiye Cad. 37/3",
+    "addressLocality":"Şişli",
+    "addressRegion":"İstanbul",
+    "postalCode":"34367",
+    "addressCountry":"TR"
+  },
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"00:00","closes":"00:00"}
+  ],
+  "publicAccess":true,
+  "isAcceptingNewPatients":true,
+  "availableService":[
+    {"@type":"MedicalTest","name":"Alerji deri testi (prick test)"},
+    {"@type":"MedicalTest","name":"Solunum fonksiyon testi"},
+    {"@type":"MedicalTherapy","name":"Alerji aşısı (immünoterapi)"}
+  ],
+  "potentialAction":{
+    "@type":"CommunicateAction",
+    "name":"Randevu talebi",
+    "target":"https://drramazanersoy.tr/randevu.html"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
+    {"@type":"ListItem","position":2,"name":"İletişim ve Ulaşım","item":"https://drramazanersoy.tr/iletisim.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ContactPage",
+  "name":"İletişim ve Ulaşım",
+  "url":"https://drramazanersoy.tr/iletisim.html",
+  "inLanguage":"tr-TR",
+  "datePublished":"2026-07-19",
+  "dateModified":"2026-07-19",
+  "about":{"@id":"https://drramazanersoy.tr/#muayenehane"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Randevu almadan gelebilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Muayenehane randevu ile çalışmaktadır. Randevusuz geldiğinizde o gün içinde yer bulunamayabilir ve uzun süre beklemek zorunda kalabilirsiniz. Gelmeden önce 0212 709 93 96 numaralı telefondan ya da WhatsApp üzerinden bize yazmanızı öneririz."}},
+    {"@type":"Question","name":"Telefonla aradığımda kimse açmazsa ne yapmalıyım?","acceptedAnswer":{"@type":"Answer","text":"Muayene sırasında telefonlar her zaman yanıtlanamayabilir. Böyle bir durumda WhatsApp üzerinden yazabilir veya sitedeki randevu talep formunu doldurabilirsiniz. Çalışma saatleri içinde iletilen taleplere aynı gün, mesai bitiminden sonra iletilenlere ise ertesi iş günü dönüş yapılır."}},
+    {"@type":"Question","name":"Muayenehaneye toplu taşıma ile nasıl gelebilirim?","acceptedAnswer":{"@type":"Answer","text":"En pratik yol M2 metro hattının Osmanbey durağıdır; muayenehane bu duraktan yaklaşık 6-8 dakikalık düz bir yürüyüş mesafesindedir. Mecidiyeköy metrobüs durağından M2 metroya bir durak inerek de ulaşabilirsiniz. Şişli-Osmanbey aksından geçen İETT otobüsleri Halaskargazi Caddesi üzerindeki duraklarda durur."}},
+    {"@type":"Question","name":"Otopark var mı, aracımı nereye bırakabilirim?","acceptedAnswer":{"@type":"Answer","text":"Binaya ait misafir otoparkı bulunmamaktadır. Teşvikiye ve Nişantaşı çevresinde ücretli yol kenarı otoparkları ile kapalı otoparklar mevcuttur. Nişantaşı trafiğinin yoğun olduğu saatlerde park yeri aramak zaman alabildiği için randevu saatinizden en az 20 dakika önce bölgede olmanızı öneririz."}},
+    {"@type":"Question","name":"Muayenehane hangi kata ve girişte?","acceptedAnswer":{"@type":"Answer","text":"Adres Harbiye Mah. Teşvikiye Cad. No: 37, Daire 3'tür. Binanın zemin katındaki ana girişten girip zil panelinden ilgili daireyi arayabilirsiniz. Bina girişi, asansör ve tekerlekli sandalye erişimi hakkında güncel bilgi için gelmeden önce bizi arayın; size yardımcı olacak düzenlemeyi birlikte planlayalım."}},
+    {"@type":"Question","name":"İlk muayeneye ne getirmeliyim?","acceptedAnswer":{"@type":"Answer","text":"Daha önce yaptırdığınız test ve tahlil sonuçlarını, kullandığınız ilaçların listesini veya kutularını, varsa eski reçetelerinizi ve kimliğinizi getirin. Şikayetlerinizin hangi mevsimde, hangi ortamda arttığını kısaca not etmeniz de tanı sürecini hızlandırır."}},
+    {"@type":"Question","name":"Deri testi yaptıracaksam randevudan önce ilaçlarımı kesmeli miyim?","acceptedAnswer":{"@type":"Answer","text":"Deri testi planlanıyorsa antihistaminik grubu ilaçların genellikle yaklaşık 10 gün önce kesilmesi gerekir; aksi halde test yanlış sonuç verebilir. Ancak astım, tansiyon ve kalp ilaçlarınız için kendi başınıza karar vermeyin. Randevu alırken kullandığınız tüm ilaçları bildirin; hangisinin kesileceğini hekim size özel olarak söyleyecektir."}},
+    {"@type":"Question","name":"Çocuğum için randevu alabilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Muayenehanede yetişkin hastalar kabul edilmektedir. 18 yaş altı hastalar için çocuk alerji ve immünoloji uzmanına başvurmanızı öneririz."}},
+    {"@type":"Question","name":"Yurt dışından geliyorum, İngilizce hizmet var mı?","acceptedAnswer":{"@type":"Answer","text":"Evet, uluslararası hastalar için İngilizce iletişim sağlanabilmektedir. Seyahat tarihinizi ve şikayetlerinizi önceden bildirirseniz muayene ve test planınızı geliş takviminize göre düzenlemeye çalışırız."}},
+    {"@type":"Question","name":"Test sonuçlarımı gelmeden gönderebilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Evet. Başka bir merkezde yaptırdığınız test sonuçlarını randevunuzdan önce güvenli bağlantı üzerinden iletebilirsiniz. Bu bir online ön değerlendirmedir; muayenenin ve kesin tanının yerine geçmez, acil durumlarda kullanılmaz."}},
+    {"@type":"Question","name":"Randevumu iptal etmem veya ertelemem gerekirse ne yapmalıyım?","acceptedAnswer":{"@type":"Answer","text":"Gelemeyeceğinizi anladığınız anda, mümkünse en az 24 saat önce bizi arayın veya WhatsApp'tan yazın. Boşalan saati bekleyen başka bir hastaya açabilir, size de en uygun yeni günü birlikte belirleyebiliriz."}},
+    {"@type":"Question","name":"Şikayetimi bu sayfadaki forma detaylı yazabilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Lütfen forma ayrıntılı sağlık bilgisi yazmayın. Form yalnızca sizinle iletişime geçebilmemiz içindir; tıbbi ayrıntıları telefonda veya muayenede paylaşmanız hem daha güvenli hem de daha doğrudur."}}
+  ]
+}
+</script>
+<?php get_footer(); ?>
