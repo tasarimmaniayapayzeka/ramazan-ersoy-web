@@ -255,4 +255,170 @@ get_header();
   ]
 }
 </script>
+<!-- KURTARILAN INLINE BETIK (script-kurtar.js): statik sayfada </main> sonrasindaydi,
+     donusturucu almamisti; arac islevselligi bu bloklara bagli -->
+<script>
+(function () {
+  'use strict';
+
+  /* Puanlama: her yanıt "a" (alerji) ve "c" (soğuk algınlığı) puanı toplar.
+     Sonuç: a - c >= 3  → alerjiyi düşündürür
+            c - a >= 3  → soğuk algınlığına daha yakın
+            aradaysa    → karışık tablo
+     Bu eşikler bilgilendirme amaçlıdır; hiçbir sonuç tanı değildir. */
+  var QUESTIONS = [
+    {
+      q: 'Şikayetleriniz 10 günden uzun süredir mi devam ediyor?',
+      hint: 'Soğuk algınlığı çoğu zaman 7–10 gün içinde kendiliğinden geriler; alerjik şikayetler maruziyet sürdükçe haftalarca sürebilir.',
+      opts: [
+        { label: 'Evet, 10 günden uzun sürüyor', a: 2, c: 0 },
+        { label: 'Hayır, birkaç gündür var', a: 0, c: 1 }
+      ]
+    },
+    {
+      q: 'Ateşiniz var mı ya da son günlerde oldu mu?',
+      hint: 'Alerjide ateş beklenmez; ateş öncelikle enfeksiyon lehine bir bulgudur.',
+      opts: [
+        { label: 'Evet, ateşim var / oldu', a: 0, c: 2 },
+        { label: 'Hayır, ateşim olmadı', a: 1, c: 0 }
+      ]
+    },
+    {
+      q: 'Gözlerinizde kaşıntı, sulanma veya kızarıklık var mı?',
+      hint: 'Göz kaşıntısı ve sulanması alerjik tabloya sık eşlik eder; soğuk algınlığında bu kadar belirgin olması beklenmez.',
+      opts: [
+        { label: 'Evet, gözlerim kaşınıyor / sulanıyor', a: 2, c: 0 },
+        { label: 'Hayır, göz şikayetim yok', a: 0, c: 1 }
+      ]
+    },
+    {
+      q: 'Hapşırıklarınız nöbetler hâlinde, art arda mı geliyor?',
+      hint: 'Arka arkaya beş-on kez gelen hapşırık nöbetleri alerjik rinit için tipiktir.',
+      opts: [
+        { label: 'Evet, art arda geliyor', a: 2, c: 0 },
+        { label: 'Hayır, ara sıra tek tük hapşırıyorum', a: 0, c: 1 }
+      ]
+    },
+    {
+      q: 'Şikayetleriniz belirli bir mevsimde ya da belirli bir ortamda mı artıyor?',
+      hint: 'Örneğin her ilkbahar, açık havada, ev temizliğinde ya da hayvanla temasta artış — alerjiyi düşündüren bir düzendir.',
+      opts: [
+        { label: 'Evet, belirli mevsim/ortamda artıyor', a: 2, c: 0 },
+        { label: 'Hayır, böyle bir düzen fark etmedim', a: 0, c: 1 }
+      ]
+    },
+    {
+      q: 'Burun akıntınız nasıl?',
+      hint: 'Alerjide akıntı genellikle su gibi berrak kalır; enfeksiyonda birkaç gün içinde koyulaşabilir.',
+      opts: [
+        { label: 'Şeffaf, su gibi akıyor', a: 2, c: 0 },
+        { label: 'Koyu (sarı-yeşil) renkte', a: 0, c: 2 },
+        { label: 'Belirgin akıntım yok / emin değilim', a: 0, c: 0 }
+      ]
+    }
+  ];
+
+  var screen   = document.getElementById('q-screen');
+  var qEl      = document.getElementById('q-question');
+  var hintEl   = document.getElementById('q-hint');
+  var answers  = document.getElementById('q-answers');
+  var backBtn  = document.getElementById('q-back');
+  var restart  = document.getElementById('q-restart');
+  var barEl    = document.getElementById('q-progress-bar');
+  var textEl   = document.getElementById('q-progress-text');
+  var panels   = {
+    alerji:  document.getElementById('res-alerji'),
+    soguk:   document.getElementById('res-soguk'),
+    karisik: document.getElementById('res-karisik')
+  };
+  if (!screen || !qEl || !answers) return;
+
+  var idx = 0;
+  var chosen = []; // her sorunun seçilen seçenek indeksi
+
+  function hidePanels() {
+    Object.keys(panels).forEach(function (k) {
+      if (panels[k]) panels[k].hidden = true;
+    });
+  }
+
+  function render(moveFocus) {
+    hidePanels();
+    screen.hidden = false;
+    var item = QUESTIONS[idx];
+    textEl.textContent = 'Soru ' + (idx + 1) + ' / ' + QUESTIONS.length;
+    barEl.style.width = (((idx + 1) / QUESTIONS.length) * 100).toFixed(1) + '%';
+    qEl.textContent = item.q;
+    hintEl.textContent = item.hint;
+
+    answers.innerHTML = '';
+    item.opts.forEach(function (opt, i) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'btn btn--ghost';
+      btn.style.cssText = 'width:100%;justify-content:flex-start;text-align:left;line-height:1.35';
+      btn.textContent = opt.label;
+      if (chosen[idx] === i) {
+        btn.setAttribute('aria-pressed', 'true');
+        btn.style.background = 'var(--mint-bg)';
+        btn.style.borderColor = 'var(--mint-ink)';
+      }
+      btn.addEventListener('click', function () {
+        chosen[idx] = i;
+        if (idx < QUESTIONS.length - 1) {
+          idx++;
+          render(true);
+        } else {
+          showResult();
+        }
+      });
+      answers.appendChild(btn);
+    });
+
+    backBtn.hidden = idx === 0;
+    restart.hidden = idx === 0 && chosen.length === 0;
+    if (moveFocus) qEl.focus();
+  }
+
+  function showResult() {
+    var a = 0, c = 0;
+    QUESTIONS.forEach(function (item, qi) {
+      var opt = item.opts[chosen[qi]];
+      if (opt) { a += opt.a; c += opt.c; }
+    });
+    var key = 'karisik';
+    if (a - c >= 3) key = 'alerji';
+    else if (c - a >= 3) key = 'soguk';
+
+    screen.hidden = true;
+    hidePanels();
+    textEl.textContent = 'Test tamamlandı';
+    barEl.style.width = '100%';
+    restart.hidden = false;
+
+    var panel = panels[key];
+    if (panel) {
+      panel.hidden = false;
+      var h = panel.querySelector('h3');
+      if (h) h.focus();
+    }
+  }
+
+  function resetQuiz() {
+    idx = 0;
+    chosen = [];
+    render(true);
+  }
+
+  backBtn.addEventListener('click', function () {
+    if (idx > 0) { idx--; render(true); }
+  });
+  restart.addEventListener('click', resetQuiz);
+  document.querySelectorAll('[data-restart]').forEach(function (btn) {
+    btn.addEventListener('click', resetQuiz);
+  });
+
+  render(false);
+})();
+</script>
 <?php get_footer(); ?>

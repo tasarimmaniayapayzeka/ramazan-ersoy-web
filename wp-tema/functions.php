@@ -31,14 +31,21 @@ require_once get_template_directory() . '/inc/yoast-uyum.php';
    1) STİL VE BETİKLER
    ============================================================ */
 function drre_varliklar() {
-    $v = '20260816';   /* önbellek kırıcı — site.css değişince elle artır */
+    $v = '20260817b';  /* önbellek kırıcı — site.css/js değişince elle artır */
+
+    /* DİKKAT: home_url() ŞART. '/assets/...' gibi kökten yol verildiğinde
+       WordPress bunu SİTEURL'e (…/wp-yeni) göre çözüyor ve dört varlık da
+       /wp-yeni/assets/... → 404 oluyordu. Gece denetimi yakaladı: site
+       stilsiz render oluyor, ACT testi puanlamıyor, chatbot hiç açılmıyordu.
+       home_url() ziyaretçi kökünü verir: https://drramazanersoy.tr/assets/... */
+    $kok = home_url('/');
 
     /* tokens.css'i ayrıca bağlamıyoruz: site.css onu @import ediyor. */
-    wp_enqueue_style('drre-site', DRRE_KOK . 'assets/css/site.css', [], $v);
-    wp_enqueue_style('drre-chatbot', DRRE_KOK . 'assets/css/chatbot.css', ['drre-site'], $v);
+    wp_enqueue_style('drre-site', $kok . 'assets/css/site.css', [], $v);
+    wp_enqueue_style('drre-chatbot', $kok . 'assets/css/chatbot.css', ['drre-site'], $v);
 
-    wp_enqueue_script('drre-site', DRRE_KOK . 'assets/js/site.js', [], $v, true);
-    wp_enqueue_script('drre-chatbot', DRRE_KOK . 'assets/js/chatbot.js', [], $v, true);
+    wp_enqueue_script('drre-site', $kok . 'assets/js/site.js', [], $v, true);
+    wp_enqueue_script('drre-chatbot', $kok . 'assets/js/chatbot.js', [], $v, true);
 }
 add_action('wp_enqueue_scripts', 'drre_varliklar');
 

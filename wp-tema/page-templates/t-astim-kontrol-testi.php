@@ -279,4 +279,118 @@ get_header();
   }
 }
 </script>
+<!-- KURTARILAN INLINE BETIK (script-kurtar.js): statik sayfada </main> sonrasindaydi,
+     donusturucu almamisti; arac islevselligi bu bloklara bagli -->
+<script>
+(function(){
+  'use strict';
+  var form   = document.getElementById('act-form');
+  var out    = document.getElementById('act-sonuc');
+  var reset  = document.getElementById('act-sifirla');
+  if(!form || !out) return;
+
+  var SORULAR = ['q1','q2','q3','q4','q5'];
+
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  }); }
+
+  function cevapAl(ad){
+    var secili = form.querySelector('input[name="' + ad + '"]:checked');
+    return secili ? parseInt(secili.value, 10) : null;
+  }
+
+  function uyariGoster(eksikNo){
+    out.innerHTML =
+      '<div class="caution" role="alert">' +
+        '<b>Eksik yanıt:</b> Lütfen ' + eksikNo + '. soruyu da yanıtlayın. ' +
+        'Puanın hesaplanabilmesi için 5 sorunun tamamının yanıtlanması gerekir.' +
+      '</div>';
+    var fs = form.querySelectorAll('fieldset')[eksikNo - 1];
+    if(fs){
+      fs.style.borderColor = 'var(--amber)';
+      var ilkRadio = fs.querySelector('input[type="radio"]');
+      if(ilkRadio) ilkRadio.focus();
+      fs.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+  }
+
+  function kenarliklariSifirla(){
+    var fsler = form.querySelectorAll('fieldset');
+    for(var i = 0; i < fsler.length; i++){ fsler[i].style.borderColor = 'var(--line)'; }
+  }
+
+  function sonucGoster(puan){
+    var baslik, aciklama, rozetStil, cta = '';
+
+    if(puan === 25){
+      baslik = 'Tam kontrol';
+      aciklama = 'Son 4 haftada astımınız <strong>tam kontrol altında</strong> görünüyor. Bu tablo, tedavinizin ve günlük düzeninizin iyi işlediğini düşündürür. Mevcut düzeninizi hekiminizin bilgisi dahilinde sürdürün ve kontrol muayenelerinizi aksatmayın.';
+      rozetStil = 'background:var(--mint-bg);color:var(--mint-ink);border:1px solid var(--mint-line)';
+    } else if(puan >= 20){
+      baslik = 'İyi kontrol';
+      aciklama = 'Son 4 haftada astımınız <strong>kontrol altında</strong> görünüyor; ancak puanınız tam kontrole (25) ulaşmamış. Bu, tedavinizde küçük düzenlemelerle daha rahat bir döneme geçilebileceğini düşündürebilir. Sonucunuzu bir sonraki muayenenizde hekiminizle paylaşmanız yeterlidir.';
+      rozetStil = 'background:var(--mint-bg);color:var(--mint-ink);border:1px solid var(--mint-line)';
+      cta =
+        '<div class="btn-row" style="margin-top:1.1rem">' +
+          '<a class="btn btn--ghost" href="../randevu.html?sikayet=astim">Kontrolü tam hedefliyorsanız değerlendirme için randevu oluşturabilirsiniz</a>' +
+        '</div>';
+    } else {
+      baslik = 'Kontrol yetersiz olabilir';
+      aciklama = 'Puanınız 20\'nin altında. Bu, son 4 haftada <strong>astım kontrolünüzün yetersiz olabileceğini</strong> düşündüren bir tarama bulgusudur — kesin bir sonuç değildir. Tedavinizin, tetikleyicilerinizin ve ilaç kullanım tekniğinizin gözden geçirilmesi için bir değerlendirme randevusu oluşturabilirsiniz.';
+      rozetStil = 'background:#FFFBF3;color:#92400E;border:1px solid var(--amber)';
+      cta =
+        '<div class="btn-row" style="margin-top:1.1rem">' +
+          '<a class="btn btn--primary" href="../randevu.html?sikayet=astim">Değerlendirme için randevu oluşturun</a>' +
+          '<a class="btn btn--ghost" href="tel:+902127099396">0212 709 93 96</a>' +
+        '</div>';
+    }
+
+    out.innerHTML =
+      '<div class="card" style="border-color:var(--mint-line)">' +
+        '<p class="eyebrow" style="margin-bottom:.4rem">Sonucunuz</p>' +
+        '<p style="margin:0 0 .35rem"><span class="tnum" style="font-family:var(--font-display);font-size:2.6rem;font-weight:600;color:var(--ink);line-height:1">' + puan + '</span>' +
+        '<span class="muted" style="font-size:1.05rem"> / 25 puan</span></p>' +
+        '<p style="margin:0 0 .9rem"><span style="display:inline-block;font-size:var(--fs-xs);font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.3rem .75rem;border-radius:var(--r-pill);' + rozetStil + '">' + esc(baslik) + '</span></p>' +
+        '<p class="sm" style="margin-bottom:0">' + aciklama + '</p>' +
+        cta +
+        '<p style="margin:1.1rem 0 0"><button class="btn btn--ghost" type="button" onclick="window.print()">Sonucu yazdır</button></p>' +
+        '<div class="caution" style="margin-bottom:0;margin-top:1.1rem">' +
+          '<b>Önemli:</b> ACT bir <b>tarama aracıdır</b>; tanı ve tedavi kararının yerine geçmez. ' +
+          'Sonucunuzu mutlaka hekiminizle paylaşın. Sonuçlar kişiden kişiye farklılık gösterebilir.' +
+        '</div>' +
+      '</div>';
+
+    /* WhatsApp mesajını puana göre güncelle (data-wa + href birlikte) */
+    var waMsg = 'Merhaba, ACT testinden ' + puan + ' puan aldım, değerlendirme randevusu istiyorum.';
+    document.querySelectorAll('a[data-wa]').forEach(function(wa){
+      wa.setAttribute('data-wa', waMsg);
+      var h = wa.getAttribute('href') || '';
+      if(h.indexOf('wa.me') !== -1) wa.setAttribute('href', h.split('?')[0] + '?text=' + encodeURIComponent(waMsg));
+    });
+
+    out.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    kenarliklariSifirla();
+    var toplam = 0;
+    for(var i = 0; i < SORULAR.length; i++){
+      var deger = cevapAl(SORULAR[i]);
+      if(deger === null){ uyariGoster(i + 1); return; }
+      toplam += deger;
+    }
+    sonucGoster(toplam);
+  });
+
+  if(reset){
+    reset.addEventListener('click', function(){
+      form.reset();
+      kenarliklariSifirla();
+      out.innerHTML = '';
+    });
+  }
+})();
+</script>
 <?php get_footer(); ?>
