@@ -60,6 +60,12 @@ add_action('admin_init', function () {
             foreach (drre_video_tanimlari() as $anahtar => $t) {
                 $temiz[$anahtar] = drre_video_id_ayikla($girdi[$anahtar] ?? '');
             }
+            /* Yeni girilen videonun kapağını kendi sunucumuza indir —
+               ziyaretçi tarayıcısı i.ytimg'e hiç gitmesin (KVKK duruşu).
+               Kayıt anında, yönetici oturumunda bir kez çalışır. */
+            foreach ($temiz as $id) {
+                if ($id !== '') drre_video_kapak_indir($id);
+            }
             return $temiz;
         },
     ]);
@@ -97,4 +103,18 @@ function drre_video_sayfasi() {
       </form>
     </div>
     <?php
+}
+
+/** Kapağı assets/img/video/{id}.jpg olarak indirir (varsa dokunmaz).
+ *  Sıra: oar2 (Shorts dikey 405x720) → maxresdefault → hqdefault. */
+function drre_video_kapak_indir($id) {
+    $hedef = dirname(ABSPATH) . '/assets/img/video/' . $id . '.jpg';
+    if (file_exists($hedef)) return;
+    foreach (['oar2', 'maxresdefault', 'hqdefault'] as $varyant) {
+        $y = wp_remote_get('https://i.ytimg.com/vi/' . $id . '/' . $varyant . '.jpg', ['timeout' => 8]);
+        if (!is_wp_error($y) && wp_remote_retrieve_response_code($y) === 200) {
+            @file_put_contents($hedef, wp_remote_retrieve_body($y));
+            return;
+        }
+    }
 }
