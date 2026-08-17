@@ -27,14 +27,27 @@ get_header();
     </div>
 
     <figure class="hero-media" style="margin:0">
-      <!-- Görsel yapay zekâ ile üretildi (nano_banana_pro 4K, 16 Ağu 2026);
-           4K orijinali gorsel-orijinal/hero-dikey.png (git dışı, E: yedekte).
-           İnsan/yüz yok — hekim fotoğrafı ancak gerçek çekimle gelir. -->
+      <?php
+      /* Hero görseli: tanışma videosunun GERÇEK karesi (kendi sunucumuzdan,
+         hekim kendi videosunda göründüğü için foto izni sorunu yok).
+         Kapak dosyası yoksa AI oda görseline düşer. Kullanıcı geri bildirimi
+         (17 Ağu): "play rozeti var ama kare boş görünüyor" — video karesi
+         hekim yüzü gösterince davet gerçek oldu. */
+      $heroVid = drre_video('tanisma');
+      $heroKapak = '/assets/img/video/' . $heroVid . '.jpg';
+      if ($heroVid && file_exists(dirname(ABSPATH) . $heroKapak)) : ?>
+      <img src="<?php echo esc_url($heroKapak); ?>"
+           alt="Uzm. Dr. Ramazan Ersoy, tanışma videosundan bir kare — muayenehanesinde konuşuyor"
+           width="405" height="720" fetchpriority="high"
+           style="width:100%;height:100%;object-fit:cover;border-radius:inherit">
+      <?php else : ?>
+      <!-- Yedek: yapay zekâ üretimi oda görseli (nano_banana_pro 4K) -->
       <img src="assets/img/icerik/hero-dikey-960.webp"
            srcset="assets/img/icerik/hero-dikey-640.webp 640w, assets/img/icerik/hero-dikey-960.webp 960w, assets/img/icerik/hero-dikey-1440.webp 1440w"
            sizes="(max-width:900px) 100vw, 560px"
            alt="Muayenehanede tül perdeli pencere önünde koyu yeşil koltuk, yanında stetoskop ve zeytin dalı duran ahşap sehpa"
            width="800" height="1000" fetchpriority="high">
+      <?php endif; ?>
       <button class="play-badge" data-video="<?php echo esc_attr(drre_video('tanisma')); ?>" data-en-boy="9/16"
               data-baslik="Uzm. Dr. Ramazan Ersoy — tanışma"
               aria-label="Uzm. Dr. Ramazan Ersoy tanışma videosunu izle (36 saniye)">
@@ -45,8 +58,8 @@ get_header();
       <figcaption class="play-label">Tanışma videosu · 36 saniye</figcaption>
     </figure>
   </div>
-  <svg class="wave-divider" viewBox="0 0çok sayıda 48" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0,24 C180,52 360,-4 600,20 C840,44 1020,4çok sayıda,26 Lçok sayıda,48 L0,48 Z" fill="#FFFFFF"/>
+  <svg class="wave-divider" viewBox="0 0 1200 48" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,24 C180,52 360,-4 600,20 C840,44 1020,4 1200,26 L1200,48 L0,48 Z" fill="#FFFFFF"/>
   </svg>
 </section>
 
@@ -127,9 +140,12 @@ get_header();
         <span class="lbl">yıl hekimlik deneyimi</span>
         <span class="go">Özgeçmişi görün →</span>
       </a>
+      <?php /* "~1200 hasta" sayacı bilinçli emekli edildi: doğrulanamaz
+               niceliksel deneyim iddiası (gece denetimi bulgusu, mevzuat
+               riski). Yerine belgeyle doğrulanabilir yıl bilgisi. */ ?>
       <a class="proof-item" href="/tedaviler/alerji-asisi-immunoterapi/">
-        <span class="num">~<span data-count="çok sayıda">çok sayıda</span></span>
-        <span class="lbl">hastaya immünoterapi uygulaması</span>
+        <span class="num"><span data-count="2009">2009</span></span>
+        <span class="lbl">'dan beri immünoterapi uygulaması</span>
         <span class="go">Aşı tedavisini okuyun →</span>
       </a>
       <a class="proof-item" href="/yayinlar-ve-oduller/">
@@ -243,7 +259,7 @@ get_header();
     <div class="reveal">
       <p class="eyebrow">Alerji aşısı · İmmünoterapi</p>
       <h2>Alerjiyi bastırmak değil, kaynağından çözmek</h2>
-      <p>İlaçlar şikayetinizi baskılar; immünoterapi ise bağışıklık sisteminizi alerjene karşı yeniden eğitir. Yaklaşık <strong>çok sayıda hastaya</strong> uygulanmış bir tedavi deneyimiyle, size uygun olup olmadığını birlikte değerlendiriyoruz.</p>
+      <p>İlaçlar şikayetinizi baskılar; immünoterapi ise bağışıklık sisteminizi alerjene karşı yeniden eğitir. 2009'dan bu yana süren immünoterapi deneyimiyle, size uygun olup olmadığını birlikte değerlendiriyoruz.</p>
       <div class="caution">
         <b>Not:</b> Tedaviye yanıt kişiden kişiye farklılık gösterebilir. İmmünoterapinin uygunluğu ancak muayene ve test sonrasında belirlenir.
       </div>
