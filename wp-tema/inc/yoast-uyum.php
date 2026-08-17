@@ -9,8 +9,19 @@
  */
 if (!defined('ABSPATH')) exit;
 
-/* Başlık ayracı: statik sayfalar "|" kullanıyor; site genelinde tek dil */
-add_filter('wpseo_separator', function () { return '|'; });
+/* Başlık ayracı: "|" — site genelinde tek dil.
+   `wpseo_separator` filtresi canlıda İŞLEMEDİ (başlıklar "-" ile çıktı);
+   ayraç seçenek katmanından okunuyor olmalı. Seçeneği doğrudan ve
+   İDEMPOTENT biçimde ayarlıyoruz: her yüklemede kontrol, farklıysa yaz. */
+add_action('init', function () {
+    if (!function_exists('YoastSEO')) return;
+    try {
+        $secenek = YoastSEO()->helpers->options;
+        if ($secenek->get('separator') !== 'sc-pipe') {
+            $secenek->set('separator', 'sc-pipe');
+        }
+    } catch (\Throwable $e) { /* Yoast yoksa sessiz geç */ }
+}, 20);
 
 /* XML sitemap TEK KAYNAK: kökteki statik sitemap.xml (build-sitemap.js
    üretir, taşınan 21 sayfayı yeni adresleriyle zaten içerir). Yoast'ın
@@ -33,17 +44,19 @@ add_filter('wpseo_metadesc', function ($desc) {
 
 /**
  * Paylaşım görseli: öne çıkan görsel atanmadıysa slug sözleşmesindeki
- * JPEG kullanılır (og:image için WebP değil JPEG — WhatsApp ve eski
+ * JPEG eklenir (og:image için WebP değil JPEG — WhatsApp ve eski
  * önizleyiciler WebP'yi her zaman göstermez).
+ *
+ * NEDEN ACTION: `wpseo_opengraph_image` filtresi yalnız VAR OLAN görseli
+ * süzer; hiç görsel bulunamadıysa presenter hiç çalışmaz ve filtre
+ * tetiklenmez (canlıda böyle yakalandı — og:image tamamen yoktu).
+ * Görsel EKLEMENİN doğru yolu bu action'daki konteyner.
  */
-function drre_paylasim_gorseli($url) {
-    if ($url) return $url;
-    if (!is_singular(['hastalik', 'test', 'tedavi', 'rehber'])) return $url;
+add_action('wpseo_add_opengraph_images', function ($konteyner) {
+    if (!is_singular(['hastalik', 'test', 'tedavi', 'rehber'])) return;
+    if (has_post_thumbnail()) return;   /* öne çıkan varsa Yoast zaten alır */
     $slug = get_post_field('post_name', get_the_ID());
     if (file_exists(dirname(ABSPATH) . '/assets/img/icerik/' . $slug . '-1440.jpg')) {
-        return 'https://drramazanersoy.tr/assets/img/icerik/' . $slug . '-1440.jpg';
+        $konteyner->add_image_by_url('https://drramazanersoy.tr/assets/img/icerik/' . $slug . '-1440.jpg');
     }
-    return $url;
-}
-add_filter('wpseo_opengraph_image', 'drre_paylasim_gorseli');
-add_filter('wpseo_twitter_image', 'drre_paylasim_gorseli');
+});
