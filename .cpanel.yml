@@ -48,4 +48,5 @@ deployment:
     # yoast-tazele.php tek seferlikti (bayat canonical temizligi, 17 Agu);
     # cp silinen dosyayi sunucudan kaldirmaz, bu satir kaldirir.
     - /bin/rm -f $DEPLOYPATH/wp-yeni/wp-content/mu-plugins/yoast-tazele.php
+    - /bin/rm -f $DEPLOYPATH/wp-yeni/wp-content/mu-plugins/baslik-doldur.php
     - /bin/echo "Yayin: $(date)" >> $HOME/deploy.log
