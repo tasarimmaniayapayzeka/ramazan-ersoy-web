@@ -50,6 +50,17 @@ get_header();
   </svg>
 </section>
 
+<!-- ═══ 1b · YOL HARİTASI ŞERİDİ (araç ailesi girişi) ═══ -->
+<section class="section section--tight" id="yol-haritasi-serit" style="padding-top:0;padding-bottom:0">
+  <div class="wrap">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;border:1.5px solid var(--line);border-radius:14px;padding:1.1rem 1.4rem;background:var(--cream)">
+      <p style="margin:0;font-size:.95rem"><strong>Nereden başlayacağınızı bilmiyor musunuz?</strong>
+        Şikayetinizi kendi cümlelerinizle yazın, size doğru sayfayı ve testi önerelim.</p>
+      <a class="btn btn--primary" href="/araclar/belirti-yol-haritasi/">Belirti Yol Haritası</a>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ 2 · SEMPTOM KAPISI (konseptin imzası) ═══ -->
 <section class="section section--tight" id="sikayet">
   <div class="wrap">
@@ -368,15 +379,30 @@ get_header();
     </div>
 
     <div class="grid-3 reveal">
+      <a class="tool-card" href="/araclar/etiket-dedektifi/">
+        <svg class="t-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="14" cy="14" r="8"/><path d="M20 20l7 7"/><path d="M11 14h6M14 11v6"/></svg>
+        <h3>Etiket Dedektifi</h3>
+        <p>İçindekiler listesini yapıştırın; kazein, E-322 gibi gizli alerjen adlarını sizin için tarayalım.</p>
+      </a>
+      <a class="tool-card" href="/araclar/belirti-yol-haritasi/">
+        <svg class="t-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 26V10l7-4 6 4 7-4v16l-7 4-6-4-7 4z"/><path d="M13 6v16M19 10v16"/></svg>
+        <h3>Belirti Yol Haritası</h3>
+        <p>Şikayetinizi kendi cümlelerinizle yazın; doğru sayfayı ve size uygun testi önerelim.</p>
+      </a>
+      <a class="tool-card" href="/araclar/acil-plan-karti/">
+        <svg class="t-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="8" width="24" height="16" rx="2"/><path d="M16 12v8M12 16h8"/></svg>
+        <h3>Acil Plan Kartı</h3>
+        <p>Anafilaksi riski taşıyanlar için kişisel cüzdan kartı + buzdolabı sayfası — yazdırmaya hazır.</p>
+      </a>
+      <a class="tool-card" href="/araclar/ev-ortami-risk-haritasi/">
+        <svg class="t-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 15L16 6l11 9"/><path d="M8 14v12h16V14"/><path d="M13 26v-6h6v6"/></svg>
+        <h3>Ev Ortamı Risk Haritası</h3>
+        <p>10 soruda evinizin alerjen yükü; sonunda önceliklere göre sıralı eylem planı.</p>
+      </a>
       <a class="tool-card" href="/araclar/alerji-mi-soguk-alginligi-mi/">
         <svg class="t-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="12"/><path d="M12 13a4 4 0 116 3.5V19"/><path d="M16 23v.5"/></svg>
         <h3>Alerji mi, soğuk algınlığı mı?</h3>
         <p>6 soruluk kısa değerlendirme — 60 saniyede fikir edinin.</p>
-      </a>
-      <a class="tool-card" href="/alerji-rehberi/yetiskinlikte-baslayan-astim/">
-        <svg class="t-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M16 6v8M10 14q-4 2-4 7t5 5 4-5v-7M22 14q4 2 4 7t-5 5-4-5v-7"/></svg>
-        <h3>Yetişkinlikte başlayan astım</h3>
-        <p>"Bu yaştan sonra astım mı olurmuş?" — olur. Belirtileri ve yapılması gerekenleri okuyun.</p>
       </a>
       <a class="tool-card" href="/alerji-rehberi/ev-tozu-akari-yatak-odasi/">
         <svg class="t-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 24V12h24v12"/><path d="M4 24h24M7 12V8h8v4"/><circle cx="22" cy="8" r="2"/></svg>
