@@ -120,8 +120,11 @@ ServerSignature Off
 # ---------- Tarayıcı önbelleği ----------
 <IfModule mod_expires.c>
   ExpiresActive On
-  # HTML: kısa (içerik güncellemeleri hızlı görünsün)
-  ExpiresByType text/html "access plus 1 hour"
+  # HTML: ONBELLEKSIZ — site artik WordPress'ten dinamik donuyor; 1 saatlik
+  # tarayici onbellegi ziyaretcilere bayat sayfa gosteriyordu (17 Agu sabahi
+  # kullanici kendi tarayicisinda eski sayfalari gordu). Varliklar ?ver=
+  # damgali ve 1 yil onbellekli kaldigi icin hiz kaybi yok.
+  ExpiresByType text/html "access plus 0 seconds"
   # Statik varlıklar: uzun
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
