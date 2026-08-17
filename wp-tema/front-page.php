@@ -168,7 +168,17 @@ get_header();
   <div class="wrap split">
     <div class="reveal">
       <figure style="margin:0;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-md);position:relative">
+        <?php /* Portre: tanışma videosunun karesinden (hekimin kendi yayını).
+                 Profesyonel çekim geldiğinde bu dosyaların üzerine yazılır,
+                 şablona dokunmak gerekmez. Dosya yoksa eski yer tutucu. */
+        if (file_exists(dirname(ABSPATH) . '/assets/img/dr-ersoy-portre.webp')) : ?>
+        <img src="/assets/img/dr-ersoy-portre.webp"
+             alt="Uzm. Dr. Ramazan Ersoy — tanışma videosundan portre"
+             width="400" height="400" loading="lazy" decoding="async"
+             style="width:100%;height:auto;display:block">
+        <?php else : ?>
         <img src="assets/img/portrait-placeholder.svg" alt="Uzm. Dr. Ramazan Ersoy" width="400" height="400">
+        <?php endif; ?>
       </figure>
     </div>
     <div class="reveal">
