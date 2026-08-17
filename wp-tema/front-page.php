@@ -33,9 +33,16 @@ get_header();
          Kapak dosyası yoksa AI oda görseline düşer. Kullanıcı geri bildirimi
          (17 Ağu): "play rozeti var ama kare boş görünüyor" — video karesi
          hekim yüzü gösterince davet gerçek oldu. */
+      /* Öncelik: Ayarlar > Görseller'den yüklenen özel hero > video kapağı */
+      $heroOzel = file_exists(dirname(ABSPATH) . '/assets/img/hero-ozel.jpg')
+          ? '/assets/img/hero-ozel.jpg?v=' . filemtime(dirname(ABSPATH) . '/assets/img/hero-ozel.jpg') : '';
       $heroVid = drre_video('tanisma');
       $heroKapak = '/assets/img/video/' . $heroVid . '.jpg';
-      if ($heroVid && file_exists(dirname(ABSPATH) . $heroKapak)) : ?>
+      if ($heroOzel) : ?>
+      <img src="<?php echo esc_url($heroOzel); ?>"
+           alt="Uzm. Dr. Ramazan Ersoy" width="405" height="720" fetchpriority="high"
+           style="width:100%;height:100%;object-fit:cover;border-radius:inherit">
+      <?php elseif ($heroVid && file_exists(dirname(ABSPATH) . $heroKapak)) : ?>
       <img src="<?php echo esc_url($heroKapak); ?>"
            alt="Uzm. Dr. Ramazan Ersoy, tanışma videosundan bir kare — muayenehanesinde konuşuyor"
            width="405" height="720" fetchpriority="high"
@@ -171,8 +178,14 @@ get_header();
         <?php /* Portre: tanışma videosunun karesinden (hekimin kendi yayını).
                  Profesyonel çekim geldiğinde bu dosyaların üzerine yazılır,
                  şablona dokunmak gerekmez. Dosya yoksa eski yer tutucu. */
-        if (file_exists(dirname(ABSPATH) . '/assets/img/dr-ersoy-portre.webp')) : ?>
-        <img src="/assets/img/dr-ersoy-portre.webp"
+        $portreKok = dirname(ABSPATH) . '/assets/img/dr-ersoy-portre';
+        $portreV = file_exists($portreKok . '.webp') ? '/assets/img/dr-ersoy-portre.webp'
+                 : (file_exists($portreKok . '.jpg') ? '/assets/img/dr-ersoy-portre.jpg' : '');
+        if ($portreV) :
+            /* önbellek kırıcı: panelden yeni portre yüklenince anında görünsün */
+            $portreV .= '?v=' . filemtime(dirname(ABSPATH) . $portreV);
+        ?>
+        <img src="<?php echo esc_url($portreV); ?>"
              alt="Uzm. Dr. Ramazan Ersoy — tanışma videosundan portre"
              width="400" height="400" loading="lazy" decoding="async"
              style="width:100%;height:auto;display:block">
