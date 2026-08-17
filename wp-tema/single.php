@@ -139,6 +139,18 @@ drre_sss_yaz($id);
 
 <section class="section section--tight" style="padding-top:0">
   <div class="wrap">
+    <?php
+    /* Bağlamsal araç önerisi: bu konuyu okuyan hastanın işine yarayacak
+       araç kartları (bkz. inc/arac-onerisi.php) */
+    if (function_exists('drre_arac_onerileri')) {
+        drre_arac_onerileri(get_post_field('post_name', $id));
+    }
+    ?>
+  </div>
+</section>
+
+<section class="section section--tight" style="padding-top:0">
+  <div class="wrap">
     <div class="article-layout">
       <div></div>
       <?php

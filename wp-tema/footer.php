@@ -48,6 +48,9 @@ $k = DRRE_KOK;
           <li><a href="<?php echo esc_url($k); ?>hasta-merkezi/randevunuza-hazirlanin/">Randevunuza hazırlanın</a></li>
           <li><a href="<?php echo esc_url($k); ?>araclar/astim-kontrol-testi/">Astım Kontrol Testi</a></li>
           <li><a href="<?php echo esc_url($k); ?>araclar/alerji-mi-soguk-alginligi-mi/">Alerji mi Soğuk Algınlığı mı?</a></li>
+          <li><a href="<?php echo esc_url($k); ?>araclar/etiket-dedektifi/">Etiket Dedektifi</a></li>
+          <li><a href="<?php echo esc_url($k); ?>araclar/belirti-yol-haritasi/">Belirti Yol Haritası</a></li>
+          <li><a href="<?php echo esc_url($k); ?>araclar/acil-plan-karti/">Acil Plan Kartı</a></li>
           <li><a href="<?php echo esc_url($k); ?>araclar/video-kutuphanesi/">Video Kütüphanesi</a></li>
         </ul>
       </div>

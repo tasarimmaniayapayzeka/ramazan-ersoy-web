@@ -49,4 +49,6 @@ deployment:
     # cp silinen dosyayi sunucudan kaldirmaz, bu satir kaldirir.
     - /bin/rm -f $DEPLOYPATH/wp-yeni/wp-content/mu-plugins/yoast-tazele.php
     - /bin/rm -f $DEPLOYPATH/wp-yeni/wp-content/mu-plugins/baslik-doldur.php
+    # sayfa-olustur-2 kendi bayragiyla kilitlenir; kurulum sonrasi depodan silinince bu satir sunucudan da kaldirir
+    - /bin/rm -f $DEPLOYPATH/wp-yeni/wp-content/mu-plugins/sayfa-olustur-2.php.eski
     - /bin/echo "Yayin: $(date)" >> $HOME/deploy.log
