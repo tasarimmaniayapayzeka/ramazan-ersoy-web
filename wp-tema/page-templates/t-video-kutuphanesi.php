@@ -48,7 +48,7 @@ get_header();
     <div class="vgrid reveal">
 
       <article class="vcard">
-        <button class="vcard-poster" data-video="" data-en-boy="9/16"
+        <button class="vcard-poster" data-video="<?php echo esc_attr(drre_video('tanisma')); ?>" data-en-boy="9/16"
                 data-baslik="Uzm. Dr. Ramazan Ersoy"
                 aria-label="Uzm. Dr. Ramazan Ersoy — videoyu izle (0:36)">
           <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="vp0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF6F4"/><stop offset="1" stop-color="#CFE7E3"/></linearGradient></defs><rect width="270" height="480" fill="url(#vp0)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="228" cy="120" r="2.5" fill="#B98A3B" opacity=".45"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
@@ -60,7 +60,7 @@ get_header();
       </article>
 
       <article class="vcard">
-        <button class="vcard-poster" data-video="" data-en-boy="9/16"
+        <button class="vcard-poster" data-video="<?php echo esc_attr(drre_video('neye-bakar')); ?>" data-en-boy="9/16"
                 data-baslik="Yetişkin alerji uzmanı neye bakar?"
                 aria-label="Yetişkin alerji uzmanı neye bakar? — videoyu izle (0:44)">
           <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="vp1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3EFE4"/><stop offset="1" stop-color="#E3DCC7"/></linearGradient></defs><rect width="270" height="480" fill="url(#vp1)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="228" cy="120" r="2.5" fill="#B98A3B" opacity=".45"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
@@ -72,7 +72,7 @@ get_header();
       </article>
 
       <article class="vcard">
-        <button class="vcard-poster" data-video="" data-en-boy="9/16"
+        <button class="vcard-poster" data-video="<?php echo esc_attr(drre_video('ne-zaman')); ?>" data-en-boy="9/16"
                 data-baslik="Alerji şikayetlerinde ne zaman doktora başvurmalıyız?"
                 aria-label="Alerji şikayetlerinde ne zaman doktora başvurmalıyız? — videoyu izle (0:38)">
           <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="vp2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EDF4F7"/><stop offset="1" stop-color="#D5E6EE"/></linearGradient></defs><rect width="270" height="480" fill="url(#vp2)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="228" cy="120" r="2.5" fill="#B98A3B" opacity=".45"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
@@ -97,7 +97,7 @@ get_header();
     <div class="vgrid reveal">
 
       <article class="vcard">
-        <button class="vcard-poster" data-video="" data-en-boy="9/16"
+        <button class="vcard-poster" data-video="<?php echo esc_attr(drre_video('muayene')); ?>" data-en-boy="9/16"
                 data-baslik="Alerji muayene süreci nasıl ilerler?"
                 aria-label="Alerji muayene süreci nasıl ilerler? — videoyu izle (0:37)">
           <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="vp3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1F0F6"/><stop offset="1" stop-color="#DEDBEA"/></linearGradient></defs><rect width="270" height="480" fill="url(#vp3)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="228" cy="120" r="2.5" fill="#B98A3B" opacity=".45"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
@@ -109,7 +109,7 @@ get_header();
       </article>
 
       <article class="vcard">
-        <button class="vcard-poster" data-video="" data-en-boy="9/16"
+        <button class="vcard-poster" data-video="<?php echo esc_attr(drre_video('testler')); ?>" data-en-boy="9/16"
                 data-baslik="Alerji testleri nedir, nasıl yapılır?"
                 aria-label="Alerji testleri nedir, nasıl yapılır? — videoyu izle (0:47)">
           <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="vp4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF6F4"/><stop offset="1" stop-color="#CFE7E3"/></linearGradient></defs><rect width="270" height="480" fill="url(#vp4)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="228" cy="120" r="2.5" fill="#B98A3B" opacity=".45"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
@@ -121,7 +121,7 @@ get_header();
       </article>
 
       <article class="vcard">
-        <button class="vcard-poster" data-video="" data-en-boy="9/16"
+        <button class="vcard-poster" data-video="<?php echo esc_attr(drre_video('sikayetim-yok')); ?>" data-en-boy="9/16"
                 data-baslik="Şikayetim yok, yine de alerji testi yaptırmalı mıyım?"
                 aria-label="Şikayetim yok, yine de alerji testi yaptırmalı mıyım? — videoyu izle (0:39)">
           <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="vp5" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3EFE4"/><stop offset="1" stop-color="#E3DCC7"/></linearGradient></defs><rect width="270" height="480" fill="url(#vp5)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="228" cy="120" r="2.5" fill="#B98A3B" opacity=".45"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
@@ -146,7 +146,7 @@ get_header();
     <div class="vgrid reveal">
 
       <article class="vcard">
-        <button class="vcard-poster" data-video="" data-en-boy="9/16"
+        <button class="vcard-poster" data-video="<?php echo esc_attr(drre_video('alerjik-astim')); ?>" data-en-boy="9/16"
                 data-baslik="Alerjik astım nedir? Belirtileri nelerdir?"
                 aria-label="Alerjik astım nedir? Belirtileri nelerdir? — videoyu izle (0:37)">
           <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="vp6" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EDF4F7"/><stop offset="1" stop-color="#D5E6EE"/></linearGradient></defs><rect width="270" height="480" fill="url(#vp6)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="228" cy="120" r="2.5" fill="#B98A3B" opacity=".45"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
@@ -158,7 +158,7 @@ get_header();
       </article>
 
       <article class="vcard">
-        <button class="vcard-poster" data-video="" data-en-boy="9/16"
+        <button class="vcard-poster" data-video="<?php echo esc_attr(drre_video('nefes-darligi')); ?>" data-en-boy="9/16"
                 data-baslik="Her nefes darlığı astım mıdır?"
                 aria-label="Her nefes darlığı astım mıdır? — videoyu izle (0:38)">
           <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="vp7" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1F0F6"/><stop offset="1" stop-color="#DEDBEA"/></linearGradient></defs><rect width="270" height="480" fill="url(#vp7)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="228" cy="120" r="2.5" fill="#B98A3B" opacity=".45"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
@@ -183,7 +183,7 @@ get_header();
     <div class="vgrid reveal">
 
       <article class="vcard">
-        <button class="vcard-poster" data-video="" data-en-boy="9/16"
+        <button class="vcard-poster" data-video="<?php echo esc_attr(drre_video('atopik')); ?>" data-en-boy="9/16"
                 data-baslik="Atopik dermatit ve egzama hastaları mezoterapi yaptırabilir mi?"
                 aria-label="Atopik dermatit ve egzama hastaları mezoterapi yaptırabilir mi? — videoyu izle (0:41)">
           <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="vp8" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF6F4"/><stop offset="1" stop-color="#CFE7E3"/></linearGradient></defs><rect width="270" height="480" fill="url(#vp8)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="228" cy="120" r="2.5" fill="#B98A3B" opacity=".45"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
@@ -195,7 +195,7 @@ get_header();
       </article>
 
       <article class="vcard">
-        <button class="vcard-poster" data-video="" data-en-boy="9/16"
+        <button class="vcard-poster" data-video="<?php echo esc_attr(drre_video('botulinum')); ?>" data-en-boy="9/16"
                 data-baslik="Botulinum toksin uygulaması alerjisi olanlara yapılabilir mi?"
                 aria-label="Botulinum toksin uygulaması alerjisi olanlara yapılabilir mi? — videoyu izle (0:40)">
           <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="vp9" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3EFE4"/><stop offset="1" stop-color="#E3DCC7"/></linearGradient></defs><rect width="270" height="480" fill="url(#vp9)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="228" cy="120" r="2.5" fill="#B98A3B" opacity=".45"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
@@ -237,20 +237,9 @@ get_header();
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
-    {"@type":"ListItem","position":2,"name":"Araçlar","item":"https://drramazanersoy.tr/araclar/"},
-    {"@type":"ListItem","position":3,"name":"Video Kütüphanesi","item":"https://drramazanersoy.tr/araclar/video-kutuphanesi.html"}
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
   "@type":"CollectionPage",
   "name":"Dr. Ersoy anlatıyor — video kütüphanesi",
-  "url":"https://drramazanersoy.tr/araclar/video-kutuphanesi.html",
+  "url":"https://drramazanersoy.tr/araclar/video-kutuphanesi/",
   "inLanguage":"tr",
   "description":"Alerji ve astım konularındaki hasta bilgilendirme videolarının konuya göre düzenlenmiş kütüphanesi.",
   "about":[
@@ -263,7 +252,7 @@ get_header();
     "@type":"Physician",
     "name":"Uzm. Dr. Ramazan Ersoy",
     "medicalSpecialty":"Allergy",
-    "url":"https://drramazanersoy.tr/dr-ramazan-ersoy.html"
+    "url":"https://drramazanersoy.tr/dr-ramazan-ersoy/"
   }
 }
 </script>

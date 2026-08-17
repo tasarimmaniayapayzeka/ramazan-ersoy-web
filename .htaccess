@@ -60,6 +60,14 @@ DirectoryIndex index.html index.php
   RewriteRule ^wp-admin(/.*)?$ /wp-yeni/wp-admin$1 [R=301,L]
   RewriteRule ^wp-login\.php$ /wp-yeni/wp-login.php [R=301,L]
 
+  # 4d) Sitemap TEK kaynak: Yoast'ın adresi statik sitemap'e gitsin
+  RewriteRule ^sitemap_index\.xml$ /sitemap.xml [R=301,L]
+
+  # 4e) Kullanıcı adı taraması: ?author=N sızıntısını kes (yazar arşivi
+  #     temada da 404; bu kural yönlendirme zincirini baştan keser)
+  RewriteCond %{QUERY_STRING} (^|&)author=\d
+  RewriteRule ^$ /? [R=301,L]
+
   # 5) ARŞİV KÖKLERİ WP'YE — geri-düşüşten ÖNCE gelmeli.
   #    hastaliklar/ ve tedaviler/ diskte GERÇEK klasör (yedek .html'ler
   #    içinde durur); aşağıdaki !-d koşulu bu yüzden onları yakalayamaz

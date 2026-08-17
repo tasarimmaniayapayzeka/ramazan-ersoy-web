@@ -271,21 +271,10 @@ get_header();
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
-    {"@type":"ListItem","position":2,"name":"Doktor","item":"https://drramazanersoy.tr/dr-ramazan-ersoy.html"},
-    {"@type":"ListItem","position":3,"name":"Bilimsel Yayınlar ve Ödüller","item":"https://drramazanersoy.tr/yayinlar-ve-oduller.html"}
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
   "@type":"Physician",
   "name":"Uzm. Dr. Ramazan Ersoy",
   "medicalSpecialty":["Allergy","Pulmonary"],
-  "url":"https://drramazanersoy.tr/dr-ramazan-ersoy.html",
+  "url":"https://drramazanersoy.tr/dr-ramazan-ersoy/",
   "award":[
     "XV. Ulusal Alerji ve Klinik İmmünoloji Kongresi (Antalya, 2007) — Solunum Yolu Alerjileri kategorisinde bildiri birinciliği (zeytin poleni allergoid immünoterapisi çalışması)",
     "XV. Ulusal Alerji ve Klinik İmmünoloji Kongresi (Antalya, 2007) — Solunum Dışı Alerjiler kategorisinde bildiri üçüncülüğü (lateks alerjisinde nazal provokasyon testi çalışması)"

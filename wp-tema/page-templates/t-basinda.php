@@ -125,14 +125,4 @@ get_header();
 
 </main>
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
-    {"@type":"ListItem","position":2,"name":"Basında","item":"https://drramazanersoy.tr/basinda.html"}
-  ]
-}
-</script>
 <?php get_footer(); ?>

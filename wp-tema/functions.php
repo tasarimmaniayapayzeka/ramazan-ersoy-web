@@ -26,6 +26,8 @@ require_once get_template_directory() . '/inc/icerik-tipleri.php';
 require_once get_template_directory() . '/inc/sema.php';
 require_once get_template_directory() . '/inc/gorsel-alt.php';
 require_once get_template_directory() . '/inc/yoast-uyum.php';
+require_once get_template_directory() . '/inc/icerik-filtre.php';
+require_once get_template_directory() . '/inc/videolar.php';
 
 /* ============================================================
    1) STİL VE BETİKLER

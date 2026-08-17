@@ -78,14 +78,4 @@ get_header();
 
 </main>
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
-    {"@type":"ListItem","position":2,"name":"Yasal Uyarı","item":"https://drramazanersoy.tr/yasal-uyari.html"}
-  ]
-}
-</script>
 <?php get_footer(); ?>

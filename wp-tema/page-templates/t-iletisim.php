@@ -408,18 +408,8 @@ get_header();
   "potentialAction":{
     "@type":"CommunicateAction",
     "name":"Randevu talebi",
-    "target":"https://drramazanersoy.tr/randevu.html"
+    "target":"https://drramazanersoy.tr/randevu/"
   }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
-    {"@type":"ListItem","position":2,"name":"İletişim ve Ulaşım","item":"https://drramazanersoy.tr/iletisim.html"}
-  ]
 }
 </script>
 <script type="application/ld+json">
@@ -427,7 +417,7 @@ get_header();
   "@context":"https://schema.org",
   "@type":"ContactPage",
   "name":"İletişim ve Ulaşım",
-  "url":"https://drramazanersoy.tr/iletisim.html",
+  "url":"https://drramazanersoy.tr/iletisim/",
   "inLanguage":"tr-TR",
   "datePublished":"2026-07-19",
   "dateModified":"2026-07-19",

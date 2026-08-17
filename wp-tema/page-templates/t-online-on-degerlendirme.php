@@ -244,40 +244,6 @@ get_header();
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
-    {"@type":"ListItem","position":2,"name":"Hasta merkezi","item":"https://drramazanersoy.tr/hasta-merkezi/"},
-    {"@type":"ListItem","position":3,"name":"Online ön değerlendirme","item":"https://drramazanersoy.tr/hasta-merkezi/online-on-degerlendirme.html"}
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"MedicalWebPage",
-  "name":"Online ön değerlendirme nasıl çalışır?",
-  "url":"https://drramazanersoy.tr/hasta-merkezi/online-on-degerlendirme.html",
-  "inLanguage":"tr",
-  "datePublished":"2026-07-19",
-  "dateModified":"2026-07-19",
-  "audience":{"@type":"MedicalAudience","audienceType":"Patient"},
-  "reviewedBy":{
-    "@type":"Physician",
-    "name":"Uzm. Dr. Ramazan Ersoy",
-    "medicalSpecialty":"Allergy",
-    "url":"https://drramazanersoy.tr/dr-ramazan-ersoy.html"
-  },
-  "about":{
-    "@type":"MedicalProcedure",
-    "name":"Online ön değerlendirme",
-    "description":"Kliniğe gelmeden önce şikayetlerin ve mevcut tetkiklerin paylaşılmasıyla klinik sürecin planlanması. Tıbbi muayenenin, kesin tanının ve reçetenin yerine geçmez; acil durumlarda kullanılamaz."
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
     {"@type":"Question","name":"Online ön değerlendirme muayenenin yerine geçer mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Online ön değerlendirme, kliniğe gelmeden önce şikayetlerinizin dinlendiği ve sürecin planlandığı bir hazırlık görüşmesidir. Kesin tanı, fizik muayene, deri testi ve reçete ancak klinikte, yüz yüze muayene ile mümkündür."}},

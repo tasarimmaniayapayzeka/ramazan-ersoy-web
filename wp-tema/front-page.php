@@ -35,7 +35,7 @@ get_header();
            sizes="(max-width:900px) 100vw, 560px"
            alt="Muayenehanede tül perdeli pencere önünde koyu yeşil koltuk, yanında stetoskop ve zeytin dalı duran ahşap sehpa"
            width="800" height="1000" fetchpriority="high">
-      <button class="play-badge" data-video="" data-en-boy="9/16"
+      <button class="play-badge" data-video="<?php echo esc_attr(drre_video('tanisma')); ?>" data-en-boy="9/16"
               data-baslik="Uzm. Dr. Ramazan Ersoy — tanışma"
               aria-label="Uzm. Dr. Ramazan Ersoy tanışma videosunu izle (36 saniye)">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
@@ -45,8 +45,8 @@ get_header();
       <figcaption class="play-label">Tanışma videosu · 36 saniye</figcaption>
     </figure>
   </div>
-  <svg class="wave-divider" viewBox="0 0 1200 48" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0,24 C180,52 360,-4 600,20 C840,44 1020,4 1200,26 L1200,48 L0,48 Z" fill="#FFFFFF"/>
+  <svg class="wave-divider" viewBox="0 0çok sayıda 48" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,24 C180,52 360,-4 600,20 C840,44 1020,4çok sayıda,26 Lçok sayıda,48 L0,48 Z" fill="#FFFFFF"/>
   </svg>
 </section>
 
@@ -117,7 +117,7 @@ get_header();
         <span class="go">Özgeçmişi görün →</span>
       </a>
       <a class="proof-item" href="/tedaviler/alerji-asisi-immunoterapi/">
-        <span class="num">~<span data-count="1200">1200</span></span>
+        <span class="num">~<span data-count="çok sayıda">çok sayıda</span></span>
         <span class="lbl">hastaya immünoterapi uygulaması</span>
         <span class="go">Aşı tedavisini okuyun →</span>
       </a>
@@ -232,7 +232,7 @@ get_header();
     <div class="reveal">
       <p class="eyebrow">Alerji aşısı · İmmünoterapi</p>
       <h2>Alerjiyi bastırmak değil, kaynağından çözmek</h2>
-      <p>İlaçlar şikayetinizi baskılar; immünoterapi ise bağışıklık sisteminizi alerjene karşı yeniden eğitir. Yaklaşık <strong>1200 hastaya</strong> uygulanmış bir tedavi deneyimiyle, size uygun olup olmadığını birlikte değerlendiriyoruz.</p>
+      <p>İlaçlar şikayetinizi baskılar; immünoterapi ise bağışıklık sisteminizi alerjene karşı yeniden eğitir. Yaklaşık <strong>çok sayıda hastaya</strong> uygulanmış bir tedavi deneyimiyle, size uygun olup olmadığını birlikte değerlendiriyoruz.</p>
       <div class="caution">
         <b>Not:</b> Tedaviye yanıt kişiden kişiye farklılık gösterebilir. İmmünoterapinin uygunluğu ancak muayene ve test sonrasında belirlenir.
       </div>
@@ -431,7 +431,7 @@ get_header();
     <div class="vgrid reveal">
 
       <article class="vcard">
-        <button class="vcard-poster" data-video="" data-en-boy="9/16"
+        <button class="vcard-poster" data-video="<?php echo esc_attr(drre_video('neye-bakar')); ?>" data-en-boy="9/16"
                 data-baslik="Yetişkin alerji uzmanı neye bakar?"
                 aria-label="Yetişkin alerji uzmanı neye bakar? — videoyu izle (0:44)">
           <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hv0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAF6F4"/><stop offset="1" stop-color="#CFE7E3"/></linearGradient></defs><rect width="270" height="480" fill="url(#hv0)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
@@ -443,7 +443,7 @@ get_header();
       </article>
 
       <article class="vcard">
-        <button class="vcard-poster" data-video="" data-en-boy="9/16"
+        <button class="vcard-poster" data-video="<?php echo esc_attr(drre_video('ne-zaman')); ?>" data-en-boy="9/16"
                 data-baslik="Ne zaman doktora başvurmalıyız?"
                 aria-label="Ne zaman doktora başvurmalıyız? — videoyu izle (0:38)">
           <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hv1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3EFE4"/><stop offset="1" stop-color="#E3DCC7"/></linearGradient></defs><rect width="270" height="480" fill="url(#hv1)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
@@ -455,7 +455,7 @@ get_header();
       </article>
 
       <article class="vcard">
-        <button class="vcard-poster" data-video="" data-en-boy="9/16"
+        <button class="vcard-poster" data-video="<?php echo esc_attr(drre_video('muayene')); ?>" data-en-boy="9/16"
                 data-baslik="Muayene süreci nasıl ilerler?"
                 aria-label="Muayene süreci nasıl ilerler? — videoyu izle (0:37)">
           <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hv2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EDF4F7"/><stop offset="1" stop-color="#D5E6EE"/></linearGradient></defs><rect width="270" height="480" fill="url(#hv2)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
@@ -467,7 +467,7 @@ get_header();
       </article>
 
       <article class="vcard">
-        <button class="vcard-poster" data-video="" data-en-boy="9/16"
+        <button class="vcard-poster" data-video="<?php echo esc_attr(drre_video('testler')); ?>" data-en-boy="9/16"
                 data-baslik="Alerji testleri nedir, nasıl yapılır?"
                 aria-label="Alerji testleri nedir, nasıl yapılır? — videoyu izle (0:47)">
           <svg viewBox="0 0 270 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="hv3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F1F0F6"/><stop offset="1" stop-color="#DEDBEA"/></linearGradient></defs><rect width="270" height="480" fill="url(#hv3)"/><path d="M-10 360q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><path d="M-10 396q50-52 90 0t90 0 90 0 90 0" fill="none" stroke="#6DBEBB" stroke-width="2.5" stroke-linecap="round" opacity=".3"/><circle cx="205" cy="86" r="4" fill="#B98A3B" opacity=".65"/><circle cx="52" cy="104" r="3" fill="#2E7C78" opacity=".35"/></svg>
@@ -620,7 +620,7 @@ get_header();
         </form>
         <div class="form-ok" data-appointment-done>
           <strong>Talebiniz alındı.</strong>
-          <p style="margin:.5rem 0 0">Mesai saatleri içindeyse aynı gün, mesai dışıysa ertesi iş günü sizi arayacağız. Acil bir durumunuz varsa lütfen 112'yi arayın.</p>
+          <p style="margin:.5rem 0 0">Mesai saatleri içindeyse aynı gün, mesai dışıysa ertesi iş günü sizi arayacağız. Acil bir durumunuz varsa lütfen <a href="tel:112">112</a>'yi arayın.</p>
           <p class="xs muted" style="margin:.75rem 0 0" data-kayit-notu></p>
         </div>
       </div>
@@ -676,4 +676,14 @@ get_header();
   ]
 }
 </script>
+<div class="wrap">
+  <p class="xs muted" style="border-top:1px solid var(--line);padding-top:1rem;margin:2rem 0 1rem">
+    Sitedeki tıbbi içerik <strong>Uzm. Dr. Ramazan Ersoy</strong> (İç Hastalıkları,
+    Alerji ve Klinik İmmünoloji) tarafından hazırlanmış ve gözden geçirilmiştir.
+    Son güncelleme: <?php echo esc_html(date_i18n('j F Y', strtotime('2026-08-17'))); ?> ·
+    Sayfadaki görseller yapay zekâ ile üretilmiştir ·
+    İçerik sorumlusu: <a href="/iletisim/">iletişim sayfası</a>.
+    Acil durumlarda <a href="tel:112">112</a>'yi arayınız.
+  </p>
+</div>
 <?php get_footer(); ?>

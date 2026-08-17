@@ -159,16 +159,6 @@ get_header();
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
-    {"@type":"ListItem","position":2,"name":"Alerji Rehberi","item":"https://drramazanersoy.tr/alerji-rehberi/"}
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
   "@type":"CollectionPage",
   "name":"Alerji Rehberi",
   "url":"https://drramazanersoy.tr/alerji-rehberi/",
@@ -179,7 +169,7 @@ get_header();
     "@type":"Physician",
     "name":"Uzm. Dr. Ramazan Ersoy",
     "medicalSpecialty":"Allergy",
-    "url":"https://drramazanersoy.tr/dr-ramazan-ersoy.html"
+    "url":"https://drramazanersoy.tr/dr-ramazan-ersoy/"
   },
   "mainEntity":{
     "@type":"ItemList",
@@ -189,62 +179,62 @@ get_header();
     "itemListElement":[
       {
         "@type":"ListItem","position":1,
-        "url":"https://drramazanersoy.tr/alerji-rehberi/evcil-hayvan-alerjisi.html",
+        "url":"https://drramazanersoy.tr/alerji-rehberi/evcil-hayvan-alerjisi/",
         "item":{
           "@type":"Article",
           "headline":"Kedim var ve alerjim çıktı: hayvanımı vermek zorunda mıyım?",
-          "url":"https://drramazanersoy.tr/alerji-rehberi/evcil-hayvan-alerjisi.html",
+          "url":"https://drramazanersoy.tr/alerji-rehberi/evcil-hayvan-alerjisi/",
           "inLanguage":"tr",
           "datePublished":"2026-07-20",
-          "author":{"@type":"Physician","name":"Uzm. Dr. Ramazan Ersoy","url":"https://drramazanersoy.tr/dr-ramazan-ersoy.html"}
+          "author":{"@type":"Physician","name":"Uzm. Dr. Ramazan Ersoy","url":"https://drramazanersoy.tr/dr-ramazan-ersoy/"}
         }
       },
       {
         "@type":"ListItem","position":2,
-        "url":"https://drramazanersoy.tr/alerji-rehberi/klima-ve-ic-ortam-alerjenleri.html",
+        "url":"https://drramazanersoy.tr/alerji-rehberi/klima-ve-ic-ortam-alerjenleri/",
         "item":{
           "@type":"Article",
           "headline":"Klima açınca burnum akıyor: klima alerjisi diye bir şey var mı?",
-          "url":"https://drramazanersoy.tr/alerji-rehberi/klima-ve-ic-ortam-alerjenleri.html",
+          "url":"https://drramazanersoy.tr/alerji-rehberi/klima-ve-ic-ortam-alerjenleri/",
           "inLanguage":"tr",
           "datePublished":"2026-07-20",
-          "author":{"@type":"Physician","name":"Uzm. Dr. Ramazan Ersoy","url":"https://drramazanersoy.tr/dr-ramazan-ersoy.html"}
+          "author":{"@type":"Physician","name":"Uzm. Dr. Ramazan Ersoy","url":"https://drramazanersoy.tr/dr-ramazan-ersoy/"}
         }
       },
       {
         "@type":"ListItem","position":3,
-        "url":"https://drramazanersoy.tr/alerji-rehberi/gebelikte-alerji-ve-astim.html",
+        "url":"https://drramazanersoy.tr/alerji-rehberi/gebelikte-alerji-ve-astim/",
         "item":{
           "@type":"Article",
           "headline":"Hamileyim, alerji ve astım ilaçlarımı bırakmalı mıyım?",
-          "url":"https://drramazanersoy.tr/alerji-rehberi/gebelikte-alerji-ve-astim.html",
+          "url":"https://drramazanersoy.tr/alerji-rehberi/gebelikte-alerji-ve-astim/",
           "inLanguage":"tr",
           "datePublished":"2026-07-20",
-          "author":{"@type":"Physician","name":"Uzm. Dr. Ramazan Ersoy","url":"https://drramazanersoy.tr/dr-ramazan-ersoy.html"}
+          "author":{"@type":"Physician","name":"Uzm. Dr. Ramazan Ersoy","url":"https://drramazanersoy.tr/dr-ramazan-ersoy/"}
         }
       },
       {
         "@type":"ListItem","position":4,
-        "url":"https://drramazanersoy.tr/alerji-rehberi/yetiskinlikte-baslayan-astim.html",
+        "url":"https://drramazanersoy.tr/alerji-rehberi/yetiskinlikte-baslayan-astim/",
         "item":{
           "@type":"Article",
           "headline":"Yetişkinlikte başlayan astım: neden şimdi?",
-          "url":"https://drramazanersoy.tr/alerji-rehberi/yetiskinlikte-baslayan-astim.html",
+          "url":"https://drramazanersoy.tr/alerji-rehberi/yetiskinlikte-baslayan-astim/",
           "inLanguage":"tr",
           "datePublished":"2026-07-19",
-          "author":{"@type":"Physician","name":"Uzm. Dr. Ramazan Ersoy","url":"https://drramazanersoy.tr/dr-ramazan-ersoy.html"}
+          "author":{"@type":"Physician","name":"Uzm. Dr. Ramazan Ersoy","url":"https://drramazanersoy.tr/dr-ramazan-ersoy/"}
         }
       },
       {
         "@type":"ListItem","position":5,
-        "url":"https://drramazanersoy.tr/alerji-rehberi/ev-tozu-akari-yatak-odasi.html",
+        "url":"https://drramazanersoy.tr/alerji-rehberi/ev-tozu-akari-yatak-odasi/",
         "item":{
           "@type":"Article",
           "headline":"Ev tozu akarı ile mücadele: yatak odası rehberi",
-          "url":"https://drramazanersoy.tr/alerji-rehberi/ev-tozu-akari-yatak-odasi.html",
+          "url":"https://drramazanersoy.tr/alerji-rehberi/ev-tozu-akari-yatak-odasi/",
           "inLanguage":"tr",
           "datePublished":"2026-07-19",
-          "author":{"@type":"Physician","name":"Uzm. Dr. Ramazan Ersoy","url":"https://drramazanersoy.tr/dr-ramazan-ersoy.html"}
+          "author":{"@type":"Physician","name":"Uzm. Dr. Ramazan Ersoy","url":"https://drramazanersoy.tr/dr-ramazan-ersoy/"}
         }
       }
     ]

@@ -185,26 +185,4 @@ get_header();
 
 </main>
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
-    {"@type":"ListItem","position":2,"name":"Çerez Politikası","item":"https://drramazanersoy.tr/cerez-politikasi.html"}
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"WebPage",
-  "name":"Çerez Politikası",
-  "url":"https://drramazanersoy.tr/cerez-politikasi.html",
-  "inLanguage":"tr",
-  "datePublished":"2026-07-19",
-  "dateModified":"2026-07-19",
-  "isPartOf":{"@type":"WebSite","name":"Uzm. Dr. Ramazan Ersoy","url":"https://drramazanersoy.tr/"}
-}
-</script>
 <?php get_footer(); ?>

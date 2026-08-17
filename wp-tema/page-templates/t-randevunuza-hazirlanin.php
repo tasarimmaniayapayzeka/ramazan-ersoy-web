@@ -341,35 +341,6 @@ get_header();
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
-    {"@type":"ListItem","position":2,"name":"Hasta Merkezi","item":"https://drramazanersoy.tr/hasta-merkezi/"},
-    {"@type":"ListItem","position":3,"name":"Randevunuza Hazırlanın","item":"https://drramazanersoy.tr/hasta-merkezi/randevunuza-hazirlanin.html"}
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"MedicalWebPage",
-  "name":"Randevunuza Hazırlanın — alerji muayenesi öncesi hazırlık rehberi",
-  "url":"https://drramazanersoy.tr/hasta-merkezi/randevunuza-hazirlanin.html",
-  "inLanguage":"tr",
-  "datePublished":"2026-07-19",
-  "dateModified":"2026-07-19",
-  "audience":{"@type":"MedicalAudience","audienceType":"Patient"},
-  "reviewedBy":{
-    "@type":"Physician",
-    "name":"Uzm. Dr. Ramazan Ersoy",
-    "medicalSpecialty":"Allergy",
-    "url":"https://drramazanersoy.tr/dr-ramazan-ersoy.html"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
     {"@type":"Question","name":"Alerji muayenesine gelirken yanımda ne getirmeliyim?","acceptedAnswer":{"@type":"Answer","text":"Daha önce yaptırdığınız test ve tahlil sonuçlarını, kullandığınız ilaçların listesini veya kutularını, varsa sevk ya da rapor belgelerinizi ve kimliğinizi getirin. Şikayetlerinizin hangi ay, ortam ve saatte arttığını kısaca not etmeniz de muayeneyi çok kolaylaştırır."}},

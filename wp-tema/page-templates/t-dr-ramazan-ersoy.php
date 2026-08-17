@@ -428,65 +428,6 @@ get_header();
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
-    {"@type":"ListItem","position":2,"name":"Doktor","item":"https://drramazanersoy.tr/dr-ramazan-ersoy.html"}
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"MedicalWebPage",
-  "name":"Uzm. Dr. Ramazan Ersoy — Özgeçmiş",
-  "url":"https://drramazanersoy.tr/dr-ramazan-ersoy.html",
-  "inLanguage":"tr",
-  "datePublished":"2026-07-19",
-  "dateModified":"2026-07-19",
-  "about":{"@type":"MedicalSpecialty","name":"Allergy"},
-  "mainEntity":{
-    "@type":"Physician",
-    "name":"Uzm. Dr. Ramazan Ersoy",
-    "honorificPrefix":"Uzm. Dr.",
-    "jobTitle":"İç Hastalıkları, Alerji ve Klinik İmmünoloji Uzmanı",
-    "medicalSpecialty":["Allergy","Internal Medicine"],
-    "url":"https://drramazanersoy.tr/dr-ramazan-ersoy.html",
-    "telephone":"+902127099396",
-    "knowsLanguage":["tr","en"],
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"Harbiye Mah. Teşvikiye Cad. 37/3",
-      "addressLocality":"Şişli",
-      "addressRegion":"İstanbul",
-      "addressCountry":"TR"
-    },
-    "alumniOf":[
-      {"@type":"CollegeOrUniversity","name":"İstanbul Üniversitesi Tıp Fakültesi"},
-      {"@type":"CollegeOrUniversity","name":"Ege Üniversitesi Tıp Fakültesi"}
-    ],
-    "memberOf":[
-      {"@type":"Organization","name":"European Academy of Allergy and Clinical Immunology (EAACI)"},
-      {"@type":"Organization","name":"Astım Alerji İmmünoloji Derneği"},
-      {"@type":"Organization","name":"Türk Toraks Derneği"},
-      {"@type":"Organization","name":"Türkiye Solunum Araştırmaları Derneği (TÜSAD)"},
-      {"@type":"Organization","name":"İstanbul Tabip Odası"}
-    ],
-    "award":[
-      "2007 · Ulusal Alerji ve Klinik İmmünoloji Kongresi — bildiri birincilik ödülü (zeytin poleni immünoterapisi)",
-      "2007 · Ulusal kongre — bildiri üçüncülük ödülü (lateks alerjisi)"
-    ],
-    "availableService":[
-      {"@type":"MedicalTest","name":"Alerji deri testi (prick test)"},
-      {"@type":"MedicalTest","name":"Solunum fonksiyon testi"},
-      {"@type":"MedicalTherapy","name":"Alerji aşısı (immünoterapi)"}
-    ]
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
     {"@type":"Question","name":"Dr. Ramazan Ersoy hangi hastalara bakıyor?","acceptedAnswer":{"@type":"Answer","text":"Muayenehanede yetişkin hastalar kabul edilmektedir. Alerjik rinit, yetişkin astımı, ürtiker, egzama, besin alerjisi, ilaç alerjisi ve arı alerjisi başlıca ilgi alanlarıdır."}},

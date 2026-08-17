@@ -107,7 +107,7 @@ get_header();
         </form>
         <div class="form-ok" data-appointment-done>
           <strong>Talebiniz alındı.</strong>
-          <p style="margin:.5rem 0 0">Mesai saatleri içindeyse aynı gün, mesai dışıysa ertesi iş günü sizi arayacağız. Acil bir durumunuz varsa lütfen 112'yi arayın.</p>
+          <p style="margin:.5rem 0 0">Mesai saatleri içindeyse aynı gün, mesai dışıysa ertesi iş günü sizi arayacağız. Acil bir durumunuz varsa lütfen <a href="tel:112">112</a>'yi arayın.</p>
           <p class="xs muted" style="margin:.75rem 0 0" data-kayit-notu></p>
         </div>
       </div>
@@ -368,49 +368,6 @@ get_header();
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
-    {"@type":"ListItem","position":2,"name":"Randevu talebi","item":"https://drramazanersoy.tr/randevu.html"}
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"MedicalWebPage",
-  "name":"Randevu talebi oluşturun",
-  "description":"Uzm. Dr. Ramazan Ersoy muayenehanesinden randevu talebi oluşturma yolları, çalışma saatleri ve randevunun kesinleşme süreci.",
-  "url":"https://drramazanersoy.tr/randevu.html",
-  "inLanguage":"tr-TR",
-  "datePublished":"2026-07-19",
-  "dateModified":"2026-07-19",
-  "audience":{"@type":"MedicalAudience","audienceType":"Patient"},
-  "about":{"@type":"MedicalSpecialty","name":"Allergy"},
-  "mainEntityOfPage":{
-    "@type":"Physician",
-    "name":"Uzm. Dr. Ramazan Ersoy",
-    "medicalSpecialty":["Allergy","Pulmonary"],
-    "telephone":"+902127099396",
-    "url":"https://drramazanersoy.tr/",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"Harbiye Mah. Teşvikiye Cad. 37/3",
-      "addressLocality":"Şişli",
-      "addressRegion":"İstanbul",
-      "addressCountry":"TR"
-    },
-    "openingHoursSpecification":[
-      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"},
-      {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:00"}
-    ]
-  },
-  "reviewedBy":{"@type":"Physician","name":"Uzm. Dr. Ramazan Ersoy"}
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
     {"@type":"Question","name":"Formu doldurunca randevum kesinleşmiş oluyor mu?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Form bir randevu talebidir. Sekreterimiz sizi arayıp gün ve saat üzerinde anlaştıktan sonra randevunuz kesinleşir. Bu görüşmede kullandığınız ilaçlar ve varsa test öncesi hazırlık da konuşulur."}},
@@ -424,7 +381,7 @@ get_header();
     {"@type":"Question","name":"Online ön değerlendirme randevunun yerine geçer mi?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Online ön değerlendirme, süreci planlamak ve elinizdeki belgeleri önceden paylaşmak içindir; muayenenin, tanının ve tedavinin yerine geçmez. Acil durumlarda kullanılmaz."}},
     {"@type":"Question","name":"Bilgilerim ne kadar süreyle saklanıyor?","acceptedAnswer":{"@type":"Answer","text":"Form üzerinden ilettiğiniz ad ve telefon bilgisi yalnızca randevu talebinizi karşılamak amacıyla, KVKK Aydınlatma Metni'nde belirtilen süre ve şartlarla işlenir. Bilgilendirme mesajı onayı isteğe bağlıdır ve randevu için gerekli değildir."}},
     {"@type":"Question","name":"Form alanına şikayetimi ayrıntılı yazabilir miyim?","acceptedAnswer":{"@type":"Answer","text":"Lütfen forma tıbbi ayrıntı yazmayın. Yalnızca genel başlığı seçmeniz yeterlidir; ayrıntıları telefonda ve muayenede güvenli şekilde konuşuruz."}},
-    {"@type":"Question","name":"Acil bir durumda ne yapmalıyım?","acceptedAnswer":{"@type":"Answer","text":"Nefes darlığı, dilde veya boğazda şişme, yutkunma güçlüğü ya da baygınlık hissi varsa randevu beklemeyin; hemen 112'yi arayın veya en yakın acil servise başvurun."}}
+    {"@type":"Question","name":"Acil bir durumda ne yapmalıyım?","acceptedAnswer":{"@type":"Answer","text":"Nefes darlığı, dilde veya boğazda şişme, yutkunma güçlüğü ya da baygınlık hissi varsa randevu beklemeyin; hemen <a href="tel:112">112</a>'yi arayın veya en yakın acil servise başvurun."}}
   ]
 }
 </script>

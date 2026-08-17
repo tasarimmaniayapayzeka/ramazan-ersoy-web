@@ -214,42 +214,9 @@ get_header();
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
-    {"@type":"ListItem","position":2,"name":"Testler","item":"https://drramazanersoy.tr/testler/"}
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"MedicalWebPage",
-  "name":"Hangi alerji testi bana gerekiyor?",
-  "description":"Deri prick testi, yama testi, spesifik IgE, spirometri ve provokasyon: hangi şikayette hangi test gerekir, nasıl hazırlanırsınız? Yetişkin hasta rehberi.",
-  "url":"https://drramazanersoy.tr/testler/",
-  "inLanguage":"tr-TR",
-  "datePublished":"2026-07-19",
-  "dateModified":"2026-08-16",
-  "audience":{"@type":"MedicalAudience","audienceType":"Patient"},
-  "author":{"@type":"Physician","name":"Uzm. Dr. Ramazan Ersoy","medicalSpecialty":"Allergy"},
-  "reviewedBy":{"@type":"Physician","name":"Uzm. Dr. Ramazan Ersoy"},
-  "about":[
-    {"@type":"MedicalTest","name":"Deri prick testi","alternateName":"Cilt delme testi","usedToDiagnose":{"@type":"MedicalCondition","name":"IgE aracılı alerji"}},
-    {"@type":"MedicalTest","name":"Yama (patch) testi","alternateName":"Epikütan test","usedToDiagnose":{"@type":"MedicalCondition","name":"Alerjik kontakt dermatit"}},
-    {"@type":"MedicalTest","name":"Spesifik IgE kan testi","usedToDiagnose":{"@type":"MedicalCondition","name":"IgE aracılı alerji"}},
-    {"@type":"MedicalTest","name":"Moleküler alerji tanısı","alternateName":"Komponent bazlı tanı"},
-    {"@type":"MedicalTest","name":"Solunum fonksiyon testi","alternateName":"Spirometri","usedToDiagnose":{"@type":"MedicalCondition","name":"Astım"}},
-    {"@type":"MedicalTest","name":"Provokasyon testi","alternateName":"Kontrollü maruziyet testi"}
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "@id": "https://drramazanersoy.tr/testler/index.html#sss",
+  "@id": "https://drramazanersoy.tr/testler/#sss",
   "mainEntity": [
     {
       "@type": "Question",
@@ -356,21 +323,6 @@ get_header();
       }
     }
   ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": "https://drramazanersoy.tr/testler/index.html#konusulabilir",
-  "speakable": {
-    "@type": "SpeakableSpecification",
-    "cssSelector": [
-      ".hero-lede",
-      ".at-glance"
-    ]
-  },
-  "url": "https://drramazanersoy.tr/testler/index.html"
 }
 </script>
 <?php get_footer(); ?>

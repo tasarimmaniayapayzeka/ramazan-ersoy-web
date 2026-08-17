@@ -413,52 +413,6 @@ get_header();
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"MedicalWebPage",
-  "name":"İstanbul polen takvimi — bu ay havada ne var?",
-  "description":"İstanbul'da ağaç, çim ve yabani ot polenlerinin aylara göre dağılımı; polen mevsiminde korunma önerileri ve hekime başvuru ölçütleri.",
-  "url":"https://drramazanersoy.tr/araclar/polen-takvimi.html",
-  "inLanguage":"tr-TR",
-  "datePublished":"2026-07-19",
-  "dateModified":"2026-07-19",
-  "audience":{"@type":"PeopleAudience","suggestedMinAge":18},
-  "about":{
-    "@type":"MedicalCondition",
-    "name":"Mevsimsel alerjik rinit (polinozis, saman nezlesi)",
-    "signOrSymptom":[
-      {"@type":"MedicalSymptom","name":"Hapşırık nöbetleri"},
-      {"@type":"MedicalSymptom","name":"Burun akıntısı ve tıkanıklık"},
-      {"@type":"MedicalSymptom","name":"Göz kaşıntısı ve sulanması"},
-      {"@type":"MedicalSymptom","name":"Öksürük ve hırıltı"}
-    ]
-  },
-  "author":{
-    "@type":"Physician",
-    "name":"Uzm. Dr. Ramazan Ersoy",
-    "medicalSpecialty":"Allergy",
-    "url":"https://drramazanersoy.tr/dr-ramazan-ersoy.html"
-  },
-  "reviewedBy":{
-    "@type":"Physician",
-    "name":"Uzm. Dr. Ramazan Ersoy",
-    "medicalSpecialty":"Allergy"
-  },
-  "isPartOf":{"@type":"WebSite","name":"Uzm. Dr. Ramazan Ersoy","url":"https://drramazanersoy.tr/"}
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
-    {"@type":"ListItem","position":2,"name":"Araçlar","item":"https://drramazanersoy.tr/araclar/"},
-    {"@type":"ListItem","position":3,"name":"İstanbul polen takvimi","item":"https://drramazanersoy.tr/araclar/polen-takvimi.html"}
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
     {"@type":"Question","name":"Polen takvimi her yıl aynı mı işler?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Takvim genel bir bilgilendirmedir. Kışın ılık geçtiği yıllarda ağaç polenleri iki–üç hafta erken başlayabilir; serin ve yağışlı bir ilkbaharda ise gecikebilir. Yağmur havadaki poleni geçici olarak yıkar, rüzgârlı ve kuru günlerde polen yükü artar."}},

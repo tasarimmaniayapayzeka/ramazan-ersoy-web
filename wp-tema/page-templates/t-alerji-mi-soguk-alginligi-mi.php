@@ -221,40 +221,6 @@ get_header();
 
 </main>
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
-    {"@type":"ListItem","position":2,"name":"Araçlar","item":"https://drramazanersoy.tr/araclar/"},
-    {"@type":"ListItem","position":3,"name":"Alerji mi, soğuk algınlığı mı?","item":"https://drramazanersoy.tr/araclar/alerji-mi-soguk-alginligi-mi.html"}
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"MedicalWebPage",
-  "name":"Alerji mi, soğuk algınlığı mı? — 6 soruluk bilgilendirme testi",
-  "url":"https://drramazanersoy.tr/araclar/alerji-mi-soguk-alginligi-mi.html",
-  "inLanguage":"tr",
-  "datePublished":"2026-07-19",
-  "dateModified":"2026-07-19",
-  "audience":{"@type":"MedicalAudience","audienceType":"Patient"},
-  "description":"Alerjik rinit ile soğuk algınlığı belirtilerini karşılaştıran 6 soruluk genel bilgilendirme testi. Tanı aracı değildir; kesin değerlendirme hekim muayenesi ile yapılır.",
-  "reviewedBy":{
-    "@type":"Physician",
-    "name":"Uzm. Dr. Ramazan Ersoy",
-    "medicalSpecialty":"Allergy",
-    "url":"https://drramazanersoy.tr/dr-ramazan-ersoy.html"
-  },
-  "about":[
-    {"@type":"MedicalCondition","name":"Alerjik Rinit","alternateName":["Saman nezlesi","Allergic rhinitis"]},
-    {"@type":"MedicalCondition","name":"Soğuk algınlığı","alternateName":["Common cold","Nezle"]}
-  ]
-}
-</script>
 <!-- KURTARILAN INLINE BETIK (script-kurtar.js): statik sayfada </main> sonrasindaydi,
      donusturucu almamisti; arac islevselligi bu bloklara bagli -->
 <script>

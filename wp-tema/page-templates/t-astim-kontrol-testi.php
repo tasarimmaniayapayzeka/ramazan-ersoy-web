@@ -237,48 +237,6 @@ get_header();
 
 </main>
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
-    {"@type":"ListItem","position":2,"name":"Araçlar","item":"https://drramazanersoy.tr/araclar/"},
-    {"@type":"ListItem","position":3,"name":"Astım Kontrol Testi (ACT)","item":"https://drramazanersoy.tr/araclar/astim-kontrol-testi.html"}
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"MedicalWebPage",
-  "name":"Astım Kontrol Testi (ACT)",
-  "url":"https://drramazanersoy.tr/araclar/astim-kontrol-testi.html",
-  "inLanguage":"tr",
-  "datePublished":"2026-07-19",
-  "dateModified":"2026-07-19",
-  "audience":{"@type":"MedicalAudience","audienceType":"Patient"},
-  "reviewedBy":{
-    "@type":"Physician",
-    "name":"Uzm. Dr. Ramazan Ersoy",
-    "medicalSpecialty":["Allergy","Pulmonary"],
-    "url":"https://drramazanersoy.tr/dr-ramazan-ersoy.html"
-  },
-  "mainEntity":{
-    "@type":"MedicalRiskCalculator",
-    "name":"Astım Kontrol Testi (ACT)",
-    "alternateName":"Asthma Control Test",
-    "estimatesRiskOf":{"@type":"MedicalCondition","name":"Kontrolsüz astım"},
-    "includedRiskFactor":[
-      {"@type":"MedicalRiskFactor","name":"Günlük aktivitelerin astım nedeniyle kısıtlanması"},
-      {"@type":"MedicalRiskFactor","name":"Nefes darlığı sıklığı"},
-      {"@type":"MedicalRiskFactor","name":"Gece ve sabah erken uyandıran astım belirtileri"},
-      {"@type":"MedicalRiskFactor","name":"Rahatlatıcı (kurtarıcı) ilaç kullanım sıklığı"},
-      {"@type":"MedicalRiskFactor","name":"Hastanın kendi kontrol değerlendirmesi"}
-    ]
-  }
-}
-</script>
 <!-- KURTARILAN INLINE BETIK (script-kurtar.js): statik sayfada </main> sonrasindaydi,
      donusturucu almamisti; arac islevselligi bu bloklara bagli -->
 <script>

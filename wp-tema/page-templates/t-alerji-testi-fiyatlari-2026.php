@@ -263,7 +263,7 @@ get_header();
     {
       "@type":"MedicalWebPage",
       "name":"Alerji testi fiyatları 2026 — ücret bilgisi nasıl öğrenilir?",
-      "url":"https://drramazanersoy.tr/fiyatlar/alerji-testi-fiyatlari-2026.html",
+      "url":"https://drramazanersoy.tr/alerji-testi-fiyatlari-2026/",
       "description":"Alerji testi ücretlerinin sağlık mevzuatı gereği internette yayınlanamadığını, fiyatı etkileyen faktörleri, SGK ve özel sağlık sigortası çerçevesini ve ücret bilgisinin nasıl alınacağını anlatan hasta bilgilendirme sayfası.",
       "inLanguage":"tr-TR",
       "datePublished":"2026-07-20",
@@ -276,7 +276,7 @@ get_header();
       "@type":"BreadcrumbList",
       "itemListElement":[
         {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
-        {"@type":"ListItem","position":2,"name":"Ücret ve Randevu Bilgisi","item":"https://drramazanersoy.tr/fiyatlar/alerji-testi-fiyatlari-2026.html"}
+        {"@type":"ListItem","position":2,"name":"Ücret ve Randevu Bilgisi","item":"https://drramazanersoy.tr/alerji-testi-fiyatlari-2026/"}
       ]
     },
     {

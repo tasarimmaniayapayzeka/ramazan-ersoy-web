@@ -272,14 +272,4 @@ get_header();
 
 </main>
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"BreadcrumbList",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Anasayfa","item":"https://drramazanersoy.tr/"},
-    {"@type":"ListItem","position":2,"name":"KVKK Aydınlatma Metni","item":"https://drramazanersoy.tr/kvkk-aydinlatma.html"}
-  ]
-}
-</script>
 <?php get_footer(); ?>
